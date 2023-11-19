@@ -8,15 +8,7 @@ export default function Blog() {
 
   return (
     <Layout title={t('blog')}>
-      <div>
-        {blogPosts.map(post => (
-          <div key={post.id}>
-            <img src={post.thumbnail} alt={post.title} />
-            <h2>{post.title}</h2>
-            <p>{post.excerpt}</p>
-          </div>
-        ))}
-      </div>
+      <h2> {t('preparation')} </h2>
     </Layout>
   );
 };

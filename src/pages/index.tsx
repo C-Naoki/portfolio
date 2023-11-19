@@ -8,7 +8,7 @@ export default function Home() {
 
   return (
     <Layout title={t('title')}>
-      <p>{t('welcome')}</p>
+      <p dangerouslySetInnerHTML={{ __html: t('welcome').replace(/\n/g, '<br>') }} />
       <h2>{t('affiliation')}</h2>
       <div className={styles.links}>
         <a href="https://www.dm.sanken.osaka-u.ac.jp/" target="_blank" rel="noopener noreferrer" className={styles.link}>{t('laboratory')}</a><br />
