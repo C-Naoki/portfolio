@@ -1,0 +1,16 @@
+.links {
+  margin-bottom: 20px;
+}
+
+.link {
+  /* display: block; */
+  color: #0000EE;
+  text-decoration: underline;
+  margin-bottom: 0px;
+  padding: 4px 0;
+}
+
+.link:hover {
+  color: #FF4500;
+  text-decoration: underline;
+}
