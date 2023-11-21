@@ -1,27 +1,23 @@
-import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Drawer, IconButton, List, ListItem, ListItemText, makeStyles } from '@material-ui/core';
+import { Drawer, IconButton, makeStyles } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { Menu as MenuIcon } from "@material-ui/icons";
-import HomeIcon from '@material-ui/icons/Home';
-import BookIcon from '@material-ui/icons/Book';
-import DescriptionIcon from '@material-ui/icons/Description';
-import ContactMailIcon from '@material-ui/icons/ContactMail';
 import Link from 'next/link';
 import { useState } from 'react';
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import DrawerContent from './DrawerContent';
 import LanguageSwitcher from './LanguageSwitcher';
 
 
 const useStyles = makeStyles((theme) => ({
-  link: {
-    color: theme.palette.text.primary,
-    textDecoration: 'none',
+  appBar: {
+    background: '#007B59',
   },
   menuButton: {
+    position: 'absolute',
+    right: theme.spacing(2),
     [theme.breakpoints.up('md')]: {
       display: 'none',
     },
@@ -35,47 +31,10 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
   },
-  drawerContainer: {
-    width: 250,
-  },
-  icon: {
-    minWidth: '35px',
-    color: 'rgba(0, 0, 0, 0.54)',
-    marginRight: '4px',
-  },
-  listItem: {
-    paddingTop: theme.spacing(1),
-    paddingBottom: theme.spacing(1),
-    '&:not(:last-child)': {
-      marginBottom: theme.spacing(1),
-    },
-    '& .MuiListItemIcon-root': {
-      minWidth: '35px',
-    },
-    '& .MuiListItemText-primary': {
-      marginLeft: '6px',
-    },
-  },
-  navigationSection: {
-    paddingBottom: theme.spacing(2),
-  },
-  externalLinkSection: {
-    paddingTop: theme.spacing(2),
-  },
-  externalIcon: {
-    fontSize: '1.5rem',
-    width: '20px',
-    height: '20px',
-  },
-  languageSwitcher: {
-    marginLeft: 'auto',
-  },
-  listItemIcon: {
-    marginLeft: '3px',
-  },
-  toolbar: {
+  toolbarCenter: {
+    display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
   },
   title: {
     flexGrow: 1,
@@ -84,7 +43,12 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '1.3rem',
   },
   iconSpacing: {
-    margin: theme.spacing(1),
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1.5),
+  },
+  LanguageSwitcher: {
+    marginLeft: '40px',
+    marginRight: '-40px',
   },
 }));
 
@@ -96,78 +60,10 @@ const Header = () => {
     setDrawerOpen(!drawerOpen);
   };
 
-  const renderDrawer = () => {
-    const classes = useStyles();
-    return (
-      <div className={classes.drawerContainer}>
-        <List>
-          <div className={classes.navigationSection}>
-            <Link href="/" passHref>
-              <ListItem button className={classes.listItem}>
-                <ListItemIcon className={classes.icon}><HomeIcon /></ListItemIcon>
-                <ListItemText primary="Home" />
-              </ListItem>
-            </Link>
-            <Link href="/blog" passHref>
-              <ListItem button className={classes.listItem}>
-                <ListItemIcon className={classes.icon}><BookIcon /></ListItemIcon>
-                <ListItemText primary="Blog" />
-              </ListItem>
-            </Link>
-            <Link href="/publications" passHref>
-              <ListItem button className={classes.listItem}>
-                <ListItemIcon className={classes.icon}><DescriptionIcon /></ListItemIcon>
-                <ListItemText primary="Publications" />
-              </ListItem>
-            </Link>
-            <Link href="/contact" passHref>
-              <ListItem button className={classes.listItem}>
-                <ListItemIcon className={classes.icon}><ContactMailIcon /></ListItemIcon>
-                <ListItemText primary="Contact" />
-              </ListItem>
-            </Link>
-          </div>
-          <div className={classes.externalLinkSection}>
-            <a href="https://github.com/C-Naoki" target="_blank" rel="noopener noreferrer" className={classes.link}>
-              <ListItem button className={classes.listItem}>
-                <ListItemIcon className={classes.listItemIcon}><FontAwesomeIcon icon={faGithub} className={classes.externalIcon} /></ListItemIcon>
-                <ListItemText primary="GitHub" />
-              </ListItem>
-            </a>
-            <a href="https://twitter.com/C__Naoki" target="_blank" rel="noopener noreferrer" className={classes.link}>
-              <ListItem button className={classes.listItem}>
-                <ListItemIcon className={classes.listItemIcon}><FontAwesomeIcon icon={faTwitter} className={classes.externalIcon} /></ListItemIcon>
-                <ListItemText primary="Twitter" />
-              </ListItem>
-            </a>
-            <a href="https://www.linkedin.com/in/naoki-chihara-0a35a827a/" target="_blank" rel="noopener noreferrer" className={classes.link}>
-              <ListItem button className={classes.listItem}>
-                <ListItemIcon className={classes.listItemIcon}><FontAwesomeIcon icon={faLinkedin} className={classes.externalIcon} /></ListItemIcon>
-                <ListItemText primary="LinkedIn" />
-              </ListItem>
-            </a>
-          </div>
-          <ListItem className={classes.languageSwitcher}>
-            <LanguageSwitcher />
-          </ListItem>
-        </List>
-      </div>
-    );
-  };
-
   return (
     <>
-      <AppBar position="sticky">
-        <Toolbar className={classes.toolbar}>
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            onClick={handleDrawerToggle}
-            className={classes.menuButton}
-          >
-            <MenuIcon />
-          </IconButton>
+      <AppBar position="sticky" className={classes.appBar}>
+        <Toolbar className={classes.toolbarCenter}>
           <Typography variant="h6" className={classes.title}>
             Naoki Chihara
           </Typography>
@@ -176,19 +72,30 @@ const Header = () => {
             <Link href="/blog" passHref><Button color="inherit">Blog</Button></Link>
             <Link href="/publications" passHref><Button color="inherit">Publications</Button></Link>
             <Link href="/contact" passHref><Button color="inherit">Contact</Button></Link>
-            <LanguageSwitcher />
-            <div>
-              <a href="https://github.com/C-Naoki" target="_blank" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faGithub} className={classes.iconSpacing} />
+            <div className={classes.toolbarCenter}>
+              <a href="https://github.com/C-Naoki" target="_blank" rel="noopener noreferrer" className={classes.toolbarCenter}>
+                <FaGithub className={classes.iconSpacing} />
               </a>
-              <a href="https://twitter.com/C__Naoki" target="_blank" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faTwitter} className={classes.iconSpacing} />
+              <a href="https://twitter.com/C__Naoki" target="_blank" rel="noopener noreferrer" className={classes.toolbarCenter}>
+                <FaTwitter className={classes.iconSpacing} />
               </a>
-              <a href="https://www.linkedin.com/in/naoki-chihara-0a35a827a/" target="_blank" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faLinkedin} className={classes.iconSpacing} />
+              <a href="https://www.linkedin.com/in/naoki-chihara-0a35a827a/" target="_blank" rel="noopener noreferrer" className={classes.toolbarCenter}>
+                <FaLinkedin className={classes.iconSpacing} />
+              </a>
+              <a className={classes.LanguageSwitcher}>
+                <LanguageSwitcher />
               </a>
             </div>
           </div>
+          <IconButton
+            edge="end"
+            color="inherit"
+            aria-label="menu"
+            onClick={handleDrawerToggle}
+            className={classes.menuButton}
+          >
+            <MenuIcon />
+          </IconButton>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -196,7 +103,7 @@ const Header = () => {
         open={drawerOpen}
         onClose={handleDrawerToggle}
       >
-        {renderDrawer()}
+        <DrawerContent />
       </Drawer>
     </>
   );
