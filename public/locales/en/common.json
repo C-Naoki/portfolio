@@ -25,5 +25,11 @@
   "M.Sc. name": "Graduate School of Information Science and Technology, Information Systems Engineering, Osaka University",
   "M.Sc. year": "[2023-]",
   "Ph.D.": "Ph.D.",
-  "Ph.D. year": "[2025-]"
+  "Ph.D. year": "[2025-]",
+  "surname": "surname",
+  "name": "name",
+  "email": "email",
+  "subject": "subject",
+  "message": "message",
+  "send": "send"
 }
