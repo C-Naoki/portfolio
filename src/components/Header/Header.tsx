@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
   headerOptions: {
     flexGrow: 1,
     display: 'flex',
+    alignItems: 'center',
     justifyContent: 'space-evenly',
     [theme.breakpoints.down('sm')]: {
       display: 'none',
@@ -71,6 +72,19 @@ const useStyles = makeStyles((theme) => ({
   },
   listItemIcon: {
     marginLeft: '3px',
+  },
+  toolbar: {
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  title: {
+    flexGrow: 1,
+    display: 'flex',
+    alignItems: 'center',
+    fontSize: '1.3rem',
+  },
+  iconSpacing: {
+    margin: theme.spacing(1),
   },
 }));
 
@@ -144,7 +158,7 @@ const Header = () => {
   return (
     <>
       <AppBar position="sticky">
-        <Toolbar>
+        <Toolbar className={classes.toolbar}>
           <IconButton
             edge="start"
             color="inherit"
@@ -154,7 +168,7 @@ const Header = () => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" style={{ flexGrow: 1, fontSize: '1.3rem' }}>
+          <Typography variant="h6" className={classes.title}>
             Naoki Chihara
           </Typography>
           <div className={classes.headerOptions}>
@@ -165,13 +179,13 @@ const Header = () => {
             <LanguageSwitcher />
             <div>
               <a href="https://github.com/C-Naoki" target="_blank" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faGithub} />
+                <FontAwesomeIcon icon={faGithub} className={classes.iconSpacing} />
               </a>
               <a href="https://twitter.com/C__Naoki" target="_blank" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faTwitter} />
+                <FontAwesomeIcon icon={faTwitter} className={classes.iconSpacing} />
               </a>
               <a href="https://www.linkedin.com/in/naoki-chihara-0a35a827a/" target="_blank" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faLinkedin} />
+                <FontAwesomeIcon icon={faLinkedin} className={classes.iconSpacing} />
               </a>
             </div>
           </div>

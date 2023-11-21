@@ -36,7 +36,7 @@ export default function Contact() {
                   <TextField fullWidth label={t('subject')} variant="outlined" />
                 </Grid>
                 <Grid item xs={12}>
-                  <TextField fullWidth label={t('message')} multiline rows={4} variant="outlined" />
+                  <TextField fullWidth label={t('message')} multiline rows={15} variant="outlined" />
                 </Grid>
                 <Grid item xs={12}>
                   <Button variant="contained" color="primary" fullWidth>{t('send')}</Button>
