@@ -25,8 +25,8 @@ export default function Publications() {
         <li>
           Effective detection of variable celestial objects using machine learning-based periodic analysis<br />
           Astronomy and Computing, Vol. 45, pp. 100765, 3 November 2023.<br />
-          <span style={{ fontWeight: 'bold', textDecoration: 'underline' }}>Naoki Chihara</span>, Tadafumi Takata, Yasuhiro Fujiwara, Koki Noda, Keisuke Toyoda, Kaito Higuchi, Makoto Onizuka{' '}
-          <a href="https://firebasestorage.googleapis.com/v0/b/portfolio-29cb4.appspot.com/o/astronomy%20and%20computing2023%2Fpaper.pdf?alt=media&token=e6539daa-8030-47b5-b134-e5e20d77ad3d"     target="_blank" rel="noopener noreferrer" className={styles.link}>[paper]</a>
+          <span style={{ fontWeight: 'bold', textDecoration: 'underline' }}>Naoki Chihara</span>, Tadafumi Takata, Yasuhiro Fujiwara, Koki Noda, Keisuke Toyoda, Kaito Higuchi, Makoto Onizuka<br />
+          <a href="https://firebasestorage.googleapis.com/v0/b/portfolio-29cb4.appspot.com/o/astronomy%20and%20computing2023%2Fpaper.pdf?alt=media&token=e6539daa-8030-47b5-b134-e5e20d77ad3d" target="_blank" rel="noopener noreferrer" className={styles.link}>[paper]</a>
         </li>
       </ol>
 
