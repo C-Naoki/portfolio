@@ -18,28 +18,28 @@ export default function Contact() {
 
   return (
     <Layout title={t('contact')}>
-      <Grid container justify="center" alignItems="center" style={{ minHeight: '10vh' }}>
-        <Grid item>
-          <Paper style={{ padding: '20px', marginTop: '40px', width: '600px' }}>
+      <Grid container justify="center" alignItems="center" style={{ width: '100%', minHeight: '60vh' }}>
+        <Grid item xs={12} style={{ display: 'flex', justifyContent: 'center' }}>
+          <Paper style={{ padding: '20px', margin: '0 auto'}}>
             <form noValidate autoComplete="off">
               <Grid container spacing={3}>
                 <Grid item xs={12} sm={6}>
-                  <TextField fullWidth label="姓" variant="outlined" />
+                  <TextField fullWidth label={t('surname')} variant="outlined" />
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                  <TextField fullWidth label="名" variant="outlined" />
+                  <TextField fullWidth label={t('name')} variant="outlined" />
                 </Grid>
                 <Grid item xs={12}>
-                  <TextField fullWidth label="メールアドレス" variant="outlined" />
+                  <TextField fullWidth label={t('email')} variant="outlined" />
                 </Grid>
                 <Grid item xs={12}>
-                  <TextField fullWidth label="件名" variant="outlined" />
+                  <TextField fullWidth label={t('subject')} variant="outlined" />
                 </Grid>
                 <Grid item xs={12}>
-                  <TextField fullWidth label="内容" multiline rows={4} variant="outlined" />
+                  <TextField fullWidth label={t('message')} multiline rows={15} variant="outlined" />
                 </Grid>
                 <Grid item xs={12}>
-                  <Button variant="contained" color="primary" fullWidth>送信</Button>
+                  <Button variant="contained" color="primary" fullWidth>{t('send')}</Button>
                 </Grid>
               </Grid>
             </form>

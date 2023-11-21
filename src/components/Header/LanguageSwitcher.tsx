@@ -25,7 +25,7 @@ const LanguageSwitcher = () => {
 
 
   return (
-    <CustomFormControl variant="outlined" style={{ minWidth: 80, marginLeft: 5, marginRight: 20, color: 'white'}}>
+    <CustomFormControl variant="outlined">
       <Select
         labelId="language-select-label"
         id="language-select"
@@ -35,8 +35,8 @@ const LanguageSwitcher = () => {
           <Typography variant="button" style={{ color: 'white' }}>{value === 'ja' ? '🇯🇵 Ja' : '🇺🇸 En'}</Typography>
         )}
       >
-        <MenuItem value="en">🇺🇸 En</MenuItem>
-        <MenuItem value="ja">🇯🇵 Ja</MenuItem>
+        <MenuItem value="en">🇺🇸 EN</MenuItem>
+        <MenuItem value="ja">🇯🇵 JA</MenuItem>
       </Select>
     </CustomFormControl>
   );
