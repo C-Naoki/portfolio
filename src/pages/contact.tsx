@@ -39,8 +39,17 @@ export default function Contact() {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    dispatch(addNewContact(surName, name, email, subject, message));
+    await dispatch(addNewContact(surName, name, email, subject, message) as any);
+    await initializeForm();
   };
+
+  const initializeForm = () => {
+    setSurName('');
+    setName('');
+    setEmail('');
+    setSubject('');
+    setMessage('');
+  }
 
   return (
     <Layout title={t('contact')}>
@@ -50,22 +59,59 @@ export default function Contact() {
             <form noValidate autoComplete="off" onSubmit={handleSubmit}>
               <Grid container spacing={3}>
                 <Grid item xs={12} sm={6}>
-                  <TextField fullWidth label={t('surname')} variant="outlined" value={surName} onChange={(e) => setSurName(e.target.value)} />
+                  <TextField
+                    fullWidth
+                    label={t('surname')}
+                    variant="outlined"
+                    value={surName}
+                    onChange={(e) => setSurName(e.target.value)}
+                  />
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                  <TextField fullWidth label={t('name')} variant="outlined" onChange={(e) => setName(e.target.value)} />
+                  <TextField
+                    fullWidth
+                    label={t('name')}
+                    variant="outlined"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
                 </Grid>
                 <Grid item xs={12}>
-                  <TextField fullWidth label={t('email')} variant="outlined" onChange={(e) => setEmail(e.target.value)} />
+                  <TextField
+                    fullWidth
+                    label={t('email')}
+                    variant="outlined"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
                 </Grid>
                 <Grid item xs={12}>
-                  <TextField fullWidth label={t('subject')} variant="outlined" onChange={(e) => setSubject(e.target.value)} />
+                  <TextField
+                    fullWidth
+                    label={t('subject')}
+                    variant="outlined"
+                    value={subject}
+                    onChange={(e) => setSubject(e.target.value)}
+                  />
                 </Grid>
                 <Grid item xs={12}>
-                  <TextField fullWidth label={t('message')} multiline rows={12} variant="outlined" onChange={(e) => setMessage(e.target.value)} />
+                  <TextField
+                    fullWidth
+                    label={t('message')}
+                    multiline rows={10}
+                    variant="outlined"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                  />
                 </Grid>
                 <Grid item xs={12}>
-                  <Button type="submit" variant="contained" color="primary" className={classes.customButton} fullWidth>{t('send')}</Button>
+                  <Button
+                    fullWidth
+                    type="submit"
+                    variant="contained"
+                    color="primary"
+                    className={classes.customButton}>{t('send')}
+                  </Button>
                 </Grid>
               </Grid>
             </form>

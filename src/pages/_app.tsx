@@ -3,7 +3,7 @@ import { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
-import store from '../reducks/store/store'; // Redux ストアをインポート
+import store from '../reducks/store/store';
 import '../styles/globals.css';
 
 const App = ({ Component, pageProps }: AppProps) => {

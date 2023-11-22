@@ -1,13 +1,20 @@
-import type { Dispatch } from 'redux';
 import { collection, doc, setDoc } from "firebase/firestore";
 import toast from 'react-hot-toast';
-import { db, FirebaseTimestamp } from '../../firebase';
-import { addContactSuccessAction, addContactFailureAction } from './actions';
+import { AnyAction } from 'redux';
+import { ThunkDispatch } from 'redux-thunk';
+import { FirebaseTimestamp, db } from '../../firebase';
+import { addContactFailureAction, addContactSuccessAction } from './actions';
 
 const contactsRef = collection(db, "contacts");
 
-export const addNewContact = (surName: string, name: string, email: string, subject: string, message: string) => {
-  return async (dispatch: Dispatch) => {
+export const addNewContact = (
+  surName: string,
+  name: string,
+  email: string,
+  subject: string,
+  message: string
+) => {
+  return async (dispatch: ThunkDispatch<any, null, AnyAction>) => {
     if (surName === '' || name === '' || email === '' || subject === '' || message === '') {
       toast.error('必須項目が未入力です');
       return;
@@ -25,13 +32,12 @@ export const addNewContact = (surName: string, name: string, email: string, subj
       written_at: FirebaseTimestamp.now(),
     };
 
-    try {
-      await setDoc(contactRef, newContact);
+    await setDoc(contactRef, newContact).then(() => {
       toast.success('送信しました');
       dispatch(addContactSuccessAction(newContact));
-    } catch (error) {
+    }).catch((error) => {
       toast.error('送信に失敗しました');
       dispatch(addContactFailureAction(error));
-    }
+    });
   };
 };
