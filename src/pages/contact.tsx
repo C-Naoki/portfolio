@@ -40,7 +40,23 @@ export default function Contact() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     await dispatch(addNewContact(surName, name, email, subject, message) as any);
-    await initializeForm();
+    const formData = { surName, name, email, subject, message };
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        initializeForm();
+      } else {
+        throw new Error('Network response was not ok.');
+      }
+    } catch (error) {
+      console.error('There was an error!', error);
+    }
   };
 
   const initializeForm = () => {
