@@ -9,11 +9,11 @@ import { useState } from 'react';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import DrawerContent from './DrawerContent';
 import LanguageSwitcher from './LanguageSwitcher';
-
+import ThemeSwitcher from './ThemeSwitcher';
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
-    background: '#007B59',
+    background: 'var(--header-color)',
   },
   menuButton: {
     position: 'absolute',
@@ -50,6 +50,10 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: '40px',
     marginRight: '-40px',
   },
+  ThemeSwitcher: {
+    marginLeft: '35px',
+    marginRight: '-40px',
+  }
 }));
 
 const Header = () => {
@@ -84,6 +88,9 @@ const Header = () => {
               </a>
               <a className={classes.LanguageSwitcher}>
                 <LanguageSwitcher />
+              </a>
+              <a className={classes.ThemeSwitcher}>
+                <ThemeSwitcher />
               </a>
             </div>
           </div>

@@ -8,7 +8,8 @@ export default function Blog() {
 
   return (
     <Layout title={t('blog')}>
-      <div>
+      <h2> {t('preparation')} </h2>
+      {/* <div>
         {blogPosts.map(post => (
           <div key={post.id}>
             <img src={post.thumbnail} alt={post.title} />
@@ -16,7 +17,7 @@ export default function Blog() {
             <p>{post.excerpt}</p>
           </div>
         ))}
-      </div>
+      </div> */}
     </Layout>
   );
 };

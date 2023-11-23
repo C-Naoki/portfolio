@@ -36,9 +36,7 @@ export default function Publications() {
           発明等：検出装置、検出⽅法及びプログラム<br />
           発明者：藤原 靖宏, 鬼塚 真, <span style={{ fontWeight: 'bold', textDecoration: 'underline' }}>千原 直己</span><br />
           出願番号：特願2023-099796<br />
-          公開番号：特開<br />
           出願日：2023.06.19<br />
-          公開日：未定
         </li>
       </ol>
     </Layout>
