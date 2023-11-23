@@ -1,7 +1,6 @@
 import { ContactState } from './types';
 
-
-export const FETCH_CONTACT_ID= 'FETCH_CONTACT_ID';
+export const FETCH_CONTACT_ID = 'FETCH_CONTACT_ID';
 
 export const fetchContactbyIdAction = (contact: ContactState) => {
   return {

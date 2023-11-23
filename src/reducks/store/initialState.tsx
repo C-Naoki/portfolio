@@ -1,7 +1,6 @@
 import { FirebaseTimestamp } from "../../firebase";
 import { ContactState } from "../contact/types";
 
-
 export type AsyncStatus = 'idle' | 'loading' | 'succeeded' | 'failed'
 
 type InitialStateType = {
