@@ -1,24 +1,50 @@
 import { Button, CircularProgress, Grid, Paper, TextField } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Layout from '../components/Uikit/Layout';
 import { addNewContact } from '../reducks/contact/operations';
-
+import styles from '../styles/globals.module.css';
 
 const useStyles = makeStyles((theme) => ({
   customButton: {
-    backgroundColor: '#ff8809',
+    backgroundColor: 'var(--button-bg-color)',
     '&:hover': {
-      backgroundColor: '#be6c15',
+      backgroundColor: 'var(--button-hover-bg-color)',
+    },
+  },
+  customPaper: {
+    boxShadow: 'var(--box-shadow)',
+  },
+  textField: {
+    '& .MuiInputBase-input': {
+      color: 'var(--text-color)',
+    },
+    '& label': {
+      color: 'var(--placeholder-color)',
+    },
+    '& .MuiInput-underline:before': {
+      borderBottomColor: 'var(--input-border-color)',
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: 'var(--input-border-color)',
+      },
+      '&:hover fieldset': {
+        borderColor: 'var(--input-hover-border-color)',
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: theme.palette.primary.main,
+      },
     },
   },
 }));
 
 export default function Contact() {
-  const classes = useStyles();
+  const theme = useTheme();
+  const classes = useStyles(theme);
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   const { t } = useTranslation();
@@ -71,11 +97,12 @@ export default function Contact() {
     <Layout title={t('contact')}>
       <Grid container justify="center" alignItems="center" style={{ width: '100%', minHeight: '60vh' }}>
         <Grid item xs={10} style={{ display: 'flex', justifyContent: 'center' }}>
-          <Paper style={{ padding: '20px', margin: '0 auto'}}>
-            <form noValidate autoComplete="off" onSubmit={handleSubmit}>
+          <Paper className={classes.customPaper}>
+            <form noValidate autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
               <Grid container spacing={3}>
                 <Grid item xs={12} sm={6}>
                   <TextField
+                    className={classes.textField}
                     fullWidth
                     label={t('surname')}
                     variant="outlined"
@@ -85,6 +112,7 @@ export default function Contact() {
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <TextField
+                    className={classes.textField}
                     fullWidth
                     label={t('name')}
                     variant="outlined"
@@ -94,6 +122,7 @@ export default function Contact() {
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
+                    className={classes.textField}
                     fullWidth
                     label={t('email')}
                     variant="outlined"
@@ -103,6 +132,7 @@ export default function Contact() {
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
+                    className={classes.textField}
                     fullWidth
                     label={t('subject')}
                     variant="outlined"
@@ -112,6 +142,7 @@ export default function Contact() {
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
+                    className={classes.textField}
                     fullWidth
                     label={t('message')}
                     multiline rows={10}
@@ -126,7 +157,8 @@ export default function Contact() {
                     type="submit"
                     variant="contained"
                     color="primary"
-                    className={classes.customButton}>{t('send')}
+                    className={classes.customButton}>
+                      {t('send')}
                   </Button>
                 </Grid>
               </Grid>

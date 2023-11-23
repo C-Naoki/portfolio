@@ -1,10 +1,36 @@
+:root {
+  --text-color: #323232;
+  --background-color: #FFFFFF;
+  --button-bg-color: #ff8809;
+  --button-hover-bg-color: #be6c15;
+  --link-color: #0000EE;
+  --link-hover-color: #FF4500;
+  --box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  --input-border-color: #BEBEBE;
+  --input-hover-border-color: #212121;
+  --placeholder-color: #757575;
+  --header-color: #007B59;
+}
+
+[data-theme="dark"] {
+  --text-color: #d4d4d4;
+  --background-color: #191919;
+  --button-bg-color: #be6c15;
+  --button-hover-bg-color: #9e520e;
+  --link-color: #81b1d2;
+  --link-hover-color: #fa8174;
+  --box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.15);
+  --input-border-color: #5F6367;
+  --input-hover-border-color: #CCCCCC;
+  --placeholder-color: #B2B2B2;
+  --header-color: #005a42;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  color: #323232;
+  color: var(--text-color);
+  background-color: var(--background-color);
 }
 
 html[lang="en"] body {

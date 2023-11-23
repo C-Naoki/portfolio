@@ -3,14 +3,22 @@
 }
 
 .link {
-  /* display: block; */
-  color: #0000EE;
+  color: var(--link-color);
   text-decoration: underline;
   margin-bottom: 0px;
   padding: 4px 0;
 }
 
 .link:hover {
-  color: #FF4500;
+  color: var(--link-hover-color);
   text-decoration: underline;
+}
+
+.form {
+  padding: 20px;
+  background-color: var(--background-color);
+}
+
+.appBar {
+  background: var(--header-color);
 }

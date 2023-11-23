@@ -9,7 +9,6 @@ import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-ic
 import Link from 'next/link';
 import LanguageSwitcher from './LanguageSwitcher';
 
-
 const useStyles = makeStyles((theme) => ({
   link: {
     color: theme.palette.text.primary,
