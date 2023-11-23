@@ -10,6 +10,7 @@
   --input-hover-border-color: #212121;
   --placeholder-color: #757575;
   --header-color: #007B59;
+  --footer-text-color: #a9a9a9;
 }
 
 [data-theme="dark"] {
@@ -24,6 +25,7 @@
   --input-hover-border-color: #CCCCCC;
   --placeholder-color: #B2B2B2;
   --header-color: #005a42;
+  --footer-text-color: #535252;
 }
 
 body {
@@ -60,7 +62,7 @@ footer {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 10px;
-  color: #a9a9a9;
+  color: var(--footer-text-color);
   font-size: 5px;
 }
 
