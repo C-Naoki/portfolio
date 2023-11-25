@@ -1,0 +1,20 @@
+.blogPost {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.blogPost:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.thumbnail {
+  width: 100%;
+  display: block;
+}
+
+.content {
+  padding: 16px;
+}
