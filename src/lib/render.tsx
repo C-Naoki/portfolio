@@ -4,8 +4,6 @@ import { Block, TextItem } from '../types/blog.d';
 export const renderBlock = (block: Block, childrenBlocks?: Block[]): JSX.Element | null => {
   const { type, id } = block;
   const value = block[type];
-  console.log("rich_text")
-  console.log(value.rich_text)
 
   switch (type) {
     case 'paragraph':
@@ -32,7 +30,12 @@ export const renderBlock = (block: Block, childrenBlocks?: Block[]): JSX.Element
     case 'image':
       const imageUrl = value.file?.url || value.external?.url;
       return imageUrl ? (
-        <img key={id} src={imageUrl} alt={value.caption?.[0]?.plain_text || ''} style={{ maxWidth: '768px', height: 'auto' }} />
+        <img
+          key={id}
+          src={imageUrl}
+          alt={value.caption?.[0]?.plain_text || ''}
+          style={{ maxWidth: '768px', height: 'auto', display: 'block', marginLeft: 'auto', marginRight: 'auto' }}
+        />
       ) : null;
     case 'equation':
       return <BlockMath key={id} math={value.expression} />;

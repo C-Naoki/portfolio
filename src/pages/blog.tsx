@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import BlogPost from '../components/Uikit/BlogPost';
 import Layout from '../components/Uikit/Layout';
 import { Post } from '../types/blog.d';
+import styles from '../styles/blog.module.css';
 
 interface BlogProps {
   posts: Post[];
@@ -28,12 +29,12 @@ export default function Blog({ posts, error, nextCursor }: BlogProps) {
 
   return (
     <Layout title={t('blog')}>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+      <div className={styles.grid}>
         {posts.map((post) => (
           <BlogPost key={post.id} post={post} />
         ))}
       </div>
-      <div>
+      <div className={styles.pagination}>
         <button onClick={() => handlePagination(null)} disabled={!router.query.startCursor}>
           First Page
         </button>

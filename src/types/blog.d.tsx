@@ -3,6 +3,7 @@ export type Post = {
   last_edited_time: string;
   title: string;
   tags: Tag[];
+  authors: string[];
   date: string;
   thumbnail: string | null;
   properties: any;

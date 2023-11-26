@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import React from 'react';
 import { Post } from '../../types/blog.d';
-import styles from "../../styles/BlogPost.module.css";
+import styles from "../../styles/blogpost.module.css";
 
 type Props = {
   post: Post;
@@ -16,26 +16,29 @@ const BlogPost: React.FC<Props> = ({ post }) => {
 
   return (
     <div className={styles.blogPost} onClick={handleClick}>
-      {post.thumbnail && (
-        <img src={post.thumbnail} alt="Thumbnail" className={styles.thumbnail} />
-      )}
+      <div className={styles.thumbnailContainer}>
+        {post.thumbnail && (
+          <img src={post.thumbnail} alt="Thumbnail" className={styles.thumbnail} />
+        )}
+      </div>
       <div className={styles.content}>
-        <h2>{post.title}</h2>
-        <div>Tags: {post.tags.join(', ')}</div>
-        <div>Last Edited: {formatDate(post.last_edited_time)}</div>
+        <h5 className={styles.title}>{post.title}</h5>
+        <div className={styles.tags}>Tags: {post.tags.join(', ')}</div>
+        <div className={styles.authors}>Authors: {post.authors.join(', ')}</div>
+        <div className={styles.lastEdited}>Last Edited: {formatDate(post.last_edited_time)}</div>
       </div>
     </div>
   );
 };
 
-export default BlogPost;
-
 function formatDate(dateString: string) {
   const options: Intl.DateTimeFormatOptions = {
     year: 'numeric',
-    month: '2-digit',
-    day: '2-digit'
+    month: 'short',
+    day: 'numeric',
   };
   const date = new Date(dateString);
   return new Intl.DateTimeFormat('en-US', options).format(date);
 }
+
+export default BlogPost;
