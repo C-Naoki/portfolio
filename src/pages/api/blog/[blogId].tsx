@@ -14,11 +14,26 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   if (req.method === 'GET') {
     try {
-      const pageBlocks = await notion.blocks.children.list({
-        block_id: blogId,
+      const response = await notion.pages.retrieve({
+        page_id: blogId as string,
       });
-
-      res.status(200).json(pageBlocks);
+      if ("properties" in response && "Name" in response.properties) {
+        const nameProperty = response.properties["Name"];
+        if (nameProperty && nameProperty.type === 'title' && nameProperty.title.length > 0) {
+          const pageTitle = nameProperty.title[0].plain_text;
+          const pageBlocks = await notion.blocks.children.list({
+            block_id: blogId as string,
+          });
+          res.status(200).json({
+            title: pageTitle,
+            results: pageBlocks.results
+          });
+        } else {
+          throw new Error('Title property is not in expected format.');
+        }
+      } else {
+        throw new Error('Response object does not contain properties.');
+      }
     } catch (error) {
       console.error('Error fetching page content:', error);
       res.status(500).json({

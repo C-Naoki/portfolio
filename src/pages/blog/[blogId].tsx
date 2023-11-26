@@ -1,16 +1,19 @@
 import { GetServerSideProps } from 'next';
 import { useEffect, useState } from 'react';
-import Layout from '../../components/Uikit/Layout';
-import { Block } from '../../types/blog.d';
+import LayoutWithSidebar from '../../components/Uikit/LayoutWithSidebar';
+import SidebarContent from '../../components/Uikit/SidebarContent';
 import { renderBlock } from '../../lib/render';
+import { Block } from '../../types/blog.d';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-const BlogPostPage = ({ postContent }: { postContent: { results: Block[] } }) => {
+const BlogPostPage = ({ postContent }: { postContent: { title: string,  results: Block[] } }) => {
   const [blocks, setBlocks] = useState<Block[]>([]);
+  const { title, ...postContentWithoutTitle } = postContent;
 
   useEffect(() => {
     const fetchBlocks = async () => {
       const fetchedBlocks = await Promise.all(
-        postContent.results.map(async (block) => {
+        postContentWithoutTitle.results.map(async (block) => {
           if (block.has_children) {
             const children = await fetchChildrenBlocks(block.id);
             return { ...block, children };
@@ -22,14 +25,14 @@ const BlogPostPage = ({ postContent }: { postContent: { results: Block[] } }) =>
     };
 
     fetchBlocks();
-  }, [postContent.results]);
+  }, [postContentWithoutTitle.results]);
 
   return (
-    <Layout title='title'>
+    <LayoutWithSidebar title={postContent.title} sidebarContent={<SidebarContent />}>
       <div>
         {blocks.map((block) => renderBlock(block, block.children))}
       </div>
-    </Layout>
+    </LayoutWithSidebar>
   );
 };
 
@@ -40,11 +43,16 @@ async function fetchChildrenBlocks(blockId: string): Promise<Block[]> {
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
+  const locale = context.locale!;
   const { blogId } = context.params as { blogId: string };
   const res = await fetch(`http://localhost:3000/api/blog/${blogId}`);
   const postContent = await res.json();
+
   return {
-    props: { postContent },
+    props: {
+      ...(await serverSideTranslations(locale, ['common', 'blog'])),
+      postContent,
+    },
   };
 };
 

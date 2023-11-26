@@ -34,7 +34,7 @@ export const renderBlock = (block: Block, childrenBlocks?: Block[]): JSX.Element
           key={id}
           src={imageUrl}
           alt={value.caption?.[0]?.plain_text || ''}
-          style={{ maxWidth: '768px', height: 'auto', display: 'block', marginLeft: 'auto', marginRight: 'auto' }}
+          style={{ maxWidth: '680px', height: 'auto', display: 'block', marginLeft: 'auto', marginRight: 'auto' }}
         />
       ) : null;
     case 'equation':
