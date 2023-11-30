@@ -57,11 +57,13 @@ const SidebarContent = () => {
           className={classes.followButton}
           startIcon={<FontAwesomeIcon icon={faTwitter} className={classes.iconStyle} />}
           component="a"
+          target='_blank'
+          rel='noopener noreferrer'
         >
           Follow @C__Naoki
         </Button>
       </Link>
-      <div>目次</div>
+      <div>📌 Contents</div>
     </div>
   );
 };
