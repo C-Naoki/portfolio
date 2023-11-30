@@ -1,13 +1,13 @@
 import { BlockMath, InlineMath } from 'react-katex';
 import { Block, TextItem } from '../types/blog.d';
 
-export const renderBlock = (block: Block, childrenBlocks?: Block[]): JSX.Element | null => {
+export const renderBlock = (block: Block, classes: Record<string, string>, childrenBlocks?: Block[]): JSX.Element | null => {
   const { type, id } = block;
   const value = block[type];
 
   switch (type) {
     case 'paragraph':
-      return <p key={id}>{value.rich_text.map(renderTextItem)}</p>;
+      return <li key={id}>{value.rich_text.map(renderTextItem)}</li>;
     case 'heading_1':
     case 'heading_2':
     case 'heading_3':
@@ -23,22 +23,32 @@ export const renderBlock = (block: Block, childrenBlocks?: Block[]): JSX.Element
         <li key={id}>
           {value.rich_text.map(renderTextItem)}
           {block.has_children && childrenBlocks && (
-            <ul>{childrenBlocks.map(childBlock => renderBlock(childBlock))}</ul>
+            <ul style={{marginTop: '0px', marginBlock: '0px'}}>{childrenBlocks.map((childBlock) => renderBlock(childBlock, childBlock.children))}</ul>
           )}
         </li>
       );
     case 'image':
+      const imageStyle = {
+        maxWidth: '100%',
+        height: 'auto',
+        display: 'block',
+        margin: '0 auto',
+      };
       const imageUrl = value.file?.url || value.external?.url;
       return imageUrl ? (
         <img
           key={id}
           src={imageUrl}
           alt={value.caption?.[0]?.plain_text || ''}
-          style={{ maxWidth: '680px', height: 'auto', display: 'block', marginLeft: 'auto', marginRight: 'auto' }}
+          style={imageStyle}
         />
       ) : null;
     case 'equation':
-      return <BlockMath key={id} math={value.expression} />;
+      return (
+      <div className={classes.formulaContainer}>
+        <BlockMath key={id} math={value.expression} />
+      </div>
+      );
     default:
       return <div key={id}>Unsupported block type: {type}</div>;
   }

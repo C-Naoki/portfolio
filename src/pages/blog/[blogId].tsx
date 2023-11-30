@@ -1,21 +1,46 @@
+import { makeStyles } from '@material-ui/core/styles';
 import { GetServerSideProps } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect, useState } from 'react';
 import LayoutWithSidebar from '../../components/Uikit/LayoutWithSidebar';
 import SidebarContent from '../../components/Uikit/SidebarContent';
 import { renderBlock } from '../../lib/render';
 import { Block } from '../../types/blog.d';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-const BlogPostPage = ({ postContent }: { postContent: { title: string,  results: Block[] } }) => {
+const useStyles = makeStyles((theme) => ({
+  formulaContainer: {
+    overflowX: 'auto',
+    maxWidth: '100%',
+  },
+  formula: {
+    whiteSpace: 'nowrap',
+  },
+}));
+
+const BlogPostPage = ({ postContent }: { postContent: { title: string, results: Block[] } }) => {
+  const classes = useStyles();
   const [blocks, setBlocks] = useState<Block[]>([]);
   const { title, ...postContentWithoutTitle } = postContent;
 
   useEffect(() => {
+    const fetchAllChildrenBlocks = async (blockId: string): Promise<Block[]> => {
+      const children = await fetchChildrenBlocks(blockId);
+      if (!Array.isArray(children)) {
+        return [];
+      }
+      for (let i = 0; i < children.length; i++) {
+        if (children[i].has_children) {
+          children[i].children = await fetchAllChildrenBlocks(children[i].id);
+        }
+      }
+      return children;
+    };
+
     const fetchBlocks = async () => {
       const fetchedBlocks = await Promise.all(
         postContentWithoutTitle.results.map(async (block) => {
           if (block.has_children) {
-            const children = await fetchChildrenBlocks(block.id);
+            const children = await fetchAllChildrenBlocks(block.id);
             return { ...block, children };
           }
           return block;
@@ -30,7 +55,7 @@ const BlogPostPage = ({ postContent }: { postContent: { title: string,  results:
   return (
     <LayoutWithSidebar title={postContent.title} sidebarContent={<SidebarContent />}>
       <div>
-        {blocks.map((block) => renderBlock(block, block.children))}
+        {blocks.map((block) => renderBlock(block, classes, block.children))}
       </div>
     </LayoutWithSidebar>
   );
