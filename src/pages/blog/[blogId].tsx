@@ -1,84 +1,64 @@
-import { makeStyles } from '@material-ui/core/styles';
-import { GetServerSideProps } from 'next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useEffect, useState } from 'react';
 import LayoutWithSidebar from '../../components/Uikit/LayoutWithSidebar';
 import SidebarContent from '../../components/Uikit/SidebarContent';
+import { getBlocks, getDatabase, getPage } from '../../lib/notion';
 import { renderBlock } from '../../lib/render';
-import { Block } from '../../types/blog.d';
+import { Block } from '../../types/notion.d';
+import { BlogIdContext as Context } from '../../types/ssg.d';
 
-const useStyles = makeStyles((theme) => ({
-  formulaContainer: {
-    overflowX: 'auto',
-    maxWidth: '100%',
-  },
-  formula: {
-    whiteSpace: 'nowrap',
-  },
-}));
-
-const BlogPostPage = ({ postContent }: { postContent: { title: string, results: Block[] } }) => {
-  const classes = useStyles();
-  const [blocks, setBlocks] = useState<Block[]>([]);
-  const { title, ...postContentWithoutTitle } = postContent;
-
-  useEffect(() => {
-    const fetchAllChildrenBlocks = async (blockId: string): Promise<Block[]> => {
-      const children = await fetchChildrenBlocks(blockId);
-      if (!Array.isArray(children)) {
-        return [];
-      }
-      for (let i = 0; i < children.length; i++) {
-        if (children[i].has_children) {
-          children[i].children = await fetchAllChildrenBlocks(children[i].id);
-        }
-      }
-      return children;
-    };
-
-    const fetchBlocks = async () => {
-      const fetchedBlocks = await Promise.all(
-        postContentWithoutTitle.results.map(async (block) => {
-          if (block.has_children) {
-            const children = await fetchAllChildrenBlocks(block.id);
-            return { ...block, children };
-          }
-          return block;
-        })
-      );
-      setBlocks(fetchedBlocks);
-    };
-
-    fetchBlocks();
-  }, [postContentWithoutTitle.results]);
-
+export default function BlogPostPage ({ page, blocks }: { page: any, blocks: Block[] }) {
+  if (!page || !blocks) {
+    return <div />;
+  }
   return (
-    <LayoutWithSidebar title={postContent.title} sidebarContent={<SidebarContent />}>
+    <LayoutWithSidebar title={page.properties.Name.title[0].plain_text} sidebarContent={<SidebarContent />}>
       <div>
-        {blocks.map((block) => renderBlock(block, classes, block.children))}
+        {blocks.map((block) => renderBlock(block))}
       </div>
     </LayoutWithSidebar>
   );
 };
 
-async function fetchChildrenBlocks(blockId: string): Promise<Block[]> {
-  const response = await fetch(`/api/blocks/${blockId}/children`);
-  const data = await response.json();
-  return data.results;
-}
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const locale = context.locale!;
-  const { blogId } = context.params as { blogId: string };
-  const res = await fetch(`http://localhost:3000/api/blog/${blogId}`);
-  const postContent = await res.json();
-
+export const getStaticPaths = async () => {
+  const database = await getDatabase();
   return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common', 'blog'])),
-      postContent,
-    },
+    paths: database.map((page) => ({
+      params: {
+        blogId: page.id
+      }
+    })),
+    fallback: true,
   };
 };
 
-export default BlogPostPage;
+export const getStaticProps = async (context: Context) => {
+  const { blogId } = context.params;
+  const page = await getPage(blogId);
+  const blocks = await getBlocks(blogId);
+
+  const childBlocks = await Promise.all(
+    blocks
+      .filter((block: any) => block.has_children)
+      .map(async (block) => {
+        return {
+          blockId: block.id,
+          children: await getBlocks(block.id),
+        };
+      })
+  );
+  const blocksWithChildren = blocks.map((block: any) => {
+    if (block.has_children && !block[block.type].children) {
+      block[block.type]["children"] = childBlocks.find(
+        (x) => x.blockId === block.id
+      )?.children;
+    }
+    return block;
+  });
+
+  return {
+    props: {
+      page,
+      blocks: blocksWithChildren,
+    },
+    revalidate: 1,
+  };
+};
