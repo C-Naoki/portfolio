@@ -6,6 +6,7 @@ import Layout from '../components/Uikit/Layout';
 import styles from '../styles/blog.module.css';
 import { useEffect, useState } from 'react';
 import { Post } from '../types/blog.d';
+import { LocaleOnlyContext as Context } from '../types/ssg.d';
 
 export default function Blog({ initialPosts, initialNextCursor }: { initialPosts: Post[], initialNextCursor: string | null }) {
   const { t } = useTranslation();
@@ -68,7 +69,7 @@ export default function Blog({ initialPosts, initialNextCursor }: { initialPosts
   );
 }
 
-export async function getStaticProps({ locale }: { locale: string }) {
+export async function getStaticProps({ context }: { context: Context }) {
   let initialPosts = [];
   let initialNextCursor = null;
 
@@ -83,7 +84,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
 
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common'])),
+      ...(await serverSideTranslations(context.locale, ['common'])),
       initialPosts,
       initialNextCursor,
     },

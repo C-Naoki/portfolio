@@ -2,6 +2,7 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Layout from '../components/Uikit/Layout';
 import styles from '../styles/globals.module.css';
+import { LocaleOnlyContext as Context } from '../types/ssg.d';
 
 export default function Home() {
   const { t } = useTranslation();
@@ -31,11 +32,10 @@ export default function Home() {
     );
   }
 
-
-export async function getStaticProps({ locale }: { locale: string }) {
+export async function getStaticProps({ context }: { context: Context }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common"])),
+      ...(await serverSideTranslations(context.locale, ["common"])),
     },
     revalidate: 60,
   };
