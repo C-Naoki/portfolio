@@ -7,7 +7,6 @@ import { useDispatch } from 'react-redux';
 import Layout from '../components/Uikit/Layout';
 import { addNewContact } from '../reducks/contact/operations';
 import styles from '../styles/globals.module.css';
-import { LocaleOnlyContext as Context } from '../types/ssg.d';
 
 const useStyles = makeStyles((theme) => ({
   customButton: {
@@ -171,10 +170,10 @@ export default function Contact() {
   );
 };
 
-export async function getStaticProps({ context }: { context: Context }) {
+export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
-      ...(await serverSideTranslations(context.locale, ["common"])),
+      ...(await serverSideTranslations(locale, ["common"])),
     },
     revalidate: 60,
   };

@@ -69,7 +69,7 @@ export default function Blog({ initialPosts, initialNextCursor }: { initialPosts
   );
 }
 
-export async function getStaticProps({ context }: { context: Context }) {
+export async function getStaticProps({ locale }: { locale: string }) {
   let initialPosts = [];
   let initialNextCursor = null;
 
@@ -84,7 +84,7 @@ export async function getStaticProps({ context }: { context: Context }) {
 
   return {
     props: {
-      ...(await serverSideTranslations(context.locale, ['common'])),
+      ...(await serverSideTranslations(locale, ['common'])),
       initialPosts,
       initialNextCursor,
     },

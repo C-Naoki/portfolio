@@ -2,7 +2,6 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Layout from '../components/Uikit/Layout';
 import styles from '../styles/globals.module.css';
-import { LocaleOnlyContext as Context } from '../types/ssg.d';
 
 export default function Publications() {
   const { t } = useTranslation();
@@ -44,10 +43,10 @@ export default function Publications() {
   );
 };
 
-export async function getStaticProps({ context }: { context: Context }) {
+export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
-      ...(await serverSideTranslations(context.locale, ["common"])),
+      ...(await serverSideTranslations(locale, ["common"])),
     },
     revalidate: 60,
   };
