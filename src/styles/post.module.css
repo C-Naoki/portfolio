@@ -56,13 +56,6 @@
   overflow: auto;
 }
 
-.code_block {
-  padding: 20px;
-  font-family: monospace;
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .file {
   padding: 2px 4px;
   text-decoration: none;
@@ -107,4 +100,65 @@
   .pre {
     background-color: rgb(15, 8, 28);
   }
+}
+
+.codeBlock {
+  background: #1E1E1E;
+  color: #f8f8f2;
+  position: relative;
+  padding: 16px;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin-bottom: 5px;
+  margin-left: 0px;
+  margin-top: -25px;
+}
+
+.copyButton {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+  position: absolute;
+  top: 50%;
+  margin-top: -8px;
+  margin-left: 740px;
+}
+
+.lineNumber {
+  text-align: left;
+  color: gray;
+  user-select: none;
+  padding-right: 10px;
+}
+
+.copiedMessage {
+  position: absolute;
+  right: 35px;
+  top: 7px;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.codeBlockHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #353535;
+  color: white;
+  padding: 4px 8px;
+  height: 20px;
+  z-index: 1;
+  position: relative;
+}
+
+.languageLabel {
+  font-size: 1.0em;
+  border-radius: 4px;
+  padding: 2px 6px;
+  position: absolute;
+  top: 50%;
+  margin-top: -8px;
 }

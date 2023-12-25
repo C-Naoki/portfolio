@@ -5,10 +5,17 @@ export type RichText = {
   text: Text,
   type: string,
   equation?: Equation,
+  code?: Code,
 }
 
 export type Equation = {
   expression: string,
+}
+
+export type Code = {
+  caption: string,
+  language: string,
+  rich_text: RichText[],
 }
 
 export type Text = {

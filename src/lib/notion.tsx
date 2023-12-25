@@ -1,4 +1,5 @@
 import { Client } from '@notionhq/client';
+import { Block } from '../types/notion.d';
 
 const databaseId = process.env.NOTION_DATABASE_ID || '';
 const notion = new Client({
@@ -16,7 +17,7 @@ export const getPage = async (pageId: string) => {
 };
 
 export const getBlocks = async (blockId: string) => {
-  const blocks = [];
+  const blocks: Block[] = [];
   let cursor;
   try {
     while (true) {
@@ -24,7 +25,7 @@ export const getBlocks = async (blockId: string) => {
         start_cursor: cursor,
         block_id: blockId,
       });
-      blocks.push(...results);
+      blocks.push(...(results as Block[]));
       if (!next_cursor) {
         break;
       }
