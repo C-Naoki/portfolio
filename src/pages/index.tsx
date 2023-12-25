@@ -20,13 +20,40 @@ export default function Home() {
         {t('address')}<br />
         Email: naoki88[at]sanken.osaka-u.ac.jp
       </p>
+      <h2>{t('experiences')}</h2>
+      <ul>
+        <li>
+          {t('sanken year')}: {t('sanken name')}<br />
+        </li>
+        <li>
+          {t('nagase year')}: {t('nagase name')}<br />
+        </li>
+      </ul>
       <h2>{t('education')}</h2>
-        {t('M.Sc. year')}: {t('M.Sc.')}<br />
-        {t('M.Sc. name')}<br />
-        {t('B.Sc. year')}: {t('B.Sc.')}<br />
-        {t('B.Sc. name')}<br />
-        {t('secondary year')}: {t('secondary')}<br />
-        {t('secondary name')}
+      <ul>
+        <li>
+          {t('M.Sc. year')}: {t('M.Sc.')}<br />
+          {t('M.Sc. name')}<br />
+        </li>
+        <li>
+          {t('B.Sc. year')}: {t('B.Sc.')}<br />
+          {t('B.Sc. name')}<br />
+        </li>
+        <li>
+          {t('secondary year')}: {t('secondary')}<br />
+          {t('secondary name')}
+        </li>
+      </ul>
+      <h2>{t('misc')}</h2>
+      <ul>
+        <li>
+          <div className={styles.links}>
+            {t('pandacco')}<br />
+            Google Developer Student Clubs (GDSC)<br />
+            <a href="https://pandacco.web.app/" target="_blank" rel="noopener noreferrer" className={styles.link}>[link]</a><br />
+          </div>
+        </li>
+      </ul>
     </Layout>
     );
   }
