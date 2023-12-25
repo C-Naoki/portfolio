@@ -18,6 +18,19 @@ export default function BlogPostPage ({ page, blocks }: { page: any, blocks: Blo
   );
 };
 
+async function fetchChildBlocks(blockId: string): Promise<Block[]> {
+  let childBlocks = await getBlocks(blockId);
+  for (let i = 0; i < childBlocks.length; i++) {
+    if (childBlocks[i].has_children) {
+      childBlocks[i][childBlocks[i].type] = {
+        ...childBlocks[i][childBlocks[i].type],
+        children: await fetchChildBlocks(childBlocks[i].id),
+      };
+    }
+  }
+  return childBlocks;
+}
+
 export const getStaticPaths = async () => {
   const database = await getDatabase();
   return {
@@ -33,31 +46,21 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context: Context) => {
   const { blogId } = context.params;
   const page = await getPage(blogId);
-  const blocks = await getBlocks(blogId);
+  let blocks = await getBlocks(blogId);
 
-  const childBlocks = await Promise.all(
-    blocks
-      .filter((block: any) => block.has_children)
-      .map(async (block) => {
-        return {
-          blockId: block.id,
-          children: await getBlocks(block.id),
-        };
-      })
-  );
-  const blocksWithChildren = blocks.map((block: any) => {
-    if (block.has_children && !block[block.type].children) {
-      block[block.type]["children"] = childBlocks.find(
-        (x) => x.blockId === block.id
-      )?.children;
+  for (let i = 0; i < blocks.length; i++) {
+    if (blocks[i].has_children) {
+      blocks[i][blocks[i].type] = {
+        ...blocks[i][blocks[i].type],
+        children: await fetchChildBlocks(blocks[i].id),
+      };
     }
-    return block;
-  });
+  }
 
   return {
     props: {
       page,
-      blocks: blocksWithChildren,
+      blocks,
     },
     revalidate: 1,
   };

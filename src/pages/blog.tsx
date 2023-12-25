@@ -1,12 +1,11 @@
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import BlogPost from '../components/Uikit/BlogPost';
 import Layout from '../components/Uikit/Layout';
 import styles from '../styles/blog.module.css';
-import { useEffect, useState } from 'react';
 import { Post } from '../types/blog.d';
-import { LocaleOnlyContext as Context } from '../types/ssg.d';
 
 export default function Blog({ initialPosts, initialNextCursor }: { initialPosts: Post[], initialNextCursor: string | null }) {
   const { t } = useTranslation();
