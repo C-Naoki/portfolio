@@ -30,7 +30,7 @@ export default async function getPaginationPaths(req: NextApiRequest, res: NextA
     }
 
     res.status(200).json(paths);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
+  } catch (error: unknown) {
+    res.status(500).json({ error: error instanceof Error ? error.message : 'An unexpected error occurred' });
   }
 }

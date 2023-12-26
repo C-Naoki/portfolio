@@ -35,7 +35,7 @@ export const addNewContact = (
     await setDoc(contactRef, newContact).then(() => {
       toast.success('送信しました');
       dispatch(addContactSuccessAction(newContact));
-    }).catch((error) => {
+    }).catch((error: unknown) => {
       toast.error('送信に失敗しました');
       dispatch(addContactFailureAction(error));
     });

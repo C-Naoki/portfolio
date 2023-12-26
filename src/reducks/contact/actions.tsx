@@ -20,7 +20,7 @@ export const addContactSuccessAction = (contact: ContactState) => {
 
 export const ADD_CONTACT_FAILURE = 'ADD_CONTACT_FAILURE';
 
-export const addContactFailureAction = (error: any) => {
+export const addContactFailureAction = (error: unknown) => {
   return {
     type: ADD_CONTACT_FAILURE,
     payload: error,
