@@ -112,7 +112,7 @@ const Header = () => {
           </Typography>
           <div className={classes.headerOptions}>
             <AnimatedButton href="/">Home</AnimatedButton>
-            <AnimatedButton href="/blog">Blog</AnimatedButton>
+            <AnimatedButton href="/blog-under-construction">Blog</AnimatedButton>
             <AnimatedButton href="/publications">Publications</AnimatedButton>
             <AnimatedButton href="/contact">Contact</AnimatedButton>
             <div className={classes.toolbarCenter}>
