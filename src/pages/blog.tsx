@@ -33,7 +33,7 @@ export default function Blog({ initialPosts, initialNextCursor }: { initialPosts
       };
       fetchData().catch(console.error);
     }
-  }, [router.query.cursor, cachedPosts]);
+  }, [router.query, cachedPosts]);
 
   const handlePagination = (cursor: string) => {
     if (cursor !== '') {

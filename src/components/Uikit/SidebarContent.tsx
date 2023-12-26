@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import { useTranslation } from 'next-i18next';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const useStyles = makeStyles((theme) => ({
@@ -48,7 +49,7 @@ const SidebarContent = () => {
 
   return (
     <div className={classes.sidebar}>
-      <img src="/images/profile.jpg" alt="Naoki Chihara" className={classes.profileImage} />
+      <Image src="/images/profile.jpg" alt="Naoki Chihara" className={classes.profileImage} />
       <h3>Naoki Chihara</h3>
       <p className={classes.profileText} dangerouslySetInnerHTML={{ __html: t('profile').replace(/\n/g, '<br>') }} />
       <Link target="_blank" rel="noopener noreferrer" href="https://twitter.com/C__Naoki" passHref>

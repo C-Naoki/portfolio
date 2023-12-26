@@ -1,12 +1,12 @@
-import { Fragment } from 'react';
-import React, { useState } from 'react';
+import Image from 'next/image';
+import { Fragment, useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { FiCopy } from 'react-icons/fi';
 import { BlockMath, InlineMath } from 'react-katex';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import styles from '../styles/post.module.css';
 import { Block, Code, RichText } from '../types/notion.d';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism'
-import { FiCopy } from 'react-icons/fi';
 
 export const Text = ({ rich_text }: { rich_text: RichText }) => {
   if (!rich_text) {
@@ -136,7 +136,7 @@ export const renderBlock = (block: Block): JSX.Element | null => {
       };
       const imageUrl = value.file?.url || value.external?.url;
       return imageUrl ? (
-        <img
+        <Image
           key={id}
           src={imageUrl}
           alt={value.caption?.[0]?.plain_text || ''}

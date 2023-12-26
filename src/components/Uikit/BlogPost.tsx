@@ -1,7 +1,8 @@
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { Post } from '../../types/blog.d';
 import styles from "../../styles/blogpost.module.css";
+import { Post } from '../../types/blog.d';
 
 type Props = {
   post: Post;
@@ -18,7 +19,7 @@ const BlogPost: React.FC<Props> = ({ post }) => {
     <div className={styles.blogPost} onClick={handleClick}>
       <div className={styles.thumbnailContainer}>
         {post.thumbnail && (
-          <img src={post.thumbnail} alt="Thumbnail" className={styles.thumbnail} />
+          <Image src={post.thumbnail} alt="Thumbnail" className={styles.thumbnail} />
         )}
       </div>
       <div className={styles.content}>
