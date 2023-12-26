@@ -1,3 +1,4 @@
+import 'katex/dist/katex.min.css';
 import { appWithTranslation } from 'next-i18next';
 import { AppProps } from 'next/app';
 import { Provider } from 'react-redux';

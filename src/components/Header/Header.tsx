@@ -9,11 +9,16 @@ import { useState } from 'react';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import DrawerContent from './DrawerContent';
 import LanguageSwitcher from './LanguageSwitcher';
+import ThemeSwitcher from './ThemeSwitcher';
 
+type AnimatedButtonProps = {
+  href: string;
+  children: React.ReactNode;
+};
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
-    background: '#007B59',
+    background: 'var(--header-color)',
   },
   menuButton: {
     position: 'absolute',
@@ -50,7 +55,45 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: '40px',
     marginRight: '-40px',
   },
+  ThemeSwitcher: {
+    marginLeft: '35px',
+    marginRight: '-40px',
+  },
+  buttonLine: {
+    position: 'relative',
+    overflow: 'hidden',
+    '&:hover': {
+      backgroundColor: 'transparent',
+    },
+    '&::before': {
+      content: '""',
+      position: 'absolute',
+      width: '100%',
+      height: '1px',
+      bottom: '0',
+      left: '0',
+      backgroundColor: '#d4d4d4',
+      transform: 'scaleX(0)',
+      transition: 'transform 0.3s ease-in-out',
+      transformOrigin: 'center top',
+    },
+    '&:hover::before': {
+      transform: 'scaleX(1)',
+      transformOrigin: 'center top',
+    },
+  },
 }));
+
+const AnimatedButton: React.FC<AnimatedButtonProps> = ({ href, children }) => {
+  const classes = useStyles();
+  return (
+    <Link href={href} passHref>
+      <Button className={classes.buttonLine} color="inherit">
+        {children}
+      </Button>
+    </Link>
+  );
+};
 
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -62,16 +105,16 @@ const Header = () => {
 
   return (
     <>
-      <AppBar position="sticky" className={classes.appBar}>
+      <AppBar position="fixed" className={classes.appBar}>
         <Toolbar className={classes.toolbarCenter}>
           <Typography variant="h6" className={classes.title}>
             Naoki Chihara
           </Typography>
           <div className={classes.headerOptions}>
-            <Link href="/" passHref><Button color="inherit">Home</Button></Link>
-            <Link href="/blog" passHref><Button color="inherit">Blog</Button></Link>
-            <Link href="/publications" passHref><Button color="inherit">Publications</Button></Link>
-            <Link href="/contact" passHref><Button color="inherit">Contact</Button></Link>
+            <AnimatedButton href="/">Home</AnimatedButton>
+            <AnimatedButton href="/blog">Blog</AnimatedButton>
+            <AnimatedButton href="/publications">Publications</AnimatedButton>
+            <AnimatedButton href="/contact">Contact</AnimatedButton>
             <div className={classes.toolbarCenter}>
               <a href="https://github.com/C-Naoki" target="_blank" rel="noopener noreferrer" className={classes.toolbarCenter}>
                 <FaGithub className={classes.iconSpacing} />
@@ -84,6 +127,9 @@ const Header = () => {
               </a>
               <a className={classes.LanguageSwitcher}>
                 <LanguageSwitcher />
+              </a>
+              <a className={classes.ThemeSwitcher}>
+                <ThemeSwitcher />
               </a>
             </div>
           </div>

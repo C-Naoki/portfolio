@@ -1,9 +1,7 @@
-import { FaGithub, FaGlobe } from 'react-icons/fa';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FormControl, IconButton, Menu, MenuItem, Select, makeStyles, useMediaQuery, useTheme } from '@material-ui/core';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
-
+import { FaGlobe } from 'react-icons/fa';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
