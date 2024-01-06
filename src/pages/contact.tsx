@@ -94,7 +94,7 @@ export default function Contact() {
   }
 
   return (
-    <Layout title={t('contact')}>
+    <Layout title={t('contact.heading')}>
       <Grid container justify="center" alignItems="center" style={{ width: '100%', minHeight: '60vh' }}>
         <Grid item xs={10} style={{ display: 'flex', justifyContent: 'center' }}>
           <Paper className={classes.customPaper}>
@@ -104,7 +104,7 @@ export default function Contact() {
                   <TextField
                     className={classes.textField}
                     fullWidth
-                    label={t('surname')}
+                    label={t('contact.surname')}
                     variant="outlined"
                     value={surName}
                     onChange={(e) => setSurName(e.target.value)}
@@ -114,7 +114,7 @@ export default function Contact() {
                   <TextField
                     className={classes.textField}
                     fullWidth
-                    label={t('name')}
+                    label={t('contact.name')}
                     variant="outlined"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
@@ -124,7 +124,7 @@ export default function Contact() {
                   <TextField
                     className={classes.textField}
                     fullWidth
-                    label={t('email')}
+                    label={t('contact.email')}
                     variant="outlined"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -134,7 +134,7 @@ export default function Contact() {
                   <TextField
                     className={classes.textField}
                     fullWidth
-                    label={t('subject')}
+                    label={t('contact.subject')}
                     variant="outlined"
                     value={subject}
                     onChange={(e) => setSubject(e.target.value)}
@@ -144,7 +144,7 @@ export default function Contact() {
                   <TextField
                     className={classes.textField}
                     fullWidth
-                    label={t('message')}
+                    label={t('contact.message')}
                     multiline rows={10}
                     variant="outlined"
                     value={message}
@@ -158,7 +158,7 @@ export default function Contact() {
                     variant="contained"
                     color="primary"
                     className={classes.customButton}>
-                      {t('send')}
+                      {t('contact.send')}
                   </Button>
                 </Grid>
               </Grid>

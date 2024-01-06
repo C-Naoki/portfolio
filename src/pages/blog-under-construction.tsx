@@ -5,8 +5,8 @@ import Layout from '../components/Uikit/Layout';
 export default function BlogUnderConstruction() {
   const { t } = useTranslation();
   return (
-    <Layout title={t('blog')}>
-      <p>{t('preparation')}</p>
+    <Layout title={t('blog.heading')}>
+      <p>{t('blog.preparation')}</p>
     </Layout>
   );
 }

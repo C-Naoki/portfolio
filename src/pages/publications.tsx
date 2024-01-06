@@ -7,8 +7,8 @@ export default function Publications() {
   const { t } = useTranslation();
 
   return (
-    <Layout title={t('publications')}>
-      <h2>{t('conference')}</h2>
+    <Layout title={t('publications.heading')}>
+      <h2>{t('publications.conference')}</h2>
       <ul>
         <li>
           周期解析による変動天体の検出<br />
@@ -20,7 +20,7 @@ export default function Publications() {
         </li>
       </ul>
 
-      <h2>{t('journal')}</h2>
+      <h2>{t('publications.journal')}</h2>
       <ul>
         <li>
           Effective detection of variable celestial objects using machine learning-based periodic analysis<br />
@@ -30,7 +30,7 @@ export default function Publications() {
         </li>
       </ul>
 
-      <h2>{t('patent')}</h2>
+      <h2>{t('publications.patent')}</h2>
       <ul>
         <li>
           発明等：検出装置、検出⽅法及びプログラム<br />

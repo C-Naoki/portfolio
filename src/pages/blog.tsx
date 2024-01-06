@@ -52,7 +52,7 @@ export default function Blog({ initialPosts, initialNextCursor }: { initialPosts
   };
 
   return (
-    <Layout title={t('blog')}>
+    <Layout title={t('blog.heading')}>
       <div className={styles.grid}>
         {posts.map((post) => (
           <BlogPost key={post.id} post={post} />
