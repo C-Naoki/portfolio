@@ -18,7 +18,7 @@ export default function Home() {
       </div>
       <p>
         {t('affiliation.address')}<br />
-        Email: naoki88 [at] sanken.osaka-u.ac.jp
+        Email: naoki88[at]sanken.osaka-u.ac.jp
       </p>
       <h2>{t('grants.heading')}</h2>
       <ul>
@@ -57,9 +57,10 @@ export default function Home() {
       <ul>
         <li>
           <div className={styles.links}>
-            {t('misc.pandacco')}<br />
-            Google Developer Student Clubs (GDSC)<br />
-            <a href="https://pandacco.web.app/" target="_blank" rel="noopener noreferrer" className={styles.link}>[link]</a><br />
+          <a href="https://pandacco.web.app/" target="_blank" rel="noopener noreferrer" className={styles.link}>
+            {t('misc.pandacco')}
+          </a> <i>-- developer</i><br />
+          Google Developer Student Clubs (GDSC) <br />
           </div>
         </li>
       </ul>

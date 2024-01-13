@@ -50,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
   iconSpacing: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1.5),
+    fontSize: '1.1rem',
   },
   LanguageSwitcher: {
     marginLeft: '40px',

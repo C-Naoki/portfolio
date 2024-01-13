@@ -8,13 +8,11 @@ const nextConfig = {
     domains: ['prod-files-secure.s3.us-west-2.amazonaws.com'],
   },
   async redirects() {
-    return [
-      {
-        source: '/blog',
-        destination: '/blog-under-construction',
-        permanent: false,
-      },
-    ];
+    return [{
+      source: '/blog',
+      destination: '/blog-under-construction',
+      permanent: false,
+    }];
   },
 };
 

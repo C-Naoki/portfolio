@@ -10,21 +10,25 @@
     "heading": "研究成果物",
     "conference": "学会",
     "journal": "論文誌",
-    "patent": "特許"
+    "patent": "特許",
+    "my name": "千原 直己",
+    "tod101 title": "動的モード分解による時系列データストリームの将来予測",
+    "tod101 info": "情報処理学会論文誌データベース (TOD), Vol.xx, No. x, pp. xx-xx, 2024年4月13日.",
+    "tod101 co-authors": "松原 靖子, 藤原 廉, 櫻井 保志"
   },
   "grants": {
     "heading": "助成金",
-    "hwip year": "[2023年-現在]",
+    "hwip year": "[2023年4月-現在]",
     "hwip name": "ヒューマンウェアイノベーション博士課程プログラム"
   },
   "experiences": {
     "heading": "職歴",
     "nagase name": "株式会社ナガセ デジタル技術エンジニア",
-    "nagase year": "[2021年-2023年]",
+    "nagase year": "[2020年9月-2023年3月]",
     "TA name": "大阪大学 工学部 電子情報工学科 ティーチング・アシスタント (TA)",
-    "TA year": "[2023年]",
+    "TA year": "[2023年4月-2023年9月]",
     "sanken name": "大阪大学 産業科学研究所 特任研究員",
-    "sanken year": "[2023年-現在]"
+    "sanken year": "[2023年6月-現在]"
   },
   "affiliation": {
     "heading": "所属",
@@ -32,22 +36,22 @@
     "SANKEN": "産業科学研究所 (SANKEN)",
     "graduate": "大阪大学大学院 情報科学研究科",
     "university": "大阪大学",
-    "address": "住所：〒565-0871 茨木市美穂ヶ丘8-1"
+    "address": "住所：〒565-0871 大阪府茨木市美穂ヶ丘 8-1"
   },
   "education": {
     "heading": "学歴",
     "secondary": "高校",
     "secondary name": "兵庫県立 宝塚北高校 普通科 卒業",
-    "secondary year": "[2016年-2019年]",
+    "secondary year": "[2016年4月-2019年3月]",
     "B.Sc.": "学士",
     "B.Sc. name": "大阪大学 工学部 電子情報工学科 卒業",
-    "B.Sc. year": "[2019年-2023年]",
+    "B.Sc. year": "[2019年4月-2023年3月]",
     "M.Sc.": "修士",
     "M.Sc. name": "大阪大学大学院 情報科学研究科 情報システム工学専攻 在籍",
-    "M.Sc. year": "[2023年-現在]",
+    "M.Sc. year": "[2023年4月-現在]",
     "Ph.D.": "博士",
     "Ph.D. name": "大阪大学大学院 情報科学研究科 情報システム工学専攻 在籍",
-    "Ph.D. year": "[2025年-現在]"
+    "Ph.D. year": "[2025年4月-現在]"
   },
   "misc": {
     "heading": "その他",

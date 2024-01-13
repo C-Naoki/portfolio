@@ -33,14 +33,15 @@ body {
   padding: 0;
   color: var(--text-color);
   background-color: var(--background-color);
+  font-size: 14.5px;
 }
 
 html[lang="en"] body {
-  font-family: 'メイリオ', Times, serif;
+  font-family: 'メイリオ', 'Times New Roman';
 }
 
 html[lang="ja"] body {
-  font-family: 'メイリオ', 'Hiragino Mincho ProN', 'MS P明朝', 'MS PMincho', serif;
+  font-family: 'メイリオ';
 }
 
 a {
@@ -54,16 +55,17 @@ ol {
 
 ul {
   margin-top: 0px;
+  margin-bottom: 25px;
   padding-left: 20px;
 }
 
 li {
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 
 h2 {
   margin-top: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 nav ul {
