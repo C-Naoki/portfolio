@@ -37,11 +37,11 @@ body {
 }
 
 html[lang="en"] body {
-  font-family: 'メイリオ', 'Times New Roman';
+  font-family: Meiryo, "Hiragino Kaku Gothic ProN";
 }
 
 html[lang="ja"] body {
-  font-family: 'メイリオ';
+  font-family: Meiryo, "Hiragino Kaku Gothic ProN";
 }
 
 a {
