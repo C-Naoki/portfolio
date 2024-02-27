@@ -4,7 +4,7 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import Layout from '../components/Uikit/Layout';
+import Layout from '../components/Layouts/Layout';
 import { addNewContact } from '../reducks/contact/operations';
 import styles from '../styles/globals.module.css';
 
