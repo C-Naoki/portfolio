@@ -11,6 +11,14 @@ export default function Publications() {
       <h2>{t('publications.conference')}</h2>
       <ul>
         <li>
+          動的モード分解を活用した高速将来予測アルゴリズム<br />
+          第16回データ工学と情報マネジメントに関するフォーラム (DEIM2024), T2-B-6-02, 2024.<br />
+          <span style={{ fontWeight: 'bold', textDecoration: 'underline' }}>千原 直己</span>, 松原 靖子, 藤原 廉, 櫻井 保志<br />
+          <a href="/assets/DEIM2024/paper.pdf" target="_blank" rel="noopener noreferrer" className={styles.link}>[paper]</a>{' '}
+          <a href="/assets/DEIM2024/slides.pdf" target="_blank" rel="noopener noreferrer" className={styles.link}>[slides]</a>{' '}
+          <a href="/assets/DEIM2024/poster.pdf" target="_blank" rel="noopener noreferrer" className={styles.link}>[poster]</a>
+        </li>
+        <li>
           周期解析による変動天体の検出<br />
           第15回データ工学と情報マネジメントに関するフォーラム (DEIM2023), 4a-6-3, 2023.<br />
           <span style={{ fontWeight: 'bold', textDecoration: 'underline' }}>千原 直己</span>, 高田 唯史, 藤原 靖宏, 鬼塚 真<br />
