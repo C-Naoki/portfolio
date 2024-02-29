@@ -1,6 +1,6 @@
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import Layout from '../components/Uikit/Layout';
+import Layout from '../components/Layouts/Layout';
 import styles from '../styles/globals.module.css';
 
 export default function Home() {

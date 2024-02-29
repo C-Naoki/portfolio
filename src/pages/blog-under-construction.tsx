@@ -1,6 +1,6 @@
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import Layout from '../components/Uikit/Layout';
+import Layout from '../components/Layouts/Layout';
 
 export default function BlogUnderConstruction() {
   const { t } = useTranslation();
