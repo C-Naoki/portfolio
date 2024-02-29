@@ -2,8 +2,8 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import Layout from '../components/Layouts/Layout';
 import BlogPost from '../components/Uikit/BlogPost';
-import Layout from '../components/Uikit/Layout';
 import styles from '../styles/blog.module.css';
 import { Post } from '../types/blog.d';
 
