@@ -1,6 +1,7 @@
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Layout from '../components/Layouts/Layout';
+import HorizontalLine from '../components/Uikit/HorizontalLine';
 import styles from '../styles/globals.module.css';
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
     <Layout title={t('title')}>
       <p dangerouslySetInnerHTML={{ __html: t('welcome').replace(/\n/g, '<br>') }} />
       <h2>{t('affiliation.heading')}</h2>
+      <HorizontalLine />
       <div className={styles.links}>
         <a href="https://www.dm.sanken.osaka-u.ac.jp/" target="_blank" rel="noopener noreferrer" className={styles.link}>{t('affiliation.laboratory')}</a><br />
         <a href="https://www.sanken.osaka-u.ac.jp/en/" target="_blank" rel="noopener noreferrer" className={styles.link}>{t('affiliation.SANKEN')}</a><br />
@@ -21,12 +23,14 @@ export default function Home() {
         Email: naoki88[at]sanken.osaka-u.ac.jp
       </p>
       <h2>{t('grants.heading')}</h2>
+      <HorizontalLine />
       <ul>
         <li>
           {t('grants.hwip year')}: {t('grants.hwip name')}<br />
         </li>
       </ul>
       <h2>{t('experiences.heading')}</h2>
+      <HorizontalLine />
       <ul>
         <li>
           {t('experiences.sanken year')}: {t('experiences.sanken name')}<br />
@@ -39,6 +43,7 @@ export default function Home() {
         </li>
       </ul>
       <h2>{t('education.heading')}</h2>
+      <HorizontalLine />
       <ul>
         <li>
           {t('education.M.Sc. year')}: {t('education.M.Sc.')}<br />
@@ -54,6 +59,7 @@ export default function Home() {
         </li>
       </ul>
       <h2>{t('misc.heading')}</h2>
+      <HorizontalLine />
       <ul>
         <li>
           <div className={styles.links}>
