@@ -1,11 +1,12 @@
 import { Container } from '@material-ui/core';
 import React from 'react';
 import { Toaster } from 'react-hot-toast';
+import styles from '../../styles/layout.module.css';
 
 
 export default function Layout({ children, title }: { children: React.ReactNode, title?: string }) {
   return (
-    <Container style={{ marginTop: '95px', maxWidth: '750px', backgroundColor: '#ffffff', paddingTop: '5px'  }}>
+    <Container className={styles.container}>
       {title && <h1>{title}</h1>}
       {children}
       <Toaster />

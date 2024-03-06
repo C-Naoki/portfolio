@@ -1,0 +1,6 @@
+.container {
+  margin-top: 95px !important;
+  max-width: 750px !important;
+  background-color: var(--background-color);
+  padding-top: 5px !important;
+}
