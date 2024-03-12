@@ -1,0 +1,89 @@
+.appBar {
+  background-color: var(--header-color) !important;
+}
+
+.menuButton {
+  position: absolute;
+  right: 16px;
+}
+
+.headerOptions {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.toolbarCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+}
+
+.iconSpacing {
+  margin-left: 8px;
+  margin-right: 12px;
+  font-size: 1.1rem;
+}
+
+.LanguageSwitcher {
+  margin-left: 40px;
+  margin-right: -40px;
+}
+
+.ThemeSwitcher {
+  margin-left: 35px;
+  margin-right: -40px;
+}
+
+.ThemeSwitcherSmall {
+  margin-right: 20px;
+}
+
+.buttonLine {
+  position: relative;
+  overflow: hidden;
+}
+
+.buttonLine:hover {
+  background-color: transparent;
+}
+
+.buttonLine::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #d4d4d4;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center top;
+}
+
+.buttonLine:hover::before {
+  transform: scaleX(1);
+}
+
+@media (min-width: 960px) {
+  .menuButton {
+    display: none !important;
+  }
+  .ThemeSwitcherSmall {
+    display: none;
+  }
+}
+
+@media (max-width: 960px) {
+  .headerOptions {
+    display: none;
+  }
+}
