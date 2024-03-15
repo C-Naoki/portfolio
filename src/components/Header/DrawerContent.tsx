@@ -54,33 +54,37 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const DrawerContent = () => {
+const DrawerContent = ({ handleDrawerToggle }: { handleDrawerToggle: any }) => {
   const classes = useStyles();
+
+  const handleCloseDrawer = () => {
+    handleDrawerToggle();
+  };
 
   return (
     <div className={classes.drawerContainer}>
     <List>
       <div className={classes.navigationSection}>
         <Link href="/" passHref>
-          <ListItem button className={classes.listItem}>
+          <ListItem button className={classes.listItem} onClick={handleCloseDrawer}>
             <ListItemIcon className={classes.icon}><HomeIcon /></ListItemIcon>
             <ListItemText primary="Home" />
           </ListItem>
         </Link>
         <Link href="/blog" passHref>
-          <ListItem button className={classes.listItem}>
+          <ListItem button className={classes.listItem} onClick={handleCloseDrawer}>
             <ListItemIcon className={classes.icon}><BookIcon /></ListItemIcon>
             <ListItemText primary="Blog" />
           </ListItem>
         </Link>
         <Link href="/publications" passHref>
-          <ListItem button className={classes.listItem}>
+          <ListItem button className={classes.listItem} onClick={handleCloseDrawer}>
             <ListItemIcon className={classes.icon}><DescriptionIcon /></ListItemIcon>
             <ListItemText primary="Publications" />
           </ListItem>
         </Link>
         <Link href="/contact" passHref>
-          <ListItem button className={classes.listItem}>
+          <ListItem button className={classes.listItem} onClick={handleCloseDrawer}>
             <ListItemIcon className={classes.icon}><ContactMailIcon /></ListItemIcon>
             <ListItemText primary="Contact" />
           </ListItem>

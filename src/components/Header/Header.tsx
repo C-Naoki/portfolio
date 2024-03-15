@@ -64,6 +64,11 @@ const Header = () => {
               </a>
             </div>
           </div>
+          {/*
+            TODO: ここら辺若干ダサい気がする
+            1. スマホ用とPC用にcssを分ける必要がある。(現状は、headerOptionsがPCようになっている？)
+            2. ThemeSwitcherSmallがスマホ用とかではない。IconBottonもスマホの時しか表示されないコンポーネントなはずなので、まとめるべき。
+          */}
           <a className={styles.ThemeSwitcherSmall}>
             <ThemeSwitcher />
           </a>
@@ -79,11 +84,11 @@ const Header = () => {
         </Toolbar>
       </AppBar>
       <Drawer
-        anchor="left"
+        anchor="right"
         open={drawerOpen}
         onClose={handleDrawerToggle}
       >
-        <DrawerContent />
+        <DrawerContent handleDrawerToggle={handleDrawerToggle} />
       </Drawer>
     </>
   );
