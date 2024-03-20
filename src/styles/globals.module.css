@@ -13,12 +13,3 @@
   color: var(--link-hover-color);
   text-decoration: underline;
 }
-
-.form {
-  padding: 20px;
-  background-color: var(--background-color);
-}
-
-.appBar {
-  background: var(--header-color);
-}
