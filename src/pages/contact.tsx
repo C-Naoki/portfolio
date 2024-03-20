@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Layout from '../components/Layouts/Layout';
 import { addNewContact } from '../reducks/contact/operations';
-import styles from '../styles/globals.module.css';
+import styles from '../styles/contact.module.css';
 
 const useStyles = makeStyles((theme) => ({
   customButton: {
@@ -65,7 +65,13 @@ export default function Contact() {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    await dispatch(addNewContact(surName, name, email, subject, message) as any);
+
+    const addContactResult = await dispatch(addNewContact(surName, name, email, subject, message) as any);
+    if (!addContactResult.success) {
+        console.error('Contact addition failed', addContactResult.error);
+        return;
+    }
+
     const formData = { surName, name, email, subject, message };
     try {
       const response = await fetch('/api/contact', {
