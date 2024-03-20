@@ -17,7 +17,7 @@ export const addNewContact = (
   return async (dispatch: ThunkDispatch<any, null, AnyAction>) => {
     if (surName === '' || name === '' || email === '' || subject === '' || message === '') {
       toast.error('必須項目が未入力です');
-      return;
+      return { success: false };
     }
 
     const contactRef = doc(contactsRef);
@@ -32,12 +32,15 @@ export const addNewContact = (
       written_at: FirebaseTimestamp.now(),
     };
 
-    await setDoc(contactRef, newContact).then(() => {
+    try {
+      await setDoc(contactRef, newContact);
       toast.success('送信しました');
       dispatch(addContactSuccessAction(newContact));
-    }).catch((error: unknown) => {
+      return { success: true };
+    } catch (error) {
       toast.error('送信に失敗しました');
       dispatch(addContactFailureAction(error));
-    });
+      return { success: false, error };
+    }
   };
 };
