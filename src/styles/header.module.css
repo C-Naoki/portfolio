@@ -27,7 +27,7 @@
   font-size: 1.3rem;
 }
 
-.iconSpacing {
+.headerIcon {
   margin-left: 8px;
   margin-right: 12px;
   font-size: 1.1rem;
@@ -47,16 +47,16 @@
   margin-right: 20px;
 }
 
-.buttonLine {
+.button {
   position: relative;
   overflow: hidden;
 }
 
-.buttonLine:hover {
+.button:hover {
   background-color: transparent;
 }
 
-.buttonLine::before {
+.button::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -69,7 +69,7 @@
   transform-origin: center top;
 }
 
-.buttonLine:hover::before {
+.button:hover::before {
   transform: scaleX(1);
 }
 
@@ -86,4 +86,53 @@
   .headerOptions {
     display: none;
   }
+}
+
+.drawerContainer {
+  width: 250px;
+}
+
+.listItem {
+  padding-top: 8px; /* theme.spacing(1) はデフォルトで8px */
+  padding-bottom: 8px; /* theme.spacing(1) はデフォルトで8px */
+}
+
+.listItem:not(:last-child) {
+  margin-bottom: 8px; /* theme.spacing(1) はデフォルトで8px */
+}
+
+.listItem .MuiListItemIcon-root {
+  min-width: 35px;
+}
+
+.listItem .MuiListItemText-primary {
+  margin-left: 6px;
+}
+
+.navigationSection {
+  padding-bottom: 16px; /* theme.spacing(2) はデフォルトで16px */
+}
+
+.navigationIcon {
+  min-width: 35px;
+  margin-right: 4px;
+}
+
+.externalLink {
+  color: rgba(0, 0, 0, 0.87); /* 黒色に近い色で、透明度は87% */
+  text-decoration: none;
+}
+
+.externalLinkSection {
+  padding-top: 16px; /* theme.spacing(2) はデフォルトで16px */
+}
+
+.externalLinkIcon {
+  margin-left: 3px;
+}
+
+.FontAwesomeIcon {
+  font-size: 1.5rem;
+  width: 20px;
+  height: 20px;
 }

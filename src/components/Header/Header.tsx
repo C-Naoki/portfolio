@@ -20,7 +20,7 @@ type AnimatedButtonProps = {
 const AnimatedButton: React.FC<AnimatedButtonProps> = ({ href, children }) => {
   return (
     <Link href={href} passHref>
-      <Button className={styles.buttonLine} color="inherit">
+      <Button className={styles.button} color="inherit">
         {children}
       </Button>
     </Link>
@@ -48,13 +48,13 @@ const Header = () => {
             <AnimatedButton href="/contact">Contact</AnimatedButton>
             <div className={styles.toolbarCenter}>
               <a href="https://github.com/C-Naoki" target="_blank" rel="noopener noreferrer" className={styles.toolbarCenter}>
-                <FaGithub className={styles.iconSpacing} />
+                <FaGithub className={styles.headerIcon} />
               </a>
               <a href="https://twitter.com/C__Naoki" target="_blank" rel="noopener noreferrer" className={styles.toolbarCenter}>
-                <FaTwitter className={styles.iconSpacing} />
+                <FaTwitter className={styles.headerIcon} />
               </a>
               <a href="https://www.linkedin.com/in/naoki-chihara-0a35a827a/" target="_blank" rel="noopener noreferrer" className={styles.toolbarCenter}>
-                <FaLinkedin className={styles.iconSpacing} />
+                <FaLinkedin className={styles.headerIcon} />
               </a>
               <a className={styles.LanguageSwitcher}>
                 <LanguageSwitcher />
