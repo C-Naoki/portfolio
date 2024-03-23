@@ -35,13 +35,24 @@ const DrawerContent: React.FC<DrawerContentProps> = ({ handleDrawerToggle }) => 
     <div className={styles.drawerContainer}>
       <List>
         <div className={styles.navigationSection}>
-          {navigationItems.map((item) => (
-            <NavigationListItem href={item.href} icon={item.icon} text={item.text} onClick={handleCloseDrawer} />
+          {navigationItems.map((item, index) => (
+            <NavigationListItem
+              key={index}
+              href={item.href}
+              icon={item.icon}
+              text={item.text}
+              onClick={handleCloseDrawer}
+            />
           ))}
         </div>
         <div className={styles.externalLinkSection}>
-          {externalLinkItems.map((item) => (
-            <ExternalLinkListItem href={item.href} icon={item.icon} text={item.text} />
+          {externalLinkItems.map((item, index) => (
+            <ExternalLinkListItem
+              key={index}
+              href={item.href}
+              icon={item.icon}
+              text={item.text}
+            />
           ))}
         </div>
         <ListItem>
