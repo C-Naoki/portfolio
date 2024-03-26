@@ -1,12 +1,16 @@
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
+import { useEffect } from 'react'
 
-export const  useConditionalRedirect = ({ condition, redirectTo }:  { condition: boolean, redirectTo: string }) => {
-  const router = useRouter();
+import { useRouter } from 'next/router'
+
+export const useConditionalRedirect = ({ condition, redirectTo }: { condition: boolean, redirectTo: string }): void => {
+  const router = useRouter()
 
   useEffect(() => {
-    if (condition) {
-      router.push(redirectTo);
+    const Redirect = async (): Promise<void> => {
+      if (condition) {
+        await router.push(redirectTo)
+      }
     }
-  }, [condition, redirectTo, router]);
-};
+    void Redirect()
+  }, [condition, redirectTo, router])
+}

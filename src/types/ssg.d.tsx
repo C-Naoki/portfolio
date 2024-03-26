@@ -1,14 +1,14 @@
-export type BlogIdContext = {
+export interface BlogIdContext {
   params: {
-    blogId: string,
-  },
-  locales: string[],
-  locale: string,
-  defaultLocale: string,
+    blogId: string
+  }
+  locales: string[]
+  locale: string
+  defaultLocale: string
 }
 
-export type LocaleOnlyContext = {
-  locales: string[],
-  locale: string,
-  defaultLocale: string,
+export interface LocaleOnlyContext {
+  locales: string[]
+  locale: string
+  defaultLocale: string
 }

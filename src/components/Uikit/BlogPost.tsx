@@ -1,25 +1,28 @@
-import Image from 'next/image';
-import { useRouter } from 'next/router';
-import React from 'react';
-import styles from "../../styles/blogpost.module.css";
-import { Post } from '../../types/blog.d';
+import React from 'react'
 
-type Props = {
-  post: Post;
-};
+import Image from 'next/image'
+import { useRouter } from 'next/router'
 
-const BlogPost: React.FC<Props> = ({ post }) => {
-  const router = useRouter();
+import styles from '../../styles/blogpost.module.css'
 
-  const handleClick = () => {
-    router.push(`/blog/${post.id}`);
-  };
+import type { Post } from '../../types/blog.d'
+
+interface PostProps {
+  post: Post
+}
+
+const BlogPost: React.FC<PostProps> = ({ post }) => {
+  const router = useRouter()
+
+  const handleClick = async (): Promise<void> => {
+    await router.push(`/blog/${post.id}`)
+  }
 
   return (
-    <div className={styles.blogPost} onClick={handleClick}>
+    <div className={styles.blogPost} onClick={() => { void handleClick() }}>
       <div className={styles.thumbnailContainer}>
-        {post.thumbnail && (
-          <Image src={post.thumbnail} alt="Thumbnail" className={styles.thumbnail} />
+        {post.thumbnail != null && (
+          <Image src={post.thumbnail} alt='Thumbnail' className={styles.thumbnail} />
         )}
       </div>
       <div className={styles.content}>
@@ -29,17 +32,17 @@ const BlogPost: React.FC<Props> = ({ post }) => {
         <div className={styles.lastEdited}>Last Edited: {formatDate(post.last_edited_time)}</div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-function formatDate(dateString: string) {
+function formatDate (dateString: string): string {
   const options: Intl.DateTimeFormatOptions = {
     year: 'numeric',
     month: 'short',
-    day: 'numeric',
-  };
-  const date = new Date(dateString);
-  return new Intl.DateTimeFormat('en-US', options).format(date);
+    day: 'numeric'
+  }
+  const date = new Date(dateString)
+  return new Intl.DateTimeFormat('en-US', options).format(date)
 }
 
-export default BlogPost;
+export default BlogPost

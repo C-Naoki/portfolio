@@ -1,11 +1,12 @@
-import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import Layout from '../components/Layouts/Layout';
-import HorizontalLine from '../components/Uikit/HorizontalLine';
-import styles from '../styles/globals.module.css';
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-export default function Home() {
-  const { t } = useTranslation();
+import Layout from '../components/Layouts/Layout'
+import HorizontalLine from '../components/Uikit/HorizontalLine'
+import styles from '../styles/globals.module.css'
+
+export default function Home (): JSX.Element {
+  const { t } = useTranslation()
 
   return (
     <Layout title={t('title')}>
@@ -73,14 +74,14 @@ export default function Home() {
         </ul>
       </div>
     </Layout>
-    );
-  }
+  )
+}
 
-export async function getStaticProps({ locale }: { locale: string }) {
+export async function getStaticProps ({ locale }: { locale: string }): Promise<any> {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common"])),
+      ...(await serverSideTranslations(locale, ['common']))
     },
-    revalidate: 60,
-  };
+    revalidate: 60
+  }
 }

@@ -1,7 +1,8 @@
-import { FormControl, IconButton, Menu, MenuItem, Select, makeStyles, useMediaQuery, useTheme } from '@material-ui/core';
-import { useRouter } from 'next/router';
-import React, { useState } from 'react';
-import { FaGlobe } from 'react-icons/fa';
+import React, { useState } from 'react'
+
+import { FormControl, IconButton, Menu, MenuItem, Select, makeStyles, useMediaQuery, useTheme } from '@material-ui/core'
+import { useRouter } from 'next/router'
+import { FaGlobe } from 'react-icons/fa'
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -9,55 +10,55 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 120,
     backgroundColor: theme.palette.background.paper,
     color: theme.palette.text.primary,
-    "& .MuiOutlinedInput-notchedOutline": {
-      borderColor: "transparent",
+    '& .MuiOutlinedInput-notchedOutline': {
+      borderColor: 'transparent'
     },
-    "& .MuiSvgIcon-root": {
-      color: theme.palette.text.secondary,
-    },
+    '& .MuiSvgIcon-root': {
+      color: theme.palette.text.secondary
+    }
   },
   select: {
     paddingTop: theme.spacing(1),
     paddingBottom: theme.spacing(1),
     display: 'flex',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   globeIcon: {
-    marginLeft: '20px',
+    marginLeft: '20px'
   }
-}));
+}))
 
-const LanguageSwitcher = () => {
-  const classes = useStyles();
-  const router = useRouter();
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+const LanguageSwitcher = (): JSX.Element => {
+  const classes = useStyles()
+  const router = useRouter()
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
+  const isDesktop = useMediaQuery(theme.breakpoints.up('md'))
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
-  const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
+  const handleMenu = (event: React.MouseEvent<HTMLElement>): void => {
+    setAnchorEl(event.currentTarget)
+  }
 
-  const handleCloseMenu = () => {
-    setAnchorEl(null);
-  };
+  const handleCloseMenu = (): void => {
+    setAnchorEl(null)
+  }
 
-  const handleLocaleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
-    router.push(router.pathname, router.asPath, { locale: event.target.value as string });
-    handleCloseMenu();
-  };
+  const handleLocaleChange = (event: React.ChangeEvent<{ value: unknown }>): void => {
+    void router.push(router.pathname, router.asPath, { locale: event.target.value as string })
+    handleCloseMenu()
+  }
 
-  const handleLocaleMenuItemClick = (locale: string) => {
-    router.push(router.pathname, router.asPath, { locale });
-    handleCloseMenu();
-  };
+  const handleLocaleMenuItemClick = (locale: string): void => {
+    void router.push(router.pathname, router.asPath, { locale })
+    handleCloseMenu()
+  }
 
   return (
     <>
       {isDesktop && (
-        <IconButton color="inherit" onClick={handleMenu}>
-          <FaGlobe fontSize="large" />
+        <IconButton color='inherit' onClick={handleMenu}>
+          <FaGlobe fontSize='large' />
         </IconButton>
       )}
       <Menu
@@ -66,8 +67,8 @@ const LanguageSwitcher = () => {
         open={Boolean(anchorEl)}
         onClose={handleCloseMenu}
       >
-        <MenuItem onClick={() => handleLocaleMenuItemClick('en')}>🇺🇸 English</MenuItem>
-        <MenuItem onClick={() => handleLocaleMenuItemClick('ja')}>🇯🇵 日本語</MenuItem>
+        <MenuItem onClick={() => { handleLocaleMenuItemClick('en') }}>🇺🇸 English</MenuItem>
+        <MenuItem onClick={() => { handleLocaleMenuItemClick('ja') }}>🇯🇵 日本語</MenuItem>
       </Menu>
       {isMobile && (
         <FormControl className={classes.formControl}>
@@ -78,13 +79,13 @@ const LanguageSwitcher = () => {
             displayEmpty
             inputProps={{ 'aria-label': 'Without label' }}
           >
-            <MenuItem value="en">🇺🇸 English</MenuItem>
-            <MenuItem value="ja">🇯🇵 日本語</MenuItem>
+            <MenuItem value='en'>🇺🇸 English</MenuItem>
+            <MenuItem value='ja'>🇯🇵 日本語</MenuItem>
           </Select>
         </FormControl>
       )}
     </>
-  );
-};
+  )
+}
 
-export default LanguageSwitcher;
+export default LanguageSwitcher

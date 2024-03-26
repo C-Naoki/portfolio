@@ -1,9 +1,10 @@
-import { FirebaseTimestamp } from "../../firebase";
-import { ContactState } from "../contact/types";
+import { FirebaseTimestamp } from '../../firebase'
+
+import type { ContactState } from '../contact/types'
 
 export type AsyncStatus = 'idle' | 'loading' | 'succeeded' | 'failed'
 
-type InitialStateType = {
+interface InitialStateType {
   contact: ContactState
 }
 
@@ -15,7 +16,7 @@ const initialState: InitialStateType = {
     subject: '',
     message: '',
     uid: '',
-    written_at: FirebaseTimestamp.now(),
+    written_at: FirebaseTimestamp.now()
   }
 }
 

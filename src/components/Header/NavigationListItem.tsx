@@ -1,13 +1,15 @@
-import React from 'react';
-import { ListItem, ListItemIcon, ListItemText } from '@mui/material';
-import Link from 'next/link';
-import styles from '../../styles/header.module.css';
+import React from 'react'
+
+import { ListItem, ListItemIcon, ListItemText } from '@material-ui/core'
+import Link from 'next/link'
+
+import styles from '@/styles/header.module.css'
 
 interface NavigationIconProps {
-  href: string;
-  icon: React.ElementType;
-  text: string;
-  onClick: () => void;
+  href: string
+  icon: React.ElementType
+  text: string
+  onClick: () => void
 }
 
 const NavigationListItem: React.FC<NavigationIconProps> = ({ href, icon: Icon, text, onClick }) => {
@@ -20,7 +22,7 @@ const NavigationListItem: React.FC<NavigationIconProps> = ({ href, icon: Icon, t
         <ListItemText primary={text} />
       </ListItem>
     </Link>
-  );
-};
+  )
+}
 
-export default NavigationListItem;
+export default NavigationListItem

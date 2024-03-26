@@ -1,15 +1,17 @@
-import * as Actions from './actions';
-import initialState from '../store/initialState';
-import { Action } from './types';
+import initialState from '../store/initialState'
 
-export const ContactReducer = (state = initialState.contact, action: Action) => {
+import * as Actions from './actions'
+
+import type { Action } from './types'
+
+export const ContactReducer = (state = initialState.contact, action: Action): any => {
   switch (action.type) {
     case Actions.FETCH_CONTACT_ID:
       return {
         ...state,
-        contact: [...action.payload],
+        contact: [...action.payload]
       }
     default:
-      return state;
+      return state
   }
 }

@@ -1,102 +1,106 @@
-import { Button, CircularProgress, Grid, Paper, TextField } from '@material-ui/core';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import Layout from '../components/Layouts/Layout';
-import { addNewContact } from '../reducks/contact/operations';
-import styles from '../styles/contact.module.css';
+import { useEffect, useState } from 'react'
+
+import { Button, CircularProgress, Grid, Paper, TextField } from '@material-ui/core'
+import { makeStyles, useTheme } from '@material-ui/core/styles'
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useDispatch } from 'react-redux'
+
+import Layout from '../components/Layouts/Layout'
+import { addNewContact } from '../reducks/contact/operations'
+import styles from '../styles/contact.module.css'
+
+import type { AnyAction } from 'redux'
+import type { ThunkDispatch } from 'redux-thunk'
 
 const useStyles = makeStyles((theme) => ({
   customButton: {
     backgroundColor: 'var(--button-bg-color)',
     '&:hover': {
-      backgroundColor: 'var(--button-hover-bg-color)',
-    },
+      backgroundColor: 'var(--button-hover-bg-color)'
+    }
   },
   customPaper: {
-    boxShadow: 'var(--box-shadow)',
+    boxShadow: 'var(--box-shadow)'
   },
   textField: {
     '& .MuiInputBase-input': {
-      color: 'var(--text-color)',
+      color: 'var(--text-color)'
     },
     '& label': {
-      color: 'var(--placeholder-color)',
+      color: 'var(--placeholder-color)'
     },
     '& .MuiInput-underline:before': {
-      borderBottomColor: 'var(--input-border-color)',
+      borderBottomColor: 'var(--input-border-color)'
     },
     '& .MuiOutlinedInput-root': {
       '& fieldset': {
-        borderColor: 'var(--input-border-color)',
+        borderColor: 'var(--input-border-color)'
       },
       '&:hover fieldset': {
-        borderColor: 'var(--input-hover-border-color)',
+        borderColor: 'var(--input-hover-border-color)'
       },
       '&.Mui-focused fieldset': {
-        borderColor: theme.palette.primary.main,
-      },
-    },
-  },
-}));
+        borderColor: theme.palette.primary.main
+      }
+    }
+  }
+}))
 
-export default function Contact() {
-  const theme = useTheme();
-  const classes = useStyles(theme);
-  const dispatch = useDispatch();
-  const [isLoaded, setIsLoaded] = useState(false);
-  const { t } = useTranslation();
+export default function Contact (): JSX.Element {
+  const theme = useTheme()
+  const classes = useStyles(theme)
+  const dispatch = useDispatch()
+  const [isLoaded, setIsLoaded] = useState(false)
+  const { t } = useTranslation()
 
-  const [surName, setSurName] = useState('');
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [subject, setSubject] = useState('');
-  const [message, setMessage] = useState('');
+  const [surName, setSurName] = useState('')
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [subject, setSubject] = useState('')
+  const [message, setMessage] = useState('')
 
   useEffect(() => {
-    setIsLoaded(true);
-  }, []);
+    setIsLoaded(true)
+  }, [])
 
   if (!isLoaded) {
-    return <CircularProgress />;
+    return <CircularProgress />
   }
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    const addContactResult = await dispatch(addNewContact(surName, name, email, subject, message) as any);
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
+    event.preventDefault()
+    const addContactResult = await (dispatch as ThunkDispatch<any, null, AnyAction>)(addNewContact(surName, name, email, subject, message))
     if (!addContactResult.success) {
-        console.error('Contact addition failed', addContactResult.error);
-        return;
+      console.error('Contact addition failed', addContactResult.error)
+      return
     }
 
-    const formData = { surName, name, email, subject, message };
+    const formData = { surName, name, email, subject, message }
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json'
         },
-        body: JSON.stringify(formData),
-      });
+        body: JSON.stringify(formData)
+      })
       if (response.ok) {
-        initializeForm();
+        initializeForm()
       } else {
-        throw new Error('Network response was not ok.');
+        throw new Error('Network response was not ok.')
       }
     } catch (error) {
-      console.error('There was an error!', error);
+      console.error('There was an error!', error)
     }
-  };
+  }
 
-  const initializeForm = () => {
-    setSurName('');
-    setName('');
-    setEmail('');
-    setSubject('');
-    setMessage('');
+  const initializeForm = (): void => {
+    setSurName('')
+    setName('')
+    setEmail('')
+    setSubject('')
+    setMessage('')
   }
 
   return (
@@ -104,7 +108,7 @@ export default function Contact() {
       <Grid container justify="center" alignItems="center" style={{ width: '100%', minHeight: '60vh' }}>
         <Grid item xs={10} style={{ display: 'flex', justifyContent: 'center' }}>
           <Paper className={classes.customPaper}>
-            <form noValidate autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
+            <form noValidate autoComplete="off" onSubmit={() => { void handleSubmit }} className={styles.form}>
               <Grid container spacing={3}>
                 <Grid item xs={12} sm={6}>
                   <TextField
@@ -113,7 +117,7 @@ export default function Contact() {
                     label={t('contact.surname')}
                     variant="outlined"
                     value={surName}
-                    onChange={(e) => setSurName(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setSurName(e.target.value) }}
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -123,7 +127,7 @@ export default function Contact() {
                     label={t('contact.name')}
                     variant="outlined"
                     value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setSurName(e.target.value) }}
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -133,7 +137,7 @@ export default function Contact() {
                     label={t('contact.email')}
                     variant="outlined"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setSurName(e.target.value) }}
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -143,7 +147,7 @@ export default function Contact() {
                     label={t('contact.subject')}
                     variant="outlined"
                     value={subject}
-                    onChange={(e) => setSubject(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setSurName(e.target.value) }}
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -154,7 +158,7 @@ export default function Contact() {
                     multiline rows={10}
                     variant="outlined"
                     value={message}
-                    onChange={(e) => setMessage(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setSurName(e.target.value) }}
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -173,14 +177,14 @@ export default function Contact() {
         </Grid>
       </Grid>
     </Layout>
-  );
+  )
 };
 
-export async function getStaticProps({ locale }: { locale: string }) {
+export async function getStaticProps ({ locale }: { locale: string }): Promise<any> {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common"])),
+      ...(await serverSideTranslations(locale, ['common']))
     },
-    revalidate: 60,
-  };
+    revalidate: 60
+  }
 }
