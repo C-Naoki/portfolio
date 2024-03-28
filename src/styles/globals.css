@@ -3,7 +3,7 @@
   --background-color: #FFFFFF;
   --button-bg-color: #ff8809;
   --button-hover-bg-color: #be6c15;
-  --link-color: #0D0DEE;
+  --link-color: #2753E1;
   --link-hover-color: #FF4500;
   --box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   --input-border-color: #BEBEBE;
@@ -11,6 +11,7 @@
   --placeholder-color: #757575;
   --header-color: #007B59;
   --footer-text-color: #a9a9a9;
+  --drawer-icon-color: #757575;
 }
 
 [data-theme="dark"] {
@@ -26,6 +27,7 @@
   --placeholder-color: #B2B2B2;
   --header-color: #005a42;
   --footer-text-color: #535252;
+  --drawer-icon-color: #d4d4d4;
 }
 
 @font-face {
@@ -66,17 +68,23 @@ ul {
   padding-left: 20px;
 }
 
+ul.no-bullets {
+  list-style-type: none; /* 点を非表示にする */
+  padding-left: 10px; /* 通常の箇条書きによって追加される左側のパディングを取り除く */
+}
+
 li {
   margin-bottom: 15px;
 }
 
 h1 {
   margin-top: 0px;
+  margin-bottom: 0px;
   font-size: 2.2em;
 }
 
 h2 {
-  margin-top: 35px;
+  margin-top: 25px;
   margin-bottom: 5px;
 }
 
@@ -112,6 +120,12 @@ html, body {
 
 .main-content {
   flex: 1;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    margin-top: -15px;
+  }
 }
 
 @media (max-width: 750px) {

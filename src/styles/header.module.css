@@ -1,23 +1,7 @@
+/* Header.tsx */
 .appBar {
   background-color: var(--header-color) !important;
-}
-
-.menuButton {
-  position: absolute;
-  right: 16px;
-}
-
-.headerOptions {
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.toolbarCenter {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 0 auto;
 }
 
 .title {
@@ -27,24 +11,57 @@
   font-size: 1.3rem;
 }
 
+.headerOptionsLarge {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.headerOptionsSmall {
+  display: block;
+}
+
+@media (min-width: 961px) {
+  .headerOptionsSmall {
+    display: none;
+  }
+}
+
+@media (max-width: 960px) {
+  .headerOptionsLarge {
+    display: none;
+  }
+}
+
+.toolbarCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .headerIcon {
   margin-left: 8px;
   margin-right: 12px;
   font-size: 1.1rem;
 }
 
-.LanguageSwitcher {
+.LanguageSwitcherLarge {
   margin-left: 40px;
-  margin-right: -40px;
+  margin-right: -35px;
 }
 
-.ThemeSwitcher {
+.LanguageSwitcherSmall {
+  margin: 0 auto;
+}
+
+.ThemeSwitcherLarge {
   margin-left: 35px;
   margin-right: -40px;
 }
 
 .ThemeSwitcherSmall {
-  margin-right: 20px;
+  margin-right: 0px;
 }
 
 .button {
@@ -73,32 +90,37 @@
   transform: scaleX(1);
 }
 
-@media (min-width: 960px) {
-  .menuButton {
-    display: none !important;
-  }
-  .ThemeSwitcherSmall {
-    display: none;
-  }
+.hamburgerMenu {
+  position: absolute;
+  right: 0px;
 }
 
-@media (max-width: 960px) {
-  .headerOptions {
-    display: none;
-  }
+.drawer {
+  background-color: var(--background-color) !important;
 }
 
+/* drawerContainer.tsx */
 .drawerContainer {
   width: 250px;
 }
 
+.externalLinkSection {
+  padding-top: 16px;
+}
+
+.navigationSection {
+  padding-bottom: 16px;
+}
+
+/* NavigationsListItem.tsx and ExternalLinkListItem.tsx */
+
 .listItem {
-  padding-top: 8px; /* theme.spacing(1) はデフォルトで8px */
-  padding-bottom: 8px; /* theme.spacing(1) はデフォルトで8px */
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .listItem:not(:last-child) {
-  margin-bottom: 8px; /* theme.spacing(1) はデフォルトで8px */
+  margin-bottom: 8px;
 }
 
 .listItem .MuiListItemIcon-root {
@@ -109,30 +131,64 @@
   margin-left: 6px;
 }
 
-.navigationSection {
-  padding-bottom: 16px; /* theme.spacing(2) はデフォルトで16px */
+.listItemText {
+  color: var(--text-color) !important;
+}
+
+.externalLinkIcon {
+  color: var(--drawer-icon-color) !important;
+  margin-left: 3px;
 }
 
 .navigationIcon {
+  color: var(--drawer-icon-color) !important;
   min-width: 35px;
   margin-right: 4px;
 }
 
 .externalLink {
-  color: rgba(0, 0, 0, 0.87); /* 黒色に近い色で、透明度は87% */
+  color: rgba(0, 0, 0, 0.87);
   text-decoration: none;
-}
-
-.externalLinkSection {
-  padding-top: 16px; /* theme.spacing(2) はデフォルトで16px */
-}
-
-.externalLinkIcon {
-  margin-left: 3px;
 }
 
 .FontAwesomeIcon {
   font-size: 1.5rem;
   width: 20px;
   height: 20px;
+}
+
+/* LanguageSwitcher.tsx */
+.formControl {
+  margin: 8px;
+  min-width: 120px;
+  background-color: var(--background-color);
+}
+
+.formControl .MuiOutlinedInput-notchedOutline {
+  border-color: transparent;
+}
+
+.formControl .MuiInputBase-input {
+  color: red !important;
+}
+
+.menuPaper {
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
+}
+
+.select {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  display: flex;
+  align-items: center;
+  color: var(--text-color) !important;
+}
+
+.selectIcon {
+  color: var(--text-color) !important;
+}
+
+.selectUnderline:after {
+  border-bottom: 2px solid red;
 }

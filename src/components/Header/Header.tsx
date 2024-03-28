@@ -9,12 +9,12 @@ import { Menu as MenuIcon } from '@material-ui/icons'
 import Link from 'next/link'
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
-import styles from '../../styles/header.module.css'
+import DrawerContent from './DrawerContent'
+import LanguageSwitcher from './LanguageSwitcher'
+import ThemeSwitcher from './ThemeSwitcher'
 
-import DrawerContent from '@/components/Header/DrawerContent'
-import LanguageSwitcher from '@/components/Header/LanguageSwitcher'
-import ThemeSwitcher from '@/components/Header/ThemeSwitcher'
 import externalLinks from '@/constants/externalLinks'
+import styles from '@/styles/header.module.css'
 
 interface AnimatedButtonProps {
   href: string
@@ -41,11 +41,11 @@ const Header: React.FC = () => {
   return (
     <>
       <AppBar position='fixed' className={styles.appBar}>
-        <Toolbar className={styles.toolbarCenter}>
+        <Toolbar>
           <Typography variant='h6' className={styles.title}>
             Naoki Chihara
           </Typography>
-          <div className={styles.headerOptions}>
+          <div className={styles.headerOptionsLarge}>
             <AnimatedButton href='/'>Home</AnimatedButton>
             <AnimatedButton href='/blog-under-construction'>Blog</AnimatedButton>
             <AnimatedButton href='/publications'>Publications</AnimatedButton>
@@ -60,40 +60,41 @@ const Header: React.FC = () => {
               <a href={externalLinks.linkedin} target='_blank' rel='noopener noreferrer' className={styles.toolbarCenter}>
                 <FaLinkedin className={styles.headerIcon} />
               </a>
-              <a className={styles.LanguageSwitcher}>
+              <a className={styles.LanguageSwitcherLarge}>
                 <LanguageSwitcher />
               </a>
-              <a className={styles.ThemeSwitcher}>
+              <a className={styles.ThemeSwitcherLarge}>
                 <ThemeSwitcher />
               </a>
             </div>
           </div>
-          {/*
-            TODO: ここら辺若干ダサい気がする
-            1. スマホ用とPC用にcssを分ける必要がある。(現状は、headerOptionsがPCようになっている？)
-            2. ThemeSwitcherSmallがスマホ用とかではない。IconBottonもスマホの時しか表示されないコンポーネントなはずなので、まとめるべき。
-          */}
-          <a className={styles.ThemeSwitcherSmall}>
-            <ThemeSwitcher />
-          </a>
-          <IconButton
-            edge='end'
-            color='inherit'
-            aria-label='menu'
-            onClick={handleDrawerToggle}
-            className={styles.menuButton}
-          >
-            <MenuIcon />
-          </IconButton>
+          <div className={styles.headerOptionsSmall}>
+            <a className={styles.LanguageSwitcherSmall}>
+                <LanguageSwitcher />
+            </a>
+            <a className={styles.ThemeSwitcherSmall}>
+              <ThemeSwitcher />
+            </a>
+            <IconButton
+              edge='end'
+              color='inherit'
+              aria-label='menu'
+              onClick={handleDrawerToggle}
+              className={styles.hamburgerMenu}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Drawer
+              classes={{ paper: styles.drawer }}
+              anchor='right'
+              open={drawerOpen}
+              onClose={handleDrawerToggle}
+            >
+              <DrawerContent handleDrawerToggle={handleDrawerToggle} />
+            </Drawer>
+          </div>
         </Toolbar>
       </AppBar>
-      <Drawer
-        anchor='right'
-        open={drawerOpen}
-        onClose={handleDrawerToggle}
-      >
-        <DrawerContent handleDrawerToggle={handleDrawerToggle} />
-      </Drawer>
     </>
   )
 }

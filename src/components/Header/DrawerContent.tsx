@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons'
-import { List, ListItem } from '@material-ui/core'
+import { List } from '@material-ui/core'
 import BookIcon from '@material-ui/icons/Book'
 import ContactMailIcon from '@material-ui/icons/ContactMail'
 import DescriptionIcon from '@material-ui/icons/Description'
@@ -10,7 +10,7 @@ import HomeIcon from '@material-ui/icons/Home'
 import ExternalLinkListItem from './ExternalLinkListItem'
 import NavigationListItem from './NavigationListItem'
 
-import LanguageSwitcher from '@/components/Header/LanguageSwitcher'
+import externalLinks from '@/constants/externalLinks'
 import styles from '@/styles/header.module.css'
 
 interface DrawerContentProps {
@@ -26,9 +26,9 @@ const DrawerContent: React.FC<DrawerContentProps> = ({ handleDrawerToggle }) => 
   ]
 
   const externalLinkItems = [
-    { href: 'https://github.com/C-Naoki', text: 'GitHub', icon: faGithub },
-    { href: 'https://twitter.com/C__Naoki', text: 'Twitter', icon: faTwitter },
-    { href: 'https://www.linkedin.com/in/naoki-chihara-0a35a827a/', text: 'LinkedIn', icon: faLinkedin }
+    { href: externalLinks.github, text: 'GitHub', icon: faGithub },
+    { href: externalLinks.twitter, text: 'Twitter', icon: faTwitter },
+    { href: externalLinks.linkedin, text: 'LinkedIn', icon: faLinkedin }
   ]
 
   const handleCloseDrawer = (): void => {
@@ -59,9 +59,6 @@ const DrawerContent: React.FC<DrawerContentProps> = ({ handleDrawerToggle }) => 
             />
           ))}
         </div>
-        <ListItem>
-          <LanguageSwitcher />
-        </ListItem>
       </List>
     </div>
   )

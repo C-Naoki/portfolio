@@ -20,7 +20,7 @@ const ExternalLinkListItem: React.FC<ExternalLinkListItemProps> = ({ href, icon,
         <ListItemIcon className={styles.externalLinkIcon}>
           <FontAwesomeIcon icon={icon} className={styles.FontAwesomeIcon} />
         </ListItemIcon>
-        <ListItemText primary={text} />
+        <ListItemText classes={{ primary: styles.listItemText }} primary={text} />
       </ListItem>
     </a>
   )
