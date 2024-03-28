@@ -105,7 +105,7 @@ export default function Contact (): JSX.Element {
 
   return (
     <Layout title={t('contact.heading')}>
-      <Grid container justify="center" alignItems="center" style={{ width: '100%', minHeight: '60vh' }}>
+      <Grid container justify="center" alignItems="center" style={{ marginTop: '30px', width: '100%', minHeight: '60vh' }}>
         <Grid item xs={10} style={{ display: 'flex', justifyContent: 'center' }}>
           <Paper className={classes.customPaper}>
             <form noValidate autoComplete="off" onSubmit={() => { void handleSubmit }} className={styles.form}>
