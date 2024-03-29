@@ -4,12 +4,12 @@ import { useRouter } from 'next/router'
 import { appWithTranslation } from 'next-i18next'
 import { Provider } from 'react-redux'
 
-import Footer from '../components/Footer/Footer'
-import Header from '../components/Header/Header'
-import { useConditionalRedirect } from '../lib/hooks/useConditionalRedirect'
-import store from '../reducks/store/store'
-
 import type { AppProps } from 'next/app'
+
+import Footer from '@/components/Footer'
+import Header from '@/components/Header'
+import { useConditionalRedirect } from '@/lib/hooks/useConditionalRedirect'
+import store from '@/reducks/store/store'
 
 const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   useConditionalRedirect({
