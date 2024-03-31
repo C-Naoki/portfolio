@@ -10,11 +10,7 @@
     "heading": "Publications",
     "conference": "Conference",
     "journal": "Journal",
-    "patent": "Patent",
-    "my name": "Naoki Chihara",
-    "tod101 title": "Real-time Forecasting of Time-evolving Data Streams using Dynamic Mode Decomposition",
-    "tod101 info": "IPSJ Transactions on Databases (TOD), Vol. xx, No. x, pp. xx-xx, 13 April 2024.",
-    "tod101 co-authors": "Yasuko Matsubara, Ren Fujiwara, Yasushi Sakurai"
+    "patent": "Patent"
   },
   "grants": {
     "heading": "Grants",
