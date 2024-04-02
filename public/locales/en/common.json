@@ -36,18 +36,10 @@
   },
   "education": {
     "heading": "Education",
-    "secondary": "Secondary School",
-    "secondary name": "Takarazuka Kita High School, General Course, Hyogo Prefectural",
-    "secondary year": "[2016.04-2019.03]",
-    "B.Sc.": "B.Sc.",
-    "B.Sc. name": "School of Engineering, Division of Electronic and Information Engineering, Osaka University",
-    "B.Sc. year": "[2019.04-2023.03]",
-    "M.Sc.": "M.Sc.",
-    "M.Sc. name": "Graduate School of Information Science and Technology, Division of Information Systems Engineering, Osaka University",
-    "M.Sc. year": "[2023.04-present]",
-    "Ph.D.": "Ph.D.",
-    "Ph.D. name": "Graduate School of Information Science and Technology,\nDivision of Information Systems Engineering,\nOsaka University",
-    "Ph.D. year": "[2025.04-present]"
+    "secondary": "[2016.04-2019.03]: Secondary School\nTakarazuka Kita High School, General Course, Hyogo Prefectural",
+    "B.Sc.": "[2019.04-2023.03]: B.Sc.\nSchool of Engineering, Division of Electronic and Information Engineering, Osaka University",
+    "M.Sc.": "[2023.04-present]: M.Sc.\nGraduate School of Information Science and Technology, Division of Information Systems Engineering, Osaka University",
+    "Ph.D.": "[2025.04-present]: Ph.D.\nGraduate School of Information Science and Technology, Division of Information Systems Engineering, Osaka University"
   },
   "misc": {
     "heading": "Miscellaneous",
