@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ServerStyleSheets } from '@material-ui/styles'
+import { ServerStyleSheets } from '@mui/styles'
 import NextDocument, { Head, Html, Main, NextScript } from 'next/document'
 
 import type { DocumentContext, DocumentInitialProps } from 'next/document'

@@ -1,11 +1,7 @@
 import React, { useState } from 'react'
 
-import { Drawer, IconButton } from '@material-ui/core'
-import AppBar from '@material-ui/core/AppBar'
-import Button from '@material-ui/core/Button'
-import Toolbar from '@material-ui/core/Toolbar'
-import Typography from '@material-ui/core/Typography'
-import { Menu as MenuIcon } from '@material-ui/icons'
+import MenuIcon from '@mui/icons-material/Menu'
+import { AppBar, Button, Drawer, IconButton, Toolbar, Typography } from '@mui/material'
 import Link from 'next/link'
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
@@ -76,11 +72,11 @@ const Header: React.FC = () => {
               <ThemeSwitcher />
             </a>
             <IconButton
+              className={styles.hamburgerMenu}
               edge='end'
               color='inherit'
               aria-label='menu'
               onClick={handleDrawerToggle}
-              className={styles.hamburgerMenu}
             >
               <MenuIcon />
             </IconButton>

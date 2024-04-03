@@ -1,6 +1,6 @@
 /* Header.tsx */
 .appBar {
-  background-color: var(--header-color) !important;
+  background-color: var(--main-color) !important;
   margin: 0 auto;
 }
 
@@ -48,11 +48,11 @@
 
 .LanguageSwitcherLarge {
   margin-left: 40px;
-  margin-right: -35px;
+  margin-right: -28px;
 }
 
 .LanguageSwitcherSmall {
-  margin: 0 auto;
+  margin-right: 10px;
 }
 
 .ThemeSwitcherLarge {
@@ -61,7 +61,7 @@
 }
 
 .ThemeSwitcherSmall {
-  margin-right: 0px;
+  margin-right: 7px;
 }
 
 .button {
@@ -91,8 +91,7 @@
 }
 
 .hamburgerMenu {
-  position: absolute;
-  right: 0px;
+  margin-right: -8px;
 }
 
 .drawer {

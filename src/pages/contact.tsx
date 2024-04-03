@@ -1,55 +1,62 @@
 import { useEffect, useState } from 'react'
 
-import { Button, CircularProgress, Grid, Paper, TextField } from '@material-ui/core'
-import { makeStyles, useTheme } from '@material-ui/core/styles'
+import { Button, CircularProgress, Grid, Paper, TextField } from '@mui/material'
+import { styled } from '@mui/material/styles'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useDispatch } from 'react-redux'
 
-import Layout from '../components/Layouts/Layout'
-import { addNewContact } from '../reducks/contact/operations'
-import styles from '../styles/contact.module.css'
-
 import type { AnyAction } from 'redux'
 import type { ThunkDispatch } from 'redux-thunk'
 
-const useStyles = makeStyles((theme) => ({
-  customButton: {
-    backgroundColor: 'var(--button-bg-color)',
-    '&:hover': {
-      backgroundColor: 'var(--button-hover-bg-color)'
-    }
+import Layout from '@/components/Layouts/Layout'
+import { addNewContact } from '@/reducks/contact/operations'
+import styles from '@/styles/contact.module.css'
+
+const CustomButton = styled(Button)({
+  backgroundColor: 'var(--button-bg-color)',
+  '&:hover': {
+    backgroundColor: 'var(--button-hover-bg-color)'
+  }
+})
+
+const CustomPaper = styled(Paper)({
+  boxShadow: 'var(--box-shadow)'
+})
+
+const CustomTextField = styled(TextField)({
+  // MuiInputBase-input: 入力した内容の文字色
+  '& .MuiInputBase-input': {
+    color: 'var(--text-color)'
   },
-  customPaper: {
-    boxShadow: 'var(--box-shadow)'
+  // label: プレースホルダーの文字色
+  '& label': {
+    color: 'var(--placeholder-color)'
   },
-  textField: {
-    '& .MuiInputBase-input': {
-      color: 'var(--text-color)'
+  '& label.Mui-focused': {
+    color: 'var(--main-color)'
+  },
+  // MuiInput-underline:before: 下線の色
+  '& .MuiInput-underline:before': {
+    borderBottomColor: 'var(--input-border-color)'
+  },
+  // MuiOutlinedInput-root: 枠線の色
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': {
+      borderColor: 'var(--input-border-color)',
+      transition: 'border-color 0.5s'
     },
-    '& label': {
-      color: 'var(--placeholder-color)'
+    '&:hover fieldset': {
+      borderColor: 'var(--main-color)',
+      borderWidth: '2px'
     },
-    '& .MuiInput-underline:before': {
-      borderBottomColor: 'var(--input-border-color)'
-    },
-    '& .MuiOutlinedInput-root': {
-      '& fieldset': {
-        borderColor: 'var(--input-border-color)'
-      },
-      '&:hover fieldset': {
-        borderColor: 'var(--input-hover-border-color)'
-      },
-      '&.Mui-focused fieldset': {
-        borderColor: theme.palette.primary.main
-      }
+    '&.Mui-focused fieldset': {
+      borderColor: 'var(--main-color)'
     }
   }
-}))
+})
 
 export default function Contact (): JSX.Element {
-  const theme = useTheme()
-  const classes = useStyles(theme)
   const dispatch = useDispatch()
   const [isLoaded, setIsLoaded] = useState(false)
   const { t } = useTranslation()
@@ -105,14 +112,13 @@ export default function Contact (): JSX.Element {
 
   return (
     <Layout title={t('contact.heading')}>
-      <Grid container justify="center" alignItems="center" style={{ marginTop: '30px', width: '100%', minHeight: '60vh' }}>
+      <Grid container justifyContent="center" alignItems="center" style={{ marginTop: '30px', width: '100%', minHeight: '60vh' }}>
         <Grid item xs={10} style={{ display: 'flex', justifyContent: 'center' }}>
-          <Paper className={classes.customPaper}>
+          <CustomPaper>
             <form noValidate autoComplete="off" onSubmit={() => { void handleSubmit }} className={styles.form}>
               <Grid container spacing={3}>
                 <Grid item xs={12} sm={6}>
-                  <TextField
-                    className={classes.textField}
+                  <CustomTextField
                     fullWidth
                     label={t('contact.surname')}
                     variant="outlined"
@@ -121,59 +127,54 @@ export default function Contact (): JSX.Element {
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                  <TextField
-                    className={classes.textField}
+                  <CustomTextField
                     fullWidth
                     label={t('contact.name')}
                     variant="outlined"
                     value={name}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setSurName(e.target.value) }}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setName(e.target.value) }}
                   />
                 </Grid>
                 <Grid item xs={12}>
-                  <TextField
-                    className={classes.textField}
+                  <CustomTextField
                     fullWidth
                     label={t('contact.email')}
                     variant="outlined"
                     value={email}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setSurName(e.target.value) }}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setEmail(e.target.value) }}
                   />
                 </Grid>
                 <Grid item xs={12}>
-                  <TextField
-                    className={classes.textField}
+                  <CustomTextField
                     fullWidth
                     label={t('contact.subject')}
                     variant="outlined"
                     value={subject}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setSurName(e.target.value) }}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setSubject(e.target.value) }}
                   />
                 </Grid>
                 <Grid item xs={12}>
-                  <TextField
-                    className={classes.textField}
+                  <CustomTextField
                     fullWidth
                     label={t('contact.message')}
                     multiline rows={10}
                     variant="outlined"
                     value={message}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setSurName(e.target.value) }}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setMessage(e.target.value) }}
                   />
                 </Grid>
                 <Grid item xs={12}>
-                  <Button
+                  <CustomButton
                     fullWidth
                     type="submit"
                     variant="contained"
-                    color="primary"
-                    className={classes.customButton}>
+                    color="primary">
                       {t('contact.send')}
-                  </Button>
+                  </CustomButton>
                 </Grid>
               </Grid>
             </form>
-          </Paper>
+          </CustomPaper>
         </Grid>
       </Grid>
     </Layout>

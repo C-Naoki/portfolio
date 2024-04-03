@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { ListItem, ListItemIcon, ListItemText } from '@material-ui/core'
+import { ListItem, ListItemIcon, ListItemText } from '@mui/material'
 
 import type { IconDefinition } from '@fortawesome/fontawesome-svg-core'
 

@@ -1,11 +1,11 @@
 import React from 'react'
 
 import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons'
-import { List } from '@material-ui/core'
-import BookIcon from '@material-ui/icons/Book'
-import ContactMailIcon from '@material-ui/icons/ContactMail'
-import DescriptionIcon from '@material-ui/icons/Description'
-import HomeIcon from '@material-ui/icons/Home'
+import BookIcon from '@mui/icons-material/Book'
+import ContactMailIcon from '@mui/icons-material/ContactMail'
+import DescriptionIcon from '@mui/icons-material/Description'
+import HomeIcon from '@mui/icons-material/Home'
+import { List } from '@mui/material'
 
 import ExternalLinkListItem from './ExternalLinkListItem'
 import NavigationListItem from './NavigationListItem'

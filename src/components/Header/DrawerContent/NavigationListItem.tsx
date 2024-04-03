@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ListItem, ListItemIcon, ListItemText } from '@material-ui/core'
+import { ListItem, ListItemIcon, ListItemText } from '@mui/material'
 import Link from 'next/link'
 
 import styles from '@/styles/header.module.css'

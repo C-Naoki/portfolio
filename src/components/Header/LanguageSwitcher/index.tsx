@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { IconButton, Menu, MenuItem } from '@material-ui/core'
+import { IconButton, Menu, MenuItem } from '@mui/material'
 import { useRouter } from 'next/router'
 import { FaGlobe } from 'react-icons/fa'
 
