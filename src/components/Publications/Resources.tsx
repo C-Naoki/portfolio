@@ -5,15 +5,18 @@ import ExternalLink from '@/components/Uikit/ExternalLink'
 const Resources = (resources: ResourcesProps): JSX.Element => {
   const referenceEntries = Object.entries(resources).map(([key, value]) => ({
     key,
-    label: key.charAt(0).toUpperCase() + key.slice(1),
+    label: `[${key}]`,
     url: value
   }))
 
   return (
     <div>
-      {referenceEntries.map(({ key, label, url }) => (
-        <ExternalLink key={key} url={url} text={label} />
-      ))}
+    {referenceEntries.map(({ key, label, url }, index) => (
+      <span key={key}>
+        <ExternalLink url={url} text={label} />
+        {index < referenceEntries.length - 1 ? ' ' : ''}
+      </span>
+    ))}
     </div>
   )
 }

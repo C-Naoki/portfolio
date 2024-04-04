@@ -1,7 +1,7 @@
 import { useTranslation } from 'next-i18next'
 
 import AuthorList from './AuthorList'
-import FileLinks from './FileLinks'
+import Resources from './Resources'
 import Title from './Title'
 
 import publicationsInfo from '@/constants/publicationsInfo'
@@ -19,7 +19,7 @@ export default function Publication ({ name }: { name: string }): JSX.Element {
           <AuthorList authors={detail.authors} /><br />
           <Title url={info.url} title={detail.title} /><br />
           {detail.venue}<br />
-          <FileLinks name={name} />
+          <Resources {...info.resources} />
         </>
       )}
     </div>
