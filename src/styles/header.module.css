@@ -137,6 +137,7 @@
 .externalLinkIcon {
   color: var(--drawer-icon-color) !important;
   margin-left: 3px;
+  margin-right: -20.5px;
 }
 
 .navigationIcon {
