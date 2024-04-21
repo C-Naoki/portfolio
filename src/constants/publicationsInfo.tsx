@@ -61,7 +61,7 @@ const publicationsInfo: PublicationsProps = {
   // 2023
   AstronComput45: {
     en: {
-      authors: ['Naoki Chihara', 'Tadafumi Takata', 'Yasuhiro Fujiwara', 'Makoto Onizuka'],
+      authors: ['Naoki Chihara', 'Tadafumi Takata', 'Yasuhiro Fujiwara', 'Koki Noda', 'Keisuke Toyoda', 'Kaito Higuchi', 'Makoto Onizuka'],
       title: 'Effective detection of variable celestial objects using machine learning-based periodic analysis',
       venue: 'Astronomy and Computing, Vol. 45, pp. 100765, 3 November 2023.'
     },
