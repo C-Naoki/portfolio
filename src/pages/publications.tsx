@@ -21,6 +21,7 @@ export default function Publications (): JSX.Element {
         <h2>{t('publications.journal')}</h2>
         <HorizontalLine />
         <ul>
+          <li><Publication name='TOD101'/></li>
           <li><Publication name='AstronComput45'/></li>
         </ul>
         <h2>{t('publications.patent')}</h2>

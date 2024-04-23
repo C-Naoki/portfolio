@@ -46,17 +46,17 @@ const publicationsInfo: PublicationsProps = {
     ja: {
       authors: ['千原 直己', '松原 靖子', '藤原 廉', '櫻井 保志'],
       title: '動的モード分解による時系列データストリームの将来予測',
-      venue: '情報処理学会論文誌データベース (TOD), Vol. 17, No. 2, pp. 1-11, 2024年4月13日'
+      venue: '情報処理学会論文誌データベース (TOD), Vol. 17, No. 2, pp. 1-11, 2024年4月23日'
     },
     en: {
       authors: ['Naoki Chihara', 'Yasuko Matsubara', 'Ren Fujiwara', 'Yasushi Sakurai'],
       title: 'Real-time Forecasting of Time-evolving Data Streams using Dynamic Mode Decomposition',
-      venue: 'IPSJ Transactions on Databases (TOD), Vol. 17, No. 2, pp. 1-11, 13 April 2024'
+      venue: 'IPSJ Transactions on Databases (TOD), Vol. 17, No. 2, pp. 1-11, 23 April 2024'
     },
     resources: {
       paper: '/assets/TOD101/paper.pdf'
     },
-    url: ''
+    url: 'https://ipsj.ixsq.nii.ac.jp/ej/index.php?action=pages_view_main&active_action=repository_view_main_item_snippet&index_id=11595&pn=1&count=20&order=7&page_id=13&block_id=8'
   },
   // 2023
   AstronComput45: {
