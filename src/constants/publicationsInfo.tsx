@@ -33,7 +33,7 @@ const publicationsInfo: PublicationsProps = {
     ja: {
       authors: ['千原 直己', '松原 靖子', '藤原 廉', '櫻井 保志'],
       title: '動的モード分解を活用した高速将来予測アルゴリズム',
-      venue: '第16回データ工学と情報マネジメントに関するフォーラム (DEIM2024), T2-B-6-02, 2024'
+      venue: '第16回データ工学と情報マネジメントに関するフォーラム (DEIM2024), T2-B-6-02, 2024年'
     },
     resources: {
       paper: '/assets/DEIM2024/paper.pdf',
@@ -51,19 +51,19 @@ const publicationsInfo: PublicationsProps = {
     en: {
       authors: ['Naoki Chihara', 'Yasuko Matsubara', 'Ren Fujiwara', 'Yasushi Sakurai'],
       title: 'Real-time Forecasting of Time-evolving Data Streams using Dynamic Mode Decomposition',
-      venue: 'IPSJ Transactions on Databases (TOD), Vol. 17, No. 2, pp. 1-11, 23 April 2024'
+      venue: 'IPSJ Transactions on Databases (TOD), Vol. 17, No. 2, pp. 1-11, April 23, 2024'
     },
     resources: {
       paper: '/assets/TOD101/paper.pdf'
     },
-    url: 'https://ipsj.ixsq.nii.ac.jp/ej/index.php?action=pages_view_main&active_action=repository_view_main_item_snippet&index_id=11595&pn=1&count=20&order=7&page_id=13&block_id=8'
+    url: 'https://ipsj.ixsq.nii.ac.jp/ej/?action=pages_view_main&active_action=repository_view_main_item_detail&item_id=233825&item_no=1&page_id=13&block_id=8'
   },
   // 2023
   AstronComput45: {
     en: {
       authors: ['Naoki Chihara', 'Tadafumi Takata', 'Yasuhiro Fujiwara', 'Koki Noda', 'Keisuke Toyoda', 'Kaito Higuchi', 'Makoto Onizuka'],
       title: 'Effective detection of variable celestial objects using machine learning-based periodic analysis',
-      venue: 'Astronomy and Computing, Vol. 45, pp. 100765, 3 November 2023.'
+      venue: 'Astronomy and Computing, Vol. 45, pp. 100765, November 3, 2023.'
     },
     resources: {
       paper: 'assets/AstronComput45/paper.pdf'
@@ -74,7 +74,7 @@ const publicationsInfo: PublicationsProps = {
     ja: {
       authors: ['千原 直己', '高田 唯史', '藤原 靖宏', '鬼塚 真'],
       title: '周期解析による変動天体の検出',
-      venue: '第15回データ工学と情報マネジメントに関するフォーラム (DEIM2023), 4a-6-3, 2023'
+      venue: '第15回データ工学と情報マネジメントに関するフォーラム (DEIM2023), 4a-6-3, 2023年'
     },
     resources: {
       paper: '/assets/DEIM2023/paper.pdf',
