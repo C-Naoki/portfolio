@@ -1,6 +1,6 @@
 {
   "title": "About",
-  "welcome": "I am a first-year M.Sc. student at Osaka University, Japan.\nProject researcher at SANKEN (The Institute of Scientific and Industrial Research at Osaka University).\nParticipating in Humanware Innovation Program.",
+  "welcome": "I am a second-year M.Sc. student at Osaka University, Japan.\nProject researcher at SANKEN (The Institute of Scientific and Industrial Research at Osaka University).\nParticipating in Humanware Innovation Program.",
   "profile": "I am a M.Sc. student at Osaka University, Japan. I am interested in time-series analysis.",
   "blog": {
     "heading": "Blog",
@@ -19,12 +19,10 @@
   },
   "experiences": {
     "heading": "Experiences",
-    "nagase name": "Digital technology engineer at Nagase Co., Ltd.",
-    "nagase year": "[2020.09-2023.03]",
-    "TA name": "Teaching Assistant, Division of Electronic and Information Engineering, Osaka University",
-    "TA year": "[2023.04-2023.09]",
-    "sanken name": "Project researcher at SANKEN, Osaka University",
-    "sanken year": "[2023.06-present]"
+    "nagase": "[2020.09-2023.03]: Digital technology engineer at Nagase Co., Ltd.",
+    "IST": "[2021.06-2023.03]: Part-time job at Information Science and Technology, Osaka University\nAssistant for detection of variable celestial objects",
+    "TA": "[2023.04-2023.09]: Teaching Assistant, School of Engineering, Osaka University",
+    "SANKEN": "[2023.06-present]: Project researcher at SANKEN, Osaka University"
   },
   "affiliation": {
     "heading": "Affiliation",
@@ -37,7 +35,7 @@
   "education": {
     "heading": "Education",
     "secondary": "[2016.04-2019.03]: Secondary School\nTakarazuka Kita High School, General Course, Hyogo Prefectural",
-    "B.Sc.": "[2019.04-2023.03]: B.Sc.\nSchool of Engineering, Division of Electronic and Information Engineering, Osaka University",
+    "B.Sc.": "[2019.04-2023.03]: B.Sc.\nSchool of Engineering, School of Engineering, Osaka University",
     "M.Sc.": "[2023.04-present]: M.Sc.\nGraduate School of Information Science and Technology, Division of Information Systems Engineering, Osaka University",
     "Ph.D.": "[2025.04-present]: Ph.D.\nGraduate School of Information Science and Technology, Division of Information Systems Engineering, Osaka University"
   },

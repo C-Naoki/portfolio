@@ -33,9 +33,10 @@ export default function Home (): JSX.Element {
         <h2>{t('experiences.heading')}</h2>
         <HorizontalLine />
         <ul>
-          <li>{t('experiences.sanken year')}: {t('experiences.sanken name')}</li>
-          <li>{t('experiences.TA year')}: {t('experiences.TA name')}</li>
-          <li>{t('experiences.nagase year')}: {t('experiences.nagase name')}</li>
+          <li><div className="pre-wrap">{t('experiences.SANKEN')}</div></li>
+          <li><div className="pre-wrap">{t('experiences.TA')}</div></li>
+          <li><div className="pre-wrap">{t('experiences.IST')}</div></li>
+          <li><div className="pre-wrap">{t('experiences.nagase')}</div></li>
         </ul>
         <h2>{t('education.heading')}</h2>
         <HorizontalLine />
