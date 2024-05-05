@@ -19,10 +19,16 @@
   },
   "experiences": {
     "heading": "Experiences",
-    "nagase": "[2020.09-2023.03]: Digital technology engineer at Nagase Co., Ltd.",
-    "IST": "[2021.06-2023.03]: Part-time job at Information Science and Technology, Osaka University\nAssistant for detection of variable celestial objects",
-    "TA": "[2023.04-2023.09]: Teaching Assistant, School of Engineering, Osaka University",
-    "SANKEN": "[2023.06-present]: Project researcher at SANKEN, Osaka University"
+    "nagase-date": "[2020.09-2023.03]",
+    "nagase": "Digital technology engineer at Nagase Co., Ltd.",
+    "IST-date": "[2021.06-2023.03]",
+    "IST": "Part-time job at Information Science and Technology, Osaka University",
+    "IST-content1": "Assistant for detection of variable celestial objects",
+    "TA-date": "[2023.04-2023.09]",
+    "TA": "Teaching Assistant at School of Engineering, Osaka University",
+    "TA-content1": "Exercises in Mathematical Analysis",
+    "SANKEN-date": "[2023.06-present]",
+    "SANKEN": "Project researcher at SANKEN, Osaka University"
   },
   "affiliation": {
     "heading": "Affiliation",
@@ -34,14 +40,22 @@
   },
   "education": {
     "heading": "Education",
-    "secondary": "[2016.04-2019.03]: Secondary School\nTakarazuka Kita High School, General Course, Hyogo Prefectural",
-    "B.Sc.": "[2019.04-2023.03]: B.Sc.\nSchool of Engineering, School of Engineering, Osaka University",
-    "M.Sc.": "[2023.04-present]: M.Sc.\nGraduate School of Information Science and Technology, Division of Information Systems Engineering, Osaka University",
-    "Ph.D.": "[2025.04-present]: Ph.D.\nGraduate School of Information Science and Technology, Division of Information Systems Engineering, Osaka University"
+    "secondary-date": "[2016.04-2019.03]",
+    "secondary": "Secondary School",
+    "secondary-content1": "Takarazuka Kita High School, Hyogo, Japan",
+    "Bachelor-date": "[2019.04-2023.03]",
+    "Bachelor": "B.Sc. in Engineering",
+    "Bachelor-content1": "Osaka University, Osaka, Japan",
+    "Master-date": "[2023.04-present]",
+    "Master": "M.Sc. in Information Science and Technology",
+    "Master-content1": "Osaka University, Osaka, Japan",
+    "Doctor-date": "[2025.04-present]",
+    "Doctor": "Ph.D.\nGraduate School of Information Science and Technology, Division of Information Systems Engineering, Osaka University"
   },
   "misc": {
     "heading": "Miscellaneous",
-    "pandacco": "Pandacco Online Reservation App"
+    "pandacco": "Pandacco Online Reservation App",
+    "pakdd2023": "PAKDD2023"
   },
   "contact": {
     "heading": "Contact me",

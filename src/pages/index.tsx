@@ -27,36 +27,60 @@ export default function Home (): JSX.Element {
         </p>
         <h2>{t('grants.heading')}</h2>
         <HorizontalLine />
-        <ul>
-          <li>{t('grants.hwip year')}: {t('grants.hwip name')}</li>
+        <ul className="custom-list">
+          <li data-marker={t('grants.hwip year')}>{t('grants.hwip name')}</li>
         </ul>
         <h2>{t('experiences.heading')}</h2>
         <HorizontalLine />
-        <ul>
-          <li><div className="pre-wrap">{t('experiences.SANKEN')}</div></li>
-          <li><div className="pre-wrap">{t('experiences.TA')}</div></li>
-          <li><div className="pre-wrap">{t('experiences.IST')}</div></li>
-          <li><div className="pre-wrap">{t('experiences.nagase')}</div></li>
+        <ul className="custom-list">
+          <li data-marker={t('experiences.SANKEN-date')}>{t('experiences.SANKEN')}</li>
+          <li data-marker={t('experiences.TA-date')}>
+            <a>{t('experiences.TA')}</a>
+            <ul>
+              <li>{t('experiences.TA-content1')}</li>
+            </ul>
+          </li>
+          <li data-marker={t('experiences.IST-date')}>
+            <a>{t('experiences.IST')}</a>
+            <ul>
+              <li>{t('experiences.IST-content1')}</li>
+            </ul>
+          </li>
+          <li data-marker={t('experiences.nagase-date')}>{t('experiences.nagase')}</li>
         </ul>
         <h2>{t('education.heading')}</h2>
         <HorizontalLine />
-        <ul>
-          <li><div className="pre-wrap">{t('education.M.Sc.')}</div></li>
-          <li><div className="pre-wrap">{t('education.B.Sc.')}</div></li>
-          <li><div className="pre-wrap">{t('education.secondary')}</div></li>
+        <ul className="custom-list">
+          <li data-marker={t('education.Master-date')}>
+            <a className="pre-wrap">{t('education.Master')}</a>
+            <ul>
+              <li>{t('education.Master-content1')}</li>
+            </ul>
+          </li>
+          <li data-marker={t('education.Bachelor-date')}>
+            <a className="pre-wrap">{t('education.Bachelor')}</a>
+            <ul>
+              <li>{t('education.Bachelor-content1')}</li>
+            </ul>
+          </li>
+          <li data-marker={t('education.secondary-date')}>
+            <a className="pre-wrap">{t('education.secondary')}</a>
+            <ul>
+              <li>{t('education.secondary-content1')}</li>
+            </ul>
+          </li>
         </ul>
         <h2>{t('misc.heading')}</h2>
         <HorizontalLine />
-        <ul>
-          <li>
-            <div className={styles.links}>
-              <a href="https://pandacco.web.app/" target="_blank" rel="noopener noreferrer" className={styles.link}>
-                {t('misc.pandacco')}
-              </a> <i>-- developer</i><br />
-              Google Developer Student Clubs (GDSC) <br />
-            </div>
-          </li>
-        </ul>
+        <div className={styles.links}>
+          <ul>
+            <li>
+              <ExternalLink url="https://pandacco.web.app/" text={t('misc.pandacco')} />
+              <a><i> -- developer</i></a><br />
+              <a>Google Developer Student Clubs (GDSC)</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </Layout>
   )

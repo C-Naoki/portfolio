@@ -74,7 +74,7 @@ ul.no-bullets {
 }
 
 li {
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 h1 {
@@ -133,6 +133,28 @@ html, body {
 
 .pre-wrap {
   white-space: pre-wrap;
+  line-height: 1.25;
+}
+
+.custom-list {
+  padding: 0;
+}
+
+.custom-list > li {
+  margin-bottom: 5px;
+  display: block;
+}
+
+.custom-list > li:before {
+  content: attr(data-marker) ": ";
+}
+
+.custom-list li ul {
+  padding-left: 20px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  list-style: disc;
 }
 
 @media (max-width: 600px) {
