@@ -14,8 +14,10 @@
   },
   "grants": {
     "heading": "助成金",
-    "hwip year": "[2023年4月-現在]",
-    "hwip name": "ヒューマンウェアイノベーション博士課程プログラム"
+    "pakdd2023-date": "[2023年5月]",
+    "pakdd2023": "Volunteer Award (PAKDD2023)",
+    "hwip-date": "[2023年4月-現在]",
+    "hwip-scholarship": "ヒューマンウェアイノベーション博士課程プログラム"
   },
   "experiences": {
     "heading": "職歴",
@@ -55,7 +57,9 @@
   },
   "misc": {
     "heading": "その他",
+    "pandacco-date": "[2023年3月-現在]",
     "pandacco": "パンダッコ 予約用アプリ",
+    "pakdd2023-date": "[2023年5月]",
     "pakdd2023": "PAKDD2023に運営ボランティアとして参加"
   },
   "contact": {

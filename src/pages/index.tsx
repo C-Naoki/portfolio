@@ -28,7 +28,7 @@ export default function Home (): JSX.Element {
         <h2>{t('grants.heading')}</h2>
         <HorizontalLine />
         <ul className="custom-list">
-          <li data-marker={t('grants.hwip year')}>{t('grants.hwip name')}</li>
+          <li data-marker={t('grants.hwip-date')}>{t('grants.hwip-scholarship')}</li>
         </ul>
         <h2>{t('experiences.heading')}</h2>
         <HorizontalLine />
@@ -73,11 +73,16 @@ export default function Home (): JSX.Element {
         <h2>{t('misc.heading')}</h2>
         <HorizontalLine />
         <div className={styles.links}>
-          <ul>
-            <li>
+          <ul className="custom-list">
+            <li data-marker={t('misc.pakdd2023-date')}>
+              <a>{t('misc.pakdd2023')}</a>
+            </li>
+            <li data-marker={t('misc.pandacco-date')}>
               <ExternalLink url="https://pandacco.web.app/" text={t('misc.pandacco')} />
               <a><i> -- developer</i></a><br />
-              <a>Google Developer Student Clubs (GDSC)</a>
+              <ul>
+                <li>Google Developer Student Clubs (GDSC)</li>
+              </ul>
             </li>
           </ul>
         </div>

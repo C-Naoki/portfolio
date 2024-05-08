@@ -14,8 +14,10 @@
   },
   "grants": {
     "heading": "Grants",
-    "hwip year": "[2023.04-present]",
-    "hwip name": "Osaka University Humanware Innovation Program"
+    "pakdd2023-date": "[2023.05]",
+    "pakdd2023": "Volunteer Award (PAKDD2023)",
+    "hwip-date": "[2023.04-present]",
+    "hwip-scholarship": "Osaka University Humanware Innovation Program"
   },
   "experiences": {
     "heading": "Experiences",
@@ -54,8 +56,10 @@
   },
   "misc": {
     "heading": "Miscellaneous",
+    "pandacco-date": "[2023.04-present]",
     "pandacco": "Pandacco Online Reservation App",
-    "pakdd2023": "PAKDD2023"
+    "pakdd2023-date": "[2023.05]",
+    "pakdd2023": "Participated in PAKDD2023 as volunteer"
   },
   "contact": {
     "heading": "Contact me",
