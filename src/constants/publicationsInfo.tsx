@@ -5,7 +5,7 @@ interface PublicationDetails {
 }
 
 export interface ResourcesProps {
-  paper: string
+  paper?: string
   slides?: string
   poster?: string
   code?: string
@@ -14,14 +14,14 @@ export interface ResourcesProps {
 interface PublicationJaProps {
   ja: PublicationDetails
   en?: PublicationDetails
-  resources: ResourcesProps
+  resources?: ResourcesProps
   url: string
 }
 
 interface PublicationEnProps {
   ja?: PublicationDetails
   en: PublicationDetails
-  resources: ResourcesProps
+  resources?: ResourcesProps
   url: string
 }
 
@@ -41,6 +41,14 @@ const publicationsInfo: PublicationsProps = {
       poster: '/assets/DEIM2024/poster.pdf'
     },
     url: ''
+  },
+  DAS2024: {
+    ja: {
+      authors: ['李 艾義', '星牟禮 健也', '谷垣 慶', '波多野 遥太', '能澤 伶奈', '坂本 有紀', '韋 遠舟', '千原 直己', '小谷 尚輝'],
+      title: 'Semi-autonomous Leader-follower Approach for Swarm Drone Guidance',
+      venue: '第36回自律分散システム・シンポジウム, pp. 1C2-4, 2024年'
+    },
+    url: 'https://sites.google.com/sice-das.org/das36th/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0'
   },
   TOD101: {
     ja: {
