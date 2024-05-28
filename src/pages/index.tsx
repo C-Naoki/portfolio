@@ -33,40 +33,46 @@ export default function Home (): JSX.Element {
         <h2>{t('experiences.heading')}</h2>
         <HorizontalLine />
         <ul className="custom-list">
-          <li data-marker={t('experiences.SANKEN-date')}>{t('experiences.SANKEN')}</li>
+          <li data-marker={t('experiences.SANKEN-date')}>
+            <a>{t('experiences.SANKEN')}</a>
+          </li>
           <li data-marker={t('experiences.TA-date')}>
             <a>{t('experiences.TA')}</a>
-            <ul>
+            <ul className="custom-nested-list">
               <li>{t('experiences.TA-content1')}</li>
             </ul>
           </li>
           <li data-marker={t('experiences.IST-date')}>
             <a>{t('experiences.IST')}</a>
-            <ul>
+            <ul className="custom-nested-list">
               <li>{t('experiences.IST-content1')}</li>
             </ul>
           </li>
-          <li data-marker={t('experiences.nagase-date')}>{t('experiences.nagase')}</li>
+          <li data-marker={t('experiences.nagase-date')}>
+            <a>{t('experiences.nagase')}</a>
+          </li>
         </ul>
         <h2>{t('education.heading')}</h2>
         <HorizontalLine />
         <ul className="custom-list">
           <li data-marker={t('education.Master-date')}>
             <a className="pre-wrap">{t('education.Master')}</a>
-            <ul>
-              <li>{t('education.Master-content1')}</li>
+            <ul className="custom-nested-list">
+              <li>{t('education.Master-affiliation')}</li>
+              <li>{t('education.Master-supervisor')}</li>
             </ul>
           </li>
           <li data-marker={t('education.Bachelor-date')}>
             <a className="pre-wrap">{t('education.Bachelor')}</a>
-            <ul>
-              <li>{t('education.Bachelor-content1')}</li>
+            <ul className="custom-nested-list">
+              <li>{t('education.Bachelor-affiliation')}</li>
+              <li>{t('education.Bachelor-supervisor')}</li>
             </ul>
           </li>
           <li data-marker={t('education.secondary-date')}>
             <a className="pre-wrap">{t('education.secondary')}</a>
-            <ul>
-              <li>{t('education.secondary-content1')}</li>
+            <ul className="custom-nested-list">
+              <li>{t('education.secondary-affiliation')}</li>
             </ul>
           </li>
         </ul>

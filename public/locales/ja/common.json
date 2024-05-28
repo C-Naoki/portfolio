@@ -44,16 +44,18 @@
     "heading": "学歴",
     "secondary-date": "[2016年4月-2019年3月]",
     "secondary": "高校",
-    "secondary-content1": "兵庫県立 宝塚北高校 普通科",
+    "secondary-affiliation": "兵庫県立 宝塚北高校 普通科",
     "Bachelor-date": "[2019年4月-2023年3月]",
     "Bachelor": "学士（工学）",
-    "Bachelor-content1": "大阪大学 工学部 電子情報工学科",
+    "Bachelor-affiliation": "大阪大学 工学部 電子情報工学科",
+    "Bachelor-supervisor": "指導教員：鬼塚 真 教授",
     "Master-date": "[2023年4月-現在]",
     "Master": "修士（情報科学）",
-    "Master-content1": "大阪大学 情報科学研究科 情報システム工学専攻",
+    "Master-affiliation": "大阪大学 情報科学研究科 情報システム工学専攻",
+    "Master-supervisor": "指導教員：櫻井 保志 教授",
     "Doctor-date": "[2025年4月-現在]",
     "Doctor": "博士（情報科学）",
-    "Doctor-content1": "大阪大学 情報科学研究科 情報システム工学専攻"
+    "Doctor-affiliation": "大阪大学 情報科学研究科 情報システム工学専攻"
   },
   "misc": {
     "heading": "その他",
