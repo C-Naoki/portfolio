@@ -15,7 +15,9 @@ async function getFileList (directoryPath: string): Promise<string[]> {
   }
 
   const files = await readdir(directoryPath)
-  const pdfFiles = files.filter(file => file.endsWith('.pdf'))
+  const pdfFiles = await Promise.all(files.filter(file => file.endsWith('.pdf')).map(async (file) => {
+    return file
+  }))
 
   fileCache.set(directoryPath, pdfFiles)
   setTimeout(() => fileCache.delete(directoryPath), 1000 * 60 * 60 * 24)
