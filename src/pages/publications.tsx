@@ -16,6 +16,7 @@ export default function Publications (): JSX.Element {
         <HorizontalLine />
         <ul>
           <li><Publication name='DEIM2024'/></li>
+          <li><Publication name='DAS2024'/></li>
           <li><Publication name='DEIM2023'/></li>
         </ul>
         <h2>{t('publications.journal')}</h2>
