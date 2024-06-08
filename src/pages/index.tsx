@@ -28,7 +28,12 @@ export default function Home (): JSX.Element {
         <h2>{t('grants.heading')}</h2>
         <HorizontalLine />
         <ul className="custom-list">
-          <li data-marker={t('grants.hwip-date')}>{t('grants.hwip-scholarship')}</li>
+          <li data-marker={t('grants.deim2024-date')}>
+            <ExternalLink url="https://confit.atlas.jp/guide/event/deim2024/static/awards" text={t('grants.deim2024')} />
+          </li>
+          <li data-marker={t('grants.hwip-date')}>
+            <ExternalLink url="https://www.humanware.osaka-u.ac.jp/" text={t('grants.hwip-scholarship')} />
+          </li>
         </ul>
         <h2>{t('experiences.heading')}</h2>
         <HorizontalLine />
@@ -85,8 +90,7 @@ export default function Home (): JSX.Element {
             </li>
             <li data-marker={t('misc.pandacco-date')}>
               <ExternalLink url="https://pandacco.web.app/" text={t('misc.pandacco')} />
-              <a><i> -- developer</i></a><br />
-              <ul>
+              <ul className="custom-nested-list">
                 <li>Google Developer Student Clubs (GDSC)</li>
               </ul>
             </li>

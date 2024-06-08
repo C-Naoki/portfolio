@@ -1,6 +1,7 @@
 import { useTranslation } from 'next-i18next'
 
 import AuthorList from './AuthorList'
+import Awards from './Awards'
 import Resources from './Resources'
 import Title from './Title'
 
@@ -15,12 +16,13 @@ export default function Publication ({ name }: { name: string }): JSX.Element {
   return (
     <div>
       {detail !== undefined && (
-        <>
-          <AuthorList authors={detail.authors} /><br />
-          <Title url={info.url} title={detail.title} /><br />
-          {detail.venue}<br />
+        <div>
+          <AuthorList authors={detail.authors} />
+          <Title url={info.url} title={detail.title} />
+          <div>{detail.venue}</div>
+          <Awards awards={detail.awards} />
           <Resources {...info.resources} />
-        </>
+        </div>
       )}
     </div>
   )

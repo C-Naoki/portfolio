@@ -8,7 +8,11 @@ interface TitleProps {
 }
 
 const Title: React.FC<TitleProps> = ({ url, title }) => {
-  return <ExternalLink url={url} text={title} />
+  return (
+    <div>
+      <ExternalLink url={url} text={title} />
+    </div>
+  )
 }
 
 export default Title

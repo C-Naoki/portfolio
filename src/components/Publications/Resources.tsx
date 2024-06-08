@@ -11,12 +11,12 @@ const Resources = (resources: ResourcesProps): JSX.Element => {
 
   return (
     <div>
-    {referenceEntries.map(({ key, label, url }, index) => (
-      <span key={key}>
-        <ExternalLink url={url} text={label} />
-        {index < referenceEntries.length - 1 ? ' ' : ''}
-      </span>
-    ))}
+      {referenceEntries.map(({ key, label, url }, index) => (
+        <span key={key}>
+          <ExternalLink url={url} text={label} />
+          {index < referenceEntries.length - 1 ? ' ' : ''}
+        </span>
+      ))}
     </div>
   )
 }

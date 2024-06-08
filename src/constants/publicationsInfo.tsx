@@ -2,6 +2,7 @@ interface PublicationDetails {
   authors: string[]
   title: string
   venue: string
+  awards: string[]
 }
 
 export interface ResourcesProps {
@@ -33,7 +34,8 @@ const publicationsInfo: PublicationsProps = {
     ja: {
       authors: ['千原 直己', '松原 靖子', '藤原 廉', '櫻井 保志'],
       title: '動的モード分解を活用した高速将来予測アルゴリズム',
-      venue: '第16回データ工学と情報マネジメントに関するフォーラム (DEIM2024), 兵庫, T2-B-6-02, 2024年'
+      venue: '第16回データ工学と情報マネジメントに関するフォーラム (DEIM2024), 兵庫, T2-B-6-02, 2024年',
+      awards: ['優秀論文賞']
     },
     resources: {
       paper: '/assets/DEIM2024/paper.pdf',
@@ -46,7 +48,8 @@ const publicationsInfo: PublicationsProps = {
     ja: {
       authors: ['李 艾義', '星牟禮 健也', '谷垣 慶', '波多野 遥太', '能澤 伶奈', '坂本 有紀', '韋 遠舟', '千原 直己', '小谷 尚輝'],
       title: 'Semi-autonomous Leader-follower Approach for Swarm Drone Guidance',
-      venue: '第36回自律分散システム・シンポジウム, 東京, 1C2-4, 2024年'
+      venue: '第36回自律分散システム・シンポジウム, 東京, 1C2-4, 2024年',
+      awards: ['']
     },
     url: 'https://sites.google.com/sice-das.org/das36th/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0'
   },
@@ -54,12 +57,14 @@ const publicationsInfo: PublicationsProps = {
     ja: {
       authors: ['千原 直己', '松原 靖子', '藤原 廉', '櫻井 保志'],
       title: '動的モード分解による時系列データストリームの将来予測',
-      venue: '情報処理学会論文誌データベース (TOD), Vol. 17, No. 2, pp. 1-11, 2024年4月23日'
+      venue: '情報処理学会論文誌データベース (TOD), Vol. 17, No. 2, pp. 1-11, 2024年4月23日',
+      awards: ['']
     },
     en: {
       authors: ['Naoki Chihara', 'Yasuko Matsubara', 'Ren Fujiwara', 'Yasushi Sakurai'],
       title: 'Real-time Forecasting of Time-evolving Data Streams using Dynamic Mode Decomposition',
-      venue: 'IPSJ Transactions on Databases (TOD), Vol. 17, No. 2, pp. 1-11, April 23, 2024'
+      venue: 'IPSJ Transactions on Databases (TOD), Vol. 17, No. 2, pp. 1-11, April 23, 2024',
+      awards: ['']
     },
     resources: {
       paper: '/assets/TOD101/paper.pdf'
@@ -71,7 +76,8 @@ const publicationsInfo: PublicationsProps = {
     en: {
       authors: ['Naoki Chihara', 'Tadafumi Takata', 'Yasuhiro Fujiwara', 'Koki Noda', 'Keisuke Toyoda', 'Kaito Higuchi', 'Makoto Onizuka'],
       title: 'Effective detection of variable celestial objects using machine learning-based periodic analysis',
-      venue: 'Astronomy and Computing, Vol. 45, pp. 100765, November 3, 2023.'
+      venue: 'Astronomy and Computing, Vol. 45, pp. 100765, November 3, 2023.',
+      awards: ['']
     },
     resources: {
       paper: 'assets/AstronComput45/paper.pdf'
@@ -82,7 +88,8 @@ const publicationsInfo: PublicationsProps = {
     ja: {
       authors: ['千原 直己', '高田 唯史', '藤原 靖宏', '鬼塚 真'],
       title: '周期解析による変動天体の検出',
-      venue: '第15回データ工学と情報マネジメントに関するフォーラム (DEIM2023), 岐阜, 4a-6-3, 2023年'
+      venue: '第15回データ工学と情報マネジメントに関するフォーラム (DEIM2023), 岐阜, 4a-6-3, 2023年',
+      awards: ['']
     },
     resources: {
       paper: '/assets/DEIM2023/paper.pdf',

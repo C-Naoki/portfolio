@@ -13,7 +13,9 @@
     "patent": "Patent"
   },
   "grants": {
-    "heading": "Grants",
+    "heading": "Grants & Awards",
+    "deim2024-date": "[2024.06]",
+    "deim2024": "DEIM2024 Best Paper Award Runner-up",
     "pakdd2023-date": "[2023.05]",
     "pakdd2023": "Volunteer Award (PAKDD2023)",
     "hwip-date": "[2023.04-present]",
@@ -24,10 +26,10 @@
     "nagase-date": "[2020.09-2023.03]",
     "nagase": "Digital technology engineer at Nagase Co., Ltd.",
     "IST-date": "[2021.06-2023.03]",
-    "IST": "Part-time job at Information Science and Technology, Osaka University",
+    "IST": "Part-time job at the Graduate School of Information Science and Technology, Osaka University",
     "IST-content1": "Assistant for detection of variable celestial objects",
     "TA-date": "[2023.04-2023.09]",
-    "TA": "Teaching Assistant at School of Engineering, Osaka University",
+    "TA": "Teaching Assistant at the School of Engineering, Osaka University",
     "TA-content1": "Exercises in Mathematical Analysis",
     "SANKEN-date": "[2023.06-present]",
     "SANKEN": "Project researcher at SANKEN, Osaka University"
