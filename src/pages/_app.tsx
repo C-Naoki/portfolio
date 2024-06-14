@@ -1,6 +1,5 @@
 import '@/styles/globals.css'
 import 'katex/dist/katex.min.css'
-import { useRouter } from 'next/router'
 import { appWithTranslation } from 'next-i18next'
 import { Provider } from 'react-redux'
 
@@ -8,15 +7,9 @@ import type { AppProps } from 'next/app'
 
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
-import { useConditionalRedirect } from '@/lib/hooks/useConditionalRedirect'
 import store from '@/reducks/store/store'
 
 const App = ({ Component, pageProps }: AppProps): JSX.Element => {
-  useConditionalRedirect({
-    condition: useRouter().pathname === '/blog',
-    redirectTo: '/blog-under-construction'
-  })
-
   return (
     <Provider store={store}>
       <div id='__next'>
