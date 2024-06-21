@@ -1,13 +1,20 @@
+import React from 'react'
+
 const AuthorList = ({ authors }: { authors: string[] }): JSX.Element => {
-  const highlightStyle = {
+  const highlightStyle: React.CSSProperties = {
     fontWeight: 'bold',
-    textDecoration: 'underline'
+    textDecoration: 'underline',
+    whiteSpace: 'nowrap'
+  }
+
+  const noWrapStyle: React.CSSProperties = {
+    whiteSpace: 'nowrap'
   }
 
   const authorEntries = authors.map((author, index) => ({
     key: index,
     name: author,
-    style: author === '千原 直己' || author === 'Naoki Chihara' ? highlightStyle : {}
+    style: author === '千原 直己' || author === 'Naoki Chihara' ? highlightStyle : noWrapStyle
   }))
 
   return (
