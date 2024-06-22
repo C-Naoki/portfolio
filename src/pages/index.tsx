@@ -16,7 +16,7 @@ export default function Home (): JSX.Element {
         <h2>{t('affiliation.heading')}</h2>
         <HorizontalLine />
         <div className={styles.links}>
-          <ExternalLink url="https://www.osaka-u.ac.jp/en" text={t('affiliation.laboratory')} /><br />
+          <ExternalLink url="https://www.dm.sanken.osaka-u.ac.jp/" text={t('affiliation.laboratory')} /><br />
           <ExternalLink url="https://www.sanken.osaka-u.ac.jp/en/" text={t('affiliation.SANKEN')} /><br />
           <ExternalLink url="https://www.ist.osaka-u.ac.jp/english/" text={t('affiliation.graduate')} /><br />
           <ExternalLink url="https://www.osaka-u.ac.jp/en" text={t('affiliation.university')} /><br />
