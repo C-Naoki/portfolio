@@ -2,7 +2,6 @@ import React from 'react'
 
 const AuthorList = ({ authors }: { authors: string[] }): JSX.Element => {
   const highlightStyle: React.CSSProperties = {
-    fontWeight: 'bold',
     textDecoration: 'underline',
     whiteSpace: 'nowrap'
   }
