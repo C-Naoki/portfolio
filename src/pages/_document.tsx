@@ -26,7 +26,16 @@ class Document extends NextDocument {
   render (): JSX.Element {
     return (
       <Html lang="ja">
-        <Head />
+        <Head>
+          <link
+            href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic,900&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"
+            rel="stylesheet"
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />

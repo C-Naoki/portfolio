@@ -42,17 +42,16 @@ body {
 }
 
 html[lang="en"] body {
-  font-family: Meiryo, "Segoe UI", "Hiragino Kaku Gothic ProN";
+  font-family: 'Noto Sans JP', 'Segoe UI';
 }
 
 html[lang="ja"] body {
-  font-family: Meiryo, "Segoe UI", "Hiragino Kaku Gothic ProN";
+  font-family: 'Noto Sans JP', 'Segoe UI';
 }
 
 h1 {
   margin-top: 0px;
   margin-bottom: 0px;
-  font-size: 2.2em;
 }
 
 h2 {
@@ -122,6 +121,7 @@ html, body {
 .custom-list > li {
   margin-top: 0px;
   margin-bottom: 6px;
+  margin-left: -19px;
   display: block;
 }
 
@@ -132,13 +132,13 @@ html, body {
 .custom-nested-list {
   padding-left: 20px;
   margin-top: 0px;
-  margin-bottom: 0px;
+  margin-bottom: -1px;
   margin-left: 10px;
   list-style: disc;
 }
 
-.custom-nested-list li {
-  margin-top: 0px;
+.custom-nested-list > li {
+  margin-top: 3.5px;
   margin-bottom: 0px;
 }
 
