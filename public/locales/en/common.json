@@ -1,5 +1,5 @@
 {
-  "title": "About",
+  "title": "Home",
   "welcome": "I am a second-year M.Sc. student at Osaka University, Japan.\nProject researcher at SANKEN (The Institute of Scientific and Industrial Research at Osaka University).\nParticipating in Humanware Innovation Program.",
   "profile": "I am a M.Sc. student at Osaka University, Japan. I am interested in time-series analysis.",
   "blog": {
@@ -61,9 +61,11 @@
   "misc": {
     "heading": "Miscellaneous",
     "pandacco-date": "[2023.04-present]",
-    "pandacco": "Pandacco Online Reservation App",
+    "pandacco": "Developed online reservation app for local bakery (Pandacco)",
     "pakdd2023-date": "[2023.05]",
-    "pakdd2023": "Participated in PAKDD2023 as volunteer"
+    "pakdd2023": "Participated in PAKDD2023 as volunteer",
+    "pigicon2023-date": "[2023.12]",
+    "pigicon2023": "2nd Recruit Programming Contest (PIGICON2023) Runner-up"
   },
   "contact": {
     "heading": "Contact me",

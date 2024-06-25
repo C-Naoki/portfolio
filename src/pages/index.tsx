@@ -4,6 +4,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Layout from '@/components/Layouts/Layout'
 import ExternalLink from '@/components/Uikit/ExternalLink'
 import HorizontalLine from '@/components/Uikit/HorizontalLine'
+import Link from '@/components/Uikit/Link'
 import styles from '@/styles/globals.module.css'
 
 export default function Home (): JSX.Element {
@@ -85,11 +86,15 @@ export default function Home (): JSX.Element {
         <HorizontalLine />
         <div className={styles.links}>
           <ul className="custom-list">
+            <li data-marker={t('misc.pigicon2023-date')}>
+              <a>{t('misc.pigicon2023')}</a>
+            </li>
             <li data-marker={t('misc.pakdd2023-date')}>
               <a>{t('misc.pakdd2023')}</a>
             </li>
             <li data-marker={t('misc.pandacco-date')}>
-              <ExternalLink url="https://pandacco.web.app/" text={t('misc.pandacco')} />
+              <span>{t('misc.pandacco')}</span>
+              <Link url='https://pandacco.web.app/'/>
               <ul className="custom-nested-list">
                 <li>Google Developer Student Clubs (GDSC)</li>
               </ul>
