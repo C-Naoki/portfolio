@@ -22,7 +22,7 @@ export const Footer: React.FC = () => {
 
   return (
     <footer style={{ justifyContent: 'space-between', alignItems: 'center' }}>
-      <p>Copyright (c) 2023 Naoki Chihara. All rights reserved. <br />Last updated on {lastUpdated}</p>
+      <p>Copyright © 2023 Naoki Chihara. All rights reserved. <br />Last updated on {lastUpdated}</p>
     </footer>
   )
 }
