@@ -10,7 +10,7 @@ import { List } from '@mui/material'
 import ExternalLinkListItem from './ExternalLinkListItem'
 import NavigationListItem from './NavigationListItem'
 
-import externalLinks from '@/constants/externalLinks'
+import externalLinksInfo from '@/constants/externalLinksInfo'
 import styles from '@/styles/header.module.css'
 
 interface DrawerContentProps {
@@ -26,9 +26,9 @@ const DrawerContent: React.FC<DrawerContentProps> = ({ handleDrawerToggle }) => 
   ]
 
   const externalLinkItems = [
-    { href: externalLinks.github, text: 'GitHub', icon: faGithub },
-    { href: externalLinks.twitter, text: 'Twitter', icon: faTwitter },
-    { href: externalLinks.linkedin, text: 'LinkedIn', icon: faLinkedin }
+    { href: externalLinksInfo.github, text: 'GitHub', icon: faGithub },
+    { href: externalLinksInfo.twitter, text: 'Twitter', icon: faTwitter },
+    { href: externalLinksInfo.linkedin, text: 'LinkedIn', icon: faLinkedin }
   ]
 
   const handleCloseDrawer = (): void => {

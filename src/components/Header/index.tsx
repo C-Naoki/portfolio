@@ -9,7 +9,7 @@ import DrawerContent from './DrawerContent'
 import LanguageSwitcher from './LanguageSwitcher'
 import ThemeSwitcher from './ThemeSwitcher'
 
-import externalLinks from '@/constants/externalLinks'
+import externalLinksInfo from '@/constants/externalLinksInfo'
 import styles from '@/styles/header.module.css'
 
 interface AnimatedButtonProps {
@@ -47,13 +47,13 @@ const Header: React.FC = () => {
             <AnimatedButton href='/publications'>Publications</AnimatedButton>
             <AnimatedButton href='/contact'>Contact</AnimatedButton>
             <div className={styles.toolbarCenter}>
-              <a href={externalLinks.github} target='_blank' rel='noopener noreferrer' className={styles.toolbarCenter}>
+              <a href={externalLinksInfo.github} target='_blank' rel='noopener noreferrer' className={styles.toolbarCenter}>
                 <FaGithub className={styles.headerIcon} />
               </a>
-              <a href={externalLinks.twitter} target='_blank' rel='noopener noreferrer' className={styles.toolbarCenter}>
+              <a href={externalLinksInfo.twitter} target='_blank' rel='noopener noreferrer' className={styles.toolbarCenter}>
                 <FaTwitter className={styles.headerIcon} />
               </a>
-              <a href={externalLinks.linkedin} target='_blank' rel='noopener noreferrer' className={styles.toolbarCenter}>
+              <a href={externalLinksInfo.linkedin} target='_blank' rel='noopener noreferrer' className={styles.toolbarCenter}>
                 <FaLinkedin className={styles.headerIcon} />
               </a>
               <a className={styles.LanguageSwitcherLarge}>
