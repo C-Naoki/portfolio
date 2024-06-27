@@ -3,6 +3,7 @@ import React from 'react'
 const AuthorList = ({ authors }: { authors: string[] }): JSX.Element => {
   const highlightStyle: React.CSSProperties = {
     textDecoration: 'underline',
+    fontWeight: 'bold',
     whiteSpace: 'nowrap'
   }
 
@@ -11,15 +12,14 @@ const AuthorList = ({ authors }: { authors: string[] }): JSX.Element => {
   }
 
   const authorEntries = authors.map((author, index) => ({
-    key: index,
     name: author,
     style: author === '千原 直己' || author === 'Naoki Chihara' ? highlightStyle : noWrapStyle
   }))
 
   return (
     <div>
-      {authorEntries.map(({ key, name, style }, index) => (
-        <span key={key}>
+      {authorEntries.map(({ name, style }, index) => (
+        <span key={name}>
           <span style={style}>
             {name}
           </span>

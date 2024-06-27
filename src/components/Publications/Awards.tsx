@@ -1,7 +1,8 @@
-const Awards = ({ awards }: { awards: string[] }): JSX.Element => {
+const Awards = ({ awards, urls }: { awards: string[], urls: string[] }): JSX.Element => {
   const awardsEntries = awards.map((award, index) => ({
     key: index,
     name: award,
+    url: urls[index],
     className: 'highlight-style'
   }))
 
@@ -10,9 +11,8 @@ const Awards = ({ awards }: { awards: string[] }): JSX.Element => {
       {awardsEntries.map(({ key, name, className }, index) => (
         <span key={key}>
           <span className={className}>
-            {name}
+            {name}{index < awardsEntries.length - 1 ? ', ' : ''}
           </span>
-          {index < awards.length - 1 ? '' : ''}
         </span>
       ))}
     </div>

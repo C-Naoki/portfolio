@@ -13,28 +13,30 @@ export default function Publications (): JSX.Element {
     <Layout title={t('publications.heading')}>
       <div className={styles.section}>
         <h2>{t('publications.conference')}</h2>
-        <HorizontalLine />
-        <ul>
-          <li><Publication name='DEIM2024'/></li>
-          <li><Publication name='DAS2024'/></li>
-          <li><Publication name='DEIM2023'/></li>
-        </ul>
-        <h2>{t('publications.journal')}</h2>
-        <HorizontalLine />
-        <ul>
-          <li><Publication name='TOD101'/></li>
-          <li><Publication name='AstronComput45'/></li>
-        </ul>
-        <h2>{t('publications.patent')}</h2>
-        <HorizontalLine />
-        <ul>
-          <li>
-            発明等：検出装置、検出⽅法及びプログラム<br />
-            発明者：藤原 靖宏, 鬼塚 真, <span style={{ fontWeight: 'bold', textDecoration: 'underline' }}>千原 直己</span><br />
-            出願番号：特願2023-099796<br />
-            出願日：2023.06.19<br />
-          </li>
-        </ul>
+        <div className={styles.publications}>
+          <HorizontalLine />
+          <ul>
+            <li><Publication name='DEIM2024'/></li>
+            <li><Publication name='DAS2024'/></li>
+            <li><Publication name='DEIM2023'/></li>
+          </ul>
+          <h2>{t('publications.journal')}</h2>
+          <HorizontalLine />
+          <ul>
+            <li><Publication name='TOD101'/></li>
+            <li><Publication name='AstronComput45'/></li>
+          </ul>
+          <h2>{t('publications.patent')}</h2>
+          <HorizontalLine />
+          <ul>
+            <li>
+              発明等：検出装置、検出⽅法及びプログラム<br />
+              発明者：藤原 靖宏, 鬼塚 真, <span style={{ fontWeight: 'bold', textDecoration: 'underline' }}>千原 直己</span><br />
+              出願番号：特願2023-099796<br />
+              出願日：2023.06.19<br />
+            </li>
+          </ul>
+        </div>
       </div>
     </Layout>
   )

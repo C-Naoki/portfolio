@@ -3,7 +3,7 @@
   --background-color: #FFFFFF;
   --button-bg-color: #FF8809;
   --button-hover-bg-color: #BE6C15;
-  --link-color: #2753E1;
+  --link-color: #1771cf;
   --link-hover-color: #FF4500;
   --box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   --input-border-color: #DEDEDE;
@@ -144,6 +144,9 @@ html, body {
 
 .highlight-style {
   font-weight: bold;
+  font-style: italic;
+  font-family: 'Lato';
+  font-size: 15px;
   color: var(--highlight-color);
 }
 

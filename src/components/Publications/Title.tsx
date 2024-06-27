@@ -4,13 +4,13 @@ import ExternalLink from '@/components/Uikit/ExternalLink'
 
 interface TitleProps {
   url: string
-  title: string
+  name: string
 }
 
-const Title: React.FC<TitleProps> = ({ url, title }) => {
+const Title: React.FC<TitleProps> = ({ url, name }) => {
   return (
     <div>
-      <ExternalLink url={url} text={title} />
+      <ExternalLink url={url} text={name} bold={true} />
     </div>
   )
 }
