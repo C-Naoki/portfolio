@@ -1,6 +1,6 @@
 {
   "title": "Home",
-  "welcome": "I am a second-year M.Sc. student at Osaka University, Japan.\nProject researcher at SANKEN (The Institute of Scientific and Industrial Research at Osaka University).\nParticipating in Humanware Innovation Program.",
+  "welcome": "I am a second-year M.Sc. student at Osaka University, Japan and am project researcher at SANKEN (The Institute of Scientific and Industrial Research at Osaka University). I am interested in (RQ1) real-time forecasting and (RQ2) causal discovery in time-series data. I am fortunate to be advised by Prof. Yasushi Sakurai and Prof. Yasuko Matsubara at SANKEN, Osaka University. I recieved my B.Sc. degrees from Osaka University advised by Prof. Makoto Onizuka in March, 2023. I am participating in Humanware Innovation Program to deepen my knowledge in other fields.",
   "profile": "I am a M.Sc. student at Osaka University, Japan. I am interested in time-series analysis.",
   "blog": {
     "heading": "Blog",
@@ -117,7 +117,7 @@
     "pakdd2023-date": "[2023.05]",
     "pakdd2023": "Participated in PAKDD2023 as volunteer",
     "pigicon2023-date": "[2023.12]",
-    "pigicon2023": "2nd Recruit Programming Contest (PIGICON2023) Runner-up"
+    "pigicon2023": "Second-place award at the 2nd Recruit Programming Contest (PIGICON2023)"
   },
   "contact": {
     "heading": "Contact me",
