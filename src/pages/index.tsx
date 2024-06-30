@@ -1,5 +1,6 @@
-import { useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { FaDownload } from 'react-icons/fa'
 
 import Layout from '@/components/Layouts/Layout'
 import ExternalLink from '@/components/Uikit/ExternalLink'
@@ -14,13 +15,21 @@ export default function Home (): JSX.Element {
     <Layout title={t('title')}>
       <div className={styles.section}>
         <p dangerouslySetInnerHTML={{ __html: t('welcome').replace(/\n/g, '<br>') }} />
+        <p>
+          <FaDownload style={{ marginRight: '6px', marginBottom: '-1px' }} />
+          <Trans
+            i18nKey="cv"
+            components={{
+              l: <a className={styles.link} target="_blank" rel="noopener noreferrer" href="assets/CV.pdf"/>
+            }}/>
+        </p>
         <h2>{t('affiliation.heading')}</h2>
         <HorizontalLine />
         <div className={styles.links}>
-          <ExternalLink url="https://www.dm.sanken.osaka-u.ac.jp/" text={t('affiliation.laboratory')} /><br />
-          <ExternalLink url="https://www.sanken.osaka-u.ac.jp/en/" text={t('affiliation.SANKEN')} /><br />
-          <ExternalLink url="https://www.ist.osaka-u.ac.jp/english/" text={t('affiliation.graduate')} /><br />
-          <ExternalLink url="https://www.osaka-u.ac.jp/en" text={t('affiliation.university')} /><br />
+          <ExternalLink url="https://www.dm.sanken.osaka-u.ac.jp/" text={t('affiliation.laboratory')}/><br />
+          <ExternalLink url="https://www.sanken.osaka-u.ac.jp/en/" text={t('affiliation.SANKEN')}/><br />
+          <ExternalLink url="https://www.ist.osaka-u.ac.jp/english/" text={t('affiliation.graduate')}/><br />
+          <ExternalLink url="https://www.osaka-u.ac.jp/en" text={t('affiliation.university')}/><br />
         </div>
         <p>
           {t('affiliation.address')}<br />

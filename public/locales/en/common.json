@@ -1,6 +1,7 @@
 {
   "title": "Home",
   "welcome": "I am a second-year M.Sc. student at Osaka University, Japan and am project researcher at SANKEN (The Institute of Scientific and Industrial Research at Osaka University). I am interested in (RQ1) real-time forecasting and (RQ2) causal discovery in time-series data. I am fortunate to be advised by Prof. Yasushi Sakurai and Prof. Yasuko Matsubara at SANKEN, Osaka University. I recieved my B.Sc. degrees from Osaka University advised by Prof. Makoto Onizuka in March, 2023. I am participating in Humanware Innovation Program to deepen my knowledge in other fields.",
+  "cv": "Download my CV <l>here</l>",
   "profile": "I am a M.Sc. student at Osaka University, Japan. I am interested in time-series analysis.",
   "blog": {
     "heading": "Blog",
@@ -104,11 +105,13 @@
     "Bachelor-affiliation": "Osaka University, Osaka, Japan",
     "Bachelor-supervisor": "Supervisor: Prof. Makoto Onizuka",
     "Master-date": "[2023.04-present]",
-    "Master": "M.Sc. in Information Science and Technology",
+    "Master": "M.Sc. in Information Science",
     "Master-affiliation": "Osaka University, Osaka, Japan",
     "Master-supervisor": "Supervisor: Prof. Yasushi Sakurai",
     "Doctor-date": "[2025.04-present]",
-    "Doctor": "Ph.D.\nGraduate School of Information Science and Technology, Division of Information Systems Engineering, Osaka University"
+    "Doctor": "Ph.D. in Information Science",
+    "Doctor-affiliation": "Osaka University, Osaka, Japan",
+    "Doctor-supervisor": "Supervisor: Prof. Yasushi Sakurai"
   },
   "misc": {
     "heading": "Miscellaneous",
