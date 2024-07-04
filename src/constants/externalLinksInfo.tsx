@@ -2,6 +2,7 @@ const externalLinksInfo: Record<string, any> = {
   github: 'https://github.com/C-Naoki',
   twitter: 'https://twitter.com/C__Naoki',
   linkedin: 'https://www.linkedin.com/in/naoki-chihara-0a35a827a/',
+  zenn: 'https://zenn.dev/naoki0103',
   // 2024
   KDDPC2024: {
     title: 'https://kdd2024.kdd.org/call-for-phd-consortium/',

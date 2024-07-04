@@ -43,7 +43,7 @@ const Header: React.FC = () => {
           </Typography>
           <div className={styles.headerOptionsLarge}>
             <AnimatedButton href='/'>Home</AnimatedButton>
-            <AnimatedButton href='https://zenn.dev/naoki0103'>Blog</AnimatedButton>
+            <AnimatedButton href={externalLinksInfo.zenn}>Blog</AnimatedButton>
             <AnimatedButton href='/publications'>Publications</AnimatedButton>
             <AnimatedButton href='/contact'>Contact</AnimatedButton>
             <div className={styles.toolbarCenter}>

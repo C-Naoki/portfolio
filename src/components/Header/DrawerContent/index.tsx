@@ -20,7 +20,7 @@ interface DrawerContentProps {
 const DrawerContent: React.FC<DrawerContentProps> = ({ handleDrawerToggle }) => {
   const navigationItems = [
     { href: '/', text: 'Home', icon: HomeIcon },
-    { href: 'https://zenn.dev/naoki0103', text: 'Blog', icon: BookIcon },
+    { href: externalLinksInfo.zenn, text: 'Blog', icon: BookIcon },
     { href: '/publications', text: 'Publications', icon: DescriptionIcon },
     { href: '/contact', text: 'Contact', icon: ContactMailIcon }
   ]
