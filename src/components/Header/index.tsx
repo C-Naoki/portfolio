@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+import { faOrcid } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import MenuIcon from '@mui/icons-material/Menu'
 import { AppBar, Button, Drawer, IconButton, Toolbar, Typography } from '@mui/material'
 import Link from 'next/link'
@@ -35,7 +37,7 @@ const Header: React.FC = () => {
   }
 
   return (
-    <>
+    <div>
       <AppBar position='fixed' className={styles.appBar}>
         <Toolbar>
           <Typography variant='h6' className={styles.title}>
@@ -55,6 +57,9 @@ const Header: React.FC = () => {
               </a>
               <a href={externalLinksInfo.linkedin} target='_blank' rel='noopener noreferrer' className={styles.toolbarCenter}>
                 <FaLinkedin className={styles.headerIcon} />
+              </a>
+              <a href={externalLinksInfo.orcid} target='_blank' rel='noopener noreferrer' className={styles.toolbarCenter}>
+                <FontAwesomeIcon icon={faOrcid} className={styles.headerIcon} />
               </a>
               <a className={styles.LanguageSwitcherLarge}>
                 <LanguageSwitcher />
@@ -91,7 +96,7 @@ const Header: React.FC = () => {
           </div>
         </Toolbar>
       </AppBar>
-    </>
+    </div>
   )
 }
 
