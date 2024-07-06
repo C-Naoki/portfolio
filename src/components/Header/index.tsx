@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { faOrcid } from '@fortawesome/free-brands-svg-icons'
+import { faGoogleScholar, faOrcid } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import MenuIcon from '@mui/icons-material/Menu'
 import { AppBar, Button, Drawer, IconButton, Toolbar, Typography } from '@mui/material'
@@ -49,16 +49,19 @@ const Header: React.FC = () => {
             <AnimatedButton href='/publications'>Publications</AnimatedButton>
             <AnimatedButton href='/contact'>Contact</AnimatedButton>
             <div className={styles.toolbarCenter}>
-              <a href={externalLinksInfo.github} target='_blank' rel='noopener noreferrer' className={styles.toolbarCenter}>
+              <a href={externalLinksInfo.github} target='_blank' rel='noopener noreferrer' className={styles.toolbarCenter} >
                 <FaGithub className={styles.headerIcon} />
               </a>
-              <a href={externalLinksInfo.twitter} target='_blank' rel='noopener noreferrer' className={styles.toolbarCenter}>
+              <a href={externalLinksInfo.twitter} target='_blank' rel='noopener noreferrer' className={styles.toolbarCenter} >
                 <FaTwitter className={styles.headerIcon} />
               </a>
-              <a href={externalLinksInfo.linkedin} target='_blank' rel='noopener noreferrer' className={styles.toolbarCenter}>
+              <a href={externalLinksInfo.linkedin} target='_blank' rel='noopener noreferrer' className={styles.toolbarCenter} >
                 <FaLinkedin className={styles.headerIcon} />
               </a>
-              <a href={externalLinksInfo.orcid} target='_blank' rel='noopener noreferrer' className={styles.toolbarCenter}>
+              <a href={externalLinksInfo.googlescholar} target='_blank' rel='noopener noreferrer' className={styles.toolbarCenter} >
+                <FontAwesomeIcon icon={faGoogleScholar} className={styles.headerIcon} />
+              </a>
+              <a href={externalLinksInfo.orcid} target='_blank' rel='noopener noreferrer' className={styles.toolbarCenter} >
                 <FontAwesomeIcon icon={faOrcid} className={styles.headerIcon} />
               </a>
               <a className={styles.LanguageSwitcherLarge}>

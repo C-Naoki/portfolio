@@ -3,6 +3,7 @@ const externalLinksInfo: Record<string, any> = {
   twitter: 'https://twitter.com/C__Naoki',
   linkedin: 'https://www.linkedin.com/in/naoki-chihara-0a35a827a/',
   orcid: 'https://orcid.org/0009-0005-7061-8214',
+  googlescholar: 'https://scholar.google.com/citations?user=pq2b3jQAAAAJ&hl=en&oi=sra',
   zenn: 'https://zenn.dev/naoki0103',
   // 2024
   KDDPC2024: {
