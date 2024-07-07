@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faGoogleScholar, faLinkedin, faOrcid, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import BookIcon from '@mui/icons-material/Book'
 import ContactMailIcon from '@mui/icons-material/ContactMail'
 import DescriptionIcon from '@mui/icons-material/Description'
@@ -28,7 +28,9 @@ const DrawerContent: React.FC<DrawerContentProps> = ({ handleDrawerToggle }) => 
   const externalLinkItems = [
     { href: externalLinksInfo.github, text: 'GitHub', icon: faGithub },
     { href: externalLinksInfo.twitter, text: 'Twitter', icon: faTwitter },
-    { href: externalLinksInfo.linkedin, text: 'LinkedIn', icon: faLinkedin }
+    { href: externalLinksInfo.linkedin, text: 'LinkedIn', icon: faLinkedin },
+    { href: externalLinksInfo.googlescholar, text: 'Google Scholar', icon: faGoogleScholar },
+    { href: externalLinksInfo.orcid, text: 'ORCID', icon: faOrcid }
   ]
 
   const handleCloseDrawer = (): void => {
