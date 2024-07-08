@@ -7,7 +7,7 @@ const externalLinksInfo: Record<string, any> = {
   zenn: 'https://zenn.dev/naoki0103',
   // 2024
   KDDPC2024: {
-    title: 'https://kdd2024.kdd.org/call-for-phd-consortium/',
+    title: 'https://kdd2024.kdd.org/ph-d-consortium/',
     awards: [],
     resources: {
       paper: '/assets/KDDPC2024/paper.pdf'
