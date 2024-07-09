@@ -1,6 +1,6 @@
 import { Trans, useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { FaDownload } from 'react-icons/fa'
+import { FaDownload, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
 
 import Layout from '@/components/Layouts/Layout'
 import ExternalLink from '@/components/Uikit/ExternalLink'
@@ -32,8 +32,8 @@ export default function Home (): JSX.Element {
           <ExternalLink url="https://www.osaka-u.ac.jp/en" text={t('affiliation.university')}/><br />
         </div>
         <p>
-          {t('affiliation.address')}<br />
-          Email: naoki88[at]sanken.osaka-u.ac.jp
+          <FaMapMarkerAlt className="fa-icon" />{t('affiliation.address')}<br />
+          <FaEnvelope className="fa-icon" />naoki88[at]sanken.osaka-u.ac.jp
         </p>
         <h2>{t('grants.heading')}</h2>
         <HorizontalLine />
