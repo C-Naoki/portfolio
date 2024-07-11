@@ -25,15 +25,15 @@ export default function Home (): JSX.Element {
         </p>
         <h2>{t('affiliation.heading')}</h2>
         <HorizontalLine />
-        <div className={styles.links}>
-          <ExternalLink url="https://www.dm.sanken.osaka-u.ac.jp/" text={t('affiliation.laboratory')}/><br />
-          <ExternalLink url="https://www.sanken.osaka-u.ac.jp/en/" text={t('affiliation.SANKEN')}/><br />
-          <ExternalLink url="https://www.ist.osaka-u.ac.jp/english/" text={t('affiliation.graduate')}/><br />
-          <ExternalLink url="https://www.osaka-u.ac.jp/en" text={t('affiliation.university')}/><br />
+        <div>
+          <ExternalLink url="https://www.dm.sanken.osaka-u.ac.jp/" text={t('affiliation.laboratory')} /><br />
+          <ExternalLink url="https://www.sanken.osaka-u.ac.jp/en/" text={t('affiliation.SANKEN')} /><br />
+          <ExternalLink url="https://www.ist.osaka-u.ac.jp/english/" text={t('affiliation.graduate')} /><br />
+          <ExternalLink url="https://www.osaka-u.ac.jp/en" text={t('affiliation.university')} /><br />
         </div>
         <p>
-          <FaMapMarkerAlt className="fa-icon" />{t('affiliation.address')}<br />
-          <FaEnvelope className="fa-icon" />naoki88[at]sanken.osaka-u.ac.jp
+          <FaMapMarkerAlt style={{ marginRight: '6px', marginBottom: '-1px' }} />{t('affiliation.address')}<br />
+          <FaEnvelope style={{ marginRight: '6px', marginBottom: '-1px' }} />naoki88[at]sanken.osaka-u.ac.jp
         </p>
         <h2>{t('grants.heading')}</h2>
         <HorizontalLine />
@@ -49,22 +49,22 @@ export default function Home (): JSX.Element {
         <HorizontalLine />
         <ul className="custom-list">
           <li data-marker={t('experiences.SANKEN-date')}>
-            <a>{t('experiences.SANKEN')}</a>
+            <span>{t('experiences.SANKEN')}</span>
           </li>
           <li data-marker={t('experiences.TA-date')}>
-            <a>{t('experiences.TA')}</a>
+            <span>{t('experiences.TA')}</span>
             <ul className="custom-nested-list">
               <li>{t('experiences.TA-content1')}</li>
             </ul>
           </li>
           <li data-marker={t('experiences.IST-date')}>
-            <a>{t('experiences.IST')}</a>
+            <span>{t('experiences.IST')}</span>
             <ul className="custom-nested-list">
               <li>{t('experiences.IST-content1')}</li>
             </ul>
           </li>
           <li data-marker={t('experiences.nagase-date')}>
-            <a>{t('experiences.nagase')}</a>
+            <span>{t('experiences.nagase')}</span>
           </li>
         </ul>
         <h2>{t('education.heading')}</h2>
@@ -93,17 +93,17 @@ export default function Home (): JSX.Element {
         </ul>
         <h2>{t('misc.heading')}</h2>
         <HorizontalLine />
-        <div className={styles.links}>
+        <div>
           <ul className="custom-list">
             <li data-marker={t('misc.pigicon2023-date')}>
-              <a>{t('misc.pigicon2023')}</a>
+              <span>{t('misc.pigicon2023')}</span>
             </li>
             <li data-marker={t('misc.pakdd2023-date')}>
-              <a>{t('misc.pakdd2023')}</a>
+              <span>{t('misc.pakdd2023')}</span>
             </li>
             <li data-marker={t('misc.pandacco-date')}>
               <span>{t('misc.pandacco')}</span>
-              <Link url='https://pandacco.web.app/'/>
+              <Link url='https://pandacco.web.app/' />
               <ul className="custom-nested-list">
                 <li>Google Developer Student Clubs (GDSC)</li>
               </ul>
