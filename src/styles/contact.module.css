@@ -2,3 +2,49 @@
   padding: 20px;
   background-color: var(--background-color);
 }
+
+.button {
+  background-color: var(--button-bg-color);
+}
+
+.button:hover {
+  background-color: var(--button-hover-bg-color);
+}
+
+.paper {
+  box-shadow: var(--box-shadow);
+}
+
+.textField {
+  width: 100%;
+}
+
+.textField input {
+  color: var(--text-color);
+}
+
+.textField label {
+  color: var(--placeholder-color);
+}
+
+.textField label[data-shrink="true"] {
+  color: var(--placeholder-color);
+}
+
+.textField:is(:hover, :focus-within) label[data-shrink="true"] {
+  color: var(--main-color);
+}
+
+.textField fieldset {
+  border-color: var(--input-border-color);
+  transition: border-color 0.5s;
+}
+
+.textField:hover fieldset {
+  border-color: var(--main-color) !important;
+  border-width: 2px;
+}
+
+.textField:focus-within fieldset {
+  border-color: var(--main-color) !important;
+}
