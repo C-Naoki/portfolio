@@ -6,6 +6,7 @@ import Layout from '@/components/Layouts/Layout'
 import ExternalLink from '@/components/Uikit/ExternalLink'
 import HorizontalLine from '@/components/Uikit/HorizontalLine'
 import Link from '@/components/Uikit/Link'
+import TransLink from '@/components/Uikit/TransLink'
 import styles from '@/styles/globals.module.css'
 
 export default function Home (): JSX.Element {
@@ -14,14 +15,20 @@ export default function Home (): JSX.Element {
   return (
     <Layout title={t('title')}>
       <div className={styles.section}>
-        <p dangerouslySetInnerHTML={{ __html: t('welcome').replace(/\n/g, '<br>') }} />
         <p>
-          <FaDownload style={{ marginRight: '6px', marginBottom: '-1px' }} />
           <Trans
-            i18nKey="cv"
+            i18nKey="welcome"
             components={{
-              l: <a className={styles.link} target="_blank" rel="noopener noreferrer" href="assets/CV.pdf"/>
-            }}/>
+              link_makoto: <TransLink url="http://www-bigdata.ist.osaka-u.ac.jp/professor/onizuka/onizuka_en.html" />,
+              link_yasushi: <TransLink url="https://www.dm.sanken.osaka-u.ac.jp/~yasushi/index-j.htm" />,
+              link_yasuko: <TransLink url="https://www.dm.sanken.osaka-u.ac.jp/~yasuko/index.html" />,
+              link_hwip: <TransLink url="https://www.humanware.osaka-u.ac.jp/en/" />
+            }}
+          />
+        </p>
+        <p>
+          <FaDownload className="fa-icon" />
+          <Trans i18nKey="cv" components={{ link_cv: <TransLink url="assets/CV.pdf" /> }} />
         </p>
         <h2>{t('affiliation.heading')}</h2>
         <HorizontalLine />
@@ -32,8 +39,8 @@ export default function Home (): JSX.Element {
           <ExternalLink url="https://www.osaka-u.ac.jp/en" text={t('affiliation.university')} /><br />
         </div>
         <p>
-          <FaMapMarkerAlt style={{ marginRight: '6px', marginBottom: '-1px' }} />{t('affiliation.address')}<br />
-          <FaEnvelope style={{ marginRight: '6px', marginBottom: '-1px' }} />naoki88[at]sanken.osaka-u.ac.jp
+          <FaMapMarkerAlt className="fa-icon" />{t('affiliation.address')}<br />
+          <FaEnvelope className="fa-icon" />naoki88[at]sanken.osaka-u.ac.jp
         </p>
         <h2>{t('grants.heading')}</h2>
         <HorizontalLine />

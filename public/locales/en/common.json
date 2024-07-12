@@ -1,7 +1,7 @@
 {
   "title": "Home",
-  "welcome": "I am a second-year M.Sc. student at Osaka University, Japan and am project researcher at SANKEN (The Institute of Scientific and Industrial Research at Osaka University). I am interested in (RQ1) real-time forecasting and (RQ2) causal discovery in time-series data. I am fortunate to be advised by Prof. Yasushi Sakurai and Prof. Yasuko Matsubara at SANKEN, Osaka University. I recieved my B.Sc. degrees from Osaka University advised by Prof. Makoto Onizuka in March, 2023. I am participating in Humanware Innovation Program to deepen my knowledge in other fields.",
-  "cv": "Download my CV <l>here</l>",
+  "welcome": "I am a second-year M.Sc. student at Osaka University, Japan and am project researcher at SANKEN (The Institute of Scientific and Industrial Research at Osaka University). I am interested in (RQ1) real-time forecasting and (RQ2) causal discovery in time-series data. I am fortunate to be advised by <link_yasushi>Prof. Yasushi Sakurai</link_yasushi> and <link_yasuko>Prof. Yasuko Matsubara</link_yasuko> at SANKEN. I recieved my B.Sc. degrees from Osaka University advised by <link_makoto>Prof. Makoto Onizuka</link_makoto> in March, 2023. I am participating in <link_hwip>Humanware Innovation Program</link_hwip> to deepen my knowledge in other fields.",
+  "cv": "Download my CV <link_cv>here</link_cv>",
   "profile": "I am a M.Sc. student at Osaka University, Japan. I am interested in time-series analysis.",
   "blog": {
     "heading": "Blog",
@@ -80,7 +80,7 @@
     "nagase": "Digital technology engineer at Nagase Co., Ltd.",
     "IST-date": "[2021.06-2023.03]",
     "IST": "Part-time job at the Graduate School of Information Science and Technology, Osaka University",
-    "IST-content1": "Assistant for detection of variable celestial objects",
+    "IST-content1": "Assistant in the detection of variable celestial objects",
     "TA-date": "[2023.04-2023.09]",
     "TA": "Teaching Assistant at the School of Engineering, Osaka University",
     "TA-content1": "Exercises in Mathematical Analysis",
@@ -90,10 +90,10 @@
   "affiliation": {
     "heading": "Affiliation",
     "laboratory": "Sakurai & Matsubara Lab.",
-    "SANKEN": "The Institute of Scientific and Industrial Research",
+    "SANKEN": "The Institute of Scientific and Industrial Research (SANKEN)",
     "graduate": "Graduate School of Information Science and Technology",
     "university": "Osaka University",
-    "address": "Address: Mihogaoka 8-1, Ibaraki, Osaka 567-0047, Japan"
+    "address": "Mihogaoka 8-1, Ibaraki, Osaka 567-0047, Japan"
   },
   "education": {
     "heading": "Education",
