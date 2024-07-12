@@ -19,18 +19,15 @@
 }
 
 .headerOptionsSmall {
-  display: block;
-}
-
-@media (min-width: 961px) {
-  .headerOptionsSmall {
-    display: none;
-  }
+  display: none;
 }
 
 @media (max-width: 960px) {
   .headerOptionsLarge {
     display: none;
+  }
+  .headerOptionsSmall {
+    display: block;
   }
 }
 
@@ -47,7 +44,7 @@
 }
 
 .LanguageSwitcherLarge {
-  margin-left: 40px;
+  margin-left: 30px;
   margin-right: -28px;
 }
 
@@ -57,7 +54,7 @@
 
 .ThemeSwitcherLarge {
   margin-left: 35px;
-  margin-right: -40px;
+  margin-right: -35px;
 }
 
 .ThemeSwitcherSmall {
@@ -112,7 +109,6 @@
 }
 
 /* NavigationsListItem.tsx and ExternalLinkListItem.tsx */
-
 .listItem {
   padding-top: 8px;
   padding-bottom: 8px;

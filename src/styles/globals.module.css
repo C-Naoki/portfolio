@@ -1,16 +1,11 @@
-.links {
-  margin-bottom: 20px;
-}
-
 .link {
   color: var(--link-color);
-  text-decoration: underline;
   margin-bottom: 0px;
   padding: 4px 0;
 }
 
 .link:hover {
-  color: var(--link-hover-color);
+  color: var(--link-color);
   text-decoration: underline;
 }
 
@@ -31,5 +26,6 @@
 }
 
 .publications > ul > li {
-  margin-bottom: 15px;
+  margin-bottom: 7px;
+  line-height: 1.35em;
 }
