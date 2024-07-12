@@ -20,7 +20,7 @@ export default function Home (): JSX.Element {
             i18nKey="welcome"
             components={{
               link_makoto: <TransLink url="http://www-bigdata.ist.osaka-u.ac.jp/professor/onizuka/onizuka_en.html" />,
-              link_yasushi: <TransLink url="https://www.dm.sanken.osaka-u.ac.jp/~yasushi/index-j.htm" />,
+              link_yasushi: <TransLink url="https://www.dm.sanken.osaka-u.ac.jp/~yasushi/index-j.html" />,
               link_yasuko: <TransLink url="https://www.dm.sanken.osaka-u.ac.jp/~yasuko/index.html" />,
               link_hwip: <TransLink url="https://www.humanware.osaka-u.ac.jp/en/" />
             }}
