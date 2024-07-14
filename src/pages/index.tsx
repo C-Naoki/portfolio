@@ -5,7 +5,6 @@ import { FaDownload, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
 import Layout from '@/components/Layouts/Layout'
 import ExternalLink from '@/components/Uikit/ExternalLink'
 import HorizontalLine from '@/components/Uikit/HorizontalLine'
-import Link from '@/components/Uikit/Link'
 import TransLink from '@/components/Uikit/TransLink'
 import styles from '@/styles/globals.module.css'
 
@@ -109,8 +108,8 @@ export default function Home (): JSX.Element {
               <span>{t('misc.pakdd2023')}</span>
             </li>
             <li data-marker={t('misc.pandacco-date')}>
-              <span>{t('misc.pandacco')}</span>
-              <Link url='https://pandacco.web.app/' />
+              <span>{t('misc.pandacco')} </span>
+              <ExternalLink url='https://pandacco.web.app/' bracket={true} />
               <ul className="custom-nested-list">
                 <li>Google Developer Student Clubs (GDSC)</li>
               </ul>
