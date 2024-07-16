@@ -3,6 +3,7 @@ import React from 'react'
 import { Container } from '@mui/material'
 import { Toaster } from 'react-hot-toast'
 
+import ScrollToTopButton from '@/components/Uikit/ScrollToTopButton'
 import styles from '@/styles/layout.module.css'
 
 export default function Layout ({ children, title }: { children: React.ReactNode, title: string }): JSX.Element {
@@ -14,6 +15,7 @@ export default function Layout ({ children, title }: { children: React.ReactNode
       <h1>{title}</h1>
       <div className={styles.layoutGrid} style={{ gridTemplateColumns }}>
         {children}
+        <ScrollToTopButton />
       </div>
       <Toaster />
     </Container>
