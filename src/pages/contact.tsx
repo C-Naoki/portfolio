@@ -33,7 +33,7 @@ export default function Contact (): JSX.Element {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
     event.preventDefault()
-    const addContactResult = await (dispatch as ThunkDispatch<any, null, AnyAction>)(addNewContact(surName, name, email, subject, message))
+    const addContactResult = await (dispatch as ThunkDispatch<any, null, AnyAction>)(addNewContact(surName, name, email, subject, message, t))
     if (!addContactResult.success) {
       console.error('Contact addition failed', addContactResult.error)
       return
@@ -98,6 +98,7 @@ export default function Contact (): JSX.Element {
                     fullWidth
                     label={t('contact.email')}
                     variant="outlined"
+                    type="email"
                     value={email}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setEmail(e.target.value) }}
                     className={styles.textField}

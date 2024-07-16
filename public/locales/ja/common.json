@@ -111,6 +111,10 @@
     "email": "メールアドレス",
     "subject": "件名",
     "message": "内容",
-    "send": "送信"
+    "send": "送信",
+    "success": "送信しました",
+    "erroe": "通信に失敗しました",
+    "empty-error": "必須項目が未入力です",
+    "email-error": "メールアドレスが正しくありません"
   }
 }

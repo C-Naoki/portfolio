@@ -15,11 +15,16 @@ export const addNewContact = (
   name: string,
   email: string,
   subject: string,
-  message: string
+  message: string,
+  t: (key: string) => string
 ) => {
   return async (dispatch: ThunkDispatch<any, null, AnyAction>) => {
     if (surName === '' || name === '' || email === '' || subject === '' || message === '') {
-      toast.error('必須項目が未入力です')
+      toast.error(t('contact.empty-error'))
+      return { success: false }
+    }
+    if (!validateEmail(email)) {
+      toast.error(t('contact.email-error'))
       return { success: false }
     }
 
@@ -37,13 +42,18 @@ export const addNewContact = (
 
     try {
       await setDoc(contactRef, newContact)
-      toast.success('送信しました')
+      toast.success(t('contact.success'))
       dispatch(addContactSuccessAction(newContact))
       return { success: true }
     } catch (error: unknown) {
-      toast.error('送信に失敗しました')
+      toast.error(t('contact.error'))
       dispatch(addContactFailureAction(error))
       return { success: false, error }
     }
   }
+}
+
+const validateEmail = (email: string): boolean => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  return emailRegex.test(email)
 }

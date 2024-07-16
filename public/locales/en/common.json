@@ -129,6 +129,10 @@
     "email": "email",
     "subject": "subject",
     "message": "message",
-    "send": "send"
+    "send": "send",
+    "success": "Your message has been sent successfully.",
+    "error": "An error occurred while sending your message.",
+    "empty-error": "Please fill out all fields.",
+    "email-error": "Please enter a valid email address."
   }
 }
