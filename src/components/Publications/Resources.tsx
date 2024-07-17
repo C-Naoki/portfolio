@@ -2,7 +2,7 @@ import ExternalLink from '@/components/Uikit/ExternalLink'
 
 const Resources = ({ resources }: { resources: Record<string, string> }): JSX.Element => {
   return (
-    <div>
+    <div className='resources'>
       {Object.entries(resources).map(([name, url], index) => (
         <span key={name}>
           [<ExternalLink url={url} text={name} />]

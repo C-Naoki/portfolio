@@ -5,9 +5,10 @@ export interface VenueProps {
 
 const Venue = (venue: VenueProps): JSX.Element => {
   return (
-    <div>
-      <span style={{ fontStyle: 'italic', fontFamily: 'Lato', fontSize: 15 }}>{venue.name}</span>
-      <span>, {venue.others}.</span>
+    <div className='venue'>
+      <span className='venue-name'>{venue.name}, </span>
+      <span>{venue.others}.</span>
+      {' '}
     </div>
   )
 }

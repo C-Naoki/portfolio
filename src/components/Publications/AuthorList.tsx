@@ -11,13 +11,13 @@ const AuthorList = ({ authors }: { authors: string[] }): JSX.Element => {
     whiteSpace: 'nowrap'
   }
 
-  const authorEntries = authors.map((author, index) => ({
+  const authorEntries = authors.map((author) => ({
     name: author,
     style: author === '千原 直己' || author === 'Naoki Chihara' ? highlightStyle : noWrapStyle
   }))
 
   return (
-    <div>
+    <div className='author-list'>
       {authorEntries.map(({ name, style }, index) => (
         <span key={name}>
           <span style={style}>
@@ -26,6 +26,7 @@ const AuthorList = ({ authors }: { authors: string[] }): JSX.Element => {
           {index < authorEntries.length - 1 ? ', ' : ''}
         </span>
       ))}
+      {'. '}
     </div>
   )
 }

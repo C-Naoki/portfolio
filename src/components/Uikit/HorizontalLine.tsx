@@ -1,5 +1,5 @@
-const HorizontalLine = (): JSX.Element => {
-  return <div className='horizontal-line'></div>
+const HorizontalLine = ({ main = true }: { main?: boolean }): JSX.Element => {
+  return <div className={main ? 'horizontal-line' : 'horizontal-subline'} />
 }
 
 export default HorizontalLine

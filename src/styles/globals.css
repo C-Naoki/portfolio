@@ -100,6 +100,42 @@ html, body {
   flex: 1;
 }
 
+.container {
+  margin-top: 95px !important;
+  max-width: 1150px !important;
+  background-color: var(--background-color);
+  padding-top: 5px !important;
+}
+
+.container h1 {
+  color: var(--heading-color);
+  font-size: 40px;
+  margin-bottom: 35px;
+  margin-top: 5px;
+  margin-left: 15px;
+}
+
+.section {
+  line-height: 1.5em;
+  margin-bottom: 30px !important;
+  background-color: var(--container-color);
+  border-radius: 8px;
+  padding: 25px 23px 10px 23px;
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--input-border-color);
+}
+
+.section h2 {
+  font-size: 25px;
+  margin-top: 2px;
+  margin-bottom: 15px;
+  color: var(--heading-color);
+}
+
+.section > ul > li {
+  margin-bottom: 10px;
+}
+
 .link {
   color: var(--link-color);
   margin-bottom: 0px;
@@ -112,8 +148,17 @@ html, body {
 }
 
 .horizontal-line {
-  margin-top: 0px;
-  margin-bottom: 10px;
+  background-color: var(--heading-color);
+  margin-top: 22px;
+  margin-bottom: 18px;
+  margin-left: 0px;
+  width: 100%;
+  height: 2.5px;
+}
+
+.horizontal-subline {
+  margin-top: 20px;
+  margin-bottom: 15px;
   margin-left: 0px;
   width: 100%;
   height: 1px;
@@ -123,6 +168,14 @@ html, body {
 .pre-wrap {
   white-space: pre-wrap;
   line-height: 1.25;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 .custom-list {
@@ -152,18 +205,53 @@ html, body {
   margin-bottom: 0px;
 }
 
-.highlight-style {
+.publication {
+  padding-left: 5px;
+  margin-bottom: 20px;
+}
+
+.publication-heading{
+  color: var(--subheading-color);
+  margin-bottom: 12px;
+}
+
+.author-list {
+  margin-bottom: 5px;
+  color: var(--text-color);
+  align-items: center
+}
+
+.award {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.award-icon {
+  font-size: 22px;
+  margin-right: 4px;
+}
+
+.highlight {
   font-weight: bold;
-  font-style: italic;
   font-family: 'Lato';
   font-size: 16.5px;
   color: var(--highlight-color);
 }
 
 .venue {
+  font-size: 16px;
+  color: var(--component-text-color);
+  margin-top: -2px;
+}
+
+.venue-name {
   font-style: italic;
   font-family: 'Lato';
-  font-size: 16.5px;
+}
+
+.resources {
+  margin-top: 2px;
 }
 
 .fa-icon {
@@ -187,20 +275,34 @@ html, body {
 }
 
 @media (max-width: 600px) {
-  h1 {
-    margin-top: -15px;
-  }
-
   body {
-    font-size: 14px;
+    font-size: 15px;
   }
 
-  .highlight-style {
-    font-size: 14.5px;
+  .highlight {
+    font-size: 15px;
   }
 
   .venue {
-    font-size: 14.5px;
+    font-size: 15px;
+  }
+
+  .container {
+    padding: 10px 10px 30px 10px;
+    margin-top: 50px !important;
+    margin-bottom: -10px !important;
+    border-radius: 0px;
+  }
+
+  .container h1 {
+    margin-left: 10px;
+    margin-bottom: 20px;
+    margin-top: 25px;
+    font-size: 30px;
+  }
+
+  .section {
+    padding: 25px 20px 5px 20px;
   }
 }
 

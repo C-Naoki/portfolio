@@ -1,16 +1,16 @@
 import React from 'react'
 
-import ExternalLink from '@/components/Uikit/ExternalLink'
-
 interface TitleProps {
-  url: string
+  href: string
   name: string
 }
 
-const Title: React.FC<TitleProps> = ({ url, name }) => {
+const Title: React.FC<TitleProps> = ({ href, name }) => {
   return (
     <div>
-      <ExternalLink url={url} text={name} bold={true} />
+      <a href={href}>
+        <h3 className='publication-heading'>{name}. </h3>
+      </a>
     </div>
   )
 }
