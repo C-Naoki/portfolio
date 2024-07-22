@@ -8,7 +8,7 @@
     "preparation": "準備中..."
   },
   "publications": {
-    "heading": "研究成果物",
+    "heading": "業績一覧",
     "conference": "学会",
     "journal": "論文誌",
     "patent": "特許",
@@ -17,15 +17,15 @@
       "title": "動的モード分解を活用した高速将来予測アルゴリズム",
       "venue": {
         "name": "第16回データ工学と情報マネジメントに関するフォーラム (DEIM2024)",
-        "others": "兵庫, 2024年2月29日〜3月5日"
+        "others": "兵庫, 2024年2月29日~3月5日"
       },
-      "awards": ["DEIM2024 優秀論文賞"]
+      "awards": ["優秀論文賞"]
     },
     "DAS2024": {
       "authors": ["李 艾義", "星牟禮 健也", "谷垣 慶", "波多野 遥太", "能澤 伶奈", "坂本 有紀", "韋 遠舟", "千原 直己", "小谷 尚輝"],
       "venue": {
         "name": "第36回自律分散システム・シンポジウム",
-        "others": "東京, 2024年2月16日〜2月17日"
+        "others": "東京, 2024年2月16日~2月17日"
       },
       "awards": []
     },
@@ -43,7 +43,7 @@
       "title": "周期解析による変動天体の検出",
       "venue": {
         "name": "第15回データ工学と情報マネジメントに関するフォーラム (DEIM2023)",
-        "others": "岐阜, 2023年3月5日〜3月9日"
+        "others": "岐阜, 2023年3月5日~3月9日"
       },
       "awards": []
     }
@@ -55,20 +55,24 @@
     "pakdd2023-date": "[2023年5月]",
     "pakdd2023": "Volunteer Award (PAKDD2023)",
     "hwip-date": "[2023年4月-現在]",
-    "hwip-scholarship": "ヒューマンウェアイノベーション博士課程プログラム"
+    "hwip": "ヒューマンウェアイノベーション博士課程プログラム",
+    "hwip-content1": "研究活動経費、国内出張旅費、給付型奨学金 etc."
   },
   "experiences": {
     "heading": "職歴",
-    "nagase-date": "[2020年9月-2023年3月]",
-    "nagase": "株式会社ナガセ デジタル技術エンジニア",
-    "IST-date": "[2021年6月-2023年3月]",
-    "IST": "大阪大学 情報科学研究科 アルバイト",
-    "IST-content1": "変動天体の探索に関する補助",
-    "TA-date": "[2023年4月-2023年9月]",
-    "TA": "大阪大学 工学部 ティーチング・アシスタント (TA)",
-    "TA-content1": "数学解析演習",
-    "SANKEN-date": "[2023年6月-現在]",
-    "SANKEN": "大阪大学 産業科学研究所 特任研究員S"
+    "nagase-date": "2020年9月-2023年3月",
+    "nagase": "株式会社ナガセ",
+    "nagase-role": "デジタル技術エンジニア",
+    "IST-date": "2021年6月-2023年3月",
+    "IST": "大阪大学 情報科学研究所",
+    "IST-role": "変動天体の探索に関する補助",
+    "TA-date": "2023年4月-2023年9月",
+    "TA": "大阪大学 工学部",
+    "TA-role": "ティーチング・アシスタント (TA)",
+    "TA-content1": "科目名: 数学解析演習",
+    "SANKEN-date": "2023年6月-現在",
+    "SANKEN": "大阪大学 産業科学研究所",
+    "SANKEN-role": "特任研究員S"
   },
   "affiliation": {
     "heading": "所属",
@@ -80,18 +84,18 @@
   },
   "education": {
     "heading": "学歴",
-    "secondary-date": "[2016年4月-2019年3月]",
-    "secondary": "高校",
+    "secondary-date": "2016年4月-2019年3月",
+    "secondary": "高等学校",
     "secondary-affiliation": "兵庫県立 宝塚北高校 普通科",
-    "Bachelor-date": "[2019年4月-2023年3月]",
+    "Bachelor-date": "2019年4月-2023年3月",
     "Bachelor": "学士（工学）",
     "Bachelor-affiliation": "大阪大学 工学部 電子情報工学科",
     "Bachelor-supervisor": "指導教員：鬼塚 真 教授",
-    "Master-date": "[2023年4月-現在]",
+    "Master-date": "2023年4月-現在",
     "Master": "修士（情報科学）",
     "Master-affiliation": "大阪大学 情報科学研究科 情報システム工学専攻",
     "Master-supervisor": "指導教員：櫻井 保志 教授",
-    "Doctor-date": "[2025年4月-現在]",
+    "Doctor-date": "2025年4月-現在",
     "Doctor": "博士（情報科学）",
     "Doctor-affiliation": "大阪大学 情報科学研究科 情報システム工学専攻"
   },

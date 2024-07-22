@@ -10,8 +10,9 @@
 }
 
 .form {
+  border-radius: 8px !important;
   padding: 20px;
-  background-color: var(--background-color);
+  background-color: var(--container-color);
 }
 
 .button {

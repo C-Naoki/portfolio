@@ -1,9 +1,10 @@
 :root {
   --text-color: #323232;
-  --background-color: #FFFFFF;
+  --background-color: #e8f0e8;
+  --container-color: #ffffff;
   --button-bg-color: #FF8809;
   --button-hover-bg-color: #BE6C15;
-  --link-color: #1771cf;
+  --link-color: #008080;
   --link-hover-color: #FF4500;
   --box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   --input-border-color: #DEDEDE;
@@ -12,24 +13,31 @@
   --main-color: #007B59;
   --footer-text-color: #A9A9A9;
   --drawer-icon-color: #757575;
-  --highlight-color: #D72727;
+  --highlight-color: #CA8A03;
+  --heading-color: #1b5e20;
+  --subheading-color: #4A7C6A;
+  --component-text-color: #4b5563;
 }
 
 [data-theme="dark"] {
   --text-color: #D4D4D4;
-  --background-color: #191919;
+  --background-color: #1a1f25;
+  --container-color: #252b33;
   --button-bg-color: #BE6C15;
   --button-hover-bg-color: #9e520e;
-  --link-color: #81B1D2;
+  --link-color: #68a5a5;
   --link-hover-color: #FA8174;
-  --box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.15);
+  --box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
   --input-border-color: #404040;
   --input-hover-border-color: #CCCCCC;
   --placeholder-color: #B2B2B2;
   --main-color: #005A42;
   --footer-text-color: #535252;
   --drawer-icon-color: #D4D4D4;
-  --highlight-color: #df4545;
+  --highlight-color: #E6B64C;
+  --heading-color: #5a9c7f;
+  --subheading-color: #6EAE99;
+  --component-text-color: #a0aec0;
 }
 
 body {
@@ -138,13 +146,36 @@ html, body {
 
 .link {
   color: var(--link-color);
-  margin-bottom: 0px;
-  padding: 4px 0;
+  text-decoration: none;
+  position: relative;
+  vertical-align: baseline;
+  background-image: linear-gradient(var(--link-color), var(--link-color));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1.5px;
+  transition: background-size 0.2s ease-in-out;
 }
 
 .link:hover {
-  color: var(--link-color);
-  text-decoration: underline;
+  background-size: 100% 1.5px;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1.5px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--link-color);
+  transform-origin: bottom right;
+  transition: transform 0.2s ease-out;
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .horizontal-line {
@@ -179,7 +210,7 @@ html, body {
 }
 
 .custom-list {
-  margin-bottom: -7px;
+  margin-bottom: 12px;
 }
 
 .custom-list > li {
@@ -195,14 +226,62 @@ html, body {
 
 .custom-nested-list {
   padding-left: 20px;
-  margin-top: 0px;
-  margin-bottom: -1px;
+  margin-top: 7px;
+  margin-bottom: 0px;
   margin-left: 10px;
   list-style: disc;
 }
 
 .custom-nested-list > li {
   margin-bottom: 0px;
+}
+
+.experience {
+  padding-left: 5px;
+  margin-bottom: 15px;
+}
+
+.experience-heading{
+  color: var(--subheading-color);
+  margin-bottom: 12px;
+}
+
+.experience-component {
+  margin-bottom: 5px;
+  color: var(--component-text-color);
+  display: flex;
+  align-items: center
+}
+
+.experience-icon {
+  color: var(--subheading-color);
+  font-size: 20px;
+  margin-left: -2px;
+  margin-right: 6px;
+}
+
+.education {
+  padding-left: 5px;
+  margin-bottom: 15px;
+}
+
+.education-heading{
+  color: var(--subheading-color);
+  margin-bottom: 12px;
+}
+
+.education-component {
+  margin-bottom: 5px;
+  color: var(--component-text-color);
+  display: flex;
+  align-items: center
+}
+
+.education-icon {
+  color: var(--subheading-color);
+  font-size: 20px;
+  margin-left: -2px;
+  margin-right: 6px;
 }
 
 .publication {
@@ -217,7 +296,7 @@ html, body {
 
 .author-list {
   margin-bottom: 5px;
-  color: var(--text-color);
+  color: var(--component-text-color);
   align-items: center
 }
 
