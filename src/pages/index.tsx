@@ -49,6 +49,9 @@ export default function Home (): JSX.Element {
         <h2>{t('grants.heading')}</h2>
         <HorizontalLine />
         <ul className="custom-list">
+          <li data-marker={t('grants.yamashita-date')}>
+            <ExternalLink url="https://www.ipsj.or.jp/award/yamashita2024.html" text={t('grants.yamashita')} />
+          </li>
           <li data-marker={t('grants.deim2024-date')}>
             <ExternalLink url="https://confit.atlas.jp/guide/event/deim2024/static/awards" text={t('grants.deim2024')} />
           </li>
