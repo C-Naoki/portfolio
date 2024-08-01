@@ -30,7 +30,7 @@
         "name": "The 16th Forum on Data Engineering and Information Management (DEIM2024)",
         "others": "Hyogo, Japan, February 28 - March 5, 2024"
       },
-      "awards": ["Best Paper Award Runner-up"]
+      "awards": ["Best Paper Award Runner-up", "2024 IPSJ Yamashita SIG Research Award"]
     },
     "DAS2024": {
       "authors": ["Aiyi Li", "Kenya Hoshimure", "Kei Tanigaki", "Yota Hatano", "Reina Nozawa", "Yuki Sakamoto", "Yuanzhou Wei", "Naoki Chihara", "Naoki Kodani"],
@@ -70,6 +70,8 @@
   },
   "grants": {
     "heading": "Grants & Awards",
+    "yamashita-date": "[2024.07]",
+    "yamashita": "2024 IPSJ Yamashita SIG Research Award",
     "deim2024-date": "[2024.06]",
     "deim2024": "DEIM2024 Best Paper Award Runner-up",
     "pakdd2023-date": "[2023.05]",
