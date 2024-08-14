@@ -92,7 +92,7 @@
 }
 
 .drawer {
-  background-color: var(--background-color) !important;
+  background-color: var(--container-color) !important;
 }
 
 /* drawerContainer.tsx */
