@@ -5,6 +5,8 @@
   "profile": "I am a M.Sc. student at Osaka University, Japan. I am interested in time-series analysis.",
   "blog": {
     "heading": "Blog",
+    "article": "Article",
+    "book": "Book",
     "preparation": "Coming Soon..."
   },
   "biography": {

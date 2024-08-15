@@ -45,7 +45,7 @@ const Header: React.FC = () => {
           </Typography>
           <div className={styles.headerOptionsLarge}>
             <AnimatedButton href='/'>Home</AnimatedButton>
-            <AnimatedButton href={externalLinksInfo.zenn}>Blog</AnimatedButton>
+            <AnimatedButton href='/blog'>Blog</AnimatedButton>
             <AnimatedButton href='/publications'>Publications</AnimatedButton>
             <AnimatedButton href='/contact'>Contact</AnimatedButton>
             <div className={styles.toolbarCenter}>
