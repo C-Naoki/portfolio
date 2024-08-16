@@ -77,11 +77,11 @@ export default function Home (): JSX.Element {
       <section className="section" id='education'>
         <h2>{t('education.heading')}</h2>
         <HorizontalLine />
-        <Education type='Master' t={t}/>
+        <Education type='Master'/>
         <HorizontalLine main={false}/>
-        <Education type='Bachelor' t={t}/>
+        <Education type='Bachelor'/>
         <HorizontalLine main={false}/>
-        <Education type='secondary' t={t}/>
+        <Education type='secondary'/>
       </section>
       <section className="section" id='misc'>
         <h2>{t('misc.heading')}</h2>
