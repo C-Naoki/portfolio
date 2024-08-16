@@ -126,7 +126,7 @@ export default function Contact (): JSX.Element {
                   />
                 </Grid>
                 <Grid item xs={12}>
-                  <Button fullWidth type="submit" variant="contained" color="primary" className={styles.button} >
+                  <Button fullWidth type="submit" variant="contained" color="primary" className={styles.button}>
                     <span>{t('contact.send')}</span>
                   </Button>
                 </Grid>

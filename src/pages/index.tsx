@@ -20,25 +20,25 @@ export default function Home (): JSX.Element {
         <Trans
           i18nKey="welcome"
           components={{
-            link_makoto: <TransLink url="http://www-bigdata.ist.osaka-u.ac.jp/professor/onizuka/onizuka_en.html" />,
-            link_yasushi: <TransLink url="https://www.dm.sanken.osaka-u.ac.jp/~yasushi/index-j.html" />,
-            link_yasuko: <TransLink url="https://www.dm.sanken.osaka-u.ac.jp/~yasuko/index.html" />,
-            link_hwip: <TransLink url="https://www.humanware.osaka-u.ac.jp/en/" />
+            link_makoto: <TransLink url="http://www-bigdata.ist.osaka-u.ac.jp/professor/onizuka/onizuka_en.html"/>,
+            link_yasushi: <TransLink url="https://www.dm.sanken.osaka-u.ac.jp/~yasushi/index-j.html"/>,
+            link_yasuko: <TransLink url="https://www.dm.sanken.osaka-u.ac.jp/~yasuko/index.html"/>,
+            link_hwip: <TransLink url="https://www.humanware.osaka-u.ac.jp/en/"/>
           }}
         />
         <div style={{ marginTop: '15px', marginBottom: '12px' }}>
-          <FaDownload className="fa-icon" />
-          <Trans i18nKey="cv" components={{ link_cv: <TransLink url="assets/CV.pdf" /> }} />
+          <FaDownload className="fa-icon"/>
+          <Trans i18nKey="cv" components={{ link_cv: <TransLink url="assets/CV.pdf"/> }}/>
         </div>
       </section>
       <section className="section" id='affiliation'>
         <h2>{t('affiliation.heading')}</h2>
         <HorizontalLine />
         <div>
-          <ExternalLink url="https://www.dm.sanken.osaka-u.ac.jp/" text={t('affiliation.laboratory')} /><br />
-          <ExternalLink url="https://www.sanken.osaka-u.ac.jp/en/" text={t('affiliation.SANKEN')} /><br />
-          <ExternalLink url="https://www.ist.osaka-u.ac.jp/english/" text={t('affiliation.graduate')} /><br />
-          <ExternalLink url="https://www.osaka-u.ac.jp/en" text={t('affiliation.university')} /><br />
+          <ExternalLink url="https://www.dm.sanken.osaka-u.ac.jp/" text={t('affiliation.laboratory')}/><br />
+          <ExternalLink url="https://www.sanken.osaka-u.ac.jp/en/" text={t('affiliation.SANKEN')}/><br />
+          <ExternalLink url="https://www.ist.osaka-u.ac.jp/english/" text={t('affiliation.graduate')}/><br />
+          <ExternalLink url="https://www.osaka-u.ac.jp/en" text={t('affiliation.university')}/><br />
         </div>
         <div style={{ marginTop: '15px', marginBottom: '12px' }}>
           <FaMapMarkerAlt className="fa-icon" />{t('affiliation.address')}<br />
@@ -50,13 +50,13 @@ export default function Home (): JSX.Element {
         <HorizontalLine />
         <ul className="custom-list">
           <li data-marker={t('grants.yamashita-date')}>
-            <ExternalLink url="https://www.ipsj.or.jp/award/yamashita2024.html" text={t('grants.yamashita')} />
+            <ExternalLink url="https://www.ipsj.or.jp/award/yamashita2024.html" text={t('grants.yamashita')}/>
           </li>
           <li data-marker={t('grants.deim2024-date')}>
-            <ExternalLink url="https://confit.atlas.jp/guide/event/deim2024/static/awards" text={t('grants.deim2024')} />
+            <ExternalLink url="https://confit.atlas.jp/guide/event/deim2024/static/awards" text={t('grants.deim2024')}/>
           </li>
           <li data-marker={t('grants.hwip-date')}>
-            <ExternalLink url="https://www.humanware.osaka-u.ac.jp/" text={t('grants.hwip')} />
+            <ExternalLink url="https://www.humanware.osaka-u.ac.jp/" text={t('grants.hwip')}/>
             <ul className="custom-nested-list">
               <li>{t('grants.hwip-content1')}</li>
             </ul>
@@ -66,22 +66,22 @@ export default function Home (): JSX.Element {
       <section className="section" id='experiences'>
         <h2>{t('experiences.heading')}</h2>
         <HorizontalLine />
-        <Experiences type='SANKEN' />
-        <HorizontalLine main={false} />
-        <Experiences type='TA' />
-        <HorizontalLine main={false} />
-        <Experiences type='IST' />
-        <HorizontalLine main={false} />
-        <Experiences type='nagase' />
+        <Experiences type='SANKEN'/>
+        <HorizontalLine main={false}/>
+        <Experiences type='TA'/>
+        <HorizontalLine main={false}/>
+        <Experiences type='IST'/>
+        <HorizontalLine main={false}/>
+        <Experiences type='nagase'/>
       </section>
       <section className="section" id='education'>
         <h2>{t('education.heading')}</h2>
         <HorizontalLine />
-        <Education type='Master' />
-        <HorizontalLine main={false} />
-        <Education type='Bachelor' />
-        <HorizontalLine main={false} />
-        <Education type='secondary' />
+        <Education type='Master' t={t}/>
+        <HorizontalLine main={false}/>
+        <Education type='Bachelor' t={t}/>
+        <HorizontalLine main={false}/>
+        <Education type='secondary' t={t}/>
       </section>
       <section className="section" id='misc'>
         <h2>{t('misc.heading')}</h2>
@@ -95,7 +95,7 @@ export default function Home (): JSX.Element {
           </li>
           <li data-marker={t('misc.pandacco-date')}>
             <span>{t('misc.pandacco')} </span>
-            <ExternalLink url='https://pandacco.web.app/' bracket={true} />
+            <ExternalLink url='https://pandacco.web.app/' bracket={true}/>
             <ul className="custom-nested-list">
               <li>Google Developer Student Clubs (GDSC)</li>
             </ul>
