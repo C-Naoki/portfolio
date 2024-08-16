@@ -15,6 +15,14 @@
   "plugins": [
     "react"
   ],
+  "overrides": [
+    {
+      "files": ["next.config.js", "next-i18next.config.js"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ],
   "rules": {
     "import/order": [
       "error",
