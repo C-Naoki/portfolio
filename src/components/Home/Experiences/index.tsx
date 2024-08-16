@@ -1,10 +1,8 @@
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined'
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline'
-import { useTranslation } from 'next-i18next'
 
-const Experiences = ({ type }: { type: string }): JSX.Element => {
-  const { t } = useTranslation()
-
+import type { TFunction } from 'next-i18next'
+const Experiences = ({ type, t }: { type: string, t: TFunction }): JSX.Element => {
   return (
     <div className='experience'>
       <h3 className='experience-heading'>{t(`experiences.${type}`)}</h3>
