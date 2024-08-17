@@ -1,3 +1,4 @@
+/* ===== General Options ===== */
 :root {
   --text-color: #323232;
   --background-color: #e8f0e8;
@@ -104,25 +105,6 @@ html, body {
   min-height: 100vh;
 }
 
-.main-content {
-  flex: 1;
-}
-
-.container {
-  margin-top: 95px !important;
-  max-width: 1150px !important;
-  background-color: var(--background-color);
-  padding-top: 5px !important;
-}
-
-.container h1 {
-  color: var(--heading-color);
-  font-size: 40px;
-  margin-bottom: 35px;
-  margin-top: 5px;
-  margin-left: 15px;
-}
-
 .section {
   line-height: 1.5em;
   margin-bottom: 30px !important;
@@ -178,29 +160,6 @@ html, body {
   transform-origin: bottom left;
 }
 
-.horizontal-line {
-  background-color: var(--heading-color);
-  margin-top: 22px;
-  margin-bottom: 18px;
-  margin-left: 0px;
-  width: 100%;
-  height: 2.5px;
-}
-
-.horizontal-subline {
-  margin-top: 20px;
-  margin-bottom: 15px;
-  margin-left: 0px;
-  width: 100%;
-  height: 1px;
-  background-color: var(--input-border-color);
-}
-
-.pre-wrap {
-  white-space: pre-wrap;
-  line-height: 1.25;
-}
-
 .italic {
   font-style: italic;
 }
@@ -209,6 +168,28 @@ html, body {
   font-weight: bold;
 }
 
+/* ===== _app.tsx ===== */
+.main-content {
+  flex: 1;
+}
+
+/* ===== Layout.tsx ===== */
+.container {
+  margin-top: 95px !important;
+  max-width: 1150px !important;
+  background-color: var(--background-color);
+  padding-top: 5px !important;
+}
+
+.container h1 {
+  color: var(--heading-color);
+  font-size: 40px;
+  margin-bottom: 35px;
+  margin-top: 5px;
+  margin-left: 15px;
+}
+
+/* ===== index.tsx ===== */
 .custom-list {
   margin-bottom: 12px;
 }
@@ -241,7 +222,7 @@ html, body {
   margin-bottom: 15px;
 }
 
-.experience-heading{
+.experience-heading {
   color: var(--subheading-color);
   margin-bottom: 12px;
 }
@@ -265,7 +246,7 @@ html, body {
   margin-bottom: 15px;
 }
 
-.education-heading{
+.education-heading {
   color: var(--subheading-color);
   margin-bottom: 12px;
 }
@@ -284,6 +265,7 @@ html, body {
   margin-right: 6px;
 }
 
+/* ===== blog.tsx ===== */
 .blog {
   margin-left: 5px !important;
   margin-bottom: 15px !important;
@@ -295,25 +277,13 @@ html, body {
   color: var(--subheading-color);
 }
 
-.show-more-button {
-  display: block;
-  margin: -15px auto 35px auto;
-  background-color: transparent;
-  border: none;
-  font-size: 14px;
-  text-decoration: underline dotted;
-}
-
-.show-more-button:hover {
-  color: var(--button-hover-bg-color);
-}
-
+/* ===== publications.tsx ===== */
 .publication {
   padding-left: 5px;
   margin-bottom: 20px;
 }
 
-.publication-heading{
+.publication-heading {
   color: var(--subheading-color);
   margin-bottom: 12px;
 }
@@ -362,6 +332,25 @@ html, body {
   margin-bottom: -1px;
 }
 
+/* ===== components ===== */
+.horizontal-line {
+  background-color: var(--heading-color);
+  margin-top: 22px;
+  margin-bottom: 18px;
+  margin-left: 0px;
+  width: 100%;
+  height: 2.5px;
+}
+
+.horizontal-subline {
+  margin-top: 20px;
+  margin-bottom: 15px;
+  margin-left: 0px;
+  width: 100%;
+  height: 1px;
+  background-color: var(--input-border-color);
+}
+
 .scroll-to-top-button {
   position: fixed;
   bottom: 1.25rem;
@@ -375,6 +364,19 @@ html, body {
 
 .scroll-to-top-button svg {
   stroke-width: 4px;
+}
+
+.show-more-button {
+  display: block;
+  margin: -15px auto 35px auto;
+  background-color: transparent;
+  border: none;
+  font-size: 14px;
+  text-decoration: underline dotted;
+}
+
+.show-more-button:hover {
+  color: var(--button-hover-bg-color);
 }
 
 @media (max-width: 600px) {
