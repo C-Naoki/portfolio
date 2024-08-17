@@ -5,6 +5,7 @@ import { FaDownload, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
 import Education from '@/components/Home/Education'
 import Experiences from '@/components/Home/Experiences'
 import Layout from '@/components/Layouts/Layout'
+import Section from '@/components/Layouts/Section'
 import ExternalLink from '@/components/Uikit/ExternalLink'
 import HorizontalLine from '@/components/Uikit/HorizontalLine'
 import TransLink from '@/components/Uikit/TransLink'
@@ -14,8 +15,7 @@ export default function Home (): JSX.Element {
 
   return (
     <Layout title={t('title')}>
-      <section className="section" id='affiliation'>
-        <h2>{t('biography.heading')}</h2>
+      <Section id='biography' title={t('biography.heading')}>
         <HorizontalLine />
         <Trans
           i18nKey="welcome"
@@ -30,9 +30,8 @@ export default function Home (): JSX.Element {
           <FaDownload className="fa-icon"/>
           <Trans i18nKey="cv" components={{ link_cv: <TransLink url="assets/CV.pdf"/> }}/>
         </div>
-      </section>
-      <section className="section" id='affiliation'>
-        <h2>{t('affiliation.heading')}</h2>
+      </Section>
+      <Section id='affiliation' title={t('affiliation.heading')}>
         <HorizontalLine />
         <div>
           <ExternalLink url="https://www.dm.sanken.osaka-u.ac.jp/" text={t('affiliation.laboratory')}/><br />
@@ -44,9 +43,8 @@ export default function Home (): JSX.Element {
           <FaMapMarkerAlt className="fa-icon" />{t('affiliation.address')}<br />
           <FaEnvelope className="fa-icon" />naoki88[at]sanken.osaka-u.ac.jp
         </div>
-      </section>
-      <section className="section" id='grants'>
-        <h2>{t('grants.heading')}</h2>
+      </Section>
+      <Section id='grants' title={t('grants.heading')}>
         <HorizontalLine />
         <ul className="custom-list">
           <li data-marker={t('grants.yamashita-date')}>
@@ -62,9 +60,8 @@ export default function Home (): JSX.Element {
             </ul>
           </li>
         </ul>
-      </section>
-      <section className="section" id='experiences'>
-        <h2>{t('experiences.heading')}</h2>
+      </Section>
+      <Section id='experiences' title={t('experiences.heading')}>
         <HorizontalLine />
         <Experiences type='SANKEN' t={t}/>
         <HorizontalLine main={false}/>
@@ -73,18 +70,16 @@ export default function Home (): JSX.Element {
         <Experiences type='IST' t={t}/>
         <HorizontalLine main={false}/>
         <Experiences type='nagase' t={t}/>
-      </section>
-      <section className="section" id='education'>
-        <h2>{t('education.heading')}</h2>
+      </Section>
+      <Section id='education' title={t('education.heading')}>
         <HorizontalLine />
         <Education type='Master' t={t}/>
         <HorizontalLine main={false}/>
         <Education type='Bachelor' t={t}/>
         <HorizontalLine main={false}/>
         <Education type='secondary' t={t}/>
-      </section>
-      <section className="section" id='misc'>
-        <h2>{t('misc.heading')}</h2>
+      </Section>
+      <Section id='misc' title={t('misc.heading')}>
         <HorizontalLine />
         <ul className="custom-list">
           <li data-marker={t('misc.pigicon2023-date')}>
@@ -101,7 +96,7 @@ export default function Home (): JSX.Element {
             </ul>
           </li>
         </ul>
-      </section>
+      </Section>
     </Layout>
   )
 }

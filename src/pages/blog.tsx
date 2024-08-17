@@ -9,6 +9,7 @@ import type { GetServerSideProps } from 'next'
 import ArticleList from '@/components/Blog/ArticleList'
 import BookList from '@/components/Blog/BookList'
 import Layout from '@/components/Layouts/Layout'
+import Section from '@/components/Layouts/Section'
 import HorizontalLine from '@/components/Uikit/HorizontalLine'
 
 export default function Blog ({ articles, books }: { articles: Article[], books: Book[] }): JSX.Element {
@@ -26,8 +27,7 @@ export default function Blog ({ articles, books }: { articles: Article[], books:
 
   return (
     <Layout title={t('blog.heading')}>
-      <section className="section" id='article'>
-        <h2>{t('blog.article')}</h2>
+      <Section id='article' title={t('blog.article')}>
         <HorizontalLine />
         {articles.slice(0, visibleArticles).map((article, index) => (
           <div key={article.id}>
@@ -35,14 +35,13 @@ export default function Blog ({ articles, books }: { articles: Article[], books:
             {index < visibleArticles - 1 && index < articles.length - 1 && <HorizontalLine main={false}/>}
           </div>
         ))}
-      </section>
+      </Section>
       {visibleArticles < articles.length && (
           <button onClick={articleShowMore} className="show-more-button">
             Show More
           </button>
       )}
-      <section className="section" id='book'>
-        <h2>{t('blog.book')}</h2>
+      <Section id='book' title={t('blog.book')}>
         <HorizontalLine />
         {books.slice(0, visibleBooks).map((book, index) => (
           <div key={book.id}>
@@ -50,7 +49,7 @@ export default function Blog ({ articles, books }: { articles: Article[], books:
             {index < visibleBooks - 1 && index < books.length - 1 && <HorizontalLine main={false}/>}
           </div>
         ))}
-      </section>
+      </Section>
       {visibleBooks < books.length && (
           <button onClick={bookShowMore} className="show-more-button">
             Show More
