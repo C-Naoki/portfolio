@@ -113,6 +113,7 @@ html, body {
   padding: 25px 23px 10px 23px;
   box-shadow: var(--box-shadow);
   border: 1px solid var(--input-border-color);
+  scroll-margin-top: 80px;
 }
 
 .section h2 {
@@ -124,6 +125,17 @@ html, body {
 
 .section > ul > li {
   margin-bottom: 10px;
+}
+
+.section-hash {
+  position: absolute;
+  left: -1.5em;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.section-title:hover .section-hash {
+  opacity: 1;
 }
 
 .link {
