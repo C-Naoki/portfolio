@@ -295,6 +295,19 @@ html, body {
   color: var(--subheading-color);
 }
 
+.show-more-button {
+  display: block;
+  margin: -15px auto 35px auto;
+  background-color: transparent;
+  border: none;
+  font-size: 14px;
+  text-decoration: underline dotted;
+}
+
+.show-more-button:hover {
+  color: var(--button-hover-bg-color);
+}
+
 .publication {
   padding-left: 5px;
   margin-bottom: 20px;
