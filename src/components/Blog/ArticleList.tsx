@@ -16,7 +16,7 @@ const ArticleList = ({ article }: Props): JSX.Element => {
 
   return (
     <div className='blog'>
-      <h3><ExternalLink url={`https://zenn.dev${article.user.username}`} text={article.title} /></h3>
+      <h3><ExternalLink url={`https://zenn.dev/${article.user.username}/articles/${article.slug}`} text={article.title} /></h3>
       <div className={styles.articleMeta}>
         <span className={styles.articleDate}>{formatDate(article.published_at)}</span>
         <span className={styles.articleEmoji}>{article.emoji}</span>
