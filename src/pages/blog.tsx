@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
@@ -11,29 +13,49 @@ import HorizontalLine from '@/components/Uikit/HorizontalLine'
 
 export default function Blog ({ articles, books }: { articles: Article[], books: Book[] }): JSX.Element {
   const { t } = useTranslation()
+  const [visibleArticles, setVisibleArticles] = useState(4)
+  const [visibleBooks, setvisibleBooks] = useState(4)
+
+  const articleShowMore = (): void => {
+    setVisibleArticles(prev => prev + 4)
+  }
+
+  const bookShowMore = (): void => {
+    setvisibleBooks(prev => prev + 4)
+  }
 
   return (
     <Layout title={t('blog.heading')}>
       <section className="section" id='article'>
         <h2>{t('blog.article')}</h2>
         <HorizontalLine />
-        {articles.map((article, index) => (
+        {articles.slice(0, visibleArticles).map((article, index) => (
           <div key={article.id}>
-            <ArticleList key={article.id} article={article} />
-            {index < articles.length - 1 && <HorizontalLine main={false}/>}
+            <ArticleList article={article} />
+            {index < visibleArticles - 1 && index < articles.length - 1 && <HorizontalLine main={false}/>}
           </div>
         ))}
       </section>
+      {visibleArticles < articles.length && (
+          <button onClick={articleShowMore} className="show-more-button">
+            Show More
+          </button>
+      )}
       <section className="section" id='book'>
         <h2>{t('blog.book')}</h2>
         <HorizontalLine />
-        {books.map((book, index) => (
+        {books.slice(0, visibleBooks).map((book, index) => (
           <div key={book.id}>
-            <BookList key={book.id} book={book} />
-            {index < books.length - 1 && <HorizontalLine main={false}/>}
+            <BookList book={book} />
+            {index < visibleBooks - 1 && index < books.length - 1 && <HorizontalLine main={false}/>}
           </div>
         ))}
       </section>
+      {visibleBooks < books.length && (
+          <button onClick={bookShowMore} className="show-more-button">
+            Show More
+          </button>
+      )}
     </Layout>
   )
 }
