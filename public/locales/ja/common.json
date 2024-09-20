@@ -9,6 +9,9 @@
     "book": "本",
     "preparation": "準備中..."
   },
+  "biography": {
+    "heading": "略歴"
+  },
   "publications": {
     "heading": "業績一覧",
     "conference": "学会",
