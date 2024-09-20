@@ -11,7 +11,7 @@ import externalLinksInfo from '@/constants/externalLinksInfo'
 export default function Publication ({ name }: { name: string }): JSX.Element {
   const { t } = useTranslation()
   const links = externalLinksInfo[name]
-  const authors: string[] = t(`publications.${name}.authors`, { returnObjects: true })
+  const authors = t(`publications.${name}.authors`, { returnObjects: true }) as string[]
 
   return (
     <div className='publication'>
