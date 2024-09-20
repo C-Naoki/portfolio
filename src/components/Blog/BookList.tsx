@@ -1,5 +1,3 @@
-import ExternalLink from '../Uikit/ExternalLink'
-
 import type { Book } from '@/types/blog.d'
 
 import styles from '@/styles/blog.module.css'
@@ -16,7 +14,9 @@ const BookList = ({ book }: Props): JSX.Element => {
 
   return (
     <div className='blog'>
-      <h3><ExternalLink url={`https://zenn.dev/${book.user.username}/books/${book.slug}`} text={book.title} /></h3>
+      <a href={`https://zenn.dev/${book.user.username}/books/${book.slug}`}>
+        <h3 className='publication-heading'>{book.title}</h3>
+      </a>
       <div className={styles.articleMeta}>
         <span className={styles.articleDate}>{formatDate(book.published_at)}</span>
       </div>
