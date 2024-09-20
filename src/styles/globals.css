@@ -21,14 +21,14 @@
 }
 
 [data-theme="dark"] {
-  --text-color: #D4D4D4;
-  --background-color: #191919;
-  --container-color: #262626;
+  --text-color: #f1f1f1;
+  --background-color: #1d1f1d;
+  --container-color: #2f2f2f;
   --button-bg-color: #BE6C15;
   --button-hover-bg-color: #9e520e;
-  --link-color: #6eb5b0;
+  --link-color: #6cbfbe;
   --link-hover-color: #FA8174;
-  --box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+  --box-shadow: 0px 4px 10px rgba(255, 255, 255, 0);
   --input-border-color: #404040;
   --input-hover-border-color: #CCCCCC;
   --placeholder-color: #B2B2B2;
@@ -36,9 +36,9 @@
   --footer-text-color: #535252;
   --drawer-icon-color: #D4D4D4;
   --highlight-color: #E6B64C;
-  --heading-color: #68ac78;
-  --subheading-color: #6EAE99;
-  --component-text-color: #a0aec0;
+  --heading-color: #a3d0b4;
+  --subheading-color: #a3d0b4;
+  --component-text-color: #c5d0dc;
 }
 
 body {
