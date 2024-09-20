@@ -6,8 +6,7 @@
 }
 
 .articleDate {
-  font-size: 12px;
-  color: #586069;
+  color: var(--component-text-color);
 }
 
 .articleTags {

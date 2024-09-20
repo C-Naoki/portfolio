@@ -25,6 +25,7 @@
 
 .paper {
   box-shadow: var(--box-shadow);
+  border-radius: 10px !important;
 }
 
 .textField {
