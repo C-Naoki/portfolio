@@ -29,7 +29,7 @@ export default function Publications (): JSX.Element {
       </Section>
       <Section id='patent' title={t('publications.patent')}>
         <HorizontalLine />
-        <ul>
+        <ul style={{ marginBottom: '0px' }}>
           <li>
             発明等：検出装置、検出⽅法及びプログラム<br />
             発明者：藤原 靖宏, 鬼塚 真, <span style={{ fontWeight: 'bold', textDecoration: 'underline' }}>千原 直己</span><br />

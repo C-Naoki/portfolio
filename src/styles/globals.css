@@ -110,7 +110,7 @@ html, body {
   margin-bottom: 30px !important;
   background-color: var(--container-color);
   border-radius: 8px;
-  padding: 25px 23px 10px 23px;
+  padding: 25px 23px 20px 23px;
   box-shadow: var(--box-shadow);
   border: 1px solid var(--input-border-color);
   scroll-margin-top: 80px;
@@ -203,18 +203,22 @@ html, body {
 
 /* ===== index.tsx ===== */
 .custom-list {
-  margin-bottom: 12px;
+  margin-bottom: 0px;
 }
 
-.custom-list > li {
-  margin-top: 0px;
-  margin-bottom: 2px;
+ul.custom-list > li {
   margin-left: -19px;
+  margin-top: 10px;
+  margin-bottom: 5px;
   display: block;
 }
 
 .custom-list > li:before {
   content: attr(data-marker) ": ";
+}
+
+.custom-list > li > ul {
+  margin-bottom: 0px;
 }
 
 .custom-nested-list {
@@ -229,9 +233,26 @@ html, body {
   margin-bottom: 0px;
 }
 
+.news {
+  width: 98%;
+  height: 150px;
+  overflow: auto;
+  margin-bottom: 0px;
+}
+
+ul.news > li {
+  margin-left: -19px;
+  display: block;
+}
+
+.news > li:before {
+  content: attr(data-marker) ": ";
+}
+
 .experience {
   padding-left: 5px;
-  margin-bottom: 15px;
+  margin-top: 15px;
+  margin-bottom: 8px;
 }
 
 .experience-heading {
@@ -255,7 +276,8 @@ html, body {
 
 .education {
   padding-left: 5px;
-  margin-bottom: 15px;
+  margin-top: 15px;
+  margin-bottom: 8px;
 }
 
 .education-heading {
@@ -292,7 +314,7 @@ html, body {
 /* ===== publications.tsx ===== */
 .publication {
   padding-left: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .publication-heading {
@@ -423,7 +445,7 @@ html, body {
   }
 
   .section {
-    padding: 25px 20px 5px 20px;
+    padding: 25px 20px 20px 20px;
   }
 }
 
