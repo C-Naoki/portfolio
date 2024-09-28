@@ -26,7 +26,7 @@ export default function Home (): JSX.Element {
             link_hwip: <TransLink url="https://www.humanware.osaka-u.ac.jp/en/"/>
           }}
         />
-        <div style={{ marginTop: '15px', marginBottom: '12px' }}>
+        <div style={{ marginTop: '15px' }}>
           <FaDownload className="fa-icon"/>
           <Trans i18nKey="cv" components={{ link_cv: <TransLink url="assets/CV.pdf"/> }}/>
         </div>
@@ -39,10 +39,39 @@ export default function Home (): JSX.Element {
           <ExternalLink url="https://www.ist.osaka-u.ac.jp/english/" text={t('affiliation.graduate')}/><br />
           <ExternalLink url="https://www.osaka-u.ac.jp/en" text={t('affiliation.university')}/><br />
         </div>
-        <div style={{ marginTop: '15px', marginBottom: '12px' }}>
+        <div style={{ marginTop: '15px' }}>
           <FaMapMarkerAlt className="fa-icon" />{t('affiliation.address')}<br />
           <FaEnvelope className="fa-icon" />naoki88[at]sanken.osaka-u.ac.jp
         </div>
+      </Section>
+      <Section id='news' title={t('news.heading')}>
+        <HorizontalLine />
+        <ul className="news">
+          <li data-marker={t('news.dc1-date')}>
+            <span>{t('news.dc1')}</span>
+          </li>
+          <li data-marker={t('news.yamashita-award-date')}>
+            <span>{t('news.yamashita-award')}</span>
+          </li>
+          <li data-marker={t('news.kddpc2024-date')}>
+            <span>{t('news.kddpc2024')}</span>
+          </li>
+          <li data-marker={t('news.deim2024-award-date')}>
+            <span>{t('news.deim2024-award')}</span>
+          </li>
+          <li data-marker={t('news.tod101-date')}>
+            <span>{t('news.tod101')}</span>
+          </li>
+          <li data-marker={t('news.AstronComput45-date')}>
+            <span>{t('news.AstronComput45')}</span>
+          </li>
+          <li data-marker={t('news.bachelor-graduate-date')}>
+            <span>{t('news.bachelor-graduate')}</span>
+          </li>
+          <li data-marker={t('news.hwip-passing-date')}>
+            <span>{t('news.hwip-passing')}</span>
+          </li>
+        </ul>
       </Section>
       <Section id='grants' title={t('grants.heading')}>
         <HorizontalLine />

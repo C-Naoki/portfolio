@@ -1,6 +1,6 @@
 {
   "title": "Home",
-  "welcome": "I am a second-year M.Sc. student at Osaka University, Japan and am project researcher at SANKEN (The Institute of Scientific and Industrial Research at Osaka University). I am interested in (RQ1) real-time forecasting and (RQ2) causal discovery in time-series data. I am fortunate to be advised by <link_yasushi>Prof. Yasushi Sakurai</link_yasushi> and <link_yasuko>Prof. Yasuko Matsubara</link_yasuko> at SANKEN. I recieved my B.Sc. degrees from Osaka University advised by <link_makoto>Prof. Makoto Onizuka</link_makoto> in March, 2023. I am participating in <link_hwip>Humanware Innovation Program</link_hwip> to deepen my knowledge in other fields.",
+  "welcome": "I am a second-year M.Sc. student at Osaka University, Japan and am project researcher at SANKEN (The Institute of Scientific and Industrial Research at Osaka University). I am interested in (RQ1) real-time forecasting and (RQ2) causal discovery in time-series data. I am fortunate to be advised by <link_yasushi>Prof. Yasushi Sakurai</link_yasushi> and <link_yasuko>Prof. Yasuko Matsubara</link_yasuko> at SANKEN. I recieved my B.Sc. degree from Osaka University advised by <link_makoto>Prof. Makoto Onizuka</link_makoto> in March, 2023. I am participating in <link_hwip>Humanware Innovation Program</link_hwip> to deepen my knowledge in other fields.",
   "cv": "Download my CV <link_cv>here</link_cv>",
   "profile": "I am a M.Sc. student at Osaka University, Japan. I am interested in time-series analysis.",
   "blog": {
@@ -69,6 +69,27 @@
       },
       "awards": []
     }
+  },
+  "news": {
+    "heading": "News",
+    "dc1": "I have been preliminarily selected as a JSPS DC1 research fellow.",
+    "dc1-date": "[2024.09.27]",
+    "pandacco": "We have released an online reservation app for a local bakery (Pandacco). Check it out!",
+    "pandacco-date": "[2024.09]",
+    "yamashita-award": "I have received the 2024 IPSJ Yamashita SIG Research Award.",
+    "yamashita-award-date": "[2024.07.31]",
+    "kddpc2024": "Our paper has been accepted to the PhD Consortium at KDD2024.",
+    "kddpc2024-date": "[2024.06.25]",
+    "deim2024-award": "I have received the DEIM2024 Best Paper Award Runner-up.",
+    "deim2024-award-date": "[2024.06.08]",
+    "tod101": "Our paper has been accepted to IPSJ Transactions on Databases (TOD).",
+    "tod101-date": "[2024.01.08]",
+    "AstronComput45": "Our paper has been accepted to Astronomy and Computing.",
+    "AstronComput45-date": "[2023.10.25]",
+    "bachelor-graduate": "I have completed my B.Sc. degree at Osaka University.",
+    "bachelor-graduate-date": "[2023.03.23]",
+    "hwip-passing": "I have passed the selection exam for the Humanware Innovation Program.",
+    "hwip-passing-date": "[2023.03.14]"
   },
   "grants": {
     "heading": "Grants & Awards",
