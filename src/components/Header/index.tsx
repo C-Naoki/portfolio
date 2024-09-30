@@ -40,9 +40,11 @@ const Header: React.FC = () => {
     <div>
       <AppBar position='fixed' className={styles.appBar}>
         <Toolbar>
-          <Typography variant='h6' className={styles.title}>
-            Naoki Chihara
-          </Typography>
+          <Link className={styles.title} href='/' passHref>
+            <Typography variant='h6' component="a">
+              Naoki Chihara
+            </Typography>
+          </Link>
           <div className={styles.headerOptionsLarge}>
             <AnimatedButton href='/'>Home</AnimatedButton>
             <AnimatedButton href='/blog'>Blog</AnimatedButton>
