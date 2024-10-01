@@ -4,7 +4,6 @@ import AuthorList from './AuthorList'
 import Awards from './Awards'
 import Resources from './Resources'
 import Title from './Title'
-import type { VenueProps } from './Venue'
 import Venue from './Venue'
 
 import externalLinksInfo from '@/constants/externalLinksInfo'
@@ -12,15 +11,16 @@ import externalLinksInfo from '@/constants/externalLinksInfo'
 export default function Publication ({ name }: { name: string }): JSX.Element {
   const { t } = useTranslation()
   const links = externalLinksInfo[name]
-  const authors = t(`publications.${name}.authors`, { returnObjects: true }) as string[]
-  const venue = t(`publications.${name}.venue`, { returnObjects: true }) as VenueProps
-  const awards = t(`publications.${name}.awards`, { returnObjects: true }) as string[]
+  const authors: string[] = t(`publications.${name}.authors`, { returnObjects: true })
+  const venueName = t(`publications.${name}.venue.name`)
+  const venueOthers = t(`publications.${name}.venue.others`)
+  const awards: string[] = t(`publications.${name}.awards`, { returnObjects: true })
 
   return (
     <div className='publication'>
       <Title href={links.title} name={t(`publications.${name}.title`)} />
       <AuthorList authors={authors} />
-      <Venue name={venue.name} others={venue.others} />
+      <Venue name={venueName} others={venueOthers} />
       <Resources resources={links.resources} />
       <Awards awards={awards} urls={links.awards} />
     </div>
