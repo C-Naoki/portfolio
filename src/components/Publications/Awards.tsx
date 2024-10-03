@@ -2,9 +2,9 @@ import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
 import { useTranslation } from 'next-i18next'
 
 const Awards = ({ awards, urls }: { awards: string[], urls: string[] }): JSX.Element | null => {
-  if (awards.length === 0) return null
-
   const { i18n } = useTranslation()
+
+  if (awards.length === 0) return null
 
   const awardsEntries = awards.map((award, index) => ({
     key: index,
