@@ -54,6 +54,7 @@
       }
     ],
     "@typescript-eslint/consistent-type-imports": ["error", { "prefer": "type-imports" }],
+    "@typescript-eslint/no-unnecessary-type-assertion": "off",
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off"
   }
