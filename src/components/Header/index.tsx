@@ -40,8 +40,8 @@ const Header: React.FC = () => {
     <div>
       <AppBar position='fixed' className={styles.appBar}>
         <Toolbar>
-          <Link className={styles.title} href='/' passHref>
-            <Typography variant='h6' component="a">
+          <Link href='/' className={styles.title}>
+            <Typography variant='h6'>
               Naoki Chihara
             </Typography>
           </Link>
