@@ -1,6 +1,6 @@
 const externalLinksInfo: Record<string, any> = {
   github: 'https://github.com/C-Naoki',
-  twitter: 'https://twitter.com/C__Naoki',
+  twitter: 'https://twitter.com/c_naoki88',
   linkedin: 'https://www.linkedin.com/in/naoki-chihara-0a35a827a/',
   orcid: 'https://orcid.org/0009-0005-7061-8214',
   googlescholar: 'https://scholar.google.com/citations?user=pq2b3jQAAAAJ&hl=en&oi=sra',
