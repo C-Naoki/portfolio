@@ -71,6 +71,8 @@
   },
   "news": {
     "heading": "News",
+    "kdd2025": "Our paper has been accepted to KDD2025.",
+    "kdd2025-date": "[2024.11.17]",
     "dc1": "I have been preliminarily selected for the JSPS DC1 Research Fellowship.",
     "dc1-date": "[2024.09.27]",
     "yamashita-award": "I have received the 2024 IPSJ Yamashita SIG Research Award.",
