@@ -4,6 +4,7 @@ import { FaDownload, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
 
 import Education from '@/components/Home/Education'
 import Experiences from '@/components/Home/Experiences'
+import News from '@/components/Home/News'
 import Layout from '@/components/Layouts/Layout'
 import Section from '@/components/Layouts/Section'
 import ExternalLink from '@/components/Uikit/ExternalLink'
@@ -11,7 +12,7 @@ import HorizontalLine from '@/components/Uikit/HorizontalLine'
 import TransLink from '@/components/Uikit/TransLink'
 
 export default function Home (): JSX.Element {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
 
   return (
     <Layout title={t('title')}>
@@ -46,32 +47,7 @@ export default function Home (): JSX.Element {
       </Section>
       <Section id='news' title={t('news.heading')}>
         <HorizontalLine />
-        <ul className="news">
-          <li data-marker={t('news.dc1-date')}>
-            <span>{t('news.dc1')}</span>
-          </li>
-          <li data-marker={t('news.yamashita-award-date')}>
-            <span>{t('news.yamashita-award')}</span>
-          </li>
-          <li data-marker={t('news.kddpc2024-date')}>
-            <span>{t('news.kddpc2024')}</span>
-          </li>
-          <li data-marker={t('news.deim2024-award-date')}>
-            <span>{t('news.deim2024-award')}</span>
-          </li>
-          <li data-marker={t('news.tod101-date')}>
-            <span>{t('news.tod101')}</span>
-          </li>
-          <li data-marker={t('news.AstronComput45-date')}>
-            <span>{t('news.AstronComput45')}</span>
-          </li>
-          <li data-marker={t('news.bachelor-graduate-date')}>
-            <span>{t('news.bachelor-graduate')}</span>
-          </li>
-          <li data-marker={t('news.hwip-passing-date')}>
-            <span>{t('news.hwip-passing')}</span>
-          </li>
-        </ul>
+        <News t={t} i18n={i18n}/>
       </Section>
       <Section id='grants' title={t('grants.heading')}>
         <HorizontalLine />
@@ -118,7 +94,7 @@ export default function Home (): JSX.Element {
             <span>{t('misc.pakdd2023')}</span>
           </li>
           <li data-marker={t('misc.pandacco-date')}>
-            <span>{t('misc.pandacco')} </span>
+            <span>{t('misc.pandacco')}</span>
             <ExternalLink url='https://pandacco.web.app/' bracket={true}/>
             <ul className="custom-nested-list">
               <li>Google Developer Student Clubs (GDSC)</li>
