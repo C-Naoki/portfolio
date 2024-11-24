@@ -2,6 +2,7 @@
   "title": "Home",
   "welcome": "I am a second-year M.Sc. student at Osaka University, Japan and am project researcher at SANKEN (The Institute of Scientific and Industrial Research at Osaka University). I am interested in (RQ1) real-time forecasting and (RQ2) causal discovery in time-series data. I am fortunate to be advised by <link_yasushi>Prof. Yasushi Sakurai</link_yasushi> and <link_yasuko>Prof. Yasuko Matsubara</link_yasuko> at SANKEN. I recieved my B.Sc. degree from Osaka University advised by <link_makoto>Prof. Makoto Onizuka</link_makoto> in March, 2023. I am participating in <link_hwip>Humanware Innovation Program</link_hwip> to deepen my knowledge in other fields.",
   "cv": "Download my CV <link_cv>here</link_cv>",
+  "name": "Naoki Chihara",
   "blog": {
     "heading": "Blog",
     "article": "Article",

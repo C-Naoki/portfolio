@@ -19,7 +19,7 @@ export default function Publication ({ name }: { name: string }): JSX.Element {
   return (
     <div className='publication'>
       <Title href={links.title} name={t(`publications.${name}.title`)} />
-      <AuthorList authors={authors} />
+      <AuthorList authors={authors} t={t} />
       <Venue name={venueName} others={venueOthers} />
       <Resources resources={links.resources} />
       <Awards awards={awards} urls={links.awards} />

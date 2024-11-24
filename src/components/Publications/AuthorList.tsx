@@ -1,6 +1,10 @@
 import React from 'react'
 
-const AuthorList = ({ authors }: { authors: string[] }): JSX.Element => {
+import type { TFunction } from 'next-i18next'
+
+const AuthorList = ({ authors, t }: { authors: string[], t: TFunction }): JSX.Element => {
+  const nameVariants = [t('name', { lng: 'en' }), t('name', { lng: 'ja' })]
+
   const highlightStyle: React.CSSProperties = {
     textDecoration: 'underline',
     fontWeight: 'bold',
@@ -13,7 +17,7 @@ const AuthorList = ({ authors }: { authors: string[] }): JSX.Element => {
 
   const authorEntries = authors.map((author) => ({
     name: author,
-    style: author === '千原 直己' || author === 'Naoki Chihara' ? highlightStyle : noWrapStyle
+    style: nameVariants.includes(author) ? highlightStyle : noWrapStyle
   }))
 
   return (
