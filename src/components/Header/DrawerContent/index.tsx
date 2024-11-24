@@ -53,12 +53,14 @@ const DrawerContent: React.FC<DrawerContentProps> = ({ handleDrawerToggle }) => 
         </div>
         <div className={styles.externalLinkSection}>
           {externalLinkItems.map((item, index) => (
-            <ExternalLinkListItem
-              key={index}
-              href={item.href}
-              icon={item.icon}
-              text={item.text}
-            />
+            item.href !== '' && (
+              <ExternalLinkListItem
+                key={index}
+                href={item.href}
+                icon={item.icon}
+                text={item.text}
+              />
+            )
           ))}
         </div>
       </List>
