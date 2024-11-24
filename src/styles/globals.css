@@ -15,6 +15,7 @@
   --footer-text-color: #A9A9A9;
   --drawer-icon-color: #757575;
   --highlight-color: #CA8A03;
+  --highlight-hover-color: #a06f03;
   --heading-color: #4A7C6A;
   --subheading-color: #4A7C6A;
   --component-text-color: #4b5563;
@@ -36,6 +37,7 @@
   --footer-text-color: #535252;
   --drawer-icon-color: #D4D4D4;
   --highlight-color: #E6B64C;
+  --highlight-hover-color: #c0973e;
   --heading-color: #a3d0b4;
   --subheading-color: #a3d0b4;
   --component-text-color: #c5d0dc;
@@ -344,6 +346,10 @@ ul.news > li {
   font-family: 'Lato';
   font-size: 16.5px;
   color: var(--highlight-color);
+}
+
+.highlight > a:hover {
+  color: var(--highlight-hover-color);
 }
 
 .venue {

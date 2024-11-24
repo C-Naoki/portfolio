@@ -1,7 +1,7 @@
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
 import { useTranslation } from 'next-i18next'
 
-const Awards = ({ awards, urls }: { awards: string[], urls: string[] }): JSX.Element | null => {
+const Awards = ({ hrefs, awards }: { hrefs: string[], awards: string[] }): JSX.Element | null => {
   const { i18n } = useTranslation()
 
   if (awards.length === 0) return null
@@ -9,7 +9,7 @@ const Awards = ({ awards, urls }: { awards: string[], urls: string[] }): JSX.Ele
   const awardsEntries = awards.map((award, index) => ({
     key: index,
     name: award,
-    url: urls[index]
+    href: hrefs[index]
   }))
 
   const getClassName = (): string => i18n.language === 'en' ? 'highlight italic' : 'highlight'
@@ -18,11 +18,12 @@ const Awards = ({ awards, urls }: { awards: string[], urls: string[] }): JSX.Ele
     <div className={`${getClassName()} award`} >
       <EmojiEventsIcon className='award-icon' />
       <div>
-        {awardsEntries.map(({ key, name }, index) => (
-          <span key={key}>
-            <span className={getClassName()} >
-              {name}{index < awardsEntries.length - 1 ? ', ' : ''}
-            </span>
+        {awardsEntries.map(({ key, name, href }, index) => (
+          <span key={key} className={getClassName()}>
+            <a href={href} target='_blank' rel='noopener noreferrer'>
+              {name}
+            </a>
+            {index < awardsEntries.length - 1 ? ', ' : ''}
           </span>
         ))}
       </div>

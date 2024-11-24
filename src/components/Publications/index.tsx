@@ -22,7 +22,7 @@ export default function Publication ({ name }: { name: string }): JSX.Element {
       <AuthorList authors={authors} t={t} />
       <Venue name={venueName} others={venueOthers} />
       <Resources resources={links.resources} />
-      <Awards awards={awards} urls={links.awards} />
+      <Awards hrefs={links.awards} awards={awards} />
     </div>
   )
 }
