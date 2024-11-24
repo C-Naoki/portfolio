@@ -7,9 +7,11 @@ module.exports = {
     defaultLocale: 'en',
     locales: ['en', 'ja']
   },
-  localePath: path.resolve('./public/locales'),
   fallbackLng: {
     default: ['en'],
     en: ['ja']
-  }
+  },
+  localePath: path.resolve('./public/locales'),
+  keySeparator: '.',
+  reloadOnPrerender: true
 }
