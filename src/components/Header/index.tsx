@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import MenuIcon from '@mui/icons-material/Menu'
 import { AppBar, Button, Drawer, IconButton, Toolbar, Typography } from '@mui/material'
 import Link from 'next/link'
+import { useTranslation } from 'next-i18next'
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
 import DrawerContent from './DrawerContent'
@@ -30,6 +31,8 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({ href, children }) => {
 }
 
 const Header: React.FC = () => {
+  const { t } = useTranslation()
+
   const [drawerOpen, setDrawerOpen] = useState(false)
 
   const handleDrawerToggle = (): void => {
@@ -42,7 +45,7 @@ const Header: React.FC = () => {
         <Toolbar>
           <Link href='/' className={styles.title}>
             <Typography variant='h6'>
-              Naoki Chihara
+              {t('name', { lng: 'en' })}
             </Typography>
           </Link>
           <div className={styles.headerOptionsLarge}>
