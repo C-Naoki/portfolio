@@ -1,24 +1,34 @@
-import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined'
-import WorkOutlineIcon from '@mui/icons-material/WorkOutline'
+import ExperiencesItem from './ExperiencesItem'
 
+import type { i18n } from 'i18next'
 import type { TFunction } from 'next-i18next'
-const Experiences = ({ type, t }: { type: string, t: TFunction }): JSX.Element => {
+
+import HorizontalLine from '@/components/Uikit/HorizontalLine'
+import useTranslationKeys from '@/lib/hooks/useTranslationKeys'
+
+const Experiences = ({ t, i18n }: { t: TFunction, i18n: i18n }): JSX.Element => {
+  const keys = useTranslationKeys(i18n, 'experiences')
+  const experiencesKeys: Array<{ body: string }> = []
+  for (let i = 0; i < keys.length; i++) {
+    const key = keys[i]
+    if (key === 'heading') {
+      continue
+    } else if (!key.includes('-')) {
+      if (keys.includes(key)) {
+        experiencesKeys.push({ body: key })
+      }
+    }
+  }
+
   return (
-    <div className='experience'>
-      <h3 className='experience-heading'>{t(`experiences.${type}`)}</h3>
-      <div className='experience-component'>
-        <CalendarMonthOutlinedIcon className='experience-icon' />
-        <span>{t(`experiences.${type}-date`)}</span>
-      </div>
-      <div className='experience-component'>
-        <WorkOutlineIcon className='experience-icon' />
-        <span>{t(`experiences.${type}-role`)}</span>
-      </div>
-      {`experiences.${type}-content1` !== t(`experiences.${type}-content1`) && (
-        <div className='experience-component'>
-          <span>{t(`experiences.${type}-content1`)}</span>
-        </div>
-      )}
+    <div>
+      <HorizontalLine />
+      {experiencesKeys.map(({ body }, index) => (
+        <span key={index}>
+          <ExperiencesItem type={body} t={t} />
+          {index !== experiencesKeys.length - 1 && <HorizontalLine main={false} />}
+        </span>
+      ))}
     </div>
   )
 }

@@ -1,27 +1,34 @@
-import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined'
-import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined'
-import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined'
+import EducationItem from './EducationItem'
 
+import type { i18n } from 'i18next'
 import type { TFunction } from 'next-i18next'
 
-const Education = ({ type, t }: { type: string, t: TFunction }): JSX.Element => {
+import HorizontalLine from '@/components/Uikit/HorizontalLine'
+import useTranslationKeys from '@/lib/hooks/useTranslationKeys'
+
+const Education = ({ t, i18n }: { t: TFunction, i18n: i18n }): JSX.Element => {
+  const keys = useTranslationKeys(i18n, 'education')
+  const educationKeys: Array<{ body: string }> = []
+  for (let i = 0; i < keys.length; i++) {
+    const key = keys[i]
+    if (key === 'heading') {
+      continue
+    } else if (!key.includes('-')) {
+      if (keys.includes(key)) {
+        educationKeys.push({ body: key })
+      }
+    }
+  }
+
   return (
-    <div className='education'>
-      <h3 className='education-heading'>{t(`education.${type}`)}</h3>
-      <div className='education-component'>
-        <CalendarMonthOutlinedIcon className='education-icon' />
-        <span>{t(`education.${type}-date`)}</span>
-      </div>
-      <div className='education-component'>
-        <SchoolOutlinedIcon className='education-icon' />
-        <span>{t(`education.${type}-affiliation`)}</span>
-      </div>
-      {`education.${type}-supervisor` !== t(`education.${type}-supervisor`) && (
-        <div className='education-component'>
-          <Person2OutlinedIcon className='education-icon' />
-          <span>{t(`education.${type}-supervisor`)}</span>
-        </div>
-      )}
+    <div>
+      <HorizontalLine />
+      {educationKeys.map(({ body }, index) => (
+        <span key={index}>
+          <EducationItem type={body} t={t} />
+          {index !== educationKeys.length - 1 && <HorizontalLine main={false} />}
+        </span>
+      ))}
     </div>
   )
 }

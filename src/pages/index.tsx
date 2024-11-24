@@ -67,22 +67,10 @@ export default function Home (): JSX.Element {
         </ul>
       </Section>
       <Section id='experiences' title={t('experiences.heading')}>
-        <HorizontalLine />
-        <Experiences type='SANKEN' t={t}/>
-        <HorizontalLine main={false}/>
-        <Experiences type='TA' t={t}/>
-        <HorizontalLine main={false}/>
-        <Experiences type='IST' t={t}/>
-        <HorizontalLine main={false}/>
-        <Experiences type='nagase' t={t}/>
+        <Experiences t={t} i18n={i18n}/>
       </Section>
       <Section id='education' title={t('education.heading')}>
-        <HorizontalLine />
-        <Education type='Master' t={t}/>
-        <HorizontalLine main={false}/>
-        <Education type='Bachelor' t={t}/>
-        <HorizontalLine main={false}/>
-        <Education type='secondary' t={t}/>
+        <Education t={t} i18n={i18n}/>
       </Section>
       <Section id='misc' title={t('misc.heading')}>
         <HorizontalLine />
