@@ -50,25 +50,27 @@ const Header: React.FC = () => {
           </Link>
           <div className={styles.headerOptionsLarge}>
             <AnimatedButton href='/'>Home</AnimatedButton>
-            <AnimatedButton href='/blog'>Blog</AnimatedButton>
+            {externalLinksInfo.zenn !== '' && (
+              <AnimatedButton href='/blog'>Blog</AnimatedButton>
+            )}
             <AnimatedButton href='/publications'>Publications</AnimatedButton>
             <AnimatedButton href='/contact'>Contact</AnimatedButton>
             <div className={styles.toolbarCenter}>
-              <a href={externalLinksInfo.github} target='_blank' rel='noopener noreferrer' className={styles.toolbarCenter} >
-                <FaGithub className={styles.headerIcon} />
-              </a>
-              <a href={externalLinksInfo.twitter} target='_blank' rel='noopener noreferrer' className={styles.toolbarCenter} >
-                <FaTwitter className={styles.headerIcon} />
-              </a>
-              <a href={externalLinksInfo.linkedin} target='_blank' rel='noopener noreferrer' className={styles.toolbarCenter} >
-                <FaLinkedin className={styles.headerIcon} />
-              </a>
-              <a href={externalLinksInfo.googlescholar} target='_blank' rel='noopener noreferrer' className={styles.toolbarCenter} >
-                <FontAwesomeIcon icon={faGoogleScholar} className={styles.headerIcon} />
-              </a>
-              <a href={externalLinksInfo.orcid} target='_blank' rel='noopener noreferrer' className={styles.toolbarCenter} >
-                <FontAwesomeIcon icon={faOrcid} className={styles.headerIcon} />
-              </a>
+              <HeaderExternalLink href={externalLinksInfo.github} className={styles.toolbarCenter}>
+                <FaGithub className={styles.headerIcon}/>
+              </HeaderExternalLink>
+              <HeaderExternalLink href={externalLinksInfo.twitter} className={styles.toolbarCenter}>
+                <FaTwitter className={styles.headerIcon}/>
+              </HeaderExternalLink>
+              <HeaderExternalLink href={externalLinksInfo.linkedin} className={styles.toolbarCenter}>
+                <FaLinkedin className={styles.headerIcon}/>
+              </HeaderExternalLink>
+              <HeaderExternalLink href={externalLinksInfo.googlescholar} className={styles.toolbarCenter}>
+                <FontAwesomeIcon icon={faGoogleScholar} className={styles.headerIcon}/>
+              </HeaderExternalLink>
+              <HeaderExternalLink href={externalLinksInfo.orcid} className={styles.toolbarCenter}>
+                <FontAwesomeIcon icon={faOrcid} className={styles.headerIcon}/>
+              </HeaderExternalLink>
               <a className={styles.LanguageSwitcherLarge}>
                 <LanguageSwitcher />
               </a>
@@ -109,3 +111,17 @@ const Header: React.FC = () => {
 }
 
 export default Header
+
+function HeaderExternalLink ({ href, className, children }: { href: string, className: string, children: React.ReactNode }): JSX.Element {
+  return (
+    <a
+      className={className}
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={href === '' ? { display: 'none' } : undefined}
+    >
+      {children}
+    </a>
+  )
+}
