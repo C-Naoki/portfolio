@@ -1,6 +1,6 @@
 {
   "title": "Home",
-  "welcome": "I am a second-year M.Sc. student at Osaka University, Japan and am project researcher at SANKEN (The Institute of Scientific and Industrial Research at Osaka University). I am interested in (RQ1) real-time forecasting and (RQ2) causal discovery in time-series data. I am fortunate to be advised by <link_yasushi>Prof. Yasushi Sakurai</link_yasushi> and <link_yasuko>Prof. Yasuko Matsubara</link_yasuko> at SANKEN. I recieved my B.Sc. degree from Osaka University advised by <link_makoto>Prof. Makoto Onizuka</link_makoto> in March, 2023. I am participating in <link_hwip>Humanware Innovation Program</link_hwip> to deepen my knowledge in other fields.",
+  "welcome": "I am a second-year M.Sc. student at Osaka University, Japan and am project researcher at SANKEN, Osaka University. In a nutshell, I am interested in data mining of time series data. Specifically, my research topics are (RQ1) Stream processing and (RQ2) Causality. I am fortunate to be advised by <link_yasushi>Prof. Yasushi Sakurai</link_yasushi> and <link_yasuko>Prof. Yasuko Matsubara</link_yasuko> at SANKEN. I recieved my B.Sc. degree from Osaka University advised by <link_makoto>Prof. Makoto Onizuka</link_makoto> in March, 2023. I am participating in <link_hwip>Humanware Innovation Program</link_hwip> to deepen my knowledge in other fields.",
   "cv": "Download my CV <link_cv>here</link_cv>",
   "name": "Naoki Chihara",
   "blog": {
@@ -17,6 +17,15 @@
     "conference": "Conference",
     "journal": "Journal",
     "patent": "Patent",
+    "KDD2025": {
+      "authors": ["Naoki Chihara", "Yasuko Matsubara", "Ren Fujiwara", "Yasushi Sakurai"],
+      "title": "Modeling Time-evolving Causality over Data Streams",
+      "venue": {
+        "name": "The 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD ’25)",
+        "others": "Tronto, Canada, August 3-7, 2025"
+      },
+      "awards": []
+    },
     "KDDPC2024": {
       "authors": ["Naoki Chihara", "Yasuko Matsubara", "Ren Fujiwara", "Yasushi Sakurai"],
       "title": "Stream Mining Time-evolving Causality in Time Series",
@@ -129,10 +138,6 @@
   },
   "education": {
     "heading": "Education",
-    "Doctor-date": "2025.04-present",
-    "Doctor": "Ph.D. in Information Science",
-    "Doctor-affiliation": "Osaka University, Osaka, Japan",
-    "Doctor-supervisor": "Supervisor: Prof. Yasushi Sakurai",
     "Master-date": "2023.04-present",
     "Master": "M.Sc. in Information Science",
     "Master-affiliation": "Osaka University, Osaka, Japan",
