@@ -5,6 +5,12 @@ const externalLinksInfo: Record<string, any> = {
   orcid: 'https://orcid.org/0009-0005-7061-8214',
   googlescholar: 'https://scholar.google.com/citations?user=pq2b3jQAAAAJ&hl=en&oi=sra',
   zenn: 'https://zenn.dev/naoki0103',
+  biography: {
+    link_makoto: 'http://www-bigdata.ist.osaka-u.ac.jp/professor/onizuka/onizuka_en.html',
+    link_yasushi: 'https://www.dm.sanken.osaka-u.ac.jp/~yasushi/index-j.html',
+    link_yasuko: 'https://www.dm.sanken.osaka-u.ac.jp/~yasuko/index.html',
+    link_hwip: 'https://www.humanware.osaka-u.ac.jp/en/'
+  },
   // 2025
   KDD2025: {
     title: '',

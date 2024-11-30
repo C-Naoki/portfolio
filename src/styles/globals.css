@@ -196,22 +196,53 @@ html, body {
   margin-top: 7px;
 }
 
-.custom-list {
+.institution {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: center;
+}
+
+.fa-download {
+  margin-right: 8px;
+  margin-bottom: -1px;
+}
+
+.fa-map {
+  margin-right: 8px;
+  top: -10px;
+}
+
+.fa-envelope {
+  margin-right: 8px;
+  position: relative;
+}
+
+.custom-list > ul {
   margin-bottom: 0px;
 }
 
-ul.custom-list > li {
+.custom-list > ul > li {
   margin-left: -19px;
   margin-top: 10px;
   margin-bottom: 5px;
   display: block;
 }
 
-.custom-list > li:before {
+.custom-list > ul > li:before {
   content: attr(data-marker) ": ";
 }
 
-.custom-list > li > ul {
+.custom-list > ul > li > ul {
   padding-left: 20px;
   margin-top: 7px;
   margin-bottom: 0px;
@@ -219,7 +250,7 @@ ul.custom-list > li {
   list-style: disc;
 }
 
-.custom-list > li > ul > li {
+.custom-list ul > li > ul > li {
   margin-bottom: 0px;
 }
 
@@ -336,21 +367,6 @@ ul.custom-list > li {
 
 .venue-name {
   font-family: 'Lato';
-}
-
-.fa-download {
-  margin-right: 8px;
-  margin-bottom: -1px;
-}
-
-.fa-map {
-  margin-right: 8px;
-  margin-bottom: -1.5px;
-}
-
-.fa-envelope {
-  margin-right: 8px;
-  margin-bottom: -3.5px;
 }
 
 /* ===== components ===== */

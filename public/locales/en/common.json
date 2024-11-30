@@ -1,6 +1,6 @@
 {
   "title": "Home",
-  "welcome": "I am a second-year M.Sc. student at Osaka University, Japan and am project researcher at SANKEN, Osaka University. In a nutshell, I am interested in data mining of time series data. Specifically, my research topics are (RQ1) Stream processing and (RQ2) Causality. I am fortunate to be advised by <link_yasushi>Prof. Yasushi Sakurai</link_yasushi> and <link_yasuko>Prof. Yasuko Matsubara</link_yasuko> at SANKEN. I recieved my B.Sc. degree from Osaka University advised by <link_makoto>Prof. Makoto Onizuka</link_makoto> in March, 2023. I am participating in <link_hwip>Humanware Innovation Program</link_hwip> to deepen my knowledge in other fields.",
+  "profile-text": "I am a second-year M.Sc. student at Osaka University, Japan and am project researcher at SANKEN, Osaka University. In a nutshell, I am interested in data mining of time series data. Specifically, my research topics are (RQ1) Stream processing and (RQ2) Causality. I am fortunate to be advised by <link_yasushi>Prof. Yasushi Sakurai</link_yasushi> and <link_yasuko>Prof. Yasuko Matsubara</link_yasuko> at SANKEN. I recieved my B.Sc. degree from Osaka University advised by <link_makoto>Prof. Makoto Onizuka</link_makoto> in March, 2023. I am participating in <link_hwip>Humanware Innovation Program</link_hwip> to deepen my knowledge in other fields.",
   "cv": "Download my CV <link_cv>here</link_cv>",
   "name": "Naoki Chihara",
   "blog": {
@@ -134,7 +134,8 @@
     "SANKEN": "The Institute of Scientific and Industrial Research (SANKEN)",
     "graduate": "Graduate School of Information Science and Technology",
     "university": "Osaka University",
-    "address": "Mihogaoka 8-1, Ibaraki, Osaka 567-0047, Japan"
+    "address": "Mihogaoka 8-1, Ibaraki, Osaka 567-0047, Japan",
+    "email": "naoki88[at]sanken.osaka-u.ac.jp"
   },
   "education": {
     "heading": "Education",
