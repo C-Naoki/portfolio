@@ -19,6 +19,7 @@
   --heading-color: #4A7C6A;
   --subheading-color: #4A7C6A;
   --component-text-color: #4b5563;
+  --horizontal-line: #4A7C6A;
 }
 
 [data-theme="dark"] {
@@ -33,14 +34,15 @@
   --input-border-color: #404040;
   --input-hover-border-color: #CCCCCC;
   --placeholder-color: #B2B2B2;
-  --main-color: #004d3f;
+  --main-color: #2f3232;
   --footer-text-color: #535252;
   --drawer-icon-color: #D4D4D4;
   --highlight-color: #E6B64C;
   --highlight-hover-color: #c0973e;
-  --heading-color: #a3d0b4;
-  --subheading-color: #a3d0b4;
+  --heading-color: #f1f1f1;
+  --subheading-color: #f1f1f1;
   --component-text-color: #c5d0dc;
+  --horizontal-line: #808080;
 }
 
 body {
@@ -197,13 +199,29 @@ html, body {
 
 .container h1 {
   color: var(--heading-color);
-  font-size: 40px;
+  font-size: 35px;
   margin-bottom: 35px;
   margin-top: 5px;
   margin-left: 15px;
 }
 
 /* ===== index.tsx ===== */
+.biography {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.biography .profile-text {
+  flex-grow: 1;
+}
+
+.biography .profile-image {
+  margin-left: 18px;
+  margin-right: 18px;
+  margin-top: 7px;
+}
+
 .custom-list {
   margin-bottom: 0px;
 }
@@ -304,7 +322,7 @@ ul.news > li {
 /* ===== blog.tsx ===== */
 .blog {
   margin-left: 5px !important;
-  margin-bottom: 15px !important;
+  margin-bottom: 5px !important;
 }
 
 .blog > h3 {
@@ -367,14 +385,24 @@ ul.news > li {
   margin-top: 2px;
 }
 
-.fa-icon {
+.fa-download {
   margin-right: 8px;
   margin-bottom: -1px;
 }
 
+.fa-map {
+  margin-right: 8px;
+  margin-bottom: -1.5px;
+}
+
+.fa-envelope {
+  margin-right: 8px;
+  margin-bottom: -3.5px;
+}
+
 /* ===== components ===== */
 .horizontal-line {
-  background-color: var(--heading-color);
+  background-color: var(--horizontal-line);
   margin-top: 22px;
   margin-bottom: 18px;
   margin-left: 0px;
@@ -452,6 +480,22 @@ ul.news > li {
 
   .section {
     padding: 25px 20px 20px 20px;
+  }
+
+  .news {
+    width: 94%;
+  }
+
+  .biography {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .biography .profile-image {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 5px;
+    margin-bottom: 18px;
   }
 }
 

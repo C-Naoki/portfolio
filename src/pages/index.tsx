@@ -28,7 +28,7 @@ export default function Home (): JSX.Element {
           }}
         />
         <div style={{ marginTop: '15px' }}>
-          <FaDownload className="fa-icon"/>
+          <FaDownload className="fa-download"/>
           <Trans i18nKey="cv" components={{ link_cv: <TransLink url="assets/CV.pdf"/> }}/>
         </div>
       </Section>
@@ -41,8 +41,8 @@ export default function Home (): JSX.Element {
           <ExternalLink url="https://www.osaka-u.ac.jp/en" text={t('affiliation.university')}/><br />
         </div>
         <div style={{ marginTop: '15px' }}>
-          <FaMapMarkerAlt className="fa-icon" />{t('affiliation.address')}<br />
-          <FaEnvelope className="fa-icon" />naoki88[at]sanken.osaka-u.ac.jp
+          <FaMapMarkerAlt className="fa-map"/>{t('affiliation.address')}<br />
+          <FaEnvelope className="fa-envelope"/>naoki88[at]sanken.osaka-u.ac.jp
         </div>
       </Section>
       <Section id='news' title={t('news.heading')}>
