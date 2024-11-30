@@ -13,6 +13,8 @@ export default function Publications (): JSX.Element {
     <Layout title={t('publications.heading')}>
       <Section id='conference' title={t('publications.conference')}>
         <HorizontalLine />
+        <Publication name='KDD2025' />
+        <HorizontalLine main={false} />
         <Publication name='KDDPC2024'/>
         <HorizontalLine main={false} />
         <Publication name='DEIM2024'/>

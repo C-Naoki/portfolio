@@ -5,6 +5,12 @@ const externalLinksInfo: Record<string, any> = {
   orcid: 'https://orcid.org/0009-0005-7061-8214',
   googlescholar: 'https://scholar.google.com/citations?user=pq2b3jQAAAAJ&hl=en&oi=sra',
   zenn: 'https://zenn.dev/naoki0103',
+  // 2025
+  KDD2025: {
+    title: '',
+    awards: [],
+    resources: {}
+  },
   // 2024
   KDDPC2024: {
     title: 'https://kdd2024.kdd.org/ph-d-consortium/',
@@ -17,7 +23,7 @@ const externalLinksInfo: Record<string, any> = {
     title: 'https://confit.atlas.jp/guide/event/deim2024/subject/T2-B-6-02/advanced',
     awards: [
       'https://confit.atlas.jp/guide/event/deim2024/static/awards',
-      ''
+      'https://www.ipsj.or.jp/award/yamasita2024-detail.html'
     ],
     resources: {
       paper: '/assets/DEIM2024/paper.pdf',
