@@ -4,10 +4,10 @@ import type { i18n } from 'i18next'
 import type { TFunction } from 'next-i18next'
 
 import HorizontalLine from '@/components/Uikit/HorizontalLine'
-import useTranslationKeys from '@/lib/hooks/useTranslationKeys'
+import fetchTranslationKeys from '@/lib/utils/fetchTranslationKeys'
 
 const Education = ({ t, i18n }: { t: TFunction, i18n: i18n }): JSX.Element => {
-  const keys = useTranslationKeys(i18n, 'education')
+  const keys = fetchTranslationKeys(i18n, 'education')
   const educationKeys: Array<{ body: string }> = []
   for (let i = 0; i < keys.length; i++) {
     const key = keys[i]
