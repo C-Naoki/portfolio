@@ -18,11 +18,11 @@ export default function Publication ({ name }: { name: string }): JSX.Element {
 
   return (
     <div className='publication'>
-      <Title href={links.title} name={t(`publications.${name}.title`)} />
       <AuthorList authors={authors} t={t} />
+      <Title href={links.title} name={t(`publications.${name}.title`)} />
       <Venue name={venueName} others={venueOthers} />
-      <Resources resources={links.resources} />
       <Awards hrefs={links.awards} awards={awards} />
+      <Resources resources={links.resources} />
     </div>
   )
 }

@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Link from 'next/link'
+
 interface TitleProps {
   href: string
   name: string
@@ -7,11 +9,9 @@ interface TitleProps {
 
 const Title: React.FC<TitleProps> = ({ href, name }) => {
   return (
-    <div>
-      <a href={href}>
-        <h3 className='publication-heading'>{name}. </h3>
-      </a>
-    </div>
+    <span>
+      <Link className='link bold' href={href}>{name}</Link>{'. '}
+    </span>
   )
 }
 

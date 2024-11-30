@@ -13,25 +13,24 @@ export default function Publications (): JSX.Element {
     <Layout title={t('publications.heading')}>
       <Section id='conference' title={t('publications.conference')}>
         <HorizontalLine />
-        <Publication name='KDD2025' />
-        <HorizontalLine main={false} />
-        <Publication name='KDDPC2024'/>
-        <HorizontalLine main={false} />
-        <Publication name='DEIM2024'/>
-        <HorizontalLine main={false} />
-        <Publication name='DAS2024'/>
-        <HorizontalLine main={false} />
-        <Publication name='DEIM2023'/>
+        <ol style={{ marginBottom: '0px', lineHeight: '1.35', marginLeft: '-17px' }}>
+          <li><Publication name='KDD2025'/></li>
+          <li><Publication name='KDDPC2024'/></li>
+          <li><Publication name='DEIM2024'/></li>
+          <li><Publication name='DAS2024'/></li>
+          <li><Publication name='DEIM2023'/></li>
+        </ol>
       </Section>
       <Section id='journal' title={t('publications.journal')}>
         <HorizontalLine />
-        <Publication name='TOD101'/>
-        <HorizontalLine main={false} />
-        <Publication name='AstronComput45'/>
+        <ol style={{ marginBottom: '0px', lineHeight: '1.35', marginLeft: '-17px' }}>
+          <li><Publication name='TOD101'/></li>
+          <li><Publication name='AstronComput45' /></li>
+        </ol>
       </Section>
       <Section id='patent' title={t('publications.patent')}>
         <HorizontalLine />
-        <ul style={{ marginBottom: '0px' }}>
+        <ul style={{ marginBottom: '0px', marginLeft: '5px' }}>
           <li>
             発明等：検出装置、検出⽅法及びプログラム<br />
             発明者：藤原 靖宏, 鬼塚 真, <span style={{ fontWeight: 'bold', textDecoration: 'underline' }}>千原 直己</span><br />

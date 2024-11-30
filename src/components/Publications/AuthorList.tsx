@@ -21,7 +21,7 @@ const AuthorList = ({ authors, t }: { authors: string[], t: TFunction }): JSX.El
   }))
 
   return (
-    <div className='author-list'>
+    <span>
       {authorEntries.map(({ name, style }, index) => (
         <span key={name}>
           <span style={style}>
@@ -31,7 +31,7 @@ const AuthorList = ({ authors, t }: { authors: string[], t: TFunction }): JSX.El
         </span>
       ))}
       {'. '}
-    </div>
+    </span>
   )
 }
 
