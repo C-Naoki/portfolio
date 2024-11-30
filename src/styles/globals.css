@@ -212,10 +212,6 @@ ul.custom-list > li {
 }
 
 .custom-list > li > ul {
-  margin-bottom: 0px;
-}
-
-.custom-nested-list {
   padding-left: 20px;
   margin-top: 7px;
   margin-bottom: 0px;
@@ -223,7 +219,7 @@ ul.custom-list > li {
   list-style: disc;
 }
 
-.custom-nested-list > li {
+.custom-list > li > ul > li {
   margin-bottom: 0px;
 }
 
@@ -234,41 +230,41 @@ ul.custom-list > li {
   margin-bottom: 0px;
 }
 
-ul.news > li {
+.news > ul > li {
   margin-left: -19px;
   display: block;
 }
 
-.news > li:before {
+.news > ul > li:before {
   content: attr(data-marker) ": ";
 }
 
-.experience {
+.experiences-item {
   padding-left: 5px;
   margin-top: 15px;
   margin-bottom: 8px;
 }
 
-.experience-heading {
+.experiences-heading {
   color: var(--subheading-color);
   margin-bottom: 12px;
 }
 
-.experience-component {
+.experiences-component {
   margin-bottom: 5px;
   color: var(--component-text-color);
   display: flex;
   align-items: center
 }
 
-.experience-icon {
+.experiences-icon {
   color: var(--subheading-color);
   font-size: 20px;
   margin-left: -2px;
   margin-right: 6px;
 }
 
-.education {
+.education-item {
   padding-left: 5px;
   margin-top: 15px;
   margin-bottom: 8px;
@@ -306,7 +302,7 @@ ul.news > li {
 }
 
 /* ===== publications.tsx ===== */
-.publication {
+.publication-item {
   padding-left: 5px;
   margin-bottom: 10px;
 }

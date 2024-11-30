@@ -19,13 +19,15 @@ const News = ({ t, i18n }: { t: TFunction, i18n: i18n }): JSX.Element => {
   }
 
   return (
-    <ul className="news">
-      {newsKeys.map(({ body, date }, index) => (
-        <li key={index} data-marker={t(`news.${date}`)}>
-          <span>{t(`news.${body}`)}</span>
-        </li>
-      ))}
-    </ul>
+    <div className='news'>
+      <ul>
+        {newsKeys.map(({ body, date }, index) => (
+          <li key={index} data-marker={t(`news.${date}`)}>
+            <span>{t(`news.${body}`)}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }
 

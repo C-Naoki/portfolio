@@ -27,10 +27,9 @@ const AuthorList = ({ authors, t }: { authors: string[], t: TFunction }): JSX.El
           <span style={style}>
             {name}
           </span>
-          {index < authorEntries.length - 1 ? ', ' : ''}
+          {index < authorEntries.length - 1 ? ', ' : '. '}
         </span>
       ))}
-      {'. '}
     </span>
   )
 }
