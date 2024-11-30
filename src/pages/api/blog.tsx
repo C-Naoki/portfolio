@@ -3,14 +3,18 @@ import axios from 'axios'
 import type { Article, Book } from '@/types/blog.d'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
+import externalLinksInfo from '@/constants/externalLinksInfo'
+
 export default async function handler (
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
+  const username = externalLinksInfo.zenn.match(/zenn\.dev\/([\w\d_-]+)/)[1]
+
   try {
     const [articlesResponse, booksResponse] = await Promise.all([
-      axios.get('https://zenn.dev/api/articles?username=naoki0103&order=latest'),
-      axios.get('https://zenn.dev/api/books?username=naoki0103&order=latest')
+      axios.get(`https://zenn.dev/api/articles?username=${username}&order=latest`),
+      axios.get(`https://zenn.dev/api/books?username=${username}&order=latest`)
     ])
 
     const articles: Article[] = articlesResponse.data.articles.map((article: Article) => ({
