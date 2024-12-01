@@ -9,7 +9,17 @@ export default async function handler (
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
-  const username = externalLinksInfo.zenn.match(/zenn\.dev\/([\w\d_-]+)/)[1]
+  let username
+  if (externalLinksInfo.zenn !== undefined && externalLinksInfo.zenn !== null && externalLinksInfo.zenn !== '') {
+    const match = externalLinksInfo.zenn.match(/zenn\.dev\/([\w\d_-]+)/)
+    if (match !== null) {
+      username = match[1]
+    } else {
+      console.error("The URL doesn't match the expected pattern.")
+    }
+  } else {
+    console.error("'externalLinksInfo.zenn' is null or undefined.")
+  }
 
   try {
     const [articlesResponse, booksResponse] = await Promise.all([
