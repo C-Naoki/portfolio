@@ -14,69 +14,85 @@
   },
   "publications": {
     "heading": "Publications",
-    "conference": "Conference",
-    "journal": "Journal",
-    "patent": "Patent",
-    "KDD2025": {
-      "authors": ["Naoki Chihara", "Yasuko Matsubara", "Ren Fujiwara", "Yasushi Sakurai"],
-      "title": "Modeling Time-evolving Causality over Data Streams",
-      "venue": {
-        "name": "The 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD ’25)",
-        "others": "Tronto, Canada, August 3-7, 2025 (acceptance rate: 19%)"
+    "international-conference": {
+      "heading": "International Conference",
+      "KDD2025": {
+        "authors": ["Naoki Chihara", "Yasuko Matsubara", "Ren Fujiwara", "Yasushi Sakurai"],
+        "title": "Modeling Time-evolving Causality over Data Streams",
+        "venue": {
+          "name": "The 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD ’25)",
+          "others": "Tronto, Canada, August 3-7, 2025 (acceptance rate: 19%)"
+        },
+        "awards": []
       },
-      "awards": []
+      "KDDPC2024": {
+        "authors": ["Naoki Chihara", "Yasuko Matsubara", "Ren Fujiwara", "Yasushi Sakurai"],
+        "title": "Stream Mining Time-evolving Causality in Time Series",
+        "venue": {
+          "name": "The 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD ’24) PhD Consortium",
+          "others": "Barcelona, Spain, August 25-29, 2024"
+        },
+        "awards": []
+      }
     },
-    "KDDPC2024": {
-      "authors": ["Naoki Chihara", "Yasuko Matsubara", "Ren Fujiwara", "Yasushi Sakurai"],
-      "title": "Stream Mining Time-evolving Causality in Time Series",
-      "venue": {
-        "name": "The 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD ’24) PhD Consortium",
-        "others": "Barcelona, Spain, August 25-29, 2024"
+    "journal": {
+      "heading": "Journal",
+      "TOD101": {
+        "authors": ["Naoki Chihara", "Yasuko Matsubara", "Ren Fujiwara", "Yasushi Sakurai"],
+        "title": "Real-time Forecasting of Time-evolving Data Streams using Dynamic Mode Decomposition",
+        "venue": {
+          "name": "IPSJ Transactions on Databases (TOD)",
+          "others": "Vol. 17, No. 2, pp. 1-11, April 23, 2024"
+        },
+        "awards": []
       },
-      "awards": []
+      "AstronComput45": {
+        "authors": ["Naoki Chihara", "Tadafumi Takata", "Yasuhiro Fujiwara", "Koki Noda", "Keisuke Toyoda", "Kaito Higuchi", "Makoto Onizuka"],
+        "title": "Effective detection of variable celestial objects using machine learning-based periodic analysis",
+        "venue": {
+          "name": "Astronomy and Computing",
+          "others": "Vol. 45, pp. 100765, November 3, 2023"
+        },
+        "awards": []
+      }
     },
-    "DEIM2024": {
-      "authors": ["Naoki Chihara", "Yasuko Matsubara", "Ren Fujiwara", "Yasushi Sakurai"],
-      "venue": {
-        "name": "The 16th Forum on Data Engineering and Information Management (DEIM2024)",
-        "others": "Hyogo, Japan, February 28 - March 5, 2024"
+    "domestic": {
+      "heading": "Domestic Conference",
+      "DEIM2024": {
+        "authors": ["Naoki Chihara", "Yasuko Matsubara", "Ren Fujiwara", "Yasushi Sakurai"],
+        "venue": {
+          "name": "The 16th Forum on Data Engineering and Information Management (DEIM2024)",
+          "others": "Hyogo, Japan, February 28 - March 5, 2024"
+        },
+        "awards": ["Best Paper Award Runner-up", "2024 IPSJ Yamashita SIG Research Award"]
       },
-      "awards": ["Best Paper Award Runner-up", "2024 IPSJ Yamashita SIG Research Award"]
+      "DAS2024": {
+        "authors": ["Aiyi Li", "Kenya Hoshimure", "Kei Tanigaki", "Yota Hatano", "Reina Nozawa", "Yuki Sakamoto", "Yuanzhou Wei", "Naoki Chihara", "Naoki Kodani"],
+        "title": "Semi-autonomous Leader-follower Approach for Swarm Drone Guidance",
+        "venue": {
+          "name": "The 36th SICE Symposium on Decentralized Autonomous Systems",
+          "others": "Tokyo, Japan, February 16-17, 2024"
+        },
+        "awards": []
+      },
+      "DEIM2023": {
+        "authors": ["Naoki Chihara", "Tadafumi Takata", "Yasuhiro Fujiwara", "Makoto Onizuka"],
+        "venue": {
+          "name": "The 15th Forum on Data Engineering and Information Management (DEIM2023)",
+          "others": "Gifu, Japan, March 5-9, 2023"
+        },
+        "awards": []
+      }
     },
-    "DAS2024": {
-      "authors": ["Aiyi Li", "Kenya Hoshimure", "Kei Tanigaki", "Yota Hatano", "Reina Nozawa", "Yuki Sakamoto", "Yuanzhou Wei", "Naoki Chihara", "Naoki Kodani"],
-      "title": "Semi-autonomous Leader-follower Approach for Swarm Drone Guidance",
-      "venue": {
-        "name": "The 36th SICE Symposium on Decentralized Autonomous Systems",
-        "others": "Tokyo, Japan, February 16-17, 2024"
-      },
-      "awards": []
-    },
-    "AstronComput45": {
-      "authors": ["Naoki Chihara", "Tadafumi Takata", "Yasuhiro Fujiwara", "Koki Noda", "Keisuke Toyoda", "Kaito Higuchi", "Makoto Onizuka"],
-      "title": "Effective detection of variable celestial objects using machine learning-based periodic analysis",
-      "venue": {
-        "name": "Astronomy and Computing",
-        "others": "Vol. 45, pp. 100765, November 3, 2023"
-      },
-      "awards": []
-    },
-    "TOD101": {
-      "authors": ["Naoki Chihara", "Yasuko Matsubara", "Ren Fujiwara", "Yasushi Sakurai"],
-      "title": "Real-time Forecasting of Time-evolving Data Streams using Dynamic Mode Decomposition",
-      "venue": {
-        "name": "IPSJ Transactions on Databases (TOD)",
-        "others": "Vol. 17, No. 2, pp. 1-11, April 23, 2024"
-      },
-      "awards": []
-    },
-    "DEIM2023": {
-      "authors": ["Naoki Chihara", "Tadafumi Takata", "Yasuhiro Fujiwara", "Makoto Onizuka"],
-      "venue": {
-        "name": "The 15th Forum on Data Engineering and Information Management (DEIM2023)",
-        "others": "Gifu, Japan, March 5-9, 2023"
-      },
-      "awards": []
+    "patent": {
+      "heading": "Patent",
+      "kenshutsu2023": {
+        "authors": ["Yasuhiro Fujiwara", "Makoto Onizuka", "Naoki Chihara"],
+        "tokugan": "特願2023-099796",
+        "tokkai": "",
+        "filing-date": "2023.06.19",
+        "publication-date": ""
+      }
     }
   },
   "news": {

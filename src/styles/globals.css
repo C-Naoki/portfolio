@@ -227,8 +227,9 @@ html, body {
   position: relative;
 }
 
-.custom-list > ul {
-  margin-bottom: 0px;
+.custom-list > ul,
+.custom-list > ol {
+  margin-bottom: -5px;
 }
 
 .custom-list > ul > li {
@@ -236,6 +237,12 @@ html, body {
   margin-top: 10px;
   margin-bottom: 5px;
   display: block;
+}
+
+.custom-list > ol > li {
+  margin-left: -19px;
+  line-height: normal;
+  margin-bottom: -5px;
 }
 
 .custom-list > ul > li:before {
