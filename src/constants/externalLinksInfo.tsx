@@ -44,21 +44,24 @@ const externalLinksInfo: ExternalLinksInfoProps = {
     KDD2025: {
       title: '',
       awards: [],
-      resources: {}
+      resources: {
+        code: 'https://github.com/C-Naoki/ModePlait'
+      }
     },
     // 2024
     KDDPC2024: {
       title: 'https://kdd2024.kdd.org/ph-d-consortium/',
       awards: [],
       resources: {
-        paper: '/assets/KDDPC2024/paper.pdf'
+        paper: '/assets/KDDPC2024/paper.pdf',
+        poster: '/assets/KDDPC2024/poster.pdf'
       }
     },
     DEIM2024: {
       title: 'https://confit.atlas.jp/guide/event/deim2024/subject/T2-B-6-02/advanced',
       awards: [
         'https://confit.atlas.jp/guide/event/deim2024/static/awards',
-        'https://www.ipsj.or.jp/award/yamasita2024-detail.html'
+        'https://www.ipsj.or.jp/award/yamasita2024-detail.html#dbs'
       ],
       resources: {
         paper: '/assets/DEIM2024/paper.pdf',
