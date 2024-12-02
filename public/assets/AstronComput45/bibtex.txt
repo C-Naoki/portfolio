@@ -1,0 +1,9 @@
+@article{chihara2023effective,
+  title     = {Effective detection of variable celestial objects using machine learning-based periodic analysis},
+  author    = {Chihara, Naoki and Takata, Tadafumi and Fujiwara, Yasuhiro and Noda, Koki and Toyoda, Keisuke and Higuchi, Kaito and Onizuka, Makoto},
+  journal   = {Astronomy and Computing},
+  volume    = {45},
+  pages     = {100765},
+  year      = {2023},
+  publisher = {Elsevier}
+}

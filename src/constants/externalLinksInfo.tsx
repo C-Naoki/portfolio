@@ -1,4 +1,5 @@
 export interface ResourcesProps {
+  cite?: string
   paper?: string
   slides?: string
   poster?: string
@@ -82,6 +83,7 @@ const externalLinksInfo: ExternalLinksInfoProps = {
       title: 'https://www.sciencedirect.com/science/article/pii/S221313372300080X',
       awards: [],
       resources: {
+        cite: '/assets/AstronComput45/bibtex.txt',
         paper: '/assets/AstronComput45/paper.pdf'
       }
     },
