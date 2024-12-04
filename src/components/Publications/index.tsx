@@ -10,7 +10,8 @@ import externalLinksInfo from '@/constants/externalLinksInfo'
 
 export default function Publication ({ name, tag }: { name: string, tag: string }): JSX.Element {
   const { t } = useTranslation()
-  const links = externalLinksInfo.publications[name]
+  let links = externalLinksInfo.publications[name]
+  if (links === undefined) links = { title: '', awards: [], resources: {} }
   const authors = t(`publications.${tag}.${name}.authors`, { returnObjects: true }) as string[]
   const title = t(`publications.${tag}.${name}.title`)
   const venueName = t(`publications.${tag}.${name}.venue.name`)
