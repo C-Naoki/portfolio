@@ -70,9 +70,6 @@ export default function Home (): JSX.Element {
             <li data-marker={t('misc.pandacco-date')}>
               <span>{t('misc.pandacco')} </span>
               <ExternalLink url='https://pandacco.web.app/' bracket={true}/>
-            <ul>
-              <li>Google Developer Student Clubs (GDSC)</li>
-            </ul>
             </li>
           </ul>
         </div>
