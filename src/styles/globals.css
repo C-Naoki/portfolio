@@ -138,10 +138,6 @@ html, body {
   transition: opacity 0.2s;
 }
 
-.section-title:hover .section-hash {
-  opacity: 1;
-}
-
 .link {
   color: var(--link-color);
 }
@@ -219,12 +215,12 @@ html, body {
 
 .fa-map {
   margin-right: 8px;
-  top: -10px;
+  margin-top: 5px;
 }
 
 .fa-envelope {
   margin-right: 8px;
-  position: relative;
+  margin-top: 5.5px;
 }
 
 .custom-list > ul,
@@ -268,6 +264,10 @@ html, body {
   margin-bottom: 0px;
 }
 
+.news > ul {
+  margin-bottom: 0px;
+}
+
 .news > ul > li {
   margin-left: -19px;
   display: block;
@@ -277,54 +277,34 @@ html, body {
   content: attr(data-marker) ": ";
 }
 
-.experiences-item {
-  padding-left: 5px;
-  margin-top: 15px;
-  margin-bottom: 8px;
-}
-
-.experiences-heading {
-  color: var(--subheading-color);
-  margin-bottom: 12px;
-}
-
-.experiences-component {
-  margin-bottom: 5px;
-  color: var(--component-text-color);
-  display: flex;
-  align-items: center
-}
-
-.experiences-icon {
-  color: var(--subheading-color);
-  font-size: 20px;
-  margin-left: -2px;
-  margin-right: 6px;
-}
-
+.experiences-item,
 .education-item {
   padding-left: 5px;
   margin-top: 15px;
   margin-bottom: 8px;
 }
 
-.education-heading {
+.experiences-item .heading,
+.education-item .heading {
   color: var(--subheading-color);
   margin-bottom: 12px;
 }
 
-.education-component {
+.experiences-item .component,
+.education-item .component {
   margin-bottom: 5px;
   color: var(--component-text-color);
   display: flex;
-  align-items: center
+  align-items: flex-start;
 }
 
-.education-icon {
+.experiences-item .icon,
+.education-item .icon {
   color: var(--subheading-color);
   font-size: 20px;
   margin-left: -2px;
   margin-right: 6px;
+  margin-top: 2px;
 }
 
 /* ===== blog.tsx ===== */
@@ -426,6 +406,11 @@ html, body {
 @media (max-width: 600px) {
   body {
     font-size: 15px;
+  }
+
+  .experiences-item .icon,
+  .education-item .icon {
+    margin-top: 1px;
   }
 
   .highlight {

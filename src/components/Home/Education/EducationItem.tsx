@@ -7,18 +7,18 @@ import type { TFunction } from 'next-i18next'
 const EducationItem = ({ type, t }: { type: string, t: TFunction }): JSX.Element => {
   return (
     <div className='education-item'>
-      <h3 className='education-heading'>{t(`education.${type}`)}</h3>
-      <div className='education-component'>
-        <CalendarMonthOutlinedIcon className='education-icon'/>
+      <h3 className='heading'>{t(`education.${type}`)}</h3>
+      <div className='component'>
+        <CalendarMonthOutlinedIcon className='icon'/>
         <span>{t(`education.${type}-date`)}</span>
       </div>
-      <div className='education-component'>
-        <SchoolOutlinedIcon className='education-icon'/>
+      <div className='component'>
+        <SchoolOutlinedIcon className='icon'/>
         <span>{t(`education.${type}-affiliation`)}</span>
       </div>
       {`education.${type}-supervisor` !== t(`education.${type}-supervisor`) && (
-        <div className='education-component'>
-          <Person2OutlinedIcon className='education-icon'/>
+        <div className='component'>
+          <Person2OutlinedIcon className='icon'/>
           <span>{t(`education.${type}-supervisor`)}</span>
         </div>
       )}

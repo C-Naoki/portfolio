@@ -3,23 +3,22 @@ import WorkOutlineIcon from '@mui/icons-material/WorkOutline'
 
 import type { TFunction } from 'next-i18next'
 
+import OtherContents from '@/components/Uikit/OtherContents'
+
 const ExperiencesItem = ({ type, t }: { type: string, t: TFunction }): JSX.Element => {
+  const otherContentsRecord = t('experiences', { returnObjects: true }) as Record<string, string>
   return (
     <div className='experiences-item'>
-      <h3 className='experiences-heading'>{t(`experiences.${type}`)}</h3>
-      <div className='experiences-component'>
-        <CalendarMonthOutlinedIcon className='experiences-icon'/>
+      <h3 className='heading'>{t(`experiences.${type}`)}</h3>
+      <div className='component'>
+        <CalendarMonthOutlinedIcon className='icon'/>
         <span>{t(`experiences.${type}-date`)}</span>
       </div>
-      <div className='experiences-component'>
-        <WorkOutlineIcon className='experiences-icon'/>
+      <div className='component'>
+        <WorkOutlineIcon className='icon'/>
         <span>{t(`experiences.${type}-role`)}</span>
       </div>
-      {`experiences.${type}-content1` !== t(`experiences.${type}-content1`) && (
-        <div className='experiences-component'>
-          <span>{t(`experiences.${type}-content1`)}</span>
-        </div>
-      )}
+      <OtherContents className='component' type={type} t={otherContentsRecord}/>
     </div>
   )
 }
