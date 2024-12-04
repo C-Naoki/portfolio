@@ -2,6 +2,7 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import Affiliation from '@/components/Home/Affiliation'
+import ProfileImage from '@/components/Home/Biography/ProfileImage'
 import ProfileText from '@/components/Home/Biography/ProfileText'
 import Education from '@/components/Home/Education'
 import Experiences from '@/components/Home/Experiences'
@@ -20,6 +21,7 @@ export default function Home (): JSX.Element {
         <HorizontalLine />
         <div className='biography'>
           <ProfileText />
+          <ProfileImage />
         </div>
       </Section>
       <Section id='affiliation' title={t('affiliation.heading')}>
