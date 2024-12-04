@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Link from 'next/link'
+import ExternalLink from '@/components/Uikit/ExternalLink'
 
 interface TitleProps {
   href: string
@@ -10,7 +10,7 @@ interface TitleProps {
 const Title: React.FC<TitleProps> = ({ href, name }) => {
   return (
     <span>
-      <Link className='link bold' href={href}>{name}</Link>{'. '}
+      <ExternalLink url={href} text={name} bold={true}/>{'. '}
     </span>
   )
 }
