@@ -22,7 +22,6 @@ const Experiences = ({ t, i18n }: { t: TFunction, i18n: i18n }): JSX.Element => 
 
   return (
     <div>
-      <HorizontalLine />
       {experiencesKeys.map(({ body }, index) => (
         <span key={index}>
           <ExperiencesItem type={body} t={t} />

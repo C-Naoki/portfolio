@@ -7,10 +7,10 @@ import ProfileText from '@/components/Home/Biography/ProfileText'
 import Education from '@/components/Home/Education'
 import Experiences from '@/components/Home/Experiences'
 import GrantsAwards from '@/components/Home/GrantsAwards'
+import Misc from '@/components/Home/Misc'
 import News from '@/components/Home/News'
 import Layout from '@/components/Layouts/Layout'
 import Section from '@/components/Layouts/Section'
-import ExternalLink from '@/components/Uikit/ExternalLink'
 import HorizontalLine from '@/components/Uikit/HorizontalLine'
 
 export default function Home (): JSX.Element {
@@ -27,7 +27,7 @@ export default function Home (): JSX.Element {
       </Section>
       <Section id='affiliation' title={t('affiliation.heading')}>
         <HorizontalLine />
-        <Affiliation t={t}/>
+        <Affiliation t={t} i18n={i18n}/>
       </Section>
       <Section id='news' title={t('news.heading')}>
         <HorizontalLine />
@@ -38,27 +38,16 @@ export default function Home (): JSX.Element {
         <GrantsAwards t={t} i18n={i18n}/>
       </Section>
       <Section id='experiences' title={t('experiences.heading')}>
+        <HorizontalLine />
         <Experiences t={t} i18n={i18n}/>
       </Section>
       <Section id='education' title={t('education.heading')}>
+        <HorizontalLine />
         <Education t={t} i18n={i18n}/>
       </Section>
       <Section id='misc' title={t('misc.heading')}>
         <HorizontalLine />
-        <div className="custom-list">
-          <ul>
-            <li data-marker={t('misc.pigicon2023-date')}>
-              <span>{t('misc.pigicon2023')}</span>
-            </li>
-            <li data-marker={t('misc.pakdd2023-date')}>
-              <span>{t('misc.pakdd2023')}</span>
-            </li>
-            <li data-marker={t('misc.pandacco-date')}>
-              <span>{t('misc.pandacco')} </span>
-              <ExternalLink url='https://pandacco.web.app/' bracket={true}/>
-            </li>
-          </ul>
-        </div>
+        <Misc t={t} i18n={i18n}/>
       </Section>
     </Layout>
   )

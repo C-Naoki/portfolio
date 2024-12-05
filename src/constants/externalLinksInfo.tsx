@@ -7,8 +7,6 @@ export interface ResourcesProps {
   arxiv?: string
 }
 
-type BiographyLinksProps = Record<string, string>
-
 interface PublicationsProps {
   title: string
   awards: string[]
@@ -22,8 +20,10 @@ interface ExternalLinksInfoProps {
   orcid: string
   googlescholar: string
   zenn: string
-  biography: BiographyLinksProps
+  biography: Record<string, string>
+  affiliation: Record<string, string>
   grants_awards: Record<string, string>
+  misc: Record<string, string>
   publications: Record<string, PublicationsProps>
 }
 
@@ -40,10 +40,19 @@ const externalLinksInfo: ExternalLinksInfoProps = {
     link_yasuko: 'https://www.dm.sanken.osaka-u.ac.jp/~yasuko/index.html',
     link_hwip: 'https://www.humanware.osaka-u.ac.jp/en/'
   },
+  affiliation: {
+    laboratory: 'https://www.dm.sanken.osaka-u.ac.jp/',
+    SANKEN: 'https://www.sanken.osaka-u.ac.jp/en/',
+    graduate: 'https://www.ist.osaka-u.ac.jp/english/',
+    university: 'https://www.osaka-u.ac.jp/en'
+  },
   grants_awards: {
     yamashita: 'https://www.ipsj.or.jp/award/yamasita2024-detail.html#dbs',
     deim2024: 'https://confit.atlas.jp/guide/event/deim2024/static/awards',
     hwip: 'https://www.humanware.osaka-u.ac.jp/en/'
+  },
+  misc: {
+    pandacco: 'https://pandacco.web.app/'
   },
   publications: {
     // 2025
