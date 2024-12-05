@@ -23,6 +23,7 @@ interface ExternalLinksInfoProps {
   googlescholar: string
   zenn: string
   biography: BiographyLinksProps
+  grants_awards: Record<string, string>
   publications: Record<string, PublicationsProps>
 }
 
@@ -38,6 +39,11 @@ const externalLinksInfo: ExternalLinksInfoProps = {
     link_yasushi: 'https://www.dm.sanken.osaka-u.ac.jp/~yasushi/index-j.html',
     link_yasuko: 'https://www.dm.sanken.osaka-u.ac.jp/~yasuko/index.html',
     link_hwip: 'https://www.humanware.osaka-u.ac.jp/en/'
+  },
+  grants_awards: {
+    yamashita: 'https://www.ipsj.or.jp/award/yamasita2024-detail.html#dbs',
+    deim2024: 'https://confit.atlas.jp/guide/event/deim2024/static/awards',
+    hwip: 'https://www.humanware.osaka-u.ac.jp/en/'
   },
   publications: {
     // 2025

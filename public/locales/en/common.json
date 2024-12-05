@@ -1,8 +1,8 @@
 {
+  "name": "Naoki Chihara",
   "title": "Home",
   "profile-text": "I am a second-year M.Sc. student at Osaka University, Japan and am project researcher at SANKEN, Osaka University. In a nutshell, I am interested in data mining of time series data. Specifically, my research topics are (RQ1) Stream processing and (RQ2) Causality. I am fortunate to be advised by <link_yasushi>Prof. Yasushi Sakurai</link_yasushi> and <link_yasuko>Prof. Yasuko Matsubara</link_yasuko> at SANKEN. I recieved my B.Sc. degree from Osaka University advised by <link_makoto>Prof. Makoto Onizuka</link_makoto> in March, 2023. I am participating in <link_hwip>Humanware Innovation Program</link_hwip> to deepen my knowledge in other fields.",
   "cv": "Download my CV <link_cv>here</link_cv>",
-  "name": "Naoki Chihara",
   "blog": {
     "heading": "Blog",
     "article": "Article",
@@ -116,7 +116,7 @@
     "hwip-passing": "I have passed the selection exam for the Humanware Innovation Program.",
     "hwip-passing-date": "[2023.03.14]"
   },
-  "grants": {
+  "grants-awards": {
     "heading": "Grants & Awards",
     "yamashita-date": "[2024.07]",
     "yamashita": "2024 IPSJ Yamashita SIG Research Award",

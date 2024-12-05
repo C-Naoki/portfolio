@@ -6,6 +6,7 @@ import ProfileImage from '@/components/Home/Biography/ProfileImage'
 import ProfileText from '@/components/Home/Biography/ProfileText'
 import Education from '@/components/Home/Education'
 import Experiences from '@/components/Home/Experiences'
+import GrantsAwards from '@/components/Home/GrantsAwards'
 import News from '@/components/Home/News'
 import Layout from '@/components/Layouts/Layout'
 import Section from '@/components/Layouts/Section'
@@ -32,24 +33,9 @@ export default function Home (): JSX.Element {
         <HorizontalLine />
         <News t={t} i18n={i18n}/>
       </Section>
-      <Section id='grants' title={t('grants.heading')}>
+      <Section id='grants-awards' title={t('grants-awards.heading')}>
         <HorizontalLine />
-        <div className="custom-list">
-          <ul>
-            <li data-marker={t('grants.yamashita-date')}>
-              <ExternalLink url="https://www.ipsj.or.jp/award/yamashita2024.html" text={t('grants.yamashita')}/>
-            </li>
-            <li data-marker={t('grants.deim2024-date')}>
-              <ExternalLink url="https://confit.atlas.jp/guide/event/deim2024/static/awards" text={t('grants.deim2024')}/>
-            </li>
-            <li data-marker={t('grants.hwip-date')}>
-              <ExternalLink url="https://www.humanware.osaka-u.ac.jp/" text={t('grants.hwip')}/>
-              <ul>
-                <li>{t('grants.hwip-content1')}</li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+        <GrantsAwards t={t} i18n={i18n}/>
       </Section>
       <Section id='experiences' title={t('experiences.heading')}>
         <Experiences t={t} i18n={i18n}/>
