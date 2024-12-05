@@ -4,7 +4,7 @@ const ProfileImage = (): JSX.Element => {
   return (
     <div className='profile-image'>
       <Image
-        src="/images/profile.jpg"
+        src="/images/profile.png"
         alt="My profile photo"
         width={150}
         height={150}
