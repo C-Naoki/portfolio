@@ -2,14 +2,16 @@ import nodemailer from 'nodemailer'
 
 import type { NextApiRequest, NextApiResponse } from 'next'
 
+import nodemailerInfo from '@/constants/nodemailerInfo'
+
 export default async function handler (req: NextApiRequest, res: NextApiResponse): Promise<void> {
   if (req.method === 'POST') {
     const { surName, name, email, subject, message } = req.body
 
     const transporter = nodemailer.createTransport({
-      host: 'cc.mail.osaka-u.ac.jp',
-      port: 465,
-      secure: true,
+      host: nodemailerInfo.host,
+      port: nodemailerInfo.port,
+      secure: nodemailerInfo.secure,
       auth: {
         user: process.env.EMAIL_USERID,
         pass: process.env.EMAIL_PASSWORD
@@ -18,7 +20,7 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
 
     const mailOptions = {
       from: 'お問い合わせフォーム <portfolio.send.only@gmail.com>',
-      to: 'naoki88@sanken.osaka-u.ac.jp',
+      to: nodemailerInfo.email,
       subject: `Auto: ${subject}`,
       text: `名前: ${surName} ${name}\nメール: ${email}\n\n${message}`
     }
