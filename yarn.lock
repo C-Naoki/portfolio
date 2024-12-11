@@ -1390,6 +1390,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/gtag.js@npm:^0.0.20":
+  version: 0.0.20
+  resolution: "@types/gtag.js@npm:0.0.20"
+  checksum: 10c0/eb878aa3cfab6b98f5e69ef3383e9788aaea6a4d0611c72078678374dcbb4731f533ff2bf479a865536f1626a57887b1198279ff35a65d223fe4f93d9c76dbdd
+  languageName: node
+  linkType: hard
+
 "@types/hast@npm:^2.0.0":
   version: 2.3.8
   resolution: "@types/hast@npm:2.3.8"
@@ -5191,6 +5198,7 @@ __metadata:
     "@mui/material": "npm:^5.15.14"
     "@mui/styles": "npm:^5.15.14"
     "@notionhq/client": "npm:^2.2.13"
+    "@types/gtag.js": "npm:^0.0.20"
     "@types/node": "npm:^20"
     "@types/nodemailer": "npm:^6.4.14"
     "@types/react": "npm:^18"

@@ -5,6 +5,8 @@ import NextDocument, { Head, Html, Main, NextScript } from 'next/document'
 
 import type { DocumentContext, DocumentInitialProps } from 'next/document'
 
+import { GA_ID } from '@/lib/utils/gtag'
+
 class Document extends NextDocument {
   static async getInitialProps (ctx: DocumentContext): Promise<DocumentInitialProps> {
     const sheets = new ServerStyleSheets()
@@ -35,6 +37,22 @@ class Document extends NextDocument {
             href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"
             rel="stylesheet"
           />
+
+          {GA_ID !== '' && (
+            <>
+              <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
+              <script
+                dangerouslySetInnerHTML={{
+                  __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+
+                  gtag('config', '${GA_ID}');`
+                }}
+              />
+            </>
+          )}
         </Head>
         <body>
           <Main />
