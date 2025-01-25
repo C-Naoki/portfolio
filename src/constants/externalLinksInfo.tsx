@@ -115,7 +115,7 @@ const externalLinksInfo: ExternalLinksInfoProps = {
       }
     },
     kenshutsu2023: {
-      title: '',
+      title: 'https://jglobal.jst.go.jp/detail?JGLOBAL_ID=202503009056531197',
       awards: [],
       resources: {}
     }
