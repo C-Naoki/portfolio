@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 
+import externalLinksInfo from '@/constants/externalLinksInfo'
+
 export const Footer: React.FC = () => {
   const [lastUpdated, setLastUpdated] = useState('')
 
   useEffect(() => {
     const fetchLastCommitDate = async (): Promise<void> => {
-      const response = await fetch('https://api.github.com/repos/C-Naoki/portfolio/commits?per_page=1')
+      const response = await fetch(externalLinksInfo.commit_api)
       const commits = await response.json()
       if (commits.length > 0) {
         const lastCommitDate = new Date(commits[0].commit.committer.date as string)
