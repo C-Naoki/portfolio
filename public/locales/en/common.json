@@ -21,7 +21,7 @@
         "title": "Modeling Time-evolving Causality over Data Streams",
         "venue": {
           "name": "The 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD ’25)",
-          "others": "Tronto, Canada, August 3-7, 2025 (acceptance rate: 19%)"
+          "others": "Tronto, ON, Canada, August 3-7, 2025 (acceptance rate: 19%)"
         },
         "awards": []
       },
@@ -156,10 +156,12 @@
     "Master-date": "2023.04-present",
     "Master": "M.Sc. in Information Science",
     "Master-affiliation": "Osaka University, Osaka, Japan",
+    "Master-thesis": "Thesis: Stream Mining Time-evolving Causality for Time Series Forecasting",
     "Master-supervisor": "Supervisor: Prof. Yasushi Sakurai",
     "Bachelor-date": "2019.04-2023.03",
     "Bachelor": "B.Sc. in Engineering",
     "Bachelor-affiliation": "Osaka University, Osaka, Japan",
+    "Bachelor-thesis": "Thesis: Detection of Variable Celestial Objects using Machine Learning-based Periodic Analysis and Domain Knowledge",
     "Bachelor-supervisor": "Supervisor: Prof. Makoto Onizuka",
     "secondary-date": "2016.04-2019.03",
     "secondary": "High School Diploma",

@@ -126,17 +126,20 @@
     "SANKEN": "産業科学研究所 (SANKEN)",
     "graduate": "大阪大学 情報科学研究科",
     "university": "大阪大学",
-    "address": "565-0871 大阪府茨木市美穂ヶ丘 8-1"
+    "address": "565-0871 大阪府茨木市美穂ヶ丘 8-1",
+    "email": "naoki88[at]sanken.osaka-u.ac.jp"
   },
   "education": {
     "heading": "学歴",
     "Master-date": "2023年4月-現在",
     "Master": "修士（情報科学）",
     "Master-affiliation": "大阪大学 情報科学研究科 情報システム工学専攻",
+    "Master-thesis": "学位論文：時系列データストリームにおける将来予測のための時間変化する因果関係の抽出",
     "Master-supervisor": "指導教員：櫻井 保志 教授",
     "Bachelor-date": "2019年4月-2023年3月",
     "Bachelor": "学士（工学）",
     "Bachelor-affiliation": "大阪大学 工学部 電子情報工学科",
+    "Bachelor-thesis": "学位論文：機械学習による周期解析及びドメイン知識を活用した変動天体検出",
     "Bachelor-supervisor": "指導教員：鬼塚 真 教授",
     "secondary-date": "2016年4月-2019年3月",
     "secondary": "高等学校",

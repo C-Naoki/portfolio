@@ -1,4 +1,5 @@
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined'
+import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined'
 import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined'
 import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined'
 
@@ -16,6 +17,12 @@ const EducationItem = ({ type, t }: { type: string, t: TFunction }): JSX.Element
         <SchoolOutlinedIcon className='icon'/>
         <span>{t(`education.${type}-affiliation`)}</span>
       </div>
+      {`education.${type}-thesis` !== t(`education.${type}-thesis`) && (
+        <div className='component'>
+          <DescriptionOutlinedIcon className='icon'/>
+          <span>{t(`education.${type}-thesis`)}</span>
+        </div>
+      )}
       {`education.${type}-supervisor` !== t(`education.${type}-supervisor`) && (
         <div className='component'>
           <Person2OutlinedIcon className='icon'/>
