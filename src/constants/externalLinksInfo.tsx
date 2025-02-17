@@ -4,7 +4,7 @@ export interface ResourcesProps {
   slides?: string
   poster?: string
   code?: string
-  arxiv?: string
+  arXiv?: string
 }
 
 interface PublicationsProps {
@@ -30,7 +30,7 @@ interface ExternalLinksInfoProps {
 
 const externalLinksInfo: ExternalLinksInfoProps = {
   github: 'https://github.com/C-Naoki',
-  twitter: 'https://twitter.com/c_naoki88',
+  twitter: 'https://twitter.com/c_naoki13',
   linkedin: 'https://www.linkedin.com/in/naoki-chihara-0a35a827a/',
   orcid: 'https://orcid.org/0009-0005-7061-8214',
   googlescholar: 'https://scholar.google.com/citations?user=pq2b3jQAAAAJ&hl=en&oi=sra',
@@ -59,10 +59,12 @@ const externalLinksInfo: ExternalLinksInfoProps = {
   publications: {
     // 2025
     KDD2025: {
-      title: '',
+      title: 'https://doi.org/10.1145/3690624.3709283',
       awards: [],
       resources: {
-        code: 'https://github.com/C-Naoki/ModePlait'
+        paper: '/assets/KDD2025/paper.pdf',
+        code: 'https://github.com/C-Naoki/ModePlait',
+        arXiv: 'https://arxiv.org/abs/2502.08963'
       }
     },
     // 2024
@@ -95,7 +97,8 @@ const externalLinksInfo: ExternalLinksInfoProps = {
       title: 'https://ipsj.ixsq.nii.ac.jp/ej/?action=pages_view_main&active_action=repository_view_main_item_detail&item_id=233825&item_no=1&page_id=13&block_id=8',
       awards: [],
       resources: {
-        paper: '/assets/TOD101/paper.pdf'
+        paper: '/assets/TOD101/paper.pdf',
+        cite: '/assets/TOD101/bibtex.txt'
       }
     },
     // 2023
@@ -103,8 +106,8 @@ const externalLinksInfo: ExternalLinksInfoProps = {
       title: 'https://www.sciencedirect.com/science/article/pii/S221313372300080X',
       awards: [],
       resources: {
-        cite: '/assets/AstronComput45/bibtex.txt',
-        paper: '/assets/AstronComput45/paper.pdf'
+        paper: '/assets/AstronComput45/paper.pdf',
+        cite: '/assets/AstronComput45/bibtex.txt'
       }
     },
     DEIM2023: {
