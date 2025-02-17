@@ -35,7 +35,7 @@ const GrantsAwards = ({ t, i18n }: { t: TFunction, i18n: i18n }): JSX.Element =>
 
             return (
               <li key={index} data-marker={t(`grants-awards.${body}-date`)}>
-                <ExternalLink url={links[body]} text={t(`grants-awards.${body}`)} />
+                <ExternalLink url={links[body] !== undefined && links[body] !== '' ? links[body] : ''} text={t(`grants-awards.${body}`)} />
                 {contents.length > 0 && (
                   <ul>
                     {contents.map((content, i) => (

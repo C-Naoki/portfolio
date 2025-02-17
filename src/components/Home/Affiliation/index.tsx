@@ -27,7 +27,7 @@ const Affiliation = ({ t, i18n }: { t: TFunction, i18n: i18n }): JSX.Element => 
       <div className='institution'>
         {affiliationKeys.map(({ body }, index) => (
           <span key={index}>
-            <ExternalLink url={links[body]} text={t(`affiliation.${body}`)} />
+            <ExternalLink url={links[body] !== undefined && links[body] !== '' ? links[body] : ''} text={t(`affiliation.${body}`)} />
             {index !== affiliationKeys.length - 1 && <br />}
           </span>
         ))}
