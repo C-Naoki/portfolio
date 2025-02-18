@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react'
 
+import { useTranslation } from 'next-i18next'
+
 import externalLinksInfo from '@/constants/externalLinksInfo'
 
 export const Footer: React.FC = () => {
+  const { t } = useTranslation()
+  const yourName = t('name', { lng: 'en' })
   const [lastUpdated, setLastUpdated] = useState('')
 
   useEffect(() => {
@@ -24,7 +28,7 @@ export const Footer: React.FC = () => {
 
   return (
     <footer style={{ justifyContent: 'space-between', alignItems: 'center' }}>
-      <p>Copyright © 2023 Naoki Chihara. All rights reserved. <br />Last updated on {lastUpdated}</p>
+      <p>Copyright © 2023 {yourName}. All rights reserved. <br />Last updated on {lastUpdated}</p>
     </footer>
   )
 }
