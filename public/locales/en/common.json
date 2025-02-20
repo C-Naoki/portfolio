@@ -97,6 +97,8 @@
   },
   "news": {
     "heading": "News",
+    "boost": "I have been selected for the JST BOOST Program.",
+    "boost-date": "[2025.02.20]",
     "kdd2025": "Our paper has been accepted to KDD2025.",
     "kdd2025-date": "[2024.11.17]",
     "dc1": "I have been preliminarily selected for the JSPS DC1 Research Fellowship.",
