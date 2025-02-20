@@ -19,7 +19,7 @@ const ProfileText = (): JSX.Element => {
       />
       <div style={{ marginTop: '15px' }}>
         <FaDownload className="fa-download"/>
-        <Trans i18nKey="cv" components={{ link_cv: <TransLink url="assets/CV.pdf"/> }}/>
+        <Trans i18nKey="cv" components={{ link_cv: <TransLink url={externalLinksInfo.cv}/> }}/>
       </div>
     </div>
   )

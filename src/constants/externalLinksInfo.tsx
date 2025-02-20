@@ -21,6 +21,7 @@ interface ExternalLinksInfoProps {
   googlescholar: string
   zenn: string
   commit_api: string
+  cv: string
   biography: Record<string, string>
   affiliation: Record<string, string>
   grants_awards: Record<string, string>
@@ -36,6 +37,7 @@ const externalLinksInfo: ExternalLinksInfoProps = {
   googlescholar: 'https://scholar.google.com/citations?user=pq2b3jQAAAAJ&hl=en&oi=sra',
   zenn: 'https://zenn.dev/naoki0103',
   commit_api: 'https://api.github.com/repos/C-Naoki/portfolio/commits?per_page=1',
+  cv: 'https://c-naoki.github.io/CV/cv.pdf',
   biography: {
     link_makoto: 'http://www-bigdata.ist.osaka-u.ac.jp/professor/onizuka/onizuka_en.html',
     link_yasushi: 'https://www.dm.sanken.osaka-u.ac.jp/~yasushi/index-j.html',
