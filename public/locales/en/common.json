@@ -93,6 +93,11 @@
         "filing-date": "2023.06.19",
         "publication-date": "2025.01.07"
       }
+    },
+    "summary": {
+      "details": "Publication Details",
+      "abstract": "Abstract",
+      "resources": "Resources"
     }
   },
   "news": {

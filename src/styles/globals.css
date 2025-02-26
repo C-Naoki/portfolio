@@ -140,6 +140,7 @@ html, body {
 
 .link {
   color: var(--link-color);
+  cursor: pointer;
 }
 
 .link:hover {
@@ -223,25 +224,31 @@ html, body {
   margin-top: 5.5px;
 }
 
+.custom-list,
 .custom-list > ul,
 .custom-list > ol {
-  margin-bottom: -5px;
+  margin-bottom: -8px;
 }
 
-.custom-list > ul > li {
-  margin-left: -19px;
+.custom-list > ul > li,
+.custom-list > ol > li {
   margin-top: 10px;
+  line-height: normal;
   margin-bottom: 5px;
-  display: block;
 }
 
 .custom-list > ol > li {
   margin-left: -19px;
-  line-height: normal;
-  margin-bottom: -5px;
 }
 
-.custom-list > ul > li:before {
+.custom-list > ol > li[data-marker],
+.custom-list > ul > li[data-marker] {
+  margin-left: -19px;
+  display: block;
+  list-style-type: none;
+}
+
+.custom-list > ul > li[data-marker]:before {
   content: attr(data-marker) ": ";
 }
 

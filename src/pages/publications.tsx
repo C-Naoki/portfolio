@@ -14,7 +14,7 @@ export default function Publications (): JSX.Element {
   const publicationsKeys: Record<string, string[]> = {}
   for (let i = 0; i < keys.length; i++) {
     const key = keys[i]
-    if (key === 'heading') {
+    if (key === 'heading' || key === 'summary') {
       continue
     } else {
       const tempKeys = fetchTranslationKeys(i18n, `publications.${key}`)
