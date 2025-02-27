@@ -14,6 +14,8 @@ export default function Publication ({ name, tag }: { name: string, tag: string 
   if (links === undefined) links = { title: '', awards: [], resources: {} }
   const authors = t(`publications.${tag}.${name}.authors`, { returnObjects: true }) as string[]
   const title = t(`publications.${tag}.${name}.title`)
+  let abstract = t(`publications.${tag}.${name}.abstract`)
+  if (abstract === `publications.${tag}.${name}.abstract`) abstract = ''
   const venueName = t(`publications.${tag}.${name}.venue.name`)
   const venueOthers = t(`publications.${tag}.${name}.venue.others`)
   const awards = t(`publications.${tag}.${name}.awards`, { returnObjects: true }) as string[]
@@ -24,7 +26,7 @@ export default function Publication ({ name, tag }: { name: string, tag: string 
       <Title href={links.title} name={title}/>
       <Venue name={venueName} others={venueOthers}/>
       <Awards hrefs={links.awards} awards={awards}/>
-      <Resources resources={links.resources}/>
+      <Resources resources={links.resources} abstract={abstract}/>
     </div>
   )
 }
