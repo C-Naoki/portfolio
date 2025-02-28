@@ -60,6 +60,15 @@ const externalLinksInfo: ExternalLinksInfoProps = {
   },
   publications: {
     // 2025
+    DEIM2025: {
+      title: 'https://pub.confit.atlas.jp/ja/event/deim2025/presentation/4D-03',
+      awards: [],
+      resources: {
+        paper: '/assets/DEIM2025/paper.pdf',
+        slides: '/assets/DEIM2025/slides.pdf',
+        poster: '/assets/DEIM2025/poster.pdf'
+      }
+    },
     KDD2025: {
       title: 'https://doi.org/10.1145/3690624.3709283',
       awards: [],

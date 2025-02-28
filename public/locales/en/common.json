@@ -61,6 +61,14 @@
     },
     "domestic": {
       "heading": "Domestic Conference",
+      "DEIM2025": {
+        "authors": ["Naoki Chihara", "Yasuko Matsubara", "Ren Fujiwara", "Yasushi Sakurai"],
+        "venue": {
+          "name": "The 17th Forum on Data Engineering and Information Management (DEIM2025)",
+          "others": "Fukuoka, Japan, February 27 - March 4, 2025"
+        },
+        "awards": []
+      },
       "DEIM2024": {
         "authors": ["Naoki Chihara", "Yasuko Matsubara", "Ren Fujiwara", "Yasushi Sakurai"],
         "venue": {
