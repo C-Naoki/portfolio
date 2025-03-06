@@ -67,7 +67,7 @@
           "name": "The 17th Forum on Data Engineering and Information Management (DEIM2025)",
           "others": "Fukuoka, Japan, February 27 - March 4, 2025"
         },
-        "awards": []
+        "awards": ["Student Presentation Award"]
       },
       "DEIM2024": {
         "authors": ["Naoki Chihara", "Yasuko Matsubara", "Ren Fujiwara", "Yasushi Sakurai"],
@@ -113,6 +113,8 @@
   },
   "news": {
     "heading": "News",
+    "deim2025-presentation-date": "[2025.03.04]",
+    "deim2025-presentation": "I have received the DEIM2025 Student Presentation Award.",
     "boost": "I have been selected for the JST BOOST Program.",
     "boost-date": "[2025.02.20]",
     "kdd2025": "Our paper has been accepted to KDD2025.",
@@ -136,6 +138,8 @@
   },
   "grants-awards": {
     "heading": "Grants & Awards",
+    "deim2025-date": "[2025.03]",
+    "deim2025": "DEIM2025 Student Presentation Award",
     "yamashita-date": "[2024.07]",
     "yamashita": "IPSJ Yamashita SIG Research Award",
     "deim2024-date": "[2024.06]",
