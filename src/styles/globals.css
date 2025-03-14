@@ -227,7 +227,7 @@ html, body {
 .custom-list,
 .custom-list > ul,
 .custom-list > ol {
-  margin-bottom: -8px;
+  margin-bottom: -5px;
 }
 
 .custom-list > ul > li,
@@ -268,11 +268,11 @@ html, body {
   width: 98%;
   height: 150px;
   overflow: auto;
-  margin-bottom: 0px;
+  margin-bottom: 3px;
 }
 
 .news > ul {
-  margin-bottom: 0px;
+  margin-bottom: -10px;
 }
 
 .news > ul > li {
@@ -282,6 +282,11 @@ html, body {
 
 .news > ul > li:before {
   content: attr(data-marker) ": ";
+}
+
+.experiences,
+.education {
+  margin-bottom: 0px;
 }
 
 .experiences-item,
@@ -329,7 +334,7 @@ html, body {
 /* ===== publications.tsx ===== */
 .publication-item {
   padding-left: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 .publication-heading {
@@ -458,6 +463,11 @@ html, body {
     font-size: 15px;
   }
 
+  .education,
+  .experiences {
+    margin-bottom: -5px;
+  }
+
   .experiences-item .icon,
   .education-item .icon {
     margin-top: 1px;
@@ -491,11 +501,13 @@ html, body {
 
   .news {
     width: 94%;
+    margin-bottom: 0px;
   }
 
   .biography {
     flex-direction: column-reverse;
     align-items: center;
+    margin-bottom: 0px;
   }
 
   .biography .profile-image {

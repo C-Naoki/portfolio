@@ -21,7 +21,7 @@ const Education = ({ t, i18n }: { t: TFunction, i18n: i18n }): JSX.Element => {
   }
 
   return (
-    <div>
+    <div className='education'>
       {educationKeys.map(({ body }, index) => (
         <span key={index}>
           <EducationItem type={body} t={t} />
