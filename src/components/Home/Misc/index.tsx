@@ -21,36 +21,34 @@ const Misc = ({ t, i18n }: { t: TFunction, i18n: i18n }): JSX.Element => {
   }
 
   return (
-    <div>
-      <div className="custom-list">
-        <ul>
-          {miscKeys.map(({ body }, index) => {
-            const contents = []
-            let contentIndex = 1
-            let currentContent
-            while ((currentContent = t(`misc.${body}-content${contentIndex}`)) !== `misc.${body}-content${contentIndex}`) {
-              contents.push(currentContent)
-              contentIndex++
-            }
+    <div className="custom-list">
+      <ul>
+        {miscKeys.map(({ body }, index) => {
+          const contents = []
+          let contentIndex = 1
+          let currentContent
+          while ((currentContent = t(`misc.${body}-content${contentIndex}`)) !== `misc.${body}-content${contentIndex}`) {
+            contents.push(currentContent)
+            contentIndex++
+          }
 
-            return (
-              <li key={index} data-marker={t(`misc.${body}-date`)}>
-                <span>{t(`misc.${body}`)} </span>
-                {links[body] !== undefined && (
-                  <ExternalLink url={links[body]} bracket={true}/>
-                )}
-                {contents.length > 0 && (
-                  <ul>
-                    {contents.map((content, i) => (
-                      <li key={i}>{content}</li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            )
-          })}
-        </ul>
-      </div>
+          return (
+            <li key={index} data-marker={t(`misc.${body}-date`)}>
+              <span>{t(`misc.${body}`)} </span>
+              {links[body] !== undefined && (
+                <ExternalLink url={links[body]} bracket={true}/>
+              )}
+              {contents.length > 0 && (
+                <ul>
+                  {contents.map((content, i) => (
+                    <li key={i}>{content}</li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          )
+        })}
+      </ul>
     </div>
   )
 }
