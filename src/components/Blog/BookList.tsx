@@ -21,7 +21,7 @@ const BookList = ({ book }: Props): JSX.Element => {
         <span className={styles.articleDate}>{formatDate(book.published_at)}</span>
       </div>
       <div className={styles.articleStats}>
-        <span className={styles.likes}>❤️ {book.liked_count}</span>
+        <span className={styles.likes}>🩵 Zenn: <span className={styles.zenn}>{book.liked_count}</span> Likes</span>
       </div>
     </div>
   )

@@ -17,9 +17,23 @@
 .articleStats {
   font-size: 14px;
   margin-bottom: 5px;
-  color: #586069;
+  color: var(--component-text-color);
+}
+
+.zenn {
+  color: #399bfe;
+  font-weight: bold;
+}
+
+.qiita {
+  color: #55c500;
+  font-weight: bold;
 }
 
 .likes {
   margin-right: 16px;
+}
+
+.stocks {
+  margin-right: 18px;
 }

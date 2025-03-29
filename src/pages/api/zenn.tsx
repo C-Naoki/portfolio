@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import type { Article, Book } from '@/types/blog.d'
+import type { ZennArticle, Book } from '@/types/blog.d'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 import externalLinksInfo from '@/constants/externalLinksInfo'
@@ -27,17 +27,17 @@ export default async function handler (
       axios.get(`https://zenn.dev/api/books?username=${username}&order=latest`)
     ])
 
-    const articles: Article[] = articlesResponse.data.articles.map((article: Article) => ({
+    const zennArticles: ZennArticle[] = articlesResponse.data.articles.map((article: ZennArticle) => ({
       ...article,
       published_at: new Date(article.published_at).toISOString()
     }))
 
-    const books: Book[] = booksResponse.data.books.map((book: Book) => ({
+    const zennBooks: Book[] = booksResponse.data.books.map((book: Book) => ({
       ...book,
       published_at: new Date(book.published_at).toISOString()
     }))
 
-    res.status(200).json({ articles, books })
+    res.status(200).json({ zennArticles, zennBooks })
   } catch (error) {
     console.error('Error fetching Zenn articles or books:', error)
     res.status(500).json({ error: 'Failed to fetch articles or books' })
