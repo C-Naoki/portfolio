@@ -5,6 +5,7 @@ export interface ResourcesProps {
   poster?: string
   code?: string
   arXiv?: string
+  video?: string
 }
 
 interface PublicationsProps {
@@ -82,7 +83,8 @@ const externalLinksInfo: ExternalLinksInfoProps = {
       resources: {
         paper: '/assets/KDD2025/paper.pdf',
         code: 'https://github.com/C-Naoki/ModePlait',
-        arXiv: 'https://arxiv.org/abs/2502.08963'
+        arXiv: 'https://arxiv.org/abs/2502.08963',
+        video: 'https://youtu.be/01hS6R1a8jg'
       }
     },
     // 2024
