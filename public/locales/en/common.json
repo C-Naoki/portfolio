@@ -67,7 +67,7 @@
           "name": "The 17th Forum on Data Engineering and Information Management (DEIM2025)",
           "others": "Fukuoka, Japan, February 27 - March 4, 2025"
         },
-        "awards": ["Student Presentation Award"]
+        "awards": ["Student Presentation Award", "Best Paper Award Runner-up"]
       },
       "DEIM2024": {
         "authors": ["Naoki Chihara", "Yasuko Matsubara", "Ren Fujiwara", "Yasushi Sakurai"],
@@ -113,6 +113,8 @@
   },
   "news": {
     "heading": "News",
+    "deim2025-award-date": "[2025.05.20]",
+    "deim2025-award": "I have received the DEIM2025 Best Paper Award Runner-up.",
     "msc-date": "[2025.03.25]",
     "msc": "I have completed my M.Sc. degree at Osaka University.",
     "ist-award-date": "[2025.03.07]",
@@ -142,6 +144,8 @@
   },
   "grants-awards": {
     "heading": "Grants & Awards",
+    "deim2025-date": "[2025.06]",
+    "deim2025": "DEIM2025 Best Paper Award Runner-up",
     "ist-date": "[2025.03]",
     "ist": "Osaka University Graduate School of Information Science and Technology Award",
     "deim2025-presentation-date": "[2025.03]",

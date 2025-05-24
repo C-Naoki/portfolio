@@ -53,6 +53,7 @@ const externalLinksInfo: ExternalLinksInfoProps = {
     university: 'https://www.osaka-u.ac.jp/en'
   },
   grants_awards: {
+    deim2025: 'https://pub.confit.atlas.jp/ja/event/deim2025/content/awards',
     'deim2025-presentation': 'https://pub.confit.atlas.jp/ja/event/deim2025/content/awards',
     yamashita: 'https://www.ipsj.or.jp/award/yamasita2024-detail.html#dbs',
     deim2024: 'https://confit.atlas.jp/guide/event/deim2024/static/awards',
@@ -66,6 +67,7 @@ const externalLinksInfo: ExternalLinksInfoProps = {
     DEIM2025: {
       title: 'https://pub.confit.atlas.jp/ja/event/deim2025/presentation/4D-03',
       awards: [
+        'https://pub.confit.atlas.jp/ja/event/deim2025/content/awards',
         'https://pub.confit.atlas.jp/ja/event/deim2025/content/awards'
       ],
       resources: {
