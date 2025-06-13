@@ -8,14 +8,15 @@ import fetchTranslationKeys from '@/lib/utils/fetchTranslationKeys'
 const Misc = ({ t, i18n }: { t: TFunction, i18n: i18n }): JSX.Element => {
   const keys = fetchTranslationKeys(i18n, 'misc')
   const links = ExternalLinksInfo.misc
-  const miscKeys: Array<{ body: string }> = []
+  const miscKeys: Array<{ body: string, date: string }> = []
   for (let i = 0; i < keys.length; i++) {
     const key = keys[i]
     if (key === 'heading') {
       continue
-    } else if (!key.includes('-')) {
+    } else if (key.endsWith('-date')) {
+      const body = key.replace('-date', '')
       if (keys.includes(key)) {
-        miscKeys.push({ body: key })
+        miscKeys.push({ body, date: key })
       }
     }
   }
@@ -23,7 +24,7 @@ const Misc = ({ t, i18n }: { t: TFunction, i18n: i18n }): JSX.Element => {
   return (
     <div className="custom-list">
       <ul>
-        {miscKeys.map(({ body }, index) => {
+        {miscKeys.map(({ body, date }, index) => {
           const contents = []
           let contentIndex = 1
           let currentContent
@@ -33,7 +34,7 @@ const Misc = ({ t, i18n }: { t: TFunction, i18n: i18n }): JSX.Element => {
           }
 
           return (
-            <li key={index} data-marker={t(`misc.${body}-date`)}>
+            <li key={index} data-marker={t(`misc.${date}`)}>
               <span>{t(`misc.${body}`)} </span>
               {links[body] !== undefined && (
                 <ExternalLink url={links[body]} bracket={true}/>
