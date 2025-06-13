@@ -61,6 +61,7 @@ const externalLinksInfo: ExternalLinksInfoProps = {
     hwip: 'https://www.humanware.osaka-u.ac.jp/en/'
   },
   misc: {
+    'sakurai-interview': 'https://www.dm.sanken.osaka-u.ac.jp/interview_naoki/',
     pandacco: 'https://pandacco.web.app/'
   },
   publications: {
