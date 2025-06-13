@@ -20,6 +20,7 @@ interface ExternalLinksInfoProps {
   linkedin: string
   orcid: string
   googlescholar: string
+  speakerdeck: string
   zenn: string
   qiita: string
   commit_api: string
@@ -37,6 +38,7 @@ const externalLinksInfo: ExternalLinksInfoProps = {
   linkedin: 'https://www.linkedin.com/in/naoki-chihara-0a35a827a/',
   orcid: 'https://orcid.org/0009-0005-7061-8214',
   googlescholar: 'https://scholar.google.com/citations?user=pq2b3jQAAAAJ&hl=en&oi=sra',
+  speakerdeck: 'https://speakerdeck.com/naoki13',
   zenn: 'https://zenn.dev/naoki0103',
   qiita: 'https://qiita.com/C-naoki',
   commit_api: 'https://api.github.com/repos/C-Naoki/portfolio/commits?per_page=1',

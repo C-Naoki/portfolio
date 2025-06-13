@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { faGoogleScholar, faOrcid } from '@fortawesome/free-brands-svg-icons'
+import { faGoogleScholar, faOrcid, faSpeakerDeck } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import MenuIcon from '@mui/icons-material/Menu'
 import { AppBar, Button, Drawer, IconButton, Toolbar, Typography } from '@mui/material'
@@ -70,6 +70,9 @@ const Header: React.FC = () => {
               </HeaderExternalLink>
               <HeaderExternalLink href={externalLinksInfo.orcid} className={styles.toolbarCenter}>
                 <FontAwesomeIcon icon={faOrcid} className={styles.headerIcon}/>
+              </HeaderExternalLink>
+              <HeaderExternalLink href={externalLinksInfo.speakerdeck} className={styles.toolbarCenter}>
+                <FontAwesomeIcon icon={faSpeakerDeck} className={styles.headerIcon}/>
               </HeaderExternalLink>
               <a className={styles.LanguageSwitcherLarge}>
                 <LanguageSwitcher />
