@@ -42,13 +42,24 @@ const SearchResultItem: React.FC<SearchResultItemProps> = ({ entry, query }) => 
     return t('search.pages.home', 'Home')
   }
 
+  const getPageIcon = (entry: SearchableEntry): JSX.Element => {
+    const { category, key } = entry
+    if (category.includes('Blog') || category.includes('Book')) {
+      return <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+    } else if (key.startsWith('publications.')) {
+      return <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="10" y2="9"/></svg>
+    } else {
+      return <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    }
+  }
+
   const snippet = getSnippet(entry.value, query)
 
   const content = (
     <div className={styles.searchResultItem}>
-      <div style={{ marginTop: '-5px', marginBottom: '6px' }}>
-        <span style={{ fontSize: '0.8rem', color: '#666' }}>
-          {getPageName(entry)}
+      <div style={{ marginTop: '-5px', marginBottom: '8px' }}>
+        <span style={{ fontSize: '0.95rem', color: '#666', display: 'flex', alignItems: 'center', gap: '4px' }}>
+          {getPageIcon(entry)} {getPageName(entry)}
         </span>
       </div>
       <h3 style={{ fontSize: '1.1rem', margin: 0, wordBreak: 'break-all', fontWeight: 'normal' }}>
