@@ -207,5 +207,12 @@
     "erroe": "通信に失敗しました",
     "empty-error": "必須項目が未入力です",
     "email-error": "メールアドレスが正しくありません"
+  },
+  "search": {
+    "section": {
+      "home": "トップページ",
+      "blog": "ブログ",
+      "publications": "業績一覧"
+    }
   }
 }

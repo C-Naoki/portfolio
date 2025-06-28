@@ -6,7 +6,7 @@ import MenuIcon from '@mui/icons-material/Menu'
 import { AppBar, Button, Drawer, IconButton, Toolbar, Typography } from '@mui/material'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaSearch, FaTwitter } from 'react-icons/fa'
 
 import DrawerContent from './DrawerContent'
 import LanguageSwitcher from './LanguageSwitcher'
@@ -30,9 +30,8 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({ href, children }) => {
   )
 }
 
-const Header: React.FC = () => {
+const Header: React.FC<{ onSearch?: (value: string) => void, searchValue?: string }> = ({ onSearch, searchValue }) => {
   const { t } = useTranslation()
-
   const [drawerOpen, setDrawerOpen] = useState(false)
 
   const handleDrawerToggle = (): void => {
@@ -80,15 +79,21 @@ const Header: React.FC = () => {
               <a className={styles.ThemeSwitcherLarge}>
                 <ThemeSwitcher />
               </a>
+              <Link href="/search" className={styles.SearchBoxLarge}>
+                <FaSearch className={styles.headerIcon} aria-label="search"/>
+              </Link>
             </div>
           </div>
           <div className={styles.headerOptionsSmall}>
             <a className={styles.LanguageSwitcherSmall}>
-                <LanguageSwitcher />
+              <LanguageSwitcher />
             </a>
             <a className={styles.ThemeSwitcherSmall}>
               <ThemeSwitcher />
             </a>
+            <Link href="/search" className={styles.SearchBoxSmall}>
+              <FaSearch className={styles.headerIcon} aria-label="search"/>
+            </Link>
             <IconButton
               className={styles.hamburgerMenu}
               edge='end'

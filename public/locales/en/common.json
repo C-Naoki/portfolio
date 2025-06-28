@@ -231,5 +231,12 @@
     "error": "An error occurred while sending your message.",
     "empty-error": "Please fill out all fields.",
     "email-error": "Please enter a valid email address."
+  },
+  "search": {
+    "section": {
+      "home": "Home",
+      "blog": "Blog",
+      "publications": "Publications"
+    }
   }
 }
