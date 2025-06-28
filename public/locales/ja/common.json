@@ -209,9 +209,20 @@
     "email-error": "メールアドレスが正しくありません"
   },
   "search": {
+    "heading": "検索",
+    "search": "検索窓",
+    "placeholder": "キーワードを入力",
+    "resultsFound": "{{count}}件の結果が見つかりました",
+    "noResults": "該当する結果がありません。",
     "section": {
       "home": "トップページ",
       "blog": "ブログ",
+      "publications": "業績一覧"
+    },
+    "pages": {
+      "home": "トップページ",
+      "blog": "ブログ",
+      "book": "本",
       "publications": "業績一覧"
     }
   }
