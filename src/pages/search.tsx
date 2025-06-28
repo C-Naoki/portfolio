@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
+import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 
 import enCommon from '../../public/locales/en/common.json'
@@ -47,9 +48,21 @@ const getPageSlug = (entry: FlattenedI18nEntry): 'home' | 'publications' | 'blog
 
 export default function Search ({ articles, books }: SearchProps): JSX.Element {
   const { t, i18n } = useTranslation()
+  const router = useRouter()
   const [query, setQuery] = useState('')
   const [caseSensitive, setCaseSensitive] = useState(false)
   const [wordMatch, setWordMatch] = useState(false)
+
+  useEffect(() => {
+    if (typeof router.query.q === 'string' && router.query.q !== undefined) {
+      setQuery(router.query.q)
+    }
+  }, [router.query.q])
+
+  useEffect(() => {
+    const newQuery = query.trim() === '' ? {} : { q: query }
+    void router.replace({ pathname: router.pathname, query: newQuery }, undefined, { shallow: true })
+  }, [query, router])
 
   const blogEntries: SearchableEntry[] = articles.flatMap(([zenn, qiita]) => {
     const entries: SearchableEntry[] = []
