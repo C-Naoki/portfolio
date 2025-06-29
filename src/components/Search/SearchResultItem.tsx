@@ -58,13 +58,13 @@ const SearchResultItem: React.FC<SearchResultItemProps> = ({ entry, query }) => 
   const content = (
     <div className={styles.searchResultItem}>
       <div style={{ marginTop: '-5px', marginBottom: '8px' }}>
-        <span style={{ fontSize: '0.95rem', color: '#666', display: 'flex', alignItems: 'center', gap: '4px' }}>
+        <span style={{ fontSize: '0.95rem', display: 'flex', alignItems: 'center', gap: '4px' }}>
           {getPageIcon(entry)} {getPageName(entry)}
         </span>
       </div>
-      <h3 style={{ fontSize: '1.1rem', margin: 0, wordBreak: 'break-all', fontWeight: 'normal' }}>
+      <div style={{ fontSize: '1.1rem', margin: 0, wordBreak: 'break-all', fontWeight: 'normal' }}>
         <Highlight text={snippet} query={query} />
-      </h3>
+      </div>
     </div>
   )
 

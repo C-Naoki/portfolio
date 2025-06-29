@@ -104,10 +104,12 @@ export default function Search ({ articles, books }: SearchProps): JSX.Element {
               padding: '10px 16px',
               paddingRight: '80px',
               fontSize: '1rem',
-              border: '1px solid #ccc',
+              border: '1px solid var(--input-border-color)',
               borderRadius: '24px',
               outline: 'none',
-              transition: 'border-color 0.2s'
+              transition: 'border-color 0.2s',
+              backgroundColor: 'var(--container-color)',
+              color: 'var(--text-color)'
             }}
             autoFocus
           />
@@ -119,12 +121,13 @@ export default function Search ({ articles, books }: SearchProps): JSX.Element {
               style={{
                 padding: '6px',
                 border: 'none',
-                background: caseSensitive ? '#e0e0e0' : 'transparent',
+                background: caseSensitive ? 'var(--input-border-color)' : 'transparent',
                 borderRadius: '50%',
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                color: 'var(--text-color)'
               }}
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 4v16"/><path d="M10 4v16"/><path d="M14 9h4"/><path d="M14 15h4"/><path d="M10 9H6"/></svg>
@@ -136,12 +139,13 @@ export default function Search ({ articles, books }: SearchProps): JSX.Element {
               style={{
                 padding: '6px',
                 border: 'none',
-                background: wordMatch ? '#e0e0e0' : 'transparent',
+                background: wordMatch ? 'var(--input-border-color)' : 'transparent',
                 borderRadius: '50%',
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                color: 'var(--text-color)'
               }}
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
@@ -160,7 +164,7 @@ export default function Search ({ articles, books }: SearchProps): JSX.Element {
             </div>
               )
             : (
-            <div style={{ color: '#888', fontSize: '1.1rem', padding: '32px 0', textAlign: 'center' }}>該当する結果がありません。</div>
+            <div style={{ color: 'var(--text-color)', fontSize: '1.1rem', padding: '32px 0', textAlign: 'center' }}>該当する結果がありません。</div>
               )}
         </Section>
       )}

@@ -13,7 +13,7 @@ const Highlight: React.FC<HighlightProps> = ({ text, query }) => {
     <>
       {parts.map((part, i) =>
         regex.test(part)
-          ? <mark key={i} style={{ background: 'yellow', color: 'inherit', padding: 0 }}>{part}</mark>
+          ? <mark key={i} style={{ background: 'var(--search-highlight)', color: 'inherit', padding: 0 }}>{part}</mark>
           : <span key={i}>{part}</span>
       )}
     </>
