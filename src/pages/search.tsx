@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
@@ -20,7 +20,7 @@ export interface SearchableEntry extends FlattenedI18nEntry {
 }
 
 interface SearchProps {
-  articles: Array<[ZennArticle, QiitaArticle]>
+  articles: Array<[ZennArticle | null, QiitaArticle | null]>
   books: Book[]
 }
 
@@ -49,25 +49,16 @@ const getPageSlug = (entry: FlattenedI18nEntry): 'home' | 'publications' | 'blog
 export default function Search ({ articles, books }: SearchProps): JSX.Element {
   const { t, i18n } = useTranslation()
   const router = useRouter()
-  const [query, setQuery] = useState('')
+  const initialQuery = typeof router.query.q === 'string' ? router.query.q : ''
+  const [inputValue, setInputValue] = useState(initialQuery)
+  const [query, setQuery] = useState(initialQuery)
   const [caseSensitive, setCaseSensitive] = useState(false)
   const [wordMatch, setWordMatch] = useState(false)
 
-  useEffect(() => {
-    if (typeof router.query.q === 'string' && router.query.q !== undefined) {
-      setQuery(router.query.q)
-    }
-  }, [router.query.q])
-
-  useEffect(() => {
-    const newQuery = query.trim() === '' ? {} : { q: query }
-    void router.replace({ pathname: router.pathname, query: newQuery }, undefined, { shallow: true })
-  }, [query, router])
-
   const blogEntries: SearchableEntry[] = articles.flatMap(([zenn, qiita]) => {
     const entries: SearchableEntry[] = []
-    if (zenn?.title !== undefined && zenn.title !== '') entries.push({ category: 'Blog', key: `zenn.${zenn.id}.title`, value: zenn.title, url: `https://zenn.dev${zenn.path}` })
-    if (qiita?.title !== undefined && qiita.title !== '') entries.push({ category: 'Blog', key: `qiita.${qiita.id}.title`, value: qiita.title, url: qiita.url })
+    if (zenn?.title != null && zenn.title.trim() !== '') entries.push({ category: 'Blog', key: `zenn.${zenn.id}.title`, value: zenn.title, url: `https://zenn.dev${zenn.path}` })
+    if (qiita?.title?.trim() !== '') entries.push({ category: 'Blog', key: `qiita.${qiita?.id}.title`, value: qiita?.title ?? '', url: qiita?.url ?? '' })
     return entries
   })
   const bookEntries: SearchableEntry[] = books.map(book => ({ category: 'Book', key: `book.${book.id}.title`, value: book.title, url: `https://zenn.dev${book.path}` }))
@@ -99,8 +90,15 @@ export default function Search ({ articles, books }: SearchProps): JSX.Element {
           <input
             type="text"
             placeholder={t('search.placeholder', 'Enter keywords')}
-            value={query}
-            onChange={e => { setQuery(e.target.value) }}
+            value={inputValue}
+            onChange={e => { setInputValue(e.target.value) }}
+            onKeyDown={e => {
+              if (e.key === 'Enter') {
+                setQuery(inputValue)
+                const newQuery = inputValue.trim() === '' ? {} : { q: inputValue }
+                void router.replace({ pathname: router.pathname, query: newQuery }, undefined, { shallow: true })
+              }
+            }}
             style={{
               width: '100%',
               padding: '10px 16px',
@@ -178,8 +176,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   const zennRes = await fetch(`${baseUrl}/api/zenn`)
   const qiitaRes = await fetch(`${baseUrl}/api/qiita`)
-  const { zennArticles, zennBooks }: { zennArticles: ZennArticle[], zennBooks: Book[] } = await zennRes.json()
-  const { qiitaArticles }: { qiitaArticles: QiitaArticle[] } = await qiitaRes.json()
+  const { zennArticles = [], zennBooks = [] }: { zennArticles?: ZennArticle[], zennBooks?: Book[] } = await zennRes.json()
+  const { qiitaArticles = [] }: { qiitaArticles?: QiitaArticle[] } = await qiitaRes.json()
   const articles = zip(zennArticles, qiitaArticles)
 
   return {
@@ -191,7 +189,12 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 }
 
-function zip<T, U> (arr1: T[], arr2: U[]): Array<[T | undefined, U | undefined]> {
-  const maxLength = Math.max(arr1.length, arr2.length)
-  return Array.from({ length: maxLength }, (_, i) => [arr1[i], arr2[i]])
+function zip<T, U> (arr1: T[] | null | undefined, arr2: U[] | null | undefined): Array<[T | null, U | null]> {
+  const safeArr1 = Array.isArray(arr1) ? arr1 : []
+  const safeArr2 = Array.isArray(arr2) ? arr2 : []
+  const maxLength = Math.max(safeArr1.length, safeArr2.length)
+  return Array.from({ length: maxLength }, (_, i) => [
+    safeArr1[i] ?? null,
+    safeArr2[i] ?? null
+  ])
 }
