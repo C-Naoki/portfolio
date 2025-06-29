@@ -1,6 +1,8 @@
 import '@/styles/globals.css'
 import 'katex/dist/katex.min.css'
 
+import { useState } from 'react'
+
 import { appWithTranslation } from 'next-i18next'
 import { Provider } from 'react-redux'
 
@@ -13,13 +15,14 @@ import store from '@/reducks/store/store'
 
 const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   usePageView()
+  const [searchValue, setSearchValue] = useState('')
 
   return (
     <Provider store={store}>
       <div id='__next'>
-        <Header />
+        <Header onSearch={setSearchValue} searchValue={searchValue} />
         <div className='main-content'>
-          <Component {...pageProps} />
+          <Component {...pageProps} searchValue={searchValue} />
         </div>
         <Footer />
       </div>

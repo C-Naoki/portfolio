@@ -2,7 +2,7 @@ import React from 'react'
 
 interface ExternalLinkProps {
   url: string
-  text?: string
+  text?: React.ReactNode
   bold?: boolean
   bracket?: boolean
 }

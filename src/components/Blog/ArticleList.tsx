@@ -1,8 +1,9 @@
-import type { ZennArticle, QiitaArticle } from '@/types/blog.d'
+import type { QiitaArticle, ZennArticle } from '@/types/blog.d'
 
+import Highlight from '@/components/Uikit/Highlight'
 import styles from '@/styles/blog.module.css'
 
-const ArticleList = ({ zennArticle, qiitaArticle }: { zennArticle: ZennArticle, qiitaArticle: QiitaArticle }): JSX.Element => {
+const ArticleList = ({ zennArticle, qiitaArticle, query }: { zennArticle: ZennArticle, qiitaArticle: QiitaArticle, query?: string }): JSX.Element => {
   const formatDate = (dateString: Date): string => {
     const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: '2-digit', day: '2-digit' }
     return new Date(String(dateString)).toLocaleDateString('ja-JP', options).replace(/\//g, '-')
@@ -11,7 +12,9 @@ const ArticleList = ({ zennArticle, qiitaArticle }: { zennArticle: ZennArticle, 
   return (
     <div className='blog'>
       <a href={`https://zenn.dev/${zennArticle.user.username}/articles/${zennArticle.slug}`}>
-        <h3 className='publication-heading'>{zennArticle.title}</h3>
+        <h3 className='publication-heading'>
+          {query != null ? <Highlight text={zennArticle.title} query={query} /> : zennArticle.title}
+        </h3>
       </a>
       <div className={styles.articleMeta}>
         <span className={styles.articleDate}>{formatDate(zennArticle.published_at)}</span>

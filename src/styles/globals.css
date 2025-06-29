@@ -20,6 +20,7 @@
   --subheading-color: #4A7C6A;
   --component-text-color: #4b5563;
   --horizontal-line: #95baad;
+  --search-highlight: #fbff00;
 }
 
 [data-theme="dark"] {
@@ -43,6 +44,7 @@
   --subheading-color: #d3d3d3;
   --component-text-color: #d3d3d3;
   --horizontal-line: #585b5b;
+  --search-highlight: #6b6d09;
 }
 
 body {
