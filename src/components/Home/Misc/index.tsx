@@ -36,9 +36,16 @@ const Misc = ({ t, i18n }: { t: TFunction, i18n: i18n }): JSX.Element => {
           return (
             <li key={index} data-marker={t(`misc.${date}`)}>
               <span>{t(`misc.${body}`)} </span>
-              {links[body] !== undefined && (
-                <ExternalLink url={links[body]} bracket={true}/>
-              )}
+              {links[body]?.map((link, linkIndex) => (
+                <span key={linkIndex}>
+                  <ExternalLink
+                    url={link}
+                    bracket={true}
+                    text={link.includes('https://github.com') ? 'code' : undefined}
+                  />
+                  {linkIndex < links[body].length - 1 && ' '}
+                </span>
+              ))}
               {contents.length > 0 && (
                 <ul>
                   {contents.map((content, i) => (

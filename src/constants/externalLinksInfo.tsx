@@ -28,7 +28,7 @@ interface ExternalLinksInfoProps {
   biography: Record<string, string>
   affiliation: Record<string, string>
   grants_awards: Record<string, string>
-  misc: Record<string, string>
+  misc: Record<string, string[]>
   publications: Record<string, PublicationsProps>
 }
 
@@ -63,8 +63,8 @@ const externalLinksInfo: ExternalLinksInfoProps = {
     hwip: 'https://www.humanware.osaka-u.ac.jp/en/'
   },
   misc: {
-    'sakurai-interview': 'https://www.dm.sanken.osaka-u.ac.jp/interview_naoki/',
-    pandacco: 'https://pandacco.web.app/'
+    'sakurai-interview': ['https://www.dm.sanken.osaka-u.ac.jp/interview_naoki/'],
+    pandacco: ['https://pandacco.web.app/']
   },
   publications: {
     // 2025
