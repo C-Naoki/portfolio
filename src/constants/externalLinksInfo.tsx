@@ -63,6 +63,10 @@ const externalLinksInfo: ExternalLinksInfoProps = {
     hwip: 'https://www.humanware.osaka-u.ac.jp/en/'
   },
   misc: {
+    zennhack: [
+      'https://zenn.dev/gdgoc_osaka/articles/ae5b89e170b2f3',
+      'https://github.com/gdsc-osaka/ai-agent-hack'
+    ],
     'sakurai-interview': ['https://www.dm.sanken.osaka-u.ac.jp/interview_naoki/'],
     pandacco: ['https://pandacco.web.app/']
   },
