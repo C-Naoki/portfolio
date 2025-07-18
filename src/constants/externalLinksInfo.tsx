@@ -57,6 +57,7 @@ const externalLinksInfo: ExternalLinksInfoProps = {
   },
   grants_awards: {
     deim2025: 'https://pub.confit.atlas.jp/ja/event/deim2025/content/awards',
+    ist: 'https://www.ist.osaka-u.ac.jp/files/overview/publication/publicationIstPlaza_No20.pdf#page=87',
     'deim2025-presentation': 'https://pub.confit.atlas.jp/ja/event/deim2025/content/awards',
     yamashita: 'https://www.ipsj.or.jp/award/yamasita2024-detail.html#dbs',
     deim2024: 'https://confit.atlas.jp/guide/event/deim2024/static/awards',
