@@ -90,6 +90,8 @@ const externalLinksInfo: ExternalLinksInfoProps = {
       awards: [],
       resources: {
         paper: '/assets/KDD2025/paper.pdf',
+        slides: '/assets/KDD2025/slides.pdf',
+        poster: '/assets/KDD2025/poster.pdf',
         cite: '/assets/KDD2025/bibtex.txt',
         code: 'https://github.com/C-Naoki/ModePlait',
         arXiv: 'https://arxiv.org/abs/2502.08963',
