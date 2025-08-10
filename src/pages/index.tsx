@@ -2,11 +2,13 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import Affiliation from '@/components/Home/Affiliation'
+import Awards from '@/components/Home/Awards'
 import ProfileImage from '@/components/Home/Biography/ProfileImage'
 import ProfileText from '@/components/Home/Biography/ProfileText'
 import Education from '@/components/Home/Education'
 import Experiences from '@/components/Home/Experiences'
-import GrantsAwards from '@/components/Home/GrantsAwards'
+import Fellowships from '@/components/Home/Fellowships'
+import Grants from '@/components/Home/Grants'
 import Misc from '@/components/Home/Misc'
 import News from '@/components/Home/News'
 import Layout from '@/components/Layouts/Layout'
@@ -33,17 +35,27 @@ export default function Home (): JSX.Element {
         <HorizontalLine />
         <News t={t} i18n={i18n}/>
       </Section>
-      <Section id='grants-awards' title={t('grants-awards.heading')}>
+      <Section id='education' title={t('education.heading')}>
         <HorizontalLine />
-        <GrantsAwards t={t} i18n={i18n}/>
+        <Education t={t} i18n={i18n}/>
       </Section>
       <Section id='experiences' title={t('experiences.heading')}>
         <HorizontalLine />
         <Experiences t={t} i18n={i18n}/>
       </Section>
-      <Section id='education' title={t('education.heading')}>
+      <Section id='awards' title={t('awards.heading')}>
         <HorizontalLine />
-        <Education t={t} i18n={i18n}/>
+        <Awards t={t} i18n={i18n}/>
+      </Section>
+      {i18n.language === 'ja' && (
+        <Section id='grants' title={t('grants.heading')}>
+          <HorizontalLine />
+          <Grants t={t} i18n={i18n}/>
+        </Section>
+      )}
+      <Section id='fellowships' title={t('fellowships.heading')}>
+        <HorizontalLine />
+        <Fellowships t={t} i18n={i18n}/>
       </Section>
       <Section id='misc' title={t('misc.heading')}>
         <HorizontalLine />

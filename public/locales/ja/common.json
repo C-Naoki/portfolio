@@ -120,12 +120,10 @@
     "hwip-passing-date": "[2023年3月14日]",
     "hwip-passing": "ヒューマンウェアイノベーション博士課程プログラム (HWIP) の選抜試験に合格しました．"
   },
-  "grants-awards": {
-    "heading": "助成金 & 受賞",
-    "jasso-date": "[2025年7月]",
-    "jasso": "日本学生支援機構 特に優れた業績による返還免除（全額免除）",
+  "awards": {
+    "heading": "受賞",
     "deim2025-date": "[2025年6月]",
-    "deim2025": "DEIM2025 優秀論文賞",
+    "deim2025": "DEIM2025 優秀論文賞 (上位 1.6%)",
     "ist-date": "[2025年3月]",
     "ist": "大阪大学情報科学研究科賞",
     "deim2025-presentation-date": "[2025年3月]",
@@ -133,12 +131,35 @@
     "yamashita-date": "[2024年7月]",
     "yamashita": "情報処理学会 2024年度山下記念研究賞",
     "deim2024-date": "[2024年6月]",
-    "deim2024": "DEIM2024 優秀論文賞",
+    "deim2024": "DEIM2024 優秀論文賞 (上位 1.4%)",
     "pakdd2023-volunteer-date": "[2023年5月]",
-    "pakdd2023-volunteer": "PAKDD2023 Volunteer Award",
+    "pakdd2023-volunteer": "PAKDD2023 Volunteer Award"
+  },
+  "fellowships": {
+    "heading": "奨学金",
+    "jasso-date": "[2025年7月]",
+    "jasso": "日本学生支援機構 第一種奨学金",
+    "jasso-content1": "特に優れた業績による返還免除制度により全額免除",
     "hwip-date": "[2023年4月-現在]",
     "hwip": "ヒューマンウェアイノベーション博士課程プログラム",
-    "hwip-content1": "研究活動経費、国内出張旅費、給付型奨学金 etc."
+    "hwip-content1": "研究活動経費、国内出張旅費、給付型奨学金 etc.",
+    "message": "ご支援いただき，厚く御礼申し上げます．"
+  },
+  "grants": {
+    "heading": "助成金",
+    "hwip-student-research2-date": "[2025年6月-2026年3月]",
+    "hwip-student-research2": "大阪大学博士課程教育リーディングプログラム 学生主体融合領域研究支援経費",
+    "hwip-student-research2-content1": "研究題目：ベイズ最適化を活用したタンパク質の構造決定の効率化",
+    "hwip-student-research2-content2": "配分総額：890千円",
+    "dc-date": "[2025年4月-2028年3月]",
+    "dc": "日本学術振興会 特別研究員奨励費",
+    "dc-content1": "研究課題名：時系列データストリーム中の因果関係の検出に基づいた高速かつ解釈可能な将来予測",
+    "dc-content2": "配分総額：2,100千円",
+    "dc-content3": "領域番号：25KJ1729",
+    "hwip-student-research1-date": "[2023年6月-2024年3月]",
+    "hwip-student-research1": "大阪大学博士課程教育リーディングプログラム 学生主体融合領域研究支援経費",
+    "hwip-student-research1-content1": "研究題目：リーダードローンによるドローン群の協調運搬システムの提案",
+    "hwip-student-research1-content2": "配分総額：900千円"
   },
   "experiences": {
     "heading": "職歴",
@@ -191,7 +212,7 @@
   "misc": {
     "heading": "その他",
     "zennhack-date": "[2025年6月]",
-    "zennhack": "第2回 AI Agent Hackathon with Google Cloud 一次審査通過 (通過率: 18.7%, 32/171)",
+    "zennhack": "第2回 AI Agent Hackathon with Google Cloud 一次審査通過 (通過率: 18.7%)",
     "sakurai-interview-date": "[2025年3月]",
     "sakurai-interview": "櫻井・松原研究室のインタビュー記事",
     "pigicon2023-date": "[2023年12月]",

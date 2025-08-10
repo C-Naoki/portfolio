@@ -144,12 +144,10 @@
     "hwip-passing-date": "[2023.03.14]",
     "hwip-passing": "I have passed the selection exam for the Humanware Innovation Program."
   },
-  "grants-awards": {
-    "heading": "Grants & Awards",
-    "jasso-date": "[2025.07]",
-    "jasso": "JASSO Scholarship, Exemption from Return for Particularly Outstanding Achievement (Full Amount)",
+  "awards": {
+    "heading": "Awards",
     "deim2025-date": "[2025.06]",
-    "deim2025": "DEIM2025 Best Paper Award Runner-up",
+    "deim2025": "DEIM2025 Best Paper Award Runner-up (Top 1.6%)",
     "ist-date": "[2025.03]",
     "ist": "Osaka University Graduate School of Information Science and Technology Award",
     "deim2025-presentation-date": "[2025.03]",
@@ -157,12 +155,23 @@
     "yamashita-date": "[2024.07]",
     "yamashita": "IPSJ Yamashita SIG Research Award",
     "deim2024-date": "[2024.06]",
-    "deim2024": "DEIM2024 Best Paper Award Runner-up",
+    "deim2024": "DEIM2024 Best Paper Award Runner-up (Top 1.4%)",
     "hwip-date": "[2023.04-present]",
     "pakdd2023-volunteer-date": "[2023.05]",
-    "pakdd2023-volunteer": "PAKDD2023 Volunteer Award",
+    "pakdd2023-volunteer": "PAKDD2023 Volunteer Award"
+  },
+  "grants": {
+    "heading": "Grants"
+  },
+  "fellowships": {
+    "heading": "Fellowships",
+    "jasso-date": "[2025.07]",
+    "jasso": "Japan Student Services Organization (JASSO) Type 1 Scholarship",
+    "jasso-content1": "Exemption from Return for Particularly Outstanding Achievement (Full Amount)",
+    "hwip-date": "[2023.04-present]",
     "hwip": "Osaka University Humanware Innovation Program",
-    "hwip-content1": "Research/Travel expenses and Grant-type scholarship"
+    "hwip-content1": "Research/Travel expenses and Grant-type scholarship",
+    "message": "I would like to express my sincere gratitude for your support."
   },
   "experiences": {
     "heading": "Experiences",
@@ -215,7 +224,7 @@
   "misc": {
     "heading": "Miscellaneous",
     "zennhack-date": "[2025.06]",
-    "zennhack": "Passed the first round of the 2nd AI Agent Hackathon with Google Cloud (rate: 18.7%, 32/171)",
+    "zennhack": "Passed the first round of the 2nd AI Agent Hackathon with Google Cloud (rate: 18.7%)",
     "sakurai-interview-date": "[2025.03]",
     "sakurai-interview": "Brief interview by Sakurai & Matsubara Lab.",
     "pigicon2023-date": "[2023.12]",

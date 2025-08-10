@@ -5,17 +5,17 @@ import ExternalLink from '@/components/Uikit/ExternalLink'
 import ExternalLinksInfo from '@/constants/externalLinksInfo'
 import fetchTranslationKeys from '@/lib/utils/fetchTranslationKeys'
 
-const GrantsAwards = ({ t, i18n }: { t: TFunction, i18n: i18n }): JSX.Element => {
-  const keys = fetchTranslationKeys(i18n, 'grants-awards')
-  const links = ExternalLinksInfo.grants_awards
-  const grantsKeys: Array<{ body: string }> = []
+const Awards = ({ t, i18n }: { t: TFunction, i18n: i18n }): JSX.Element => {
+  const keys = fetchTranslationKeys(i18n, 'awards')
+  const links = ExternalLinksInfo.awards
+  const awardsKeys: Array<{ body: string }> = []
   for (let i = 0; i < keys.length; i++) {
     const key = keys[i]
     if (key === 'heading') {
       continue
     } else if (!key.includes('-date') && !key.includes('-content')) {
       if (keys.includes(key)) {
-        grantsKeys.push({ body: key })
+        awardsKeys.push({ body: key })
       }
     }
   }
@@ -23,18 +23,18 @@ const GrantsAwards = ({ t, i18n }: { t: TFunction, i18n: i18n }): JSX.Element =>
   return (
     <div className="custom-list">
       <ul>
-        {grantsKeys.map(({ body }, index) => {
-          const awardName = t(`grants-awards.${body}`)
+        {awardsKeys.map(({ body }, index) => {
+          const awardName = t(`awards.${body}`)
           const contents = []
           let contentIndex = 1
           let currentContent
-          while ((currentContent = t(`grants-awards.${body}-content${contentIndex}`)) !== `grants-awards.${body}-content${contentIndex}`) {
+          while ((currentContent = t(`awards.${body}-content${contentIndex}`)) !== `awards.${body}-content${contentIndex}`) {
             contents.push(currentContent)
             contentIndex++
           }
 
           return (
-            <li key={index} data-marker={t(`grants-awards.${body}-date`)}>
+            <li key={index} data-marker={t(`awards.${body}-date`)}>
               {links[body] !== undefined
                 ? <ExternalLink url={links[body]} text={awardName} />
                 : <span>{awardName}</span>
@@ -54,4 +54,4 @@ const GrantsAwards = ({ t, i18n }: { t: TFunction, i18n: i18n }): JSX.Element =>
   )
 }
 
-export default GrantsAwards
+export default Awards

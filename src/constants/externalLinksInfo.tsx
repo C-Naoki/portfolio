@@ -27,7 +27,9 @@ interface ExternalLinksInfoProps {
   cv: string
   biography: Record<string, string>
   affiliation: Record<string, string>
-  grants_awards: Record<string, string>
+  awards: Record<string, string>
+  grants: Record<string, string>
+  fellowships: Record<string, string>
   misc: Record<string, string[]>
   publications: Record<string, PublicationsProps>
 }
@@ -55,7 +57,7 @@ const externalLinksInfo: ExternalLinksInfoProps = {
     graduate: 'https://www.ist.osaka-u.ac.jp/english/',
     university: 'https://www.osaka-u.ac.jp/en'
   },
-  grants_awards: {
+  awards: {
     deim2025: 'https://pub.confit.atlas.jp/ja/event/deim2025/content/awards',
     ist: 'https://www.ist.osaka-u.ac.jp/files/overview/publication/publicationIstPlaza_No20.pdf#page=87',
     'deim2025-presentation': 'https://pub.confit.atlas.jp/ja/event/deim2025/content/awards',
@@ -63,6 +65,10 @@ const externalLinksInfo: ExternalLinksInfoProps = {
     deim2024: 'https://confit.atlas.jp/guide/event/deim2024/static/awards',
     hwip: 'https://www.humanware.osaka-u.ac.jp/en/'
   },
+  grants: {
+    dc: 'https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-25KJ1729'
+  },
+  fellowships: {},
   misc: {
     zennhack: [
       'https://zenn.dev/gdgoc_osaka/articles/ae5b89e170b2f3',
