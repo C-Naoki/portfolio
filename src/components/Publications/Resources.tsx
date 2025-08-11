@@ -22,7 +22,7 @@ const Resources = ({ resources, abstract }: { resources: ResourcesProps, abstrac
           {showAbstract && (
             <div className="abstract-box">
               <div className='abstract-title'>Abstract</div>
-              <p>{abstract}</p>
+              <p lang="en" className='abstract-text'>{abstract}</p>
             </div>
           )}
         </span>

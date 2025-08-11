@@ -401,6 +401,13 @@ html, body {
   left: 20px;
 }
 
+.abstract-text:lang(en) {
+  hyphens: auto; /* Enables standard CSS hyphenation based on the element's language */
+  -webkit-hyphens: auto; /* Vendor prefix for older WebKit-based browsers (Safari, Chrome, iOS Safari) */
+  -ms-hyphens: auto; /* Vendor prefix for Internet Explorer 10+ and old Edge (EdgeHTML) */
+  overflow-wrap: break-word; /* Fallback: break long words/URLs to prevent overflow if hyphenation fails */
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
