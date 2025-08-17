@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import MenuIcon from '@mui/icons-material/Menu'
 import { AppBar, Button, Drawer, IconButton, Toolbar, Typography } from '@mui/material'
 import Link from 'next/link'
+import { useSession } from 'next-auth/react'
 import { useTranslation } from 'next-i18next'
 import { FaGithub, FaLinkedin, FaSearch, FaTwitter } from 'react-icons/fa'
 
@@ -33,6 +34,8 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({ href, children }) => {
 const Header: React.FC<{ onSearch?: (value: string) => void, searchValue?: string }> = ({ onSearch, searchValue }) => {
   const { t } = useTranslation()
   const [drawerOpen, setDrawerOpen] = useState(false)
+  const { status } = useSession()
+  const isAuthed = status === 'authenticated'
 
   const handleDrawerToggle = (): void => {
     setDrawerOpen(!drawerOpen)
@@ -54,6 +57,9 @@ const Header: React.FC<{ onSearch?: (value: string) => void, searchValue?: strin
             )}
             <AnimatedButton href='/publications'>Publications</AnimatedButton>
             <AnimatedButton href='/contact'>Contact</AnimatedButton>
+            {isAuthed && (
+              <AnimatedButton href='/private'>Private</AnimatedButton>
+            )}
             <div className={styles.toolbarCenter}>
               <HeaderExternalLink href={externalLinksInfo.github} className={styles.toolbarCenter}>
                 <FaGithub className={styles.headerIcon}/>

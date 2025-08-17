@@ -3,6 +3,7 @@ import 'katex/dist/katex.min.css'
 
 import { useState } from 'react'
 
+import { SessionProvider } from 'next-auth/react'
 import { appWithTranslation } from 'next-i18next'
 import { Provider } from 'react-redux'
 
@@ -16,17 +17,20 @@ import store from '@/reducks/store/store'
 const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   usePageView()
   const [searchValue, setSearchValue] = useState('')
+  const { session, ...rest } = pageProps
 
   return (
-    <Provider store={store}>
-      <div id='__next'>
-        <Header onSearch={setSearchValue} searchValue={searchValue} />
-        <div className='main-content'>
-          <Component {...pageProps} searchValue={searchValue} />
+    <SessionProvider session={session}>
+      <Provider store={store}>
+        <div id='__next'>
+          <Header onSearch={setSearchValue} searchValue={searchValue} />
+          <div className='main-content'>
+            <Component {...rest} searchValue={searchValue} />
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-    </Provider>
+      </Provider>
+    </SessionProvider>
   )
 }
 

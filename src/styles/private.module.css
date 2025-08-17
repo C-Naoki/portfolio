@@ -1,0 +1,169 @@
+.toolbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 22px 0 12px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 16px;
+  padding-right: 140px;
+  font-size: 1rem;
+  border: 1px solid var(--input-border-color);
+  border-radius: 24px;
+  outline: none;
+  background: var(--container-color);
+  color: var(--text-color);
+  transition: border-color .2s ease;
+}
+
+.input:focus {
+  border-color: var(--input-hover-border-color);
+}
+
+.input::placeholder {
+  color: var(--placeholder-color);
+}
+
+.tools {
+  position: absolute;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.select {
+  border: 1px solid var(--input-border-color);
+  border-radius: 20px;
+  background: var(--container-color);
+  color: var(--text-color);
+  padding: 6px 10px;
+}
+
+/* リスト（divベース） */
+.rows {
+  margin: 0;
+  padding: 0;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 6px;
+  transition: background-color .12s ease;
+}
+
+.row:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.left {
+  min-width: 0;
+}
+
+.title {
+  display: block;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.meta {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  color: var(--component-text-color);
+}
+
+.actions {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.action {
+  display: inline-block;
+  padding: 4px 10px;
+  border: 1px solid var(--input-border-color);
+  border-radius: 9999px;
+  text-decoration: none;
+  font-size: .85rem;
+  background: var(--container-color);
+  color: var(--link-color);
+  transition: border-color .12s ease, color .12s ease;
+}
+
+.action:hover {
+  border-color: var(--input-hover-border-color);
+  color: var(--link-hover-color);
+}
+
+.counter {
+  margin-top: -6px;
+  margin-bottom: 8px;
+  color: var(--component-text-color);
+}
+
+/* トースト（右下） */
+.toast {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  background: var(--container-color);
+  color: var(--text-color);
+  border: 1px solid var(--input-border-color);
+  box-shadow: var(--box-shadow);
+  border-radius: 10px;
+  padding: 10px 14px;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .15s ease, transform .15s ease;
+}
+
+.toastShow {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 500px) {
+  .row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+    margin-bottom: -10px;
+  }
+
+  .left {
+    width: 100%;
+    min-width: 0;
+    margin-top: -5px;
+  }
+
+  .title {
+    white-space: normal;
+    /* タイトルを折り返し可能に */
+  }
+
+  .meta {
+    margin-top: 2px;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: flex-start;
+    /* 左寄せで下段に配置 */
+    flex-wrap: wrap;
+    /* ボタンが収まり切らない場合に折り返し */
+    margin-top: 0;
+    /* 上マージンを詰める（既存の 8px を上書き） */
+  }
+}
