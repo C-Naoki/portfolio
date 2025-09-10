@@ -11,7 +11,7 @@ const Venue = (venue: VenueProps): JSX.Element => {
   return (
     <span>
       <span className={`venue-name ${isJapanese ? '' : 'italic'}`}>{venue.name}, </span>
-      <span>{venue.others}.</span>
+      <span className={`${isJapanese ? 'venue-name' : ''}`}>{venue.others}.</span>
       {' '}
     </span>
   )

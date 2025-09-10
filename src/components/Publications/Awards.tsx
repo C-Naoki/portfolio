@@ -21,7 +21,7 @@ const Awards = ({ hrefs, awards }: { hrefs: string[], awards: string[] }): JSX.E
             <a href={href} target='_blank' rel='noopener noreferrer'>
               {name}
             </a>
-            {index < awardsEntries.length - 1 ? ', ' : '. '}
+            {index < awardsEntries.length - 1 ? ', ' : ''}
           </span>
         ))}
       </span>
