@@ -266,6 +266,15 @@
       "blog": "Blog",
       "book": "Book",
       "publications": "Publications"
+    },
+    "quick": {
+      "title": "Quick Search",
+      "placeholder": "Search…",
+      "hint": "Start typing to search. Press Esc to close.",
+      "noResults": "No matches found.",
+      "error": "Unable to load dynamic entries. {{message}}",
+      "shortcut": "Press Esc to close · ⌘⏎ to open in new tab · ⇧⌘R to refresh remote data",
+      "open": "Open quick search"
     }
   }
 }

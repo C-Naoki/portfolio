@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 
 import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
@@ -6,44 +6,19 @@ import { useTranslation } from 'next-i18next'
 import enCommon from '../../public/locales/en/common.json'
 import jaCommon from '../../public/locales/ja/common.json'
 
-import type { FlattenedI18nEntry } from '@/lib/utils/flattenI18n'
 import type { Book, QiitaArticle, ZennArticle } from '@/types/blog.d'
+import type { SearchableEntry } from '@/types/search'
 import type { GetServerSideProps } from 'next'
 
 import Layout from '@/components/Layouts/Layout'
 import Section from '@/components/Layouts/Section'
 import SearchResultItem from '@/components/Search/SearchResultItem'
+import { getUrlForEntry, mergeLocalizedEntries } from '@/lib/search/helpers'
 import { flattenI18n } from '@/lib/utils/flattenI18n'
-
-export interface SearchableEntry extends FlattenedI18nEntry {
-  url?: string
-}
 
 interface SearchProps {
   articles: Array<[ZennArticle | null, QiitaArticle | null]>
   books: Book[]
-}
-
-const getUrlForEntry = (entry: FlattenedI18nEntry): string => {
-  const { category, key } = entry
-  if (category.includes('Blog') || category.includes('Book')) return ''
-  if (key.startsWith('publications.')) {
-    const parts = key.split('.')
-    return parts.length > 2 ? `/publications#${parts[2]}` : '/publications'
-  }
-  if (key.startsWith('home.')) {
-    const parts = key.split('.')
-    return parts.length > 1 ? `/#${parts[1]}` : '/'
-  }
-  const page = getPageSlug({ category, key, value: '' })
-  return page === 'publications' ? '/publications' : page === 'blog' ? '/blog' : '/'
-}
-
-const getPageSlug = (entry: FlattenedI18nEntry): 'home' | 'publications' | 'blog' => {
-  const { category, key } = entry
-  if (category.includes('Blog') || category.includes('Book')) return 'blog'
-  if (key.startsWith('publications.')) return 'publications'
-  return 'home'
 }
 
 export default function Search ({ articles, books }: SearchProps): JSX.Element {
@@ -57,24 +32,56 @@ export default function Search ({ articles, books }: SearchProps): JSX.Element {
 
   const blogEntries: SearchableEntry[] = articles.flatMap(([zenn, qiita]) => {
     const entries: SearchableEntry[] = []
-    if (zenn?.title != null && zenn.title.trim() !== '') entries.push({ category: 'Blog', key: `zenn.${zenn.id}.title`, value: zenn.title, url: `https://zenn.dev${zenn.path}` })
-    if (qiita?.title?.trim() !== '') entries.push({ category: 'Blog', key: `qiita.${qiita?.id}.title`, value: qiita?.title ?? '', url: qiita?.url ?? '' })
+    if (zenn?.title != null && zenn.title.trim() !== '') {
+      entries.push({
+        category: 'Blog',
+        key: `zenn.${zenn.id}.title`,
+        value: zenn.title,
+        url: `https://zenn.dev${zenn.path}`,
+        searchText: zenn.title
+      })
+    }
+    if (qiita?.title?.trim() !== '') {
+      const title = qiita?.title ?? ''
+      entries.push({
+        category: 'Blog',
+        key: `qiita.${qiita?.id}.title`,
+        value: title,
+        url: qiita?.url ?? '',
+        searchText: title
+      })
+    }
     return entries
   })
-  const bookEntries: SearchableEntry[] = books.map(book => ({ category: 'Book', key: `book.${book.id}.title`, value: book.title, url: `https://zenn.dev${book.path}` }))
-
-  const i18nEntriesJa: SearchableEntry[] = flattenI18n(jaCommon).map(e => ({ ...e, url: getUrlForEntry(e) }))
-  const i18nEntriesEn: SearchableEntry[] = flattenI18n(enCommon).map(e => ({ ...e, category: e.category + ' [en]', url: getUrlForEntry(e) }))
+  const bookEntries: SearchableEntry[] = books.map(book => ({
+    category: 'Book',
+    key: `book.${book.id}.title`,
+    value: book.title,
+    url: `https://zenn.dev${book.path}`,
+    searchText: book.title
+  }))
 
   const currentLanguage = i18n.language
-  const i18nEntries = currentLanguage === 'ja' ? i18nEntriesJa : i18nEntriesEn
+  const jaEntries = useMemo(() => flattenI18n(jaCommon), [])
+  const enEntries = useMemo(() => flattenI18n(enCommon), [])
+  const i18nEntries = useMemo(() => {
+    return mergeLocalizedEntries({
+      jaEntries,
+      enEntries,
+      language: currentLanguage
+    }).map(entry => ({
+      ...entry,
+      url: getUrlForEntry(entry)
+    }))
+  }, [currentLanguage, enEntries, jaEntries])
 
   const allEntries: SearchableEntry[] = [...i18nEntries, ...blogEntries, ...bookEntries]
 
   const filteredEntries = query.trim() === ''
     ? []
     : allEntries.filter(entry => {
-      const text = caseSensitive ? entry.value : entry.value.toLowerCase()
+      const target = entry.searchText ?? entry.value ?? ''
+      const text = caseSensitive ? target : target.toLowerCase()
       const q = caseSensitive ? query : query.toLowerCase()
       if (wordMatch) {
         return new RegExp(`\\b${q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`).test(text)
@@ -93,6 +100,10 @@ export default function Search ({ articles, books }: SearchProps): JSX.Element {
             value={inputValue}
             onChange={e => { setInputValue(e.target.value) }}
             onKeyDown={e => {
+              const nativeEvent = e.nativeEvent as KeyboardEvent & { isComposing?: boolean }
+              if (nativeEvent.isComposing || nativeEvent.keyCode === 229) {
+                return
+              }
               if (e.key === 'Enter') {
                 setQuery(inputValue)
                 const newQuery = inputValue.trim() === '' ? {} : { q: inputValue }

@@ -78,6 +78,23 @@
   margin-right: -5px;
 }
 
+.searchTrigger {
+  background: none;
+  border: none;
+  color: inherit;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.searchTrigger:focus-visible {
+  outline: 2px solid var(--highlight-color);
+  outline-offset: 4px;
+  border-radius: 50%;
+}
+
 .button {
   position: relative;
   overflow: hidden;

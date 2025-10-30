@@ -254,6 +254,15 @@
       "blog": "ブログ",
       "book": "本",
       "publications": "業績一覧"
+    },
+    "quick": {
+      "title": "クイック検索",
+      "placeholder": "検索…",
+      "hint": "キーワードを入力すると検索できます。Escで閉じます。",
+      "noResults": "一致する項目はありません。",
+      "error": "動的な項目の取得に失敗しました。{{message}}",
+      "shortcut": "Escで閉じる · ⌘⏎で新しいタブ · ⇧⌘Rで再取得",
+      "open": "クイック検索を開く"
     }
   }
 }

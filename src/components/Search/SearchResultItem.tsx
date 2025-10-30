@@ -1,9 +1,10 @@
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 
-import type { SearchableEntry } from '@/pages/search'
+import type { SearchableEntry } from '@/types/search'
 
 import Highlight from '@/components/Uikit/Highlight'
+import { getEntryPageNameKey } from '@/lib/search/helpers'
 import styles from '@/styles/search.module.css'
 
 interface SearchResultItemProps {
@@ -35,25 +36,33 @@ const SearchResultItem: React.FC<SearchResultItemProps> = ({ entry, query }) => 
   const { t } = useTranslation('common')
 
   const getPageName = (entry: SearchableEntry): string => {
-    const { category, key } = entry
-    if (category.includes('Blog')) return t('search.pages.blog', 'Blog')
-    if (category.includes('Book')) return t('search.pages.book', 'Book')
-    if (key.startsWith('publications.')) return t('search.pages.publications', 'Publications')
+    const pageKey = getEntryPageNameKey(entry)
+    if (pageKey === 'blog') return t('search.pages.blog', 'Blog')
+    if (pageKey === 'book') return t('search.pages.book', 'Book')
+    if (pageKey === 'publications') return t('search.pages.publications', 'Publications')
     return t('search.pages.home', 'Home')
   }
 
   const getPageIcon = (entry: SearchableEntry): JSX.Element => {
-    const { category, key } = entry
-    if (category.includes('Blog') || category.includes('Book')) {
+    const pageKey = getEntryPageNameKey(entry)
+    if (pageKey === 'blog' || pageKey === 'book') {
       return <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
-    } else if (key.startsWith('publications.')) {
+    } else if (pageKey === 'publications') {
       return <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="10" y2="9"/></svg>
     } else {
       return <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
     }
   }
 
-  const snippet = getSnippet(entry.value, query)
+  const displayValue = entry.value ?? ''
+  const lowerDisplay = displayValue.toLowerCase()
+  const lowerQuery = query.toLowerCase()
+  let snippetSource = displayValue
+  if (!lowerDisplay.includes(lowerQuery) && typeof entry.searchText === 'string' && entry.searchText.toLowerCase().includes(lowerQuery)) {
+    snippetSource = entry.searchText
+  }
+
+  const snippet = getSnippet(snippetSource, query)
 
   const content = (
     <div className={styles.searchResultItem}>
