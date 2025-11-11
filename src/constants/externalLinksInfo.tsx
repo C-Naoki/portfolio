@@ -79,6 +79,13 @@ const externalLinksInfo: ExternalLinksInfoProps = {
   },
   publications: {
     // 2025
+    IBIS2025: {
+      title: 'https://ibisml.org/ibis2025/posters/#1b-regular',
+      awards: [],
+      resources: {
+        poster: '/assets/IBIS2025/poster.pdf'
+      }
+    },
     DEIM2025: {
       title: 'https://pub.confit.atlas.jp/ja/event/deim2025/presentation/4D-03',
       awards: [

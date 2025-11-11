@@ -61,6 +61,14 @@
     },
     "domestic": {
       "heading": "Domestic Conference",
+      "IBIS2025": {
+        "authors": ["Naoki Chihara", "Yasuko Matsubara", "Ren Fujiwara", "Yasushi Sakurai"],
+        "venue": {
+          "name": "The 28th Information-based Induction Sciences Workshop (IBIS2025)",
+          "others": "Okinawa, Japan, November 12-15, 2025"
+        },
+        "awards": []
+      },
       "DEIM2025": {
         "authors": ["Naoki Chihara", "Yasuko Matsubara", "Ren Fujiwara", "Yasushi Sakurai"],
         "venue": {
