@@ -25,9 +25,12 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
   const safePath = `pdf/${filename}`
 
   const download = String(req.query.download ?? '').toLowerCase() // ← 追加
+  const rawRef = Array.isArray(req.query.ref) ? req.query.ref[0] : req.query.ref
+  const ref = typeof rawRef === 'string' ? rawRef.trim() : ''
+  const safeRef = (ref !== '' && /^[0-9A-Za-z._/-]+$/.test(ref) && !ref.includes('..')) ? ref : undefined
 
   try {
-    const buf = await fetchPdfBuffer(safePath)
+    const buf = await fetchPdfBuffer(safePath, safeRef)
     res.setHeader('Content-Type', 'application/pdf')
     const disp = (download === '1' || download === 'true') ? 'attachment' : 'inline' // ← 追加
     res.setHeader('Content-Disposition', `${disp}; filename="${encodeURIComponent(filename)}"`)

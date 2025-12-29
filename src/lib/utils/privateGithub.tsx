@@ -3,6 +3,7 @@ const OWNER = process.env.PRIVATE_REPO_OWNER ?? ''
 const REPO = process.env.PRIVATE_REPO_NAME ?? ''
 const BRANCH = process.env.PRIVATE_REPO_BRANCH ?? 'main'
 const TOKEN = process.env.GH_PRIVATE_REPO_TOKEN ?? ''
+const REF_SAFE_RE = /^[0-9A-Za-z._/-]+$/
 
 function ghHeaders (accept: 'json' | 'raw'): Record<string, string> {
   const h: Record<string, string> = {
@@ -13,9 +14,44 @@ function ghHeaders (accept: 'json' | 'raw'): Record<string, string> {
   return h
 }
 
-export async function listPrivatePdfs (): Promise<Array<{ name: string, path: string, size: number, sha: string }>> {
-  const url = `https://api.github.com/repos/${OWNER}/${REPO}/contents/pdf?ref=${encodeURIComponent(BRANCH)}`
+function normalizeRef (ref?: string | null): string | null {
+  if (ref == null) return null
+  const trimmed = ref.trim()
+  if (trimmed === '') return null
+  if (!REF_SAFE_RE.test(trimmed) || trimmed.includes('..')) return null
+  return trimmed
+}
+
+function buildRefQuery (ref?: string | null, fallback?: string): string {
+  const cleaned = normalizeRef(ref)
+  const resolved = cleaned ?? (fallback ?? '').trim()
+  if (resolved === '') return ''
+  const params = new URLSearchParams({ ref: resolved })
+  return `?${params.toString()}`
+}
+
+export async function findCommitShaByDate (date: string): Promise<string | null> {
+  const trimmed = date.trim()
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(trimmed)) return null
+  const params = new URLSearchParams({
+    path: 'pdf',
+    sha: BRANCH,
+    until: `${trimmed}T23:59:59Z`,
+    per_page: '1'
+  })
+  const url = `${GH_API}/repos/${OWNER}/${REPO}/commits?${params.toString()}`
   const res = await fetch(url, { headers: ghHeaders('json') })
+  if (!res.ok) throw new Error(`GitHub commits failed: ${res.status}`)
+  const items = (await res.json()) as any[]
+  const sha = items?.[0]?.sha
+  if (typeof sha !== 'string' || sha.trim() === '') return null
+  return sha
+}
+
+export async function listPrivatePdfs (ref?: string | null): Promise<Array<{ name: string, path: string, size: number, sha: string }>> {
+  const url = `${GH_API}/repos/${OWNER}/${REPO}/contents/pdf${buildRefQuery(ref, BRANCH)}`
+  const res = await fetch(url, { headers: ghHeaders('json') })
+  if (res.status === 404) return []
   if (!res.ok) throw new Error(`GitHub list failed: ${res.status}`)
   const items = (await res.json()) as any[]
   return (items ?? [])
@@ -23,14 +59,14 @@ export async function listPrivatePdfs (): Promise<Array<{ name: string, path: st
     .map((it) => ({ name: it.name, path: it.path, size: it.size, sha: it.sha }))
 }
 
-export async function fetchPdfBuffer (filePath: string): Promise<Buffer> {
+export async function fetchPdfBuffer (filePath: string, ref?: string | null): Promise<Buffer> {
   if (!filePath.startsWith('pdf/') || filePath.includes('..')) {
     throw new Error('Forbidden path')
   }
 
   // まず raw 取得（~100MB まで）
   {
-    const url = `${GH_API}/repos/${OWNER}/${REPO}/contents/${encodeURI(filePath)}?ref=${encodeURIComponent(BRANCH)}`
+    const url = `${GH_API}/repos/${OWNER}/${REPO}/contents/${encodeURI(filePath)}${buildRefQuery(ref, BRANCH)}`
     const res = await fetch(url, { headers: ghHeaders('raw') })
     if (res.ok) {
       const ab = await res.arrayBuffer()
@@ -40,7 +76,7 @@ export async function fetchPdfBuffer (filePath: string): Promise<Buffer> {
 
   // フォールバック：metadata -> Blobs API（<=100MB）
   {
-    const metaUrl = `${GH_API}/repos/${OWNER}/${REPO}/contents/${encodeURI(filePath)}?ref=${encodeURIComponent(BRANCH)}`
+    const metaUrl = `${GH_API}/repos/${OWNER}/${REPO}/contents/${encodeURI(filePath)}${buildRefQuery(ref, BRANCH)}`
     const metaRes = await fetch(metaUrl, { headers: ghHeaders('json') })
     if (!metaRes.ok) throw new Error('Not Found')
     const meta = await metaRes.json()

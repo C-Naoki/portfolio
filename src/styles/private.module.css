@@ -43,6 +43,62 @@
   padding: 6px 10px;
 }
 
+.filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 16px 0 12px;
+}
+
+.filterGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filterLabel {
+  font-size: 0.9rem;
+  color: var(--component-text-color);
+}
+
+.filterInput {
+  border: 1px solid var(--input-border-color);
+  border-radius: 10px;
+  background: var(--container-color);
+  color: var(--text-color);
+  padding: 6px 10px;
+}
+
+.filterButton {
+  border: 1px solid var(--input-border-color);
+  border-radius: 9999px;
+  background: var(--container-color);
+  color: var(--link-color);
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: border-color .12s ease, color .12s ease;
+}
+
+.filterButton:hover {
+  border-color: var(--input-hover-border-color);
+  color: var(--link-hover-color);
+}
+
+.filterMeta {
+  font-size: 0.9rem;
+  color: var(--component-text-color);
+}
+
+.notice {
+  margin: 6px 0 12px;
+  font-size: 0.9rem;
+  color: var(--component-text-color);
+}
+
 /* リスト（divベース） */
 .rows {
   margin: 0;
@@ -135,6 +191,14 @@
 }
 
 @media (max-width: 500px) {
+  .filters {
+    align-items: flex-start;
+  }
+
+  .filterMeta {
+    width: 100%;
+  }
+
   .row {
     flex-direction: column;
     align-items: stretch;
