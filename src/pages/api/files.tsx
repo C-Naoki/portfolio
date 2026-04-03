@@ -1,17 +1,19 @@
-import { readdir } from 'fs/promises'
-import path from 'path'
+import { readdir, stat } from 'fs/promises'
 
 import type { NextApiRequest, NextApiResponse } from 'next'
+
+import { resolvePublicAssetDirectory } from '@/lib/utils/publicAssets'
 
 interface FileListResponse {
   files: string[]
 }
 
-const fileCache = new Map()
+const fileCache = new Map<string, string[]>()
 
 async function getFileList (directoryPath: string): Promise<string[]> {
-  if (fileCache.has(directoryPath)) {
-    return fileCache.get(directoryPath)
+  const cachedFiles = fileCache.get(directoryPath)
+  if (cachedFiles !== undefined) {
+    return cachedFiles
   }
 
   const files = await readdir(directoryPath)
@@ -26,10 +28,19 @@ async function getFileList (directoryPath: string): Promise<string[]> {
 }
 
 export default async function handler (req: NextApiRequest, res: NextApiResponse<FileListResponse>): Promise<void> {
-  const conferenceName = req.query.conferenceName as string
-  const directoryPath = path.join(process.cwd(), 'public', 'assets', conferenceName)
+  const directoryPath = resolvePublicAssetDirectory(req.query.conferenceName)
+  if (directoryPath == null) {
+    res.status(400).json({ files: [] })
+    return
+  }
 
   try {
+    const directory = await stat(directoryPath)
+    if (!directory.isDirectory()) {
+      res.status(404).json({ files: [] })
+      return
+    }
+
     const pdfFiles = await getFileList(directoryPath)
     res.status(200).json({ files: pdfFiles })
   } catch (err) {
