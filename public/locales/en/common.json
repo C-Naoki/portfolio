@@ -121,6 +121,8 @@
   },
   "news": {
     "heading": "News",
+    "icml2026-date": "[2026.05.01]",
+    "icml2026": "Our paper has been accepted to ICML2026.",
     "tod109-date": "[2025.10.29]",
     "tod109": "Our paper has been accepted to IPSJ Transactions on Databases (TOD).",
     "jasso-date": "[2025.07.29]",
