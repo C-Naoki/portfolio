@@ -5,6 +5,7 @@ export interface ResourcesProps {
   poster?: string
   code?: string
   arXiv?: string
+  OpenReview?: string
   video?: string
 }
 
@@ -78,6 +79,22 @@ const externalLinksInfo: ExternalLinksInfoProps = {
     pandacco: ['https://pandacco.web.app/']
   },
   publications: {
+    // 2026
+    ICML2026: {
+      title: '',
+      awards: [],
+      resources: {
+        OpenReview: 'https://openreview.net/forum?id=mLZlTzepbr'
+      }
+    },
+    TOD109: {
+      title: 'https://ipsj.ixsq.nii.ac.jp/records/2009109',
+      awards: [],
+      resources: {
+        paper: '/assets/TOD109/paper.pdf',
+        cite: '/assets/TOD109/bibtex.txt'
+      }
+    },
     // 2025
     IBIS2025: {
       title: 'https://ibisml.org/ibis2025/posters/#1b-regular',
@@ -138,7 +155,7 @@ const externalLinksInfo: ExternalLinksInfoProps = {
       resources: {}
     },
     TOD101: {
-      title: 'https://ipsj.ixsq.nii.ac.jp/ej/?action=pages_view_main&active_action=repository_view_main_item_detail&item_id=233825&item_no=1&page_id=13&block_id=8',
+      title: 'https://ipsj.ixsq.nii.ac.jp/records/233825',
       awards: [],
       resources: {
         paper: '/assets/TOD101/paper.pdf',

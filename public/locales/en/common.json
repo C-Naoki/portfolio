@@ -16,6 +16,16 @@
     "heading": "Publications",
     "international-conference": {
       "heading": "International Conference",
+      "ICML2026": {
+        "authors": ["Naoki Chihara", "Tatsushi Oka", "Yasuko Matsubara", "Yasushi Sakurai", "Shota Yasui"],
+        "title": "Modeling Covariate Transition for Efficient Estimation of Longitudinal Treatment Effects in Randomized Experiments",
+        "abstract": "We present a regression-adjustment framework designed to estimate longitudinal treatment effects in randomized experiments under static regimes. Although regression-adjustment methods are useful for variance reduction in randomized experiments through the use of pre-treatment covariates, they usually focus only on average effects, which cannot capture valuable knowledge about when effects appear and how long they continue. To address this limitation, we need to consider intermediate outcomes and evolving post-treatment covariates over time, and we represent these transitions using transition kernels. Furthermore, we establish the asymptotic normality and the semiparametric efficiency bound for our estimator, enabling more powerful statistical inference. Simulation studies and empirical analysis using A/B test data from a streaming platform in Japan demonstrate the practical advantages of our method.",
+        "venue": {
+          "name": "The 43rd International Conference on Machine Learning (ICML ’26)",
+          "others": "Seoul, South Korea, July 6-11, 2026 (acceptance rate: 26.6%)"
+        },
+        "awards": []
+      },
       "KDD2025": {
         "authors": ["Naoki Chihara", "Yasuko Matsubara", "Ren Fujiwara", "Yasushi Sakurai"],
         "title": "Modeling Time-evolving Causality over Data Streams",
@@ -38,6 +48,16 @@
     },
     "journal": {
       "heading": "Journal",
+      "TOD109": {
+        "authors": ["Naoki Chihara", "Yasuko Matsubara", "Ren Fujiwara", "Yasushi Sakurai"],
+        "title": "Modeling Time-evolving Causality and Forecasting in Data Streams",
+        "abstract": "We study the novel problem of discovering the time-varying cause-and-effect relationships across transitions of dynamical patterns in multivariate co-volving data streams. To solve such a problem, we present a streaming method, ModePlait, which is designed for modeling such causal relationships (i.e., time-evolving causality) and forecasting their future values. ModePlait has the following desirable properties: (a) Effective: it discovers the time-evolving causality in multivariate co-evolving data streams by detecting the transitions of distinct dynamical patterns adaptively. (b) Accurate: it enables both the discovery of time-evolving causality and the forecasting of future values in a streaming fashion. (c) Scalable: our algorithm does not depend on data stream length and thus is applicable to very large sequences. Extensive experiments on both synthetic and real-world datasets demonstrate that our proposed model outperforms state-of-the-art methods in terms of discovering the time-evolving causality as well as forecasting.",
+        "venue": {
+          "name": "IPSJ Transactions on Databases (TOD)",
+          "others": "Vol. 19, No. 2, pp. 70-81, April 21, 2026"
+        },
+        "awards": ["Recommended Paper"]
+      },
       "TOD101": {
         "authors": ["Naoki Chihara", "Yasuko Matsubara", "Ren Fujiwara", "Yasushi Sakurai"],
         "title": "Real-time Forecasting of Time-evolving Data Streams using Dynamic Mode Decomposition",
