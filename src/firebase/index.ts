@@ -7,8 +7,9 @@ import { getStorage } from 'firebase/storage'
 import { firebaseConfig } from './config'
 
 const firebaseApp = initializeApp(firebaseConfig)
-export const db = getFirestore(firebaseApp)
+
 export const auth = getAuth(firebaseApp)
-export const storage = getStorage()
-export const functions = getFunctions()
+export const db = getFirestore(firebaseApp)
 export const FirebaseTimestamp = Timestamp
+export const functions = getFunctions()
+export const storage = getStorage()
