@@ -1,0 +1,76 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  checks:
+    name: Lint, type check, and build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    env:
+      CI: 'true'
+      COREPACK_ENABLE_DOWNLOAD_PROMPT: '0'
+      NEXT_TELEMETRY_DISABLED: '1'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '21.6.2'
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Use pinned Yarn
+        run: corepack prepare yarn@4.1.0 --activate
+
+      - name: Get Yarn cache directory
+        id: yarn-cache-dir
+        run: echo "dir=$(yarn config get cacheFolder)" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Yarn dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.yarn-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-node-21.6.2-yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-21.6.2-yarn-
+
+      - name: Show tool versions
+        run: |
+          node --version
+          yarn --version
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Type check
+        run: yarn tsc --noEmit
+
+      - name: Build
+        run: yarn build
