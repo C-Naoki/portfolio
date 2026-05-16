@@ -16,6 +16,16 @@
     "heading": "Publications",
     "international-conference": {
       "heading": "International Conference",
+      "KDD2026": {
+        "authors": ["Naoki Chihara", "Ren Fujiwara", "Yasuko Matsubara", "Yasushi Sakurai"],
+        "title": "AdaKoop: Efficient Modeling of Nonlinear Dynamics from Nonstationary Data Streams with Koopman Operator Regression",
+        "abstract": "Real-time data analysis requires the ability to accurately and adaptively address nonlinear dynamics in a nonstationary data stream while preserving computational efficiency. However, nonlinear dynamics are so complex that capturing dynamically changing nonlinear patterns and utilizing them for downstream tasks under strict time constraints is nontrivial. To bridge the gap between nonlinear complexity and computational tractability, this study applies Koopman operator theory, which states that nonlinear dynamics can be represented as linear transitions in an infinite-dimensional space. Building upon its finite-dimensional approximation, we present AdaKoop, an efficient streaming algorithm for modeling nonlinear dynamics over nonstationary data streams. Our approach utilizes a probabilistic framework grounded in Koopman operator theory, treating both raw observations and reproducing kernel Hilbert space (RKHS) features as emissions from latent vectors. This dual-view formulation allows nonlinear dynamics to be expressed as a tractable linear system. Consequently, AdaKoop enables the efficient and stable modeling of nonlinear dynamics in a streaming fashion, avoiding the prohibitive computational costs of iterative nonlinear optimization. Furthermore, to address nonstationarity in data streams, AdaKoop adaptively detects the switching of patterns via statistical hypothesis testing and continuously updates model parameters. Extensive experiments on a total of 71 practical benchmark datasets across various domains demonstrate that AdaKoop outperforms state-of-the-art methods in terms of real-time forecasting accuracy and computational efficiency.",
+        "venue": {
+          "name": "The 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD ’26)",
+          "others": "Jeju, Korea, August 9-13, 2026 (acceptance rate: 18.5%)"
+        },
+        "awards": []
+      },
       "ICML2026": {
         "authors": ["Naoki Chihara", "Tatsushi Oka", "Yasuko Matsubara", "Yasushi Sakurai", "Shota Yasui"],
         "title": "Modeling Covariate Transition for Efficient Estimation of Longitudinal Treatment Effects in Randomized Experiments",
@@ -141,6 +151,8 @@
   },
   "news": {
     "heading": "News",
+    "kdd2026-date": "[2026.05.16]",
+    "kdd2026": "Our paper has been accepted to KDD2026.",
     "icml2026-date": "[2026.05.01]",
     "icml2026": "Our paper has been accepted to ICML2026.",
     "tod109-date": "[2025.10.29]",
