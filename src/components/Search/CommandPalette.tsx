@@ -26,7 +26,7 @@ interface CommandPaletteProps {
 const MAX_RESULTS = 12
 
 const stripMarkup = (value: string): string =>
-  value.replace(/<link_[^>]+>(.*?)<\/link_[^>]+>/g, '$1').replace(/<link_[^>]+>/g, '')
+  value.replace(/<([\w-]+)[^>]*>(.*?)<\/\1>/g, '$2').replace(/<[^>]+>/g, '')
 
 const buildSnippet = (text: string, query: string, context = 40, maxLength = 160): string => {
   const trimmedText = text.trim()

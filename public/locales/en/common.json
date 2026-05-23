@@ -21,8 +21,8 @@
         "title": "AdaKoop: Efficient Modeling of Nonlinear Dynamics from Nonstationary Data Streams with Koopman Operator Regression",
         "abstract": "Real-time data analysis requires the ability to accurately and adaptively address nonlinear dynamics in a nonstationary data stream while preserving computational efficiency. However, nonlinear dynamics are so complex that capturing dynamically changing nonlinear patterns and utilizing them for downstream tasks under strict time constraints is nontrivial. To bridge the gap between nonlinear complexity and computational tractability, this study applies Koopman operator theory, which states that nonlinear dynamics can be represented as linear transitions in an infinite-dimensional space. Building upon its finite-dimensional approximation, we present AdaKoop, an efficient streaming algorithm for modeling nonlinear dynamics over nonstationary data streams. Our approach utilizes a probabilistic framework grounded in Koopman operator theory, treating both raw observations and reproducing kernel Hilbert space (RKHS) features as emissions from latent vectors. This dual-view formulation allows nonlinear dynamics to be expressed as a tractable linear system. Consequently, AdaKoop enables the efficient and stable modeling of nonlinear dynamics in a streaming fashion, avoiding the prohibitive computational costs of iterative nonlinear optimization. Furthermore, to address nonstationarity in data streams, AdaKoop adaptively detects the switching of patterns via statistical hypothesis testing and continuously updates model parameters. Extensive experiments on a total of 71 practical benchmark datasets across various domains demonstrate that AdaKoop outperforms state-of-the-art methods in terms of real-time forecasting accuracy and computational efficiency.",
         "venue": {
-          "name": "The 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD ’26)",
-          "others": "Jeju, Korea, August 9-13, 2026 (acceptance rate: 18.5%)"
+          "name": "The 32nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (<bold>KDD 2026</bold>)",
+          "others": "Jeju, Korea, August 9-13, 2026 (acceptance rate=18.5%)"
         },
         "awards": []
       },
@@ -31,8 +31,8 @@
         "title": "Modeling Covariate Transition for Efficient Estimation of Longitudinal Treatment Effects in Randomized Experiments",
         "abstract": "We present a regression-adjustment framework designed to estimate longitudinal treatment effects in randomized experiments under static regimes. Although regression-adjustment methods are useful for variance reduction in randomized experiments through the use of pre-treatment covariates, they usually focus only on average effects, which cannot capture valuable knowledge about when effects appear and how long they continue. To address this limitation, we need to consider intermediate outcomes and evolving post-treatment covariates over time, and we represent these transitions using transition kernels. Furthermore, we establish the asymptotic normality and the semiparametric efficiency bound for our estimator, enabling more powerful statistical inference. Simulation studies and empirical analysis using A/B test data from a streaming platform in Japan demonstrate the practical advantages of our method.",
         "venue": {
-          "name": "The 43rd International Conference on Machine Learning (ICML ’26)",
-          "others": "Seoul, South Korea, July 6-11, 2026 (acceptance rate: 26.6%)"
+          "name": "The 43rd International Conference on Machine Learning (<bold>ICML 2026</bold>)",
+          "others": "Seoul, South Korea, July 6-11, 2026 (acceptance rate=26.6%)"
         },
         "awards": []
       },
@@ -41,8 +41,8 @@
         "title": "Modeling Time-evolving Causality over Data Streams",
         "abstract": "Given an extensive, semi-infinite collection of multivariate co-evolving data sequences (e.g., sensor/web activity streams) whose observations influence each other, how can we discover the time-changing cause-and-effect relationships in co-evolving data streams? How efficiently can we reveal dynamical patterns that allow us to forecast future values? In this paper, we present a novel streaming method, ModePlait, which is designed for modeling such causal relationships (i.e., time-evolving causality) in multivariate co-evolving data streams and forecasting their future values. The solution relies on characteristics of the causal relationships that evolve over time in accordance with the dynamic changes of exogenous variables. ModePlait has the following properties: (a) Effective: it discovers the time-evolving causality in multivariate co-evolving data streams by detecting the transitions of distinct dynamical patterns adaptively. (b) Accurate: it enables both the discovery of time-evolving causality and the forecasting of future values in a streaming fashion. (c) Scalable: our algorithm does not depend on data stream length and thus is applicable to very large sequences. Extensive experiments on both synthetic and real-world datasets demonstrate that our proposed model outperforms state-of-the-art methods in terms of discovering the time-evolving causality as well as forecasting.",
         "venue": {
-          "name": "The 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD ’25)",
-          "others": "Tronto, ON, Canada, August 3-7, 2025 (acceptance rate: 19%)"
+          "name": "The 31st ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (<bold>KDD 2025</bold>)",
+          "others": "Toronto, ON, Canada, August 3-7, 2025 (acceptance rate=19%)"
         },
         "awards": []
       },
@@ -50,7 +50,7 @@
         "authors": ["Naoki Chihara", "Yasuko Matsubara", "Ren Fujiwara", "Yasushi Sakurai"],
         "title": "Stream Mining Time-evolving Causality in Time Series",
         "venue": {
-          "name": "The 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD ’24) PhD Consortium",
+          "name": "The 30th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD 2024) PhD Consortium",
           "others": "Barcelona, Spain, August 25-29, 2024"
         },
         "awards": []

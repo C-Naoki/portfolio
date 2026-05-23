@@ -12,19 +12,22 @@ export default function Publication ({ name, tag }: { name: string, tag: string 
   const { t } = useTranslation()
   let links = externalLinksInfo.publications[name]
   if (links === undefined) links = { title: '', awards: [], resources: {} }
-  const authors = t(`publications.${tag}.${name}.authors`, { returnObjects: true }) as string[]
+  const authorsValue = t(`publications.${tag}.${name}.authors`, { returnObjects: true })
+  const authors = Array.isArray(authorsValue) ? authorsValue : []
   const title = t(`publications.${tag}.${name}.title`)
   let abstract = t(`publications.${tag}.${name}.abstract`)
   if (abstract === `publications.${tag}.${name}.abstract`) abstract = ''
-  const venueName = t(`publications.${tag}.${name}.venue.name`)
+  const venueNameKey = `publications.${tag}.${name}.venue.name`
+  const venueName = t(venueNameKey)
   const venueOthers = t(`publications.${tag}.${name}.venue.others`)
-  const awards = t(`publications.${tag}.${name}.awards`, { returnObjects: true }) as string[]
+  const awardsValue = t(`publications.${tag}.${name}.awards`, { returnObjects: true })
+  const awards = Array.isArray(awardsValue) ? awardsValue : []
 
   return (
     <div className='publication-item'>
       <AuthorList authors={authors} t={t}/>
       <Title href={links.title} name={title}/>
-      <Venue name={venueName} others={venueOthers}/>
+      <Venue name={venueName} nameI18nKey={venueNameKey} others={venueOthers}/>
       <Awards hrefs={links.awards} awards={awards}/>
       <Resources resources={links.resources} abstract={abstract}/>
     </div>

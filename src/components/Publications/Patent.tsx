@@ -9,7 +9,8 @@ export default function Patent ({ name }: { name: string }): JSX.Element {
   const { t } = useTranslation()
   let links = externalLinksInfo.publications[name]
   if (links === undefined) links = { title: '', awards: [], resources: {} }
-  const authors = t(`publications.patent.${name}.authors`, { returnObjects: true }) as string[]
+  const authorsValue = t(`publications.patent.${name}.authors`, { returnObjects: true })
+  const authors = Array.isArray(authorsValue) ? authorsValue : []
   const title = t(`publications.patent.${name}.title`)
   const tokugan = t(`publications.patent.${name}.tokugan`)
   const tokkai = t(`publications.patent.${name}.tokkai`)

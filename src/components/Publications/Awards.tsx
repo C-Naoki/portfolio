@@ -1,8 +1,4 @@
-import { useTranslation } from 'next-i18next'
-
 const Awards = ({ hrefs, awards }: { hrefs: string[], awards: string[] }): JSX.Element | null => {
-  const { i18n } = useTranslation()
-
   if (awards.length === 0) return null
 
   const awardsEntries = awards.map((award, index) => ({
@@ -11,13 +7,11 @@ const Awards = ({ hrefs, awards }: { hrefs: string[], awards: string[] }): JSX.E
     href: hrefs[index]
   }))
 
-  const getClassName = (): string => i18n.language === 'en' ? 'highlight italic' : 'highlight'
-
   return (
-    <span className={`${getClassName()} award`} >
+    <div className='highlight'>
       <span>
         {awardsEntries.map(({ key, name, href }, index) => (
-          <span key={key} className={getClassName()}>
+          <span key={key} className='highlight'>
             <a href={href} target='_blank' rel='noopener noreferrer'>
               {name}
             </a>
@@ -25,7 +19,7 @@ const Awards = ({ hrefs, awards }: { hrefs: string[], awards: string[] }): JSX.E
           </span>
         ))}
       </span>
-    </span>
+    </div>
   )
 }
 

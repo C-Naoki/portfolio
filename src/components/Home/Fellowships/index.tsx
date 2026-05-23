@@ -50,7 +50,7 @@ const Fellowships = ({ t, i18n }: { t: TFunction, i18n: i18n }): JSX.Element => 
           )
         })}
       </ul>
-      <span style= {{ fontFamily: 'Lato', fontStyle: 'italic', fontSize: '1.05rem' }}>
+      <span style= {{ display: 'block', fontStyle: 'italic', marginBottom: '6px' }}>
         {t('fellowships.message')}
       </span>
     </div>

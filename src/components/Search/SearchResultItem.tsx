@@ -13,7 +13,7 @@ interface SearchResultItemProps {
 }
 
 const getSnippet = (text: string, query: string, context = 20): string => {
-  const strippedText = text.replace(/<link_[^>]+>(.*?)<\/link_[^>]+>/g, '$1').replace(/<link_[^>]+>/g, '')
+  const strippedText = text.replace(/<([\w-]+)[^>]*>(.*?)<\/\1>/g, '$2').replace(/<[^>]+>/g, '')
   const lowerText = strippedText.toLowerCase()
   const lowerQuery = query.toLowerCase()
   const idx = lowerText.indexOf(lowerQuery)

@@ -36,6 +36,9 @@ export const isExternalUrl = (url?: string): boolean => {
   return /^https?:\/\//i.test(url)
 }
 
+const stripI18nMarkup = (value: string): string =>
+  value.replace(/<([\w-]+)[^>]*>(.*?)<\/\1>/g, '$2').replace(/<[^>]+>/g, '')
+
 interface LocalizedEntriesOptions {
   jaEntries: FlattenedI18nEntry[]
   enEntries: FlattenedI18nEntry[]
@@ -64,11 +67,12 @@ export const mergeLocalizedEntries = ({ jaEntries, enEntries, language }: Locali
     const jaValue = ja?.value?.trim()
     const enValue = en?.value?.trim()
 
-    const displayValue = language === 'ja'
+    const displayValue = stripI18nMarkup(language === 'ja'
       ? (jaValue ?? enValue ?? '')
       : (enValue ?? jaValue ?? '')
+    )
 
-    const searchText = (language === 'ja'
+    const searchText = stripI18nMarkup(language === 'ja'
       ? (jaValue ?? enValue ?? '')
       : (enValue ?? jaValue ?? '')
     ).trim()

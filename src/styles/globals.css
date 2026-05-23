@@ -1,7 +1,7 @@
 /* ===== General Options ===== */
 :root {
   --text-color: #323232;
-  --background-color: #e8f0e8;
+  --background-color: #ffffff;
   --container-color: #ffffff;
   --button-bg-color: #FF8809;
   --button-hover-bg-color: #BE6C15;
@@ -57,11 +57,13 @@ body {
 }
 
 html[lang="en"] body {
-  font-family: 'Noto Sans JP', 'Segoe UI';
+  font-family: 'Georgia', 'Noto Serif JP';
+  font-weight: 500;
 }
 
 html[lang="ja"] body {
-  font-family: 'Noto Sans JP', 'Segoe UI';
+  font-family: 'Georgia', 'Noto Serif JP';
+  font-weight: 500;
 }
 
 h1 {
@@ -113,19 +115,15 @@ html, body {
 
 .section {
   line-height: 1.5em;
-  margin-bottom: 30px !important;
-  background-color: var(--container-color);
-  border-radius: 8px;
-  padding: 25px 23px 20px 23px;
-  box-shadow: var(--box-shadow);
-  border: 1px solid var(--input-border-color);
+  margin-bottom: 40px !important;
+  padding: 0 15px 4px 15px;
   scroll-margin-top: 80px;
 }
 
 .section h2 {
-  font-size: 25px;
-  margin-top: 2px;
-  margin-bottom: 15px;
+  font-size: 26px;
+  margin-top: 0;
+  margin-bottom: 12px;
   color: var(--heading-color);
 }
 
@@ -165,8 +163,8 @@ html, body {
 /* ===== Layout.tsx ===== */
 .container {
   margin-top: 95px !important;
-  max-width: 1150px !important;
-  background-color: var(--background-color);
+  max-width: 900px !important;
+  background-color: transparent;
   padding-top: 5px !important;
 }
 
@@ -203,12 +201,13 @@ html, body {
 .contact-info {
   display: flex;
   flex-direction: column;
-  margin-top: 15px;
+  gap: 4px;
+  margin-top: 18px;
 }
 
 .contact-item {
   display: flex;
-  flex-direction: center;
+  align-items: flex-start;
 }
 
 .fa-download {
@@ -229,14 +228,7 @@ html, body {
 .custom-list,
 .custom-list > ul,
 .custom-list > ol {
-  margin-bottom: -5px;
-}
-
-.custom-list > ul > li,
-.custom-list > ol > li {
-  margin-top: 10px;
-  line-height: normal;
-  margin-bottom: 5px;
+  margin-bottom: -6px;
 }
 
 .custom-list > ol > li {
@@ -336,7 +328,7 @@ html, body {
 /* ===== publications.tsx ===== */
 .publication-item {
   padding-left: 5px;
-  margin-bottom: 0px;
+  line-height: 1.5;
 }
 
 .publication-heading {
@@ -344,14 +336,9 @@ html, body {
   margin-bottom: 12px;
 }
 
-.award {
-  display: flex;
-  align-items: center;
-}
-
 .highlight {
   font-weight: bold;
-  font-family: 'Lato';
+  /* font-family: 'Lato'; */
   font-size: 16.5px;
   color: var(--highlight-color);
 }
@@ -366,16 +353,12 @@ html, body {
   margin-top: -2px;
 }
 
-.venue-name {
-  font-family: 'Lato';
-}
-
 .abstract-box {
   margin-top: 22px;
   margin-bottom: 20px;
   width: 93%;
   padding: 0px 20px 0px 20px;
-  background-color: #fff;
+  background-color: var(--background-color);
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
   opacity: 0;
   animation: fadeIn 0.3s ease-in-out forwards;
@@ -390,7 +373,7 @@ html, body {
 }
 
 .abstract-box .abstract-title {
-  background-color: #fff;
+  background-color: var(--background-color);
   font-size: 1.2em;
   font-weight: 800;
   color: #666;
@@ -424,10 +407,10 @@ html, body {
 .horizontal-line {
   background-color: var(--horizontal-line);
   margin-top: 0px;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
   margin-left: 0px;
   width: 100%;
-  height: 3.0px;
+  height: 1px;
 }
 
 .horizontal-subline {
@@ -505,7 +488,7 @@ html, body {
   }
 
   .section {
-    padding: 25px 20px 20px 20px;
+    padding: 0 10px 4px 10px;
   }
 
   .news {
@@ -529,7 +512,6 @@ html, body {
     margin-left: -24px;
     width: 97%;
     padding: 0px 15px 0px 15px;
-    background-color: #fff;
     border: 2px solid #666;
   }
 
@@ -541,7 +523,6 @@ html, body {
   }
 
   .abstract-box .abstract-title {
-    background-color: #fff;
     font-size: 1.1em;
     font-weight: 800;
     color: #666;
