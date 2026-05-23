@@ -17,9 +17,7 @@ export default function Publication ({ name, tag }: { name: string, tag: string 
   const title = t(`publications.${tag}.${name}.title`)
   let abstract = t(`publications.${tag}.${name}.abstract`)
   if (abstract === `publications.${tag}.${name}.abstract`) abstract = ''
-  const venueNameKey = `publications.${tag}.${name}.venue.name`
-  const venueName = t(venueNameKey)
-  const venueOthers = t(`publications.${tag}.${name}.venue.others`)
+  const venueKey = `publications.${tag}.${name}.venue`
   const awardsValue = t(`publications.${tag}.${name}.awards`, { returnObjects: true })
   const awards = Array.isArray(awardsValue) ? awardsValue : []
 
@@ -27,7 +25,7 @@ export default function Publication ({ name, tag }: { name: string, tag: string 
     <div className='publication-item'>
       <AuthorList authors={authors} t={t}/>
       <Title href={links.title} name={title}/>
-      <Venue name={venueName} nameI18nKey={venueNameKey} others={venueOthers}/>
+      <Venue i18nKey={venueKey}/>
       <Awards hrefs={links.awards} awards={awards}/>
       <Resources resources={links.resources} abstract={abstract}/>
     </div>

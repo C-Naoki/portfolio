@@ -20,39 +20,27 @@
         "authors": ["Naoki Chihara", "Ren Fujiwara", "Yasuko Matsubara", "Yasushi Sakurai"],
         "title": "AdaKoop: Efficient Modeling of Nonlinear Dynamics from Nonstationary Data Streams with Koopman Operator Regression",
         "abstract": "Real-time data analysis requires the ability to accurately and adaptively address nonlinear dynamics in a nonstationary data stream while preserving computational efficiency. However, nonlinear dynamics are so complex that capturing dynamically changing nonlinear patterns and utilizing them for downstream tasks under strict time constraints is nontrivial. To bridge the gap between nonlinear complexity and computational tractability, this study applies Koopman operator theory, which states that nonlinear dynamics can be represented as linear transitions in an infinite-dimensional space. Building upon its finite-dimensional approximation, we present AdaKoop, an efficient streaming algorithm for modeling nonlinear dynamics over nonstationary data streams. Our approach utilizes a probabilistic framework grounded in Koopman operator theory, treating both raw observations and reproducing kernel Hilbert space (RKHS) features as emissions from latent vectors. This dual-view formulation allows nonlinear dynamics to be expressed as a tractable linear system. Consequently, AdaKoop enables the efficient and stable modeling of nonlinear dynamics in a streaming fashion, avoiding the prohibitive computational costs of iterative nonlinear optimization. Furthermore, to address nonstationarity in data streams, AdaKoop adaptively detects the switching of patterns via statistical hypothesis testing and continuously updates model parameters. Extensive experiments on a total of 71 practical benchmark datasets across various domains demonstrate that AdaKoop outperforms state-of-the-art methods in terms of real-time forecasting accuracy and computational efficiency.",
-        "venue": {
-          "name": "The 32nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (<bold>KDD 2026</bold>)",
-          "others": "Jeju, Korea, August 9-13, 2026 (acceptance rate=18.5%)"
-        },
+        "venue": "The 32nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (<bold>KDD 2026</bold>), pp. **-**, Jeju, Korea, August 9-13, 2026 (acceptance rate: 18.5%)",
         "awards": []
       },
       "ICML2026": {
         "authors": ["Naoki Chihara", "Tatsushi Oka", "Yasuko Matsubara", "Yasushi Sakurai", "Shota Yasui"],
         "title": "Modeling Covariate Transition for Efficient Estimation of Longitudinal Treatment Effects in Randomized Experiments",
         "abstract": "We present a regression-adjustment framework designed to estimate longitudinal treatment effects in randomized experiments under static regimes. Although regression-adjustment methods are useful for variance reduction in randomized experiments through the use of pre-treatment covariates, they usually focus only on average effects, which cannot capture valuable knowledge about when effects appear and how long they continue. To address this limitation, we need to consider intermediate outcomes and evolving post-treatment covariates over time, and we represent these transitions using transition kernels. Furthermore, we establish the asymptotic normality and the semiparametric efficiency bound for our estimator, enabling more powerful statistical inference. Simulation studies and empirical analysis using A/B test data from a streaming platform in Japan demonstrate the practical advantages of our method.",
-        "venue": {
-          "name": "The 43rd International Conference on Machine Learning (<bold>ICML 2026</bold>)",
-          "others": "Seoul, South Korea, July 6-11, 2026 (acceptance rate=26.6%)"
-        },
+        "venue": "The 43rd International Conference on Machine Learning (<bold>ICML 2026</bold>), PMLR ***, pp. **-**, Seoul, South Korea, July 6-11, 2026 (acceptance rate: 26.6%)",
         "awards": []
       },
       "KDD2025": {
         "authors": ["Naoki Chihara", "Yasuko Matsubara", "Ren Fujiwara", "Yasushi Sakurai"],
         "title": "Modeling Time-evolving Causality over Data Streams",
         "abstract": "Given an extensive, semi-infinite collection of multivariate co-evolving data sequences (e.g., sensor/web activity streams) whose observations influence each other, how can we discover the time-changing cause-and-effect relationships in co-evolving data streams? How efficiently can we reveal dynamical patterns that allow us to forecast future values? In this paper, we present a novel streaming method, ModePlait, which is designed for modeling such causal relationships (i.e., time-evolving causality) in multivariate co-evolving data streams and forecasting their future values. The solution relies on characteristics of the causal relationships that evolve over time in accordance with the dynamic changes of exogenous variables. ModePlait has the following properties: (a) Effective: it discovers the time-evolving causality in multivariate co-evolving data streams by detecting the transitions of distinct dynamical patterns adaptively. (b) Accurate: it enables both the discovery of time-evolving causality and the forecasting of future values in a streaming fashion. (c) Scalable: our algorithm does not depend on data stream length and thus is applicable to very large sequences. Extensive experiments on both synthetic and real-world datasets demonstrate that our proposed model outperforms state-of-the-art methods in terms of discovering the time-evolving causality as well as forecasting.",
-        "venue": {
-          "name": "The 31st ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (<bold>KDD 2025</bold>)",
-          "others": "Toronto, ON, Canada, August 3-7, 2025 (acceptance rate=19%)"
-        },
+        "venue": "The 31st ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (<bold>KDD 2025</bold>), pp. 153-164, Toronto, ON, Canada, August 3-7, 2025 (acceptance rate: 19%)",
         "awards": []
       },
       "KDDPC2024": {
         "authors": ["Naoki Chihara", "Yasuko Matsubara", "Ren Fujiwara", "Yasushi Sakurai"],
         "title": "Stream Mining Time-evolving Causality in Time Series",
-        "venue": {
-          "name": "The 30th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD 2024) PhD Consortium",
-          "others": "Barcelona, Spain, August 25-29, 2024"
-        },
+        "venue": "The 30th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD 2024) PhD Consortium, Barcelona, Spain, August 25-29, 2024",
         "awards": []
       }
     },
@@ -62,30 +50,21 @@
         "authors": ["Naoki Chihara", "Yasuko Matsubara", "Ren Fujiwara", "Yasushi Sakurai"],
         "title": "Modeling Time-evolving Causality and Forecasting in Data Streams",
         "abstract": "We study the novel problem of discovering the time-varying cause-and-effect relationships across transitions of dynamical patterns in multivariate co-volving data streams. To solve such a problem, we present a streaming method, ModePlait, which is designed for modeling such causal relationships (i.e., time-evolving causality) and forecasting their future values. ModePlait has the following desirable properties: (a) Effective: it discovers the time-evolving causality in multivariate co-evolving data streams by detecting the transitions of distinct dynamical patterns adaptively. (b) Accurate: it enables both the discovery of time-evolving causality and the forecasting of future values in a streaming fashion. (c) Scalable: our algorithm does not depend on data stream length and thus is applicable to very large sequences. Extensive experiments on both synthetic and real-world datasets demonstrate that our proposed model outperforms state-of-the-art methods in terms of discovering the time-evolving causality as well as forecasting.",
-        "venue": {
-          "name": "IPSJ Transactions on Databases (TOD)",
-          "others": "Vol. 19, No. 2, pp. 70-81, April 21, 2026"
-        },
+        "venue": "IPSJ Transactions on Databases (TOD), Vol. 19, No. 2, pp. 70-81, April 21, 2026",
         "awards": ["Recommended Paper"]
       },
       "TOD101": {
         "authors": ["Naoki Chihara", "Yasuko Matsubara", "Ren Fujiwara", "Yasushi Sakurai"],
         "title": "Real-time Forecasting of Time-evolving Data Streams using Dynamic Mode Decomposition",
         "abstract": "Given a large, online stream of multiple co-evolving data sequences (e.g., sensor/web activities streams), which contains multiple distinct time-series patterns based on inherent dynamics, how do we capture important patterns and forecast future values? In this paper, we present ModeCast, an efficient and effective method for forecasting co-evolving data sequences. ModeCast exploits Dynamic Mode Decomposition (DMD) to capture time-series patterns based on inherent dynamics. Our proposed method has the following properties: (a) Effective: it captures important time-evolving patterns in data streams and enables real-time, long-range forecasting; (b) General : our model can be practically applied to various types of time-evolving data streams; (c) Scalable: our algorithm does not depend on the length of data streams and thus is applicable to very large sequences. Extensive experiments on a real dataset demonstrate that ModeCast makes long-range forecasts and consistently outperforms the best existing methods as regards accuracy, and the computational speed is sufficiently fast.",
-        "venue": {
-          "name": "IPSJ Transactions on Databases (TOD)",
-          "others": "Vol. 17, No. 2, pp. 1-11, April 23, 2024"
-        },
+        "venue": "IPSJ Transactions on Databases (TOD), Vol. 17, No. 2, pp. 1-11, April 23, 2024",
         "awards": []
       },
       "AstronComput45": {
         "authors": ["Naoki Chihara", "Tadafumi Takata", "Yasuhiro Fujiwara", "Koki Noda", "Keisuke Toyoda", "Kaito Higuchi", "Makoto Onizuka"],
         "title": "Effective detection of variable celestial objects using machine learning-based periodic analysis",
         "abstract": "This paper tackles the problem of effectively detecting variable celestial objects whose brightness periodically changes over time. This problem is crucial in studying the evolution and structure of the universe and elucidating physical phenomena. The method by Sesar et al. is one of the popular approaches used in detecting variable celestial objects that uses statistical data of celestial time series, such as intrinsic variability 𝜎 and 𝜒2, etc. However, since statistical data is an aggregation of celestial time series, the previous approaches do not take advantage of the periodicity, which is the inherent characteristic of variable celestial objects; it fails to find variable celestial objects effectively. To solve such a problem, we propose an approach to detecting variable celestial objects using periodic analysis. Our approach uses sparse modeling as periodic analysis since celestial time series is typically sparse and sparse modeling can effectively obtain periodicities of the celestial objects from sparse time series. By exploiting the periodicities of the celestial objects as features, we perform binary classification to estimate whether a celestial object is a variable celestial object. To show the effectiveness of our approach, we evaluated our approach using Hyper SuprimeCam (HSC) PDR2 dataset, and we confirmed that AUC of our approach is 0.939 while AUC of the previous approach is 0.750; our approach can more effectively detect variable celestial objects.",
-        "venue": {
-          "name": "Astronomy and Computing",
-          "others": "Vol. 45, pp. 100765, November 3, 2023"
-        },
+        "venue": "Astronomy and Computing, Vol. 45, pp. 100765, November 3, 2023",
         "awards": []
       }
     },
@@ -93,43 +72,28 @@
       "heading": "Domestic Conference",
       "IBIS2025": {
         "authors": ["Naoki Chihara", "Yasuko Matsubara", "Ren Fujiwara", "Yasushi Sakurai"],
-        "venue": {
-          "name": "The 28th Information-based Induction Sciences Workshop (IBIS2025)",
-          "others": "Okinawa, Japan, November 12-15, 2025"
-        },
+        "venue": "The 28th Information-based Induction Sciences Workshop (IBIS 2025), Okinawa, Japan, November 12-15, 2025",
         "awards": []
       },
       "DEIM2025": {
         "authors": ["Naoki Chihara", "Yasuko Matsubara", "Ren Fujiwara", "Yasushi Sakurai"],
-        "venue": {
-          "name": "The 17th Forum on Data Engineering and Information Management (DEIM2025)",
-          "others": "Fukuoka, Japan, February 27 - March 4, 2025"
-        },
+        "venue": "The 17th Forum on Data Engineering and Information Management (DEIM 2025), Fukuoka, Japan, February 27 - March 4, 2025",
         "awards": ["Student Presentation Award", "Best Paper Award Runner-up"]
       },
       "DEIM2024": {
         "authors": ["Naoki Chihara", "Yasuko Matsubara", "Ren Fujiwara", "Yasushi Sakurai"],
-        "venue": {
-          "name": "The 16th Forum on Data Engineering and Information Management (DEIM2024)",
-          "others": "Hyogo, Japan, February 28 - March 5, 2024"
-        },
+        "venue": "The 16th Forum on Data Engineering and Information Management (DEIM 2024), Hyogo, Japan, February 28 - March 5, 2024",
         "awards": ["Best Paper Award Runner-up", "IPSJ Yamashita SIG Research Award"]
       },
       "DAS2024": {
         "authors": ["Aiyi Li", "Kenya Hoshimure", "Kei Tanigaki", "Yota Hatano", "Reina Nozawa", "Yuki Sakamoto", "Yuanzhou Wei", "Naoki Chihara", "Naoki Kodani"],
         "title": "Semi-autonomous Leader-follower Approach for Swarm Drone Guidance",
-        "venue": {
-          "name": "The 36th SICE Symposium on Decentralized Autonomous Systems",
-          "others": "Tokyo, Japan, February 16-17, 2024"
-        },
+        "venue": "The 36th SICE Symposium on Decentralized Autonomous Systems, Tokyo, Japan, February 16-17, 2024",
         "awards": []
       },
       "DEIM2023": {
         "authors": ["Naoki Chihara", "Tadafumi Takata", "Yasuhiro Fujiwara", "Makoto Onizuka"],
-        "venue": {
-          "name": "The 15th Forum on Data Engineering and Information Management (DEIM2023)",
-          "others": "Gifu, Japan, March 5-9, 2023"
-        },
+        "venue": "The 15th Forum on Data Engineering and Information Management (DEIM 2023), Gifu, Japan, March 5-9, 2023",
         "awards": []
       }
     },
@@ -152,33 +116,33 @@
   "news": {
     "heading": "News",
     "kdd2026-date": "[2026.05.16]",
-    "kdd2026": "Our paper has been accepted to KDD2026.",
+    "kdd2026": "Our paper has been accepted to KDD 2026.",
     "icml2026-date": "[2026.05.01]",
-    "icml2026": "Our paper has been accepted to ICML2026.",
+    "icml2026": "Our paper has been accepted to ICML 2026.",
     "tod109-date": "[2025.10.29]",
     "tod109": "Our paper has been accepted to IPSJ Transactions on Databases (TOD).",
     "jasso-date": "[2025.07.29]",
-    "jasso": "I have been granted a full exemption from return of the Japan Student Services Organization (JASSO) scholarship.",
+    "jasso": "I have been granted a full exemption from repayment of the JASSO scholarship.",
     "deim2025-award-date": "[2025.05.20]",
-    "deim2025-award": "I have received the DEIM2025 Best Paper Award Runner-up.",
+    "deim2025-award": "I have received the DEIM 2025 Best Paper Award Runner-up.",
     "msc-date": "[2025.03.25]",
     "msc": "I have completed my M.Sc. degree at Osaka University.",
     "ist-award-date": "[2025.03.07]",
     "ist-award": "I have received the Osaka University Graduate School of Information Science and Technology Award.",
     "deim2025-presentation-date": "[2025.03.04]",
-    "deim2025-presentation": "I have received the DEIM2025 Student Presentation Award.",
+    "deim2025-presentation": "I have received the DEIM 2025 Student Presentation Award.",
     "boost-date": "[2025.02.20]",
     "boost": "I have been selected for the JST BOOST Program.",
     "kdd2025-date": "[2024.11.17]",
-    "kdd2025": "Our paper has been accepted to KDD2025.",
+    "kdd2025": "Our paper has been accepted to KDD 2025.",
     "dc1-date": "[2024.09.27]",
     "dc1": "I have been preliminarily selected for the JSPS DC1 Research Fellowship.",
     "yamashita-award-date": "[2024.07.31]",
     "yamashita-award": "I have received the IPSJ Yamashita SIG Research Award.",
     "kddpc2024-date": "[2024.06.25]",
-    "kddpc2024": "Our paper has been accepted to the PhD Consortium at KDD2024.",
+    "kddpc2024": "Our paper has been accepted to the PhD Consortium at KDD 2024.",
     "deim2024-award-date": "[2024.06.08]",
-    "deim2024-award": "I have received the DEIM2024 Best Paper Award Runner-up.",
+    "deim2024-award": "I have received the DEIM 2024 Best Paper Award Runner-up.",
     "tod101-date": "[2024.01.08]",
     "tod101": "Our paper has been accepted to IPSJ Transactions on Databases (TOD).",
     "AstronComput45-date": "[2023.10.25]",
@@ -191,18 +155,18 @@
   "awards": {
     "heading": "Awards",
     "deim2025-date": "[2025.06]",
-    "deim2025": "DEIM2025 Best Paper Award Runner-up (Top 1.6%)",
+    "deim2025": "DEIM 2025 Best Paper Award Runner-up (Top 1.6%)",
     "ist-date": "[2025.03]",
     "ist": "Osaka University Graduate School of Information Science and Technology Award",
     "deim2025-presentation-date": "[2025.03]",
-    "deim2025-presentation": "DEIM2025 Student Presentation Award",
+    "deim2025-presentation": "DEIM 2025 Student Presentation Award",
     "yamashita-date": "[2024.07]",
     "yamashita": "IPSJ Yamashita SIG Research Award",
     "deim2024-date": "[2024.06]",
-    "deim2024": "DEIM2024 Best Paper Award Runner-up (Top 1.4%)",
+    "deim2024": "DEIM 2024 Best Paper Award Runner-up (Top 1.4%)",
     "hwip-date": "[2023.04-present]",
     "pakdd2023-volunteer-date": "[2023.05]",
-    "pakdd2023-volunteer": "PAKDD2023 Volunteer Award"
+    "pakdd2023-volunteer": "PAKDD 2023 Volunteer Award"
   },
   "grants": {
     "heading": "Grants"
@@ -211,7 +175,7 @@
     "heading": "Fellowships",
     "jasso-date": "[2025.07]",
     "jasso": "Japan Student Services Organization (JASSO) Type 1 Scholarship",
-    "jasso-content1": "Exemption from Return for Particularly Outstanding Achievement (Full Amount)",
+    "jasso-content1": "Exemption from repayment for Particularly Outstanding Achievement (Full Amount)",
     "hwip-date": "[2023.04-present]",
     "hwip": "Osaka University Humanware Innovation Program",
     "hwip-content1": "Research/Travel expenses and Grant-type scholarship",
@@ -275,9 +239,9 @@
     "sakurai-interview-date": "[2025.03]",
     "sakurai-interview": "Brief interview by Sakurai & Matsubara Lab.",
     "pigicon2023-date": "[2023.12]",
-    "pigicon2023": "Second-place award at the 2nd Recruit Programming Contest (PIGICON2023)",
+    "pigicon2023": "Second-place award at the 2nd Recruit Programming Contest (PIGICON 2023)",
     "pakdd2023-date": "[2023.05]",
-    "pakdd2023": "Participated in PAKDD2023 as volunteer",
+    "pakdd2023": "Participated in PAKDD 2023 as volunteer",
     "pandacco-date": "[2023.04-2025.03]",
     "pandacco": "Developed online reservation app for local bakery (Pandacco) at Google Developer Student Clubs (GDSC)"
   },

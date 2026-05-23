@@ -1,26 +1,13 @@
-import type { ReactNode } from 'react'
-
 import { Trans } from 'next-i18next'
 
-import containsJapanese from '@/lib/utils/containsJapanese'
-
 export interface VenueProps {
-  name: string
-  nameI18nKey?: string
-  others: string
+  i18nKey: string
 }
 
-const Venue = (venue: VenueProps): JSX.Element => {
-  const isJapanese = containsJapanese(venue.name)
-  const venueName: ReactNode = venue.nameI18nKey === undefined
-    ? venue.name
-    : <Trans i18nKey={venue.nameI18nKey} components={{ bold: <strong /> }} />
-
+const Venue = ({ i18nKey }: VenueProps): JSX.Element => {
   return (
     <span>
-      <span className={'venue-name'}>{venueName}, </span>
-      <span className={`${isJapanese ? 'venue-name' : ''}`}>{venue.others}.</span>
-      {' '}
+      <Trans i18nKey={i18nKey} components={{ bold: <strong /> }} />.{' '}
     </span>
   )
 }
