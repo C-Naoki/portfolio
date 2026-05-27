@@ -146,34 +146,30 @@
 .listItem {
   padding-top: 8px;
   padding-bottom: 8px;
+  align-items: center;
 }
 
 .listItem:not(:last-child) {
   margin-bottom: 8px;
 }
 
-.listItem .MuiListItemIcon-root {
-  min-width: 35px;
-}
-
-.listItem .MuiListItemText-primary {
-  margin-left: 6px;
-}
-
 .listItemText {
   color: var(--text-color) !important;
 }
 
-.externalLinkIcon {
-  color: var(--drawer-icon-color) !important;
-  margin-left: 3px;
-  margin-right: -20.5px;
+.listItemTextRoot {
+  margin: 0 0 0 6px !important;
 }
 
-.navigationIcon {
+.navigationIcon,
+.externalLinkIcon {
   color: var(--drawer-icon-color) !important;
-  min-width: 35px;
-  margin-right: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 35px !important;
+  width: 35px;
+  margin-right: 10px;
 }
 
 .externalLink {

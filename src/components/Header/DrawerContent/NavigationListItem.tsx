@@ -19,7 +19,7 @@ const NavigationListItem: React.FC<NavigationIconProps> = ({ href, icon: Icon, t
         <ListItemIcon className={styles.navigationIcon}>
           <Icon />
         </ListItemIcon>
-        <ListItemText classes={{ primary: styles.listItemText }} primary={text} />
+        <ListItemText className={styles.listItemTextRoot} classes={{ primary: styles.listItemText }} primary={text} />
       </ListItem>
     </Link>
   )
