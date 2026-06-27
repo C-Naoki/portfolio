@@ -1,0 +1,10 @@
+@inproceedings{chihara2026dynamicadjustment,
+  title = {Modeling Covariate Transition for Efficient Estimation of Longitudinal Treatment Effects in Randomized Experiments},
+  author = {Chihara, Naoki and Oka, Tatsushi and Matsubara, Yasuko and Sakurai, Yasushi and Yasui, Shota},
+  booktitle = {Proceedings of the 43rd International Conference on Machine Learning},
+  pages = {},
+  year = {2026},
+  volume = {},
+  series = {Proceedings of Machine Learning Research},
+  publisher = {PMLR},
+}

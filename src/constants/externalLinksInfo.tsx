@@ -80,10 +80,24 @@ const externalLinksInfo: ExternalLinksInfoProps = {
   },
   publications: {
     // 2026
+    KDD2026: {
+      title: 'https://doi.org/10.1145/3770855.3817851',
+      awards: [],
+      resources: {
+        paper: '/assets/KDD2026/paper.pdf',
+        code: 'https://github.com/C-Naoki/AdaKoop',
+        arXiv: 'https://arxiv.org/abs/2606.04930'
+      }
+    },
     ICML2026: {
       title: '',
       awards: [],
       resources: {
+        paper: '/assets/ICML2026/paper.pdf',
+        poster: '/assets/ICML2026/poster.pdf',
+        cite: '/assets/ICML2026/bibtex.txt',
+        code: 'https://github.com/C-Naoki/dynamic-adjustment',
+        arXiv: 'https://arxiv.org/abs/2605.31443',
         OpenReview: 'https://openreview.net/forum?id=mLZlTzepbr'
       }
     },
