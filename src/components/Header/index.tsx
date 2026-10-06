@@ -99,16 +99,19 @@ const Header: React.FC<{ onSearch?: (value: string) => void, searchValue?: strin
               </Typography>
             </Link>
             <div className={styles.headerOptionsLarge}>
-              <AnimatedButton href='/'>Home</AnimatedButton>
-              <AnimatedButton href='/about'>About Me</AnimatedButton>
-              <AnimatedButton href='/publications'>Publications</AnimatedButton>
-              {externalLinksInfo.zenn !== '' && (
-                <AnimatedButton href='/blog'>Blog</AnimatedButton>
-              )}
-              {isAuthed && (
-                <AnimatedButton href='/private'>Private</AnimatedButton>
-              )}
-              <div className={styles.toolbarCenter}>
+              <nav className={styles.navigationLinks}>
+                <AnimatedButton href='/'>Home</AnimatedButton>
+                <AnimatedButton href='/about'>About</AnimatedButton>
+                <AnimatedButton href='/'>Projects</AnimatedButton>
+                <AnimatedButton href='/publications'>Publications</AnimatedButton>
+                {externalLinksInfo.zenn !== '' && (
+                  <AnimatedButton href='/blog'>Blog</AnimatedButton>
+                )}
+                {isAuthed && (
+                  <AnimatedButton href='/private'>Private</AnimatedButton>
+                )}
+              </nav>
+              <div className={styles.headerControls}>
                 <HeaderExternalLink href={externalLinksInfo.github} className={styles.toolbarCenter}>
                   <FaGithub className={styles.headerIcon}/>
                 </HeaderExternalLink>
