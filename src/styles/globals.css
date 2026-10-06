@@ -21,6 +21,7 @@
   --component-text-color: #4b5563;
   --horizontal-line: #95baad;
   --search-highlight: #fbff00;
+  --page-inline-gutter: 15px;
 }
 
 [data-theme="dark"] {
@@ -116,7 +117,7 @@ html, body {
 .section {
   line-height: 1.5em;
   margin-bottom: 40px !important;
-  padding: 0 15px 4px 15px;
+  padding: 0 var(--page-inline-gutter) 4px var(--page-inline-gutter);
   scroll-margin-top: 80px;
 }
 
@@ -173,10 +174,44 @@ html, body {
   font-size: 35px;
   margin-bottom: 35px;
   margin-top: 5px;
-  margin-left: 15px;
+  margin-left: var(--page-inline-gutter);
 }
 
 /* ===== index.tsx ===== */
+.selected-publications {
+  margin-bottom: 10px;
+}
+
+.selected-publications ul {
+  margin-bottom: 12px;
+}
+
+.selected-publication {
+  line-height: 1.45;
+}
+
+.home-section-link {
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 36px;
+  padding: 0 12px;
+  border-radius: 8px;
+  color: #ffffff;
+  background-color: var(--main-color);
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: 16px;
+}
+
+.home-section-link:hover {
+  color: #ffffff;
+  background-color: var(--main-color);
+  filter: brightness(0.92);
+  text-decoration: none;
+}
+
 .biography {
   display: flex;
   flex-direction: row;
@@ -191,6 +226,51 @@ html, body {
   margin-left: 18px;
   margin-right: 18px;
   margin-top: 7px;
+}
+
+.research-overview-lead {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.research-overview-keywords {
+  margin-top: 20px;
+  margin-bottom: 12px;
+  font-size: 0.9375em;
+  line-height: 1.4;
+}
+
+.research-overview-keywords-label {
+  display: block;
+  margin-left: -0.5px;
+  margin-bottom: -1px;
+  color: var(--subheading-color);
+  /* font-size: 0.875em; */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 2.0;
+}
+
+.research-overview > ul {
+  margin-bottom: 5px;
+}
+
+.research-overview-topic {
+  line-height: 1.5;
+}
+
+.research-overview-topic-title {
+  color: var(--subheading-color);
+  font-weight: 700;
+}
+
+.research-overview-topic-title::after {
+  content: ": ";
+}
+
+.research-overview-topic-title:lang(ja)::after {
+  content: "：";
 }
 
 .institution {
@@ -451,6 +531,10 @@ html, body {
 }
 
 @media (max-width: 600px) {
+  :root {
+    --page-inline-gutter: 10px;
+  }
+
   body {
     font-size: 15px;
   }
@@ -465,34 +549,34 @@ html, body {
     margin-top: 1px;
   }
 
-  .highlight {
-    font-size: 15px;
-  }
-
-  .venue {
-    font-size: 15px;
-  }
-
   .container {
-    padding: 10px 10px 30px 10px;
+    padding: 10px var(--page-inline-gutter) 30px var(--page-inline-gutter) !important;
     margin-top: 50px !important;
     margin-bottom: -10px !important;
     border-radius: 0px;
   }
 
   .container h1 {
-    margin-left: 10px;
     margin-bottom: 20px;
     margin-top: 25px;
     font-size: 30px;
   }
 
   .section {
-    padding: 0 10px 4px 10px;
+    padding: 0 var(--page-inline-gutter) 4px var(--page-inline-gutter);
   }
 
   .news {
     margin-bottom: 0px;
+  }
+
+  .selected-publication {
+    line-height: 1.5;
+  }
+
+  .home-section-link {
+    justify-self: stretch;
+    justify-content: center;
   }
 
   .biography {

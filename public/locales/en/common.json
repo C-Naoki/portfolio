@@ -1,6 +1,43 @@
 {
   "name": "Naoki Chihara",
   "title": "Home",
+  "about": {
+    "heading": "About Me"
+  },
+  "home": {
+    "research-overview": {
+      "heading": "Research Overview",
+      "lead": "In fields ranging from industry to the life sciences and medicine, the causal mechanisms underlying a system often shift as the environment changes (e.g., across time, locations, or experimental conditions). These shifts also determine whether estimates obtained in the past can be reused in a new environment. It is therefore essential to understand what drives these changes and, building on that understanding, to develop update algorithms that adapt to new environments, along with methods for treatment effect estimation and decision-making that account for heterogeneity. Specifically, our research is organized around the following three directions.",
+      "keywords": {
+        "heading": "Research Keywords",
+        "items": [
+          "Statistical causal inference",
+          "Data mining",
+          "Machine learning",
+          "Stream processing",
+          "Non-stationarity",
+          "Dynamical systems"
+        ]
+      },
+      "topics": {
+        "causal-mechanism": {
+          "title": "Identifying Causal Mechanism Shifts",
+          "description": "Building on mathematical models of causal mechanisms, I aim to identify the causes of distribution shifts and estimate how the underlying changes propagate along causal pathways to affect the distributions of other variables."
+        },
+        "streaming-algorithm": {
+          "title": "Stream Processing for Non-Stationary Time Series Data",
+          "description": "I develop scalable algorithms for sequentially processing observations that arrive successively in order to adapt to time-evolving patterns under limited computational and memory resources."
+        },
+        "causal-decision-making": {
+          "title": "Heterogeneous Treatment Effect Estimation and Decision-Making",
+          "description": "I present an estimation procedure to capture heterogeneity in effects across multiple environments and changes in effects over time, and construct a decision-making approach to select what treatment to apply and when, while accounting for uncertainty."
+        }
+      }
+    },
+    "selected-publications": {
+      "heading": "Selected Publications"
+    }
+  },
   "profile-text": "I am a first-year Ph.d. student at The University of Osaka, Japan and am a specially appointed researcher at SANKEN. In a nutshell, I am interested in data mining of time series data. Specifically, my research topics are (RQ1) Stream processing and (RQ2) Causality. I am fortunate to be advised by <link_yasushi>Prof. Yasushi Sakurai</link_yasushi> and <link_yasuko>Prof. Yasuko Matsubara</link_yasuko> at SANKEN. I received my B.Sc. and M.Sc. degrees from The University of Osaka advised by <link_makoto>Prof. Makoto Onizuka</link_makoto> and <link_yasushi>Prof. Yasushi Sakurai</link_yasushi> in March, 2023 and March, 2025, respectively. I am participating in <link_hwip>Humanware Innovation Program</link_hwip> to deepen my knowledge in other fields.",
   "cv": "Download my CV <link_cv>here</link_cv>",
   "blog": {
@@ -266,11 +303,13 @@
     "noResults": "No results found.",
     "section": {
       "home": "Home",
+      "about": "About Me",
       "blog": "Blog",
       "publications": "Publications"
     },
     "pages": {
       "home": "Home",
+      "about": "About Me",
       "blog": "Blog",
       "book": "Book",
       "publications": "Publications"

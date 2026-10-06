@@ -274,7 +274,9 @@ const CommandPalette = ({
                       ? t('search.pages.book', 'Book')
                       : pageKey === 'publications'
                         ? t('search.pages.publications', 'Publications')
-                        : t('search.pages.home', 'Home')
+                        : pageKey === 'about'
+                          ? t('search.pages.about', 'About Me')
+                          : t('search.pages.home', 'Home')
                 const normalizedQuery = query.trim().toLowerCase()
                 const lowerDisplay = entry.value?.toLowerCase() ?? ''
                 const lowerSearch = entry.searchText?.toLowerCase() ?? ''

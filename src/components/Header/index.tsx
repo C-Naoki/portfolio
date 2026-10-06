@@ -100,11 +100,11 @@ const Header: React.FC<{ onSearch?: (value: string) => void, searchValue?: strin
             </Link>
             <div className={styles.headerOptionsLarge}>
               <AnimatedButton href='/'>Home</AnimatedButton>
+              <AnimatedButton href='/about'>About Me</AnimatedButton>
+              <AnimatedButton href='/publications'>Publications</AnimatedButton>
               {externalLinksInfo.zenn !== '' && (
                 <AnimatedButton href='/blog'>Blog</AnimatedButton>
               )}
-              <AnimatedButton href='/publications'>Publications</AnimatedButton>
-              <AnimatedButton href='/contact'>Contact</AnimatedButton>
               {isAuthed && (
                 <AnimatedButton href='/private'>Private</AnimatedButton>
               )}

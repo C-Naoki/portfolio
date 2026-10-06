@@ -2,10 +2,10 @@ import React from 'react'
 
 import { faGithub, faGoogleScholar, faLinkedin, faOrcid, faSpeakerDeck, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import BookIcon from '@mui/icons-material/Book'
-import ContactMailIcon from '@mui/icons-material/ContactMail'
 import DescriptionIcon from '@mui/icons-material/Description'
 import HomeIcon from '@mui/icons-material/Home'
 import LockIcon from '@mui/icons-material/Lock'
+import PersonIcon from '@mui/icons-material/Person'
 import { List } from '@mui/material'
 import { useSession } from 'next-auth/react'
 
@@ -25,9 +25,9 @@ const DrawerContent: React.FC<DrawerContentProps> = ({ handleDrawerToggle }) => 
 
   const navigationItems = [
     { href: '/', text: 'Home', icon: HomeIcon },
-    { href: '/blog', text: 'Blog', icon: BookIcon },
+    { href: '/about', text: 'About Me', icon: PersonIcon },
     { href: '/publications', text: 'Publications', icon: DescriptionIcon },
-    { href: '/contact', text: 'Contact', icon: ContactMailIcon },
+    { href: '/blog', text: 'Blog', icon: BookIcon },
     { href: '/private', text: 'Private', icon: LockIcon }
   ]
 

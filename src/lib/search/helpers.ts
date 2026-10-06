@@ -1,33 +1,64 @@
 import type { FlattenedI18nEntry } from '@/lib/utils/flattenI18n'
 import type { SearchableEntry } from '@/types/search'
 
-export const getPageSlug = (entry: FlattenedI18nEntry): 'home' | 'publications' | 'blog' => {
+type PageSlug = 'home' | 'about' | 'publications' | 'blog'
+type PageNameKey = PageSlug | 'book'
+
+const aboutSectionPrefixes = [
+  'affiliation',
+  'education',
+  'experiences',
+  'awards',
+  'grants',
+  'fellowships',
+  'misc'
+]
+
+const getAboutSectionId = (key: string): string | null => {
+  if (key === 'profile-text' || key === 'cv' || key.startsWith('biography.')) return 'biography'
+
+  for (const prefix of aboutSectionPrefixes) {
+    if (key.startsWith(`${prefix}.`)) return prefix
+  }
+
+  return null
+}
+
+export const getPageSlug = (entry: FlattenedI18nEntry): PageSlug => {
   const { category, key } = entry
-  if (category.includes('Blog') || category.includes('Book')) return 'blog'
+  const normalizedCategory = category.toLowerCase()
+  if (normalizedCategory.includes('blog') || normalizedCategory.includes('book')) return 'blog'
   if (key.startsWith('publications.')) return 'publications'
+  if (key.startsWith('about.') || getAboutSectionId(key) !== null) return 'about'
   return 'home'
 }
 
 export const getUrlForEntry = (entry: FlattenedI18nEntry): string => {
   const { category, key } = entry
-  if (category.includes('Blog') || category.includes('Book')) return ''
+  const normalizedCategory = category.toLowerCase()
+  if (normalizedCategory.includes('blog') || normalizedCategory.includes('book')) return ''
   if (key.startsWith('publications.')) {
     const parts = key.split('.')
     return parts.length > 2 ? `/publications#${parts[2]}` : '/publications'
   }
+  if (key.startsWith('about.')) return '/about'
+  const aboutSectionId = getAboutSectionId(key)
+  if (aboutSectionId !== null) return `/about#${aboutSectionId}`
   if (key.startsWith('home.')) {
     const parts = key.split('.')
     return parts.length > 1 ? `/#${parts[1]}` : '/'
   }
   const page = getPageSlug(entry)
-  return page === 'publications' ? '/publications' : page === 'blog' ? '/blog' : '/'
+  return page === 'publications' ? '/publications' : page === 'blog' ? '/blog' : page === 'about' ? '/about' : '/'
 }
 
-export const getEntryPageNameKey = (entry: SearchableEntry): 'blog' | 'book' | 'publications' | 'home' => {
+export const getEntryPageNameKey = (entry: SearchableEntry): PageNameKey => {
   const { category, key } = entry
-  if (category.includes('Blog')) return 'blog'
-  if (category.includes('Book')) return 'book'
+  const normalizedCategory = category.toLowerCase()
+  if (normalizedCategory.includes('blog')) return 'blog'
+  if (normalizedCategory.includes('book')) return 'book'
   if (key.startsWith('publications.')) return 'publications'
+  if (key.startsWith('about.') || getAboutSectionId(key) !== null) return 'about'
   return 'home'
 }
 
