@@ -126,6 +126,8 @@
   },
   "news": {
     "heading": "最新情報",
+    "neurips2026-reviewer-date": "[2026年10月9日]",
+    "neurips2026-reviewer": "NeurIPS 2026 の Top Reviewer に選ばれました．",
     "kdd2026-date": "[2026年5月16日]",
     "kdd2026": "論文が KDD 2026 に採択されました．",
     "icml2026-date": "[2026年5月1日]",
@@ -165,6 +167,8 @@
   },
   "awards": {
     "heading": "受賞",
+    "neurips2026-reviewer-date": "[2026年10月]",
+    "neurips2026-reviewer": "NeurIPS 2026 Top Reviewer",
     "deim2025-date": "[2025年6月]",
     "deim2025": "DEIM 2025 優秀論文賞 (上位 1.6%)",
     "ist-date": "[2025年3月]",

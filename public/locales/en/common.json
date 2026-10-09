@@ -152,6 +152,8 @@
   },
   "news": {
     "heading": "News",
+    "neurips2026-reviewer-date": "[2026.10.09]",
+    "neurips2026-reviewer": "I have been recognized as Top Reviewer for NeurIPS 2026.",
     "kdd2026-date": "[2026.05.16]",
     "kdd2026": "Our paper has been accepted to KDD 2026.",
     "icml2026-date": "[2026.05.01]",
@@ -191,6 +193,8 @@
   },
   "awards": {
     "heading": "Awards",
+    "neurips2026-reviewer-date": "[2026.10]",
+    "neurips2026-reviewer": "NeurIPS 2026 Top Reviewer",
     "deim2025-date": "[2025.06]",
     "deim2025": "DEIM 2025 Best Paper Award Runner-up (Top 1.6%)",
     "ist-date": "[2025.03]",
