@@ -85,12 +85,14 @@ const externalLinksInfo: ExternalLinksInfoProps = {
       awards: [],
       resources: {
         paper: '/assets/KDD2026/paper.pdf',
+        poster: '/assets/KDD2026/poster.pdf',
+        cite: '/assets/KDD2026/bibtex.txt',
         code: 'https://github.com/C-Naoki/AdaKoop',
         arXiv: 'https://arxiv.org/abs/2606.04930'
       }
     },
     ICML2026: {
-      title: '',
+      title: 'https://proceedings.mlr.press/v306/chihara26a.html',
       awards: [],
       resources: {
         paper: '/assets/ICML2026/paper.pdf',
