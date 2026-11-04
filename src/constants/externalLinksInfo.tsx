@@ -80,6 +80,13 @@ const externalLinksInfo: ExternalLinksInfoProps = {
   },
   publications: {
     // 2026
+    IBIS2026: {
+      title: 'https://ibisml.org/ibis2026/posters/',
+      awards: [],
+      resources: {
+        poster: '/assets/IBIS2026/poster.pdf'
+      }
+    },
     KDD2026: {
       title: 'https://doi.org/10.1145/3770855.3817851',
       awards: [],

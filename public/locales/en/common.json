@@ -107,6 +107,11 @@
     },
     "domestic": {
       "heading": "Domestic Conference",
+      "IBIS2026": {
+        "authors": ["Naoki Chihara", "Ren Fujiwara", "Yasuko Matsubara", "Yasushi Sakurai"],
+        "venue": "The 29th Information-based Induction Sciences Workshop (IBIS 2026), Saitama, Japan, October 26-29, 2026",
+        "awards": []
+      },
       "IBIS2025": {
         "authors": ["Naoki Chihara", "Yasuko Matsubara", "Ren Fujiwara", "Yasushi Sakurai"],
         "venue": "The 28th Information-based Induction Sciences Workshop (IBIS 2025), Okinawa, Japan, November 12-15, 2025",
